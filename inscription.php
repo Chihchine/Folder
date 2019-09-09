@@ -34,8 +34,8 @@
           </div>
           <div class="form-group col-md-4">
             <label for="">Mot de passe</label>
-            <input class="form-control" type="password" name="" value="" placeholder="*********" required>
-            <div class="invalid-feedback">Veuillez-renseigner un mot de passe.</div>
+            <input class="form-control" type="password" name="" value="" placeholder="*********" required minlength="5">
+            <div class="invalid-feedback">Minimum 6 caractères.</div>
           </div>
           <div class="form-group col-md-4">
             <label for="">Confirmer</label>
