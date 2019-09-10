@@ -7,17 +7,14 @@ $nom = "Aurelien";
 $result = Main::DataBase()->prepare("SELECT * FROM UTILISATEURS WHERE ID = ?");
 $result->execute(array($id));
 
-$userinfo = $result->fetch();
-echo $userinfo["ID"];
-
-/*$userexist = $result->rowCount();
+$userexist = $result->rowCount();
 if($userexist == 1){
 	$userinfo = $result->fetch();
-	echo $userinfo['id'];
+	echo $userinfo['ID'];
 } else 
 {
 	echo "Marche pas";
-}*/
+}
 ?> 
 
 <html> 
