@@ -25,4 +25,5 @@
 
 require(__DIR__ . "/image.php");
 require(__DIR__ . "/connexion.php");
+require(__DIR__ . "/inscription.php");
 ?>
