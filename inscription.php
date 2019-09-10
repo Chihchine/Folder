@@ -75,7 +75,7 @@ if (isset($_POST['btnInscrire'])) {
           </div>
           <div class="form-group col-md-4">
             <label for="">Mot de passe</label>
-            <input class="form-control" type="password" name="mdp"  placeholder="*********" required minlength="6">
+            <input class="form-control" type="password" name="mdp"  placeholder="*********" required>
             <div class="invalid-feedback">Minimum 6 caractères.</div>
           </div>
           <div class="form-group col-md-4">

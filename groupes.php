@@ -23,12 +23,17 @@ require("base/include/header.php");
             <textarea class="col-12" id="clubDesc" name="clubDesc" rows="3" placeholder="Une description simple du club avec ses objectifs, pour qui, quand, etc..."></textarea>
           </div>
           <div class="input-group mb-3">
+<<<<<<< HEAD
             <div class="input-group-prepend">
               <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
             </div>
             <div class="custom-file">
               <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
               <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+=======
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" value="Choisissez une image">
+>>>>>>> 8b8663df5ac99d7701d2fe84d1a3292139986032
             </div>
           </div>
         </form>
