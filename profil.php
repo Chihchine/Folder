@@ -1,21 +1,17 @@
 <?php 
 require("base/class/main.php");
 
-//$request = Main::Database()->prepare("SELECT * FROM UTILISATEURS WHERE ID = :id");
-//$request->execute(['id' => "1"]);
+$id = 1;
 
-//$request = Main:DataBase()->prepare("SELECT * FROM UTILISATEURS WHERE ID = :id");
-//$request->execute(["id" => 1])
-
-
-$result = Main::DataBase()->prepare("SELECT * FROM UTILISATEURS");
-//$result->execute(["id" => 1]);
-
-//echo $result["id"];
-
-foreach($result as $utilisateur)
+$result = Main::DataBase()->prepare("SELECT * FROM UTILISATEURS WHERE id = ?");
+$result->execute(array($id));
+$userexist = $result->rowCount();
+if($userexist == 1){
+	$userinfo = $result->fetch();
+	echo $userinfo['id'];
+} else 
 {
-	echo $utilisateur["id"];
+	echo "Marche pas";
 }
 ?> 
 
