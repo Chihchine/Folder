@@ -38,5 +38,11 @@ if($userexist == 1){
 		<h4> Ecole: <?php echo $userinfo['ECOLE'] ?> </h4>
 		<h4> Promotion: <?php echo $userinfo['PROMOTION'] ?> </h4>
 	</div>
+
+	<div id="description">
+		<?php
+			echo $userinfo['PRESENTATION'];
+		?>
+	</div>
 </body>
 </html>
