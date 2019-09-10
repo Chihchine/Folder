@@ -13,7 +13,7 @@ $result = Main::DataBase()->prepare("SELECT * FROM UTILISATEURS");
 
 //echo $result["id"];
 
-foreach($donnees as $utilisateur)
+foreach($result as $utilisateur)
 {
 	echo $utilisateur["id"];
 }
