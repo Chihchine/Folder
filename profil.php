@@ -10,9 +10,6 @@ $result->execute(array($id));
 $image = Main::DataBase()->prepare("SELECT * FROM PHOTOS WHERE ID = ?");
 $image->execute(array($id));
 
-
-
-
 $userexist = $result->rowCount();
 
 $imageinfo = $image->fetch();
