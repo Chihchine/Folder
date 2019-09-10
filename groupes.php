@@ -22,22 +22,22 @@ require("base/include/header.php");
             <label for="clubDesc">Description du groupe</label>
             <textarea class="col-12" id="clubDesc" name="clubDesc" rows="3" placeholder="Une description simple du club avec ses objectifs, pour qui, quand, etc..."></textarea>
           </div>
-          <div class="input-group image-preview">
-            <input type="text" class="form-control image-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
-            <span class="input-group-btn">
-              <!-- image-preview-clear button -->
-              <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
-                <span class="glyphicon glyphicon-remove"></span> Clear
-              </button>
-              <!-- image-preview-input -->
-              <div class="btn btn-default image-preview-input">
-                <span class="glyphicon glyphicon-folder-open"></span>
-                <span class="image-preview-input-title">Browse</span>
-                <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/> <!-- rename it -->
-              </div>
-            </span>
-          </div>
         </form>
+        <div class="input-group image-preview">
+          <input type="text" class="form-control image-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
+          <span class="input-group-btn">
+            <!-- image-preview-clear button -->
+            <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+              <span class="glyphicon glyphicon-remove"></span> Clear
+            </button>
+            <!-- image-preview-input -->
+            <div class="btn btn-default image-preview-input">
+              <span class="glyphicon glyphicon-folder-open"></span>
+              <span class="image-preview-input-title">Browse</span>
+              <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/> <!-- rename it -->
+            </div>
+          </span>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
@@ -62,7 +62,7 @@ require("base/include/header.php");
     <div class="card-header">
       <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand">Clubs créés</a>
-        <div class="form-group">
+        <div class="form-inline">
           <select id="input-classement" class="form-control">
             <option selected>Trier par...</option>
             <option>A/Z</option>
