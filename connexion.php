@@ -20,6 +20,7 @@ if (isset($_POST['connexion'])) {
     $_SESSION['id_utilisateur'] = $idUtilisateur['ID'];
     header('Location: index.php');
 
+
   }
 }
 
