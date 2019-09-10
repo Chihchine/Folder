@@ -29,6 +29,8 @@ if($userexist == 1){
 		<img id="profil-image" src="images/profils/profiltest.png" /> 
 		<h4>Nom: <?php echo $userinfo['NOM'] ?> </h4> <!-- PHP "Nom" + Data.Name--> 
 		<h4> Prénom: <?php echo $userinfo['PRENOM'] ?> </h4>
+		<h4> Ecole: <?php echo $userinfo['ECOLE'] ?> </h4>
+		<h4> Promotion: <?php echo $userinfo['PROMOTION'] ?> </h4>
 	</div>
 </body>
 </html>
