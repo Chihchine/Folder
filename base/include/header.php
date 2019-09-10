@@ -1,6 +1,6 @@
 <?php
 // if (!isset($_SESSION['id_utilisateur'])) {
-// 	Header('Location: ../');
+// 	Header('Location: index.php');
 // 	die;
 // }
 
