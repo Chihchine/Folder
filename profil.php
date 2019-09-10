@@ -1,5 +1,5 @@
-<?php 
-require("base/class/main.php");
+<!--<?php 
+//require("base/class/main.php");
 
 //$request = Main::Database()->prepare("SELECT * FROM UTILISATEURS WHERE ID = :id");
 //$request->execute(['id' => "1"]);
@@ -8,7 +8,7 @@ require("base/class/main.php");
 //$request->execute(["id" => 1])
 
 
-$result = Main:DataBase()->prepare("SELECT * FROM UTILISATEURS WHERE ID = :id");
+/*$result = Main:DataBase()->prepare("SELECT * FROM UTILISATEURS WHERE ID = :id");
 
 	if ($result->num_rows > 0) {
 	    // output data of each row
@@ -17,8 +17,8 @@ $result = Main:DataBase()->prepare("SELECT * FROM UTILISATEURS WHERE ID = :id");
 	    }
 	} else {
 	    echo "0 results";
-	}
-?> 
+	}*/
+?>-->
 
 <html> 
 <head>
