@@ -1,21 +1,18 @@
 <?php
 require("base/include/header.php");
 
-//$request = Main::Database()->prepare("SELECT * FROM UTILISATEURS WHERE ID = :id");
-//$request->execute(['id' => "1"]);
+$id = 1;
+$nom = "Aurelien"
 
-//$request = Main:DataBase()->prepare("SELECT * FROM UTILISATEURS WHERE ID = :id");
-//$request->execute(["id" => 1])
-
-
-$result = Main::DataBase()->prepare("SELECT * FROM UTILISATEURS");
-//$result->execute(["id" => 1]);
-
-//echo $result["id"];
-
-foreach($result as $utilisateur)
+$result = Main::DataBase()->prepare("SELECT * FROM UTILISATEURS WHERE NOM = ?");
+$result->execute(array($nom));
+$userexist = $result->rowCount();
+if($userexist == 1){
+	$userinfo = $result->fetch();
+	echo $userinfo['NOM'];
+} else 
 {
-	echo $utilisateur["id"];
+	echo "Marche pas";
 }
 ?> 
 
