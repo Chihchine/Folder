@@ -2,13 +2,14 @@
 require("base/class/main.php");
 
 $id = 1;
+$nom = "Aurelien"
 
-$result = Main::DataBase()->prepare("SELECT * FROM UTILISATEURS WHERE id = ?");
-$result->execute(array($id));
+$result = Main::DataBase()->prepare("SELECT * FROM UTILISATEURS WHERE NOM = ?");
+$result->execute(array($nom));
 $userexist = $result->rowCount();
 if($userexist == 1){
 	$userinfo = $result->fetch();
-	echo $userinfo['id'];
+	echo $userinfo['NOM'];
 } else 
 {
 	echo "Marche pas";
