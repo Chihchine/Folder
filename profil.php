@@ -2,7 +2,7 @@
 require("base/include/header.php");
 
 $id = 1;
-$nom = "Aurelien"
+$nom = "Aurelien";
 
 $result = Main::DataBase()->prepare("SELECT * FROM UTILISATEURS");
 $result->execute(array($id));
