@@ -1,1 +1,1 @@
-hyuykuyjy
+<?php session_start(); ?>
