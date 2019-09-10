@@ -13,15 +13,10 @@ $result = Main::DataBase()->prepare("SELECT * FROM UTILISATEURS");
 
 //echo $result["id"];
 
-
-	if ($result->num_rows > 0) {
-	    // output data of each row
-	    while($row = $result->fetch_assoc()) {
-	        echo "id: ";
-	    }
-	} else {
-	    echo "0 results";
-	}
+foreach($donnees as $utilisateur)
+{
+	echo $utilisateur["id"];
+}
 ?> 
 
 <html> 
