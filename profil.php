@@ -14,6 +14,7 @@ $userexist = $result->rowCount();
 $imageexist = $image->rowCount();
 
 $imageinfo = $image->fetch();
+$userinfo = $result->fetch();
 
 if($userexist == 1){
 	//$userinfo = $result->fetch();
