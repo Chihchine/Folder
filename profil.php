@@ -2,7 +2,7 @@
 require("base/include/header.php");
 
 $id = 1;
-$nom = "Aurelien";
+//$nom = "Aurelien";
 
 $result = Main::DataBase()->prepare("SELECT * FROM UTILISATEURS WHERE ID = ?");
 $result->execute(array($id));
@@ -11,6 +11,7 @@ $image = Main::DataBase()->prepare("SELECT * FROM PHOTOS WHERE ID = ?");
 $image->execute(array($id));
 
 $userexist = $result->rowCount();
+$imageexist = $image->rowCount();
 
 $imageinfo = $image->fetch();
 
@@ -30,7 +31,7 @@ if($userexist == 1){
 </head>
 <body>
 	<div id="presentation"> 
-		<img id="profil-image" src="images/profils/<?php echo $imageinfo['LIEN']; ?>" /> 
+		<img id="profil-image" src="images/profils/<?php if($imageexist==1){echo $imageinfo['LIEN'];} ?>" /> 
 		<h4> Nom: <?php echo $userinfo['NOM']; ?> </h4> <!-- PHP "Nom" + Data.Name--> 
 		<h4> Prénom: <?php echo $userinfo['PRENOM']; ?> </h4>
 		<h4> Ecole: <?php echo $userinfo['ECOLE']; ?> </h4>
