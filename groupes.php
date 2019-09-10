@@ -22,18 +22,6 @@ require("base/include/header.php");
             <label for="clubDesc">Description du groupe</label>
             <textarea class="col-12" id="clubDesc" name="clubDesc" rows="3" placeholder="Une description simple du club avec ses objectifs, pour qui, quand, etc..."></textarea>
           </div>
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
-            </div>
-            <div class="custom-file">
-              <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-              <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-            <div class="custom-file">
-              <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" value="Choisissez une image">
-            </div>
-          </div>
-        </div>
         </form>
       </div>
       <div class="modal-footer">
@@ -73,6 +61,18 @@ require("base/include/header.php");
         </div>
       </nav>
     </div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+      </div>
+      <div class="custom-file">
+        <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+      <div class="custom-file">
+        <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" value="Choisissez une image">
+      </div>
+    </div>
+  </div>
 <div id="createdClubs">
     </div>
     <div class="card-body row justify-content-center">
