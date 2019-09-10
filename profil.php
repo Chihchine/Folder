@@ -11,17 +11,17 @@ require("base/class/main.php");
 $result = Main::DataBase()->prepare("SELECT * FROM UTILISATEURS WHERE ID = id");
 $result->execute(["id" => 1]);
 
-echo $result["id"];
+//echo $result["id"];
 
 
-if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        echo "id: ";
-    }
-} else {
-    echo "0 results";
-}
+	if ($result->num_rows > 0) {
+	    // output data of each row
+	    while($row = $result->fetch_assoc()) {
+	        echo "id: ";
+	    }
+	} else {
+	    echo "0 results";
+	}
 ?> 
 
 <html> 
