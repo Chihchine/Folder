@@ -24,7 +24,7 @@ require("base/include/header.php");
           </div>
           <div class="input-group mb-3">
             <div class="custom-file">
-              <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+              <input type="file" class="custom-file-input" id="uploadImage" aria-describedby="uploadImage">
               <label class="custom-file-label" for="uploadImage">Choisir une image</label>
             </div>
           </div>
