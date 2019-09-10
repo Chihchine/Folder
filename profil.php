@@ -15,13 +15,11 @@ $userexist = $result->rowCount();
 $imageinfo = $image->fetch();
 
 if($userexist == 1){
-
-} 
-else
+	//$userinfo = $result->fetch();
+} else 
 {
 	header("Location: index.php");
 }
-
 ?> 
 
 <html> 
@@ -33,10 +31,10 @@ else
 <body>
 	<div id="presentation"> 
 		<img id="profil-image" src="images/profils/<?php echo $imageinfo['LIEN']; ?>" /> 
-		<h4> Nom: <?php echo $userinfo['NOM'] ?> </h4> <!-- PHP "Nom" + Data.Name--> 
-		<h4> Prénom: <?php echo $userinfo['PRENOM'] ?> </h4>
-		<h4> Ecole: <?php echo $userinfo['ECOLE'] ?> </h4>
-		<h4> Promotion: <?php echo $userinfo['PROMOTION'] ?> </h4>
+		<h4> Nom: <?php echo $userinfo['NOM']; ?> </h4> <!-- PHP "Nom" + Data.Name--> 
+		<h4> Prénom: <?php echo $userinfo['PRENOM']; ?> </h4>
+		<h4> Ecole: <?php echo $userinfo['ECOLE']; ?> </h4>
+		<h4> Promotion: <?php echo $userinfo['PROMOTION']; ?> </h4>
 	</div>
 
 	<div id="description">
