@@ -17,7 +17,7 @@
 
     //Informations globales
     public const sitePathRoot = "https://mycampus.epsi.tk/.git/"; //Racine web du site internet
-    public const imageFolder = "/img/uploads/"; //Dossier d'upload des images
+    public const imageFolder = "/images/uploads/"; //Dossier d'upload des images
 
     //Paramètre d'upload d'image
     public const imageMaxSize = "5242880";    // Taille max en octets du fichier
