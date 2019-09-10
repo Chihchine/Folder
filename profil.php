@@ -7,7 +7,7 @@ $nom = "Aurelien";
 $result = Main::DataBase()->prepare("SELECT * FROM UTILISATEURS WHERE ID = ?");
 $result->execute(array($id));
 
-$image = Main::DataBase()->prepare("SELECT * FROM PHOTOS WHERE ID = ?")
+$image = Main::DataBase()->prepare("SELECT * FROM PHOTOS WHERE ID = ?");
 $image->execute(array($id));
 
 
