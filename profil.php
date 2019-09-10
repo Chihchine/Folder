@@ -1,5 +1,5 @@
-<?php 
-require("base/class/main.php");
+<?php
+require("base/include/header.php");
 
 //$request = Main::Database()->prepare("SELECT * FROM UTILISATEURS WHERE ID = :id");
 //$request->execute(['id' => "1"]);
