@@ -29,12 +29,11 @@ if (isset($_POST['resetMdp'])) {
       <?php if (isset($_POST['resetMdp'])) { echo '<div class="alert alert-primary" role="alert">Si cet email existe, un nouveau mot de passe temporaire vous a été envoyé.</div>'; } ?>
       <a href="connexion.php">Retour</a>
       <input class="form-control" type="email" name="mail" placeholder="Email de votre école." required>
-
       <div class="invalid-feedback">Veuillez-renseigner un email valide.</div>
       <button class="btn btn-primary" type="submit" name="resetMdp">Envoyer</button>
     </form>
 
-    <!-- <script>
+    <script>
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function() {
   'use strict';
@@ -53,7 +52,7 @@ if (isset($_POST['resetMdp'])) {
     });
   }, false);
 })();
-</script> -->
+</script>
 
   </body>
 </html>
