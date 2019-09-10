@@ -1,6 +1,6 @@
 <html> 
 <head>
-	<link rel="stylesheet" href = "css/profil.css" /> 
+	<link rel="stylesheet" href = "base/css/profil.css" /> 
 	<link rel="icon" href=""/>
 
 </head>
