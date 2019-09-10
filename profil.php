@@ -1,5 +1,5 @@
-<?php 
-require("base/class/main.php");
+<?php
+require("base/include/header.php");
 
 $id = 1;
 $nom = "Aurelien"
