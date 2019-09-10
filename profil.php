@@ -15,13 +15,13 @@ $userexist = $result->rowCount();
 $imageinfo = $image->fetch();
 
 if($userexist == 1){
-	$userinfo = $result->fetch();
-	//echo $userinfo['ID'];
-	//echo $userinfo['PRENOM'];
-} else 
+
+} 
+else
 {
-	echo "Marche pas";
+	header("Location: index.php");
 }
+
 ?> 
 
 <html> 
