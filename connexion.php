@@ -1,9 +1,10 @@
 <?php
 include('connexionBDD.php');
 
+
 function verifConnexion($mail, $mdp) {
   $bdd = connexionBDD();
-  $informations = $bdd->prepare('SELECT MAIL, MDP FROM utilisateurs WHERE MAIL = ? AND MDP = ?');
+  $informations = $bdd->prepare('SELECT ID, MAIL, MDP FROM utilisateurs WHERE MAIL = ? AND MDP = ?');
   $informations->execute(array($mail, $mdp));
   $verifConnexion = $informations->fetch();
   return $verifConnexion;
@@ -14,8 +15,11 @@ if (isset($_POST['connexion'])) {
     $errorConnexion[1] = '<div class="alert alert-danger" role="alert">La combinaison email et mot de passe n\'est pas bonne.</div>';
   }
   else {
+    session_start();
+    $idUtilisateur = verifConnexion($_POST['mail'], $_POST['mdp']);
+    $_SESSION['id_utilisateur'] = $idUtilisateur['ID'];
     header('Location: index.php');
-    // on se connecte
+
   }
 }
 
