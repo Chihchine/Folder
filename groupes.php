@@ -2,6 +2,29 @@
 $pageTitle = "Groupes";
 require("base/include/header.php");
 ?>
+<?php /*<-- DEBUT - Popup création de groupe -->*/ ?>
+<div class="modal fade" id="creationGroupe" tabindex="-1" role="dialog" aria-labelledby="creationGroupeLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="creationGroupeLabel">Créer un groupe</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<?php /*<-- FIN - Popup création de groupe -->*/ ?>
+
+<?php /*<-- DEBUT - Tableau des groupes existants -->*/ ?>
 <div class="fil-arianne container">
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
@@ -25,7 +48,7 @@ require("base/include/header.php");
             <option>Ancien</option>
             <option>Membres</option>
           </select>
-          <button class="btn btn-primary">Créer un groupe</button>
+          <button class="btn btn-primary" data-toggle="modal" data-target="#creationGroupe">Créer un groupe</button>
         </div>
       </nav>
     </div>
@@ -72,3 +95,4 @@ require("base/include/header.php");
 
 </div>
 </div>
+<?php /*<-- FIN - Tableau des groupes existants -->*/ ?>
