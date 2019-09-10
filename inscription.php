@@ -27,7 +27,7 @@ if (isset($_POST['btnInscrire'])) {
     $errorInscription[1] = '<div class="alert alert-danger" role="alert">L\'adresse mail est déjà utilisé pour un compte.</div>';
   }
   else {
-    Inscription::inscription($_POST['nom'], $_POST['prenom'], $_POST['mail'], $_POST['mdp'], $_POST['ecole'], $_POST['promotion']);
+    Inscription::signin($_POST['nom'], $_POST['prenom'], $_POST['mail'], $_POST['mdp'], $_POST['ecole'], $_POST['promotion']);
     $successInscription[1] = '<div class="alert alert-success" role="alert">Vous êtes inscris, vous pouvez désormais vous connecter.</div>';
   }
 }
@@ -75,7 +75,7 @@ if (isset($_POST['btnInscrire'])) {
           </div>
           <div class="form-group col-md-4">
             <label for="">Mot de passe</label>
-            <input class="form-control" type="password" name="mdp"  placeholder="*********" required minlength="6">
+            <input class="form-control" type="password" name="mdp"  placeholder="*********" required>
             <div class="invalid-feedback">Minimum 6 caractères.</div>
           </div>
           <div class="form-group col-md-4">
