@@ -25,6 +25,7 @@ require("base/include/header.php");
             <option>Ancien</option>
             <option>Membres</option>
           </select>
+          <button>Créer un groupe</button>
         </div>
       </nav>
     </div>

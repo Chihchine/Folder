@@ -19,4 +19,4 @@ require_once(__DIR__ . "/../class/main.php");
 
   <meta charset="utf-8">
 </head>
-<body onload="pageLoad()">
+<body onload="">
