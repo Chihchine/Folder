@@ -16,7 +16,7 @@ require("base/include/header.php");
     <div class="card-header">
       <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand">Clubs créés</a>
-        <div class="form-group">
+        <div class="form-inline">
           <select id="input-classement" class="form-control">
             <option selected>Trier par...</option>
             <option>A/Z</option>
@@ -25,6 +25,7 @@ require("base/include/header.php");
             <option>Ancien</option>
             <option>Membres</option>
           </select>
+          <button class="btn btn-primary">Créer un groupe</button>
         </div>
       </nav>
     </div>
