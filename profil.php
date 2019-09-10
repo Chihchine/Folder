@@ -11,6 +11,7 @@ $userexist = $result->rowCount();
 if($userexist == 1){
 	$userinfo = $result->fetch();
 	echo $userinfo['ID'];
+	echo $userinfo['PRENOM'];
 } else 
 {
 	echo "Marche pas";
@@ -27,7 +28,7 @@ if($userexist == 1){
 	<div id="presentation"> 
 		<img id="profil-image" src="images/profils/profiltest.png" /> 
 		<h4>Nom: Reynard </h4> <!-- PHP "Nom" + Data.Name--> 
-		<h4> Prénom: Aurélien </h4>
+		<h4> Prénom: <?php echo $userinfo['PRENOM'] ?> </h4>
 	</div>
 </body>
 </html>
