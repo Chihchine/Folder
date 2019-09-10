@@ -22,21 +22,21 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 
 	if($userexist == 1){
 		//$userinfo = $result->fetch();
-	} else 
+	} else
 	{
 		header("Location: index.php");
 	}
-?> 
+?>
 
-<html> 
+<html>
 <head>
-	<link rel="stylesheet" href = "base/css/profil.css" /> 
+  <link rel="stylesheet" type="text/css" href="<?php echo Settings::sitePathRoot; ?>base/css/main.css"/>
 	<link rel="icon" href=""/>
 
 </head>
 <body>
-	<div id="presentation"> 
-		<img id="profil-image" src="images/uploads/<?php if($imageexist==1){echo $imageinfo['LIEN'];} ?>" /> 
+	<div id="presentation">
+		<img id="profil-image" src="images/uploads/<?php if($imageexist==1){echo $imageinfo['LIEN'];} ?>" />
 		<h4> Nom: <?php echo $userinfo['NOM']; ?> </h4>
 		<h4> Prénom: <?php echo $userinfo['PRENOM']; ?> </h4>
 		<h4> Ecole: <?php echo $userinfo['ECOLE']; ?> </h4>
@@ -51,8 +51,8 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 </body>
 </html>
 
-<?php 
-} 
+<?php
+}
 else{
 	header("Location: index.php");
 }
