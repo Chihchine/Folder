@@ -32,7 +32,7 @@ if($userexist == 1){
 <body>
 	<div id="presentation"> 
 		<img id="profil-image" src="images/profils/<?php if($imageexist==1){echo $imageinfo['LIEN'];} ?>" /> 
-		<h4> Nom: <?php echo $userinfo['NOM']; ?> </h4> <!-- PHP "Nom" + Data.Name--> 
+		<h4> Nom: <?php echo $userinfo['NOM']; ?> </h4>
 		<h4> Prénom: <?php echo $userinfo['PRENOM']; ?> </h4>
 		<h4> Ecole: <?php echo $userinfo['ECOLE']; ?> </h4>
 		<h4> Promotion: <?php echo $userinfo['PROMOTION']; ?> </h4>
