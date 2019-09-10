@@ -11,9 +11,11 @@ function inscription($nom, $prenom, $mail, $mdp, $ecole, $promotion) {
 function mailExists($mail) {
   $bdd = connexionBDD();
   $mailBDD = $bdd->prepare('SELECT MAIL FROM utilisateurs WHERE MAIL = ?');
-  $mailExists = $mailBDD->execute(array($mail));
+  $mailBDD->execute(array($mail));
+  $mailExists = $mailBDD->fetch();
   return $mailExists;
 }
+
 
 if (isset($_POST['btnInscrire'])) {
   if ($_POST['mdp'] != $_POST['confirmMdp']) {

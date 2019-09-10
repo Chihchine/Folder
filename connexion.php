@@ -1,4 +1,26 @@
+<?php
+include('connexionBDD.php');
 
+function verifConnexion($mail, $mdp) {
+  $bdd = connexionBDD();
+  $informations = $bdd->prepare('SELECT MAIL, MDP FROM utilisateurs WHERE MAIL = ? AND MDP = ?');
+  $informations->execute(array($mail, $mdp));
+  $verifConnexion = $informations->fetch();
+  return $verifConnexion;
+}
+
+if (isset($_POST['connexion'])) {
+  if (empty(verifConnexion($_POST['mail'], $_POST['mdp']))) {
+    $errorConnexion[1] = '<div class="alert alert-danger" role="alert">La combinaison email et mot de passe n\'est pas bonne.</div>';
+  }
+  else {
+    header('Location: index.php');
+    // on se connecte
+  }
+}
+
+
+ ?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <head>
@@ -11,22 +33,23 @@
     <title></title>
   </head>
   <body>
-    <form class="needs-validation form-signin" novalidate>
+    <form method="post" class="needs-validation form-signin" novalidate>
       <img class="mb-4">
       <h1 class="h3 mb-3 font-weight-normal">Se connecter</h1>
+      <?php if (!empty($errorConnexion[1])) { echo $errorConnexion[1]; } ?>
       <label for="inputEmail" class="sr-only">Adresse email</label>
-      <input type="email" id="inputEmail" class="form-control" placeholder="Adresse email" required autofocus>
+      <input type="email" id="inputEmail" name="mail" class="form-control" placeholder="Adresse email" required autofocus>
       <label for="inputPassword" class="sr-only">Mot de passe</label>
-      <input type="password" id="inputPassword" class="form-control" placeholder="Mot de passe" required>
+      <input type="password" id="inputPassword" name="mdp" class="form-control" placeholder="Mot de passe" required>
       <a href="oublimdp.php">Mot de passe oublié ?</a>
       <a class="link-inscription" href="inscription.php">S'inscrire</a>
       <div class="invalid-feedback">Veuillez-renseigner un email valide.</div>
       <div class="invalid-feedback">Votre mot de passe ne peut-être vide.</div>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Connexion</button>
+      <button class="btn btn-lg btn-primary btn-block" type="submit" name="connexion">Connexion</button>
       <p class="text-muted">&copy; 2019 - Nom du site</p>
     </form>
 
-    <script>
+    <!-- <script>
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function() {
   'use strict';
@@ -45,6 +68,7 @@
     });
   }, false);
 })();
-</script>
+</script> -->
+
   </body>
 </html>
