@@ -6,9 +6,6 @@ require("base/class/main.php");
 
 $request = Main:DataBase()->prepare("SELECT * FROM UTILISATEURS WHERE ID = :id");
 $request->execute(["id" => 1])
-
-error($request);
-
 ?> 
 
 <html> 
