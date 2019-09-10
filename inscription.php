@@ -23,11 +23,11 @@ if (isset($_POST['btnInscrire'])) {
     echo "à faire";
     // en JS ?
   }
-  elseif (!empty(inscription::mailExists($_POST['mail']))) {
+  elseif (!empty(Inscription::mailExists($_POST['mail']))) {
     $errorInscription[1] = '<div class="alert alert-danger" role="alert">L\'adresse mail est déjà utilisé pour un compte.</div>';
   }
   else {
-    inscrption::inscription($_POST['nom'], $_POST['prenom'], $_POST['mail'], $_POST['mdp'], $_POST['ecole'], $_POST['promotion']);
+    Inscription::inscription($_POST['nom'], $_POST['prenom'], $_POST['mail'], $_POST['mdp'], $_POST['ecole'], $_POST['promotion']);
     $successInscription[1] = '<div class="alert alert-success" role="alert">Vous êtes inscris, vous pouvez désormais vous connecter.</div>';
   }
 }
