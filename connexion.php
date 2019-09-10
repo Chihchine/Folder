@@ -1,22 +1,23 @@
 <?php
-include('connexionBDD.php');
+require_once("base/class/main.php")
+#include('connexionBDD.php');
 
 
-function verifConnexion($mail, $mdp) {
-  $bdd = connexionBDD();
-  $informations = $bdd->prepare('SELECT ID, MAIL, MDP FROM utilisateurs WHERE MAIL = ? AND MDP = ?');
-  $informations->execute(array($mail, $mdp));
-  $verifConnexion = $informations->fetch();
-  return $verifConnexion;
-}
+// function verifConnexion($mail, $mdp) {
+//   #$bdd = connexionBDD();
+//   $informations = Main::Database()->prepare('SELECT ID, MAIL, MDP FROM utilisateurs WHERE MAIL = ? AND MDP = ?');
+//   $informations->execute(array($mail, $mdp));
+//   $verifConnexion = $informations->fetch();
+//   return $verifConnexion;
+// }
 
 if (isset($_POST['connexion'])) {
-  if (empty(verifConnexion($_POST['mail'], $_POST['mdp']))) {
+  if (empty(Connexion::verif($_POST['mail'], $_POST['mdp']))) {
     $errorConnexion[1] = '<div class="alert alert-danger" role="alert">La combinaison email et mot de passe n\'est pas bonne.</div>';
   }
   else {
     session_start();
-    $idUtilisateur = verifConnexion($_POST['mail'], $_POST['mdp']);
+    $idUtilisateur = Connexion::verif($_POST['mail'], $_POST['mdp']);
     $_SESSION['id_utilisateur'] = $idUtilisateur['ID'];
     header('Location: index.php');
 
@@ -54,7 +55,7 @@ if (isset($_POST['connexion'])) {
       <p class="text-muted">&copy; 2019 - Nom du site</p>
     </form>
 
-    <!-- <script>
+    <script>
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function() {
   'use strict';
@@ -73,7 +74,7 @@ if (isset($_POST['connexion'])) {
     });
   }, false);
 })();
-</script> -->
+</script>
 
   </body>
 </html>
