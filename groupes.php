@@ -122,3 +122,4 @@ require("base/include/header.php");
 </div>
 </div>
 <?php /*<-- FIN - Tableau des groupes existants -->*/ ?>
+</body>
