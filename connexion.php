@@ -18,9 +18,9 @@
       <label for="inputPassword" class="sr-only">Mot de passe</label>
       <input type="password" id="inputPassword" class="form-control" placeholder="Mot de passe" required>
       <a href="oublimdp.php">Mot de passe oublié ?</a>
+      <a class="link-inscription" href="inscription.php">S'inscrire</a>
       <div class="invalid-feedback">Veuillez-renseigner un email valide.</div>
       <div class="invalid-feedback">Votre mot de passe ne peut-être vide.</div>
-      <a class="link-inscription" href="inscription.php">S'inscrire</a>
       <button class="btn btn-lg btn-primary btn-block" type="submit">Connexion</button>
       <p class="text-muted">&copy; 2019 - Nom du site</p>
     </form>

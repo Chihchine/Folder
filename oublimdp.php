@@ -13,6 +13,7 @@
     <form class="needs-validation form-signin" novalidate>
       <img class="mb-4">
       <h1 class="h3 mb-3 font-weight-normal">Mot de passe oublié</h1>
+      <a href="connexion.php">Retour</a>
       <input class="form-control" type="email" name="" value="" placeholder="Email de votre école." required>
       <div class="invalid-feedback">Veuillez-renseigner un email valide.</div>
       <button class="btn btn-primary" type="submit" name="button">Envoyer</button>
