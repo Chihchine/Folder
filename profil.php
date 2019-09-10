@@ -4,12 +4,12 @@ require("base/class/main.php");
 $id = 1;
 $nom = "Aurelien"
 
-$result = Main::DataBase()->prepare("SELECT * FROM UTILISATEURS WHERE NOM = ?");
-$result->execute(array($nom));
+$result = Main::DataBase()->prepare("SELECT * FROM UTILISATEURS");
+$result->execute(array($id));
 $userexist = $result->rowCount();
 if($userexist == 1){
 	$userinfo = $result->fetch();
-	echo $userinfo['NOM'];
+	echo $userinfo['id'];
 } else 
 {
 	echo "Marche pas";
