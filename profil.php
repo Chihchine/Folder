@@ -1,3 +1,11 @@
+<?php 
+require("base/class/main.php");
+
+//$request = Main::Database()->prepare("SELECT * FROM UTILISATEURS WHERE ID = :id");
+//$request->execute(['id' => "1"]);
+
+?> 
+
 <html> 
 <head>
 	<link rel="stylesheet" href = "base/css/profil.css" /> 
