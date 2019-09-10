@@ -1,41 +1,14 @@
-<?php include('connexionBDD.php');
-
-function mailExists($mail) {
-  $bdd = connexionBDD();
-  $mailBDD = $bdd->prepare('SELECT MAIL FROM utilisateurs WHERE MAIL = ?');
-  $mailBDD->execute(array($mail));
-  $mailExists = $mailBDD->fetch();
-  return $mailExists;
-}
-
-function generatePassword() {
-  $caracteres = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-$longueurMax = strlen($caracteres);
-$chaineAleatoire = '';
-for ($i = 0; $i < 8; $i++)
-{
-$chaineAleatoire .= $caracteres[rand(0, $longueurMax - 1)];
-}
-return $chaineAleatoire;
-}
-
-function modifyPassword($mdp, $mail) {
-  $bdd = connexionBDD();
-  $request = $bdd->prepare('UPDATE UTILISATEURS SET MDP = ? WHERE mail = ?');
-  $request->execute(array($mdp, $mail));
-  return $request;
-}
-
+<?php
+require_once("base/class/main.php");
 
 
 if (isset($_POST['resetMdp'])) {
-  if (!empty(mailExists($_POST['mail']))) {
-    $newPassword = generatePassword();
-    modifyPassword($newPassword, $_POST['mail']);
-    // envoyer le mail
+  if (!empty(Oublimdp::mailExists($_POST['mail']))) {
+    $newPassword = Oublimdp::generatePassword();
+    Oublimdp::modifyPassword($newPassword, $_POST['mail']);
+    Oublimdp::sendMail($newPassword, $_POST['mail']);
   }
 }
-
 
  ?>
 
@@ -54,15 +27,14 @@ if (isset($_POST['resetMdp'])) {
     <form method="post" class="needs-validation form-signin" novalidate>
       <img class="mb-4">
       <h1 class="h3 mb-3 font-weight-normal">Mot de passe oublié</h1>
-      <?php if (isset($_POST['resetMdp'])) { echo '<div class="alert alert-primary" role="alert">Si cet email existe, un nouveau mot de passe temporaire vous a été envoyé.</div>'; } ?>
+      <?php if (isset($_POST['resetMdp'])) { echo '<div class="alert alert-primary" role="alert">Si cet email existe, un nouveau mot de passe vous a été envoyé.</div>'; } ?>
       <a href="connexion.php">Retour</a>
-      <input class="form-control" type="email" name="mail" placeholder="Email de votre école." required>
-
+      <input class="form-control" type="email" name="mail" placeholder="Email de votre école" required>
       <div class="invalid-feedback">Veuillez-renseigner un email valide.</div>
       <button class="btn btn-primary" type="submit" name="resetMdp">Envoyer</button>
     </form>
 
-    <!-- <script>
+    <script>
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function() {
   'use strict';
@@ -81,7 +53,7 @@ if (isset($_POST['resetMdp'])) {
     });
   }, false);
 })();
-</script> -->
+</script>
 
   </body>
 </html>
