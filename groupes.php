@@ -33,7 +33,6 @@ require("base/include/header.php");
 </div>
 <?php /*<-- FIN - Popup création de groupe -->*/ ?>
 
-<?php /*<-- DEBUT - Tableau des groupes existants -->*/ ?>
 <div class="fil-arianne container">
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
@@ -43,28 +42,12 @@ require("base/include/header.php");
   </nav>
 </div>
 
-<div class="input-group image-preview">
-    <input type="text" class="form-control image-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
-    <span class="input-group-btn">
-        <!-- image-preview-clear button -->
-        <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
-            <span class="glyphicon glyphicon-remove"></span> Clear
-        </button>
-        <!-- image-preview-input -->
-        <div class="btn btn-default image-preview-input">
-            <span class="glyphicon glyphicon-folder-open"></span>
-            <span class="image-preview-input-title">Browse</span>
-            <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/> <!-- rename it -->
-        </div>
-    </span>
-</div>
-
 <div class="container">
   <div class="card clubs-crées">
     <div class="card-header">
       <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand">Clubs créés</a>
-        <div class="form-inline">
+        <div class="form-group">
           <select id="input-classement" class="form-control">
             <option selected>Trier par...</option>
             <option>A/Z</option>
@@ -77,7 +60,6 @@ require("base/include/header.php");
         </div>
       </nav>
     </div>
-
 <div id="createdClubs">
     </div>
     <div class="card-body row justify-content-center">
@@ -121,5 +103,4 @@ require("base/include/header.php");
 
 </div>
 </div>
-<?php /*<-- FIN - Tableau des groupes existants -->*/ ?>
 </body>
