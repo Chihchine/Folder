@@ -5,13 +5,18 @@ require("base/include/header.php");
 $id = 1;
 $nom = "Aurelien"
 
-$result = Main::DataBase()->prepare("SELECT * FROM UTILISATEURS WHERE NOM = ?");
-$result->execute(array($nom));
+$result = Main::DataBase()->prepare("SELECT * FROM UTILISATEURS");
+$result->execute(array($id));
 $userexist = $result->rowCount();
 if($userexist == 1){
 	$userinfo = $result->fetch();
+<<<<<<< HEAD
 	echo $userinfo['NOM'];
 } else
+=======
+	echo $userinfo['id'];
+} else 
+>>>>>>> 2a0f03d942ced6f6f2717e35ad13bcc16998fec7
 {
 	echo "Marche pas";
 }
