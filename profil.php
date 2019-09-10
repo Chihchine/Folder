@@ -1,24 +1,22 @@
-<!--<?php 
-//require("base/class/main.php");
+<?php
+require("base/include/header.php");
 
-//$request = Main::Database()->prepare("SELECT * FROM UTILISATEURS WHERE ID = :id");
-//$request->execute(['id' => "1"]);
+$id = 1;
+$nom = "Aurelien";
 
-//$request = Main:DataBase()->prepare("SELECT * FROM UTILISATEURS WHERE ID = :id");
-//$request->execute(["id" => 1])
+$result = Main::DataBase()->prepare("SELECT * FROM UTILISATEURS WHERE ID = ?");
+$result->execute(array($id));
 
-
-/*$result = Main:DataBase()->prepare("SELECT * FROM UTILISATEURS WHERE ID = :id");
-
-	if ($result->num_rows > 0) {
-	    // output data of each row
-	    while($row = $result->fetch_assoc()) {
-	        echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
-	    }
-	} else {
-	    echo "0 results";
-	}*/
-?>-->
+$userexist = $result->rowCount();
+if($userexist == 1){
+	$userinfo = $result->fetch();
+	//echo $userinfo['ID'];
+	//echo $userinfo['PRENOM'];
+} else 
+{
+	echo "Marche pas";
+}
+?> 
 
 <html> 
 <head>
@@ -29,8 +27,10 @@
 <body>
 	<div id="presentation"> 
 		<img id="profil-image" src="images/profils/profiltest.png" /> 
-		<h4>Nom: Reynard </h4> <!-- PHP "Nom" + Data.Name--> 
-		<h4> Prénom: Aurélien </h4>
+		<h4> Nom: <?php echo $userinfo['NOM'] ?> </h4> <!-- PHP "Nom" + Data.Name--> 
+		<h4> Prénom: <?php echo $userinfo['PRENOM'] ?> </h4>
+		<h4> Ecole: <?php echo $userinfo['ECOLE'] ?> </h4>
+		<h4> Promotion: <?php echo $userinfo['PROMOTION'] ?> </h4>
 	</div>
 </body>
 </html>
