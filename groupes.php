@@ -43,6 +43,22 @@ require("base/include/header.php");
   </nav>
 </div>
 
+<div class="input-group image-preview">
+    <input type="text" class="form-control image-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
+    <span class="input-group-btn">
+        <!-- image-preview-clear button -->
+        <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+            <span class="glyphicon glyphicon-remove"></span> Clear
+        </button>
+        <!-- image-preview-input -->
+        <div class="btn btn-default image-preview-input">
+            <span class="glyphicon glyphicon-folder-open"></span>
+            <span class="image-preview-input-title">Browse</span>
+            <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/> <!-- rename it -->
+        </div>
+    </span>
+</div>
+
 <div class="container">
   <div class="card clubs-crées">
     <div class="card-header">
@@ -61,18 +77,7 @@ require("base/include/header.php");
         </div>
       </nav>
     </div>
-    <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
-      </div>
-      <div class="custom-file">
-        <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-      <div class="custom-file">
-        <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" value="Choisissez une image">
-      </div>
-    </div>
-  </div>
+
 <div id="createdClubs">
     </div>
     <div class="card-body row justify-content-center">
