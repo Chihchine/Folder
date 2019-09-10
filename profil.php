@@ -4,7 +4,7 @@ require("base/include/header.php");
 $id = 1;
 $nom = "Aurelien";
 
-$result = Main::DataBase()->prepare("SELECT * FROM UTILISATEURS");
+$result = Main::DataBase()->prepare("SELECT * FROM UTILISATEURS WHERE ID = ?");
 $result->execute(array($id));
 $userexist = $result->rowCount();
 if($userexist == 1){
