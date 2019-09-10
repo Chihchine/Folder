@@ -13,11 +13,20 @@ require("base/include/header.php");
         </button>
       </div>
       <div class="modal-body">
-        ...
+        <form class="form-proposition-club" action="#" method="post">
+          <div class="form-group">
+            <label for="clubName">Nom du groupe</label>
+            <input type="text" name="clubName" id="clubName" class="form-control" placeholder="Nom du club choisi...">
+          </div>
+          <div class="form-group">
+            <label for="clubDesc">Description du groupe</label>
+            <textarea class="col-12" id="clubDesc" name="clubDesc" rows="3" placeholder="Une description simple du club avec ses objectifs, pour qui, quand, etc..."></textarea>
+          </div>
+        </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+        <button type="button" class="btn btn-primary">Créer</button>
       </div>
     </div>
   </div>
