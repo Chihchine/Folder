@@ -1,20 +1,21 @@
 <?php
-include('connexionBDD.php');
+require_once("base/class/main.php");
 
-function inscription($nom, $prenom, $mail, $mdp, $ecole, $promotion) {
-  $bdd = connexionBDD();
-  $inscriptionBDD = $bdd->prepare('INSERT INTO utilisateurs(NOM, PRENOM, MAIL, MDP, ECOLE, PROMOTION) VALUES (?, ?, ?, ?, ?, ?)');
-  $inscription = $inscriptionBDD->execute(array($nom, $prenom, $mail, $mdp, $ecole, $promotion));
-  return $inscription;
-}
-
-function mailExists($mail) {
-  $bdd = connexionBDD();
-  $mailBDD = $bdd->prepare('SELECT MAIL FROM utilisateurs WHERE MAIL = ?');
-  $mailBDD->execute(array($mail));
-  $mailExists = $mailBDD->fetch();
-  return $mailExists;
-}
+// include('connexionBDD.php');
+// function inscription($nom, $prenom, $mail, $mdp, $ecole, $promotion) {
+//   $bdd = connexionBDD();
+//   $inscriptionBDD = $bdd->prepare('INSERT INTO utilisateurs(NOM, PRENOM, MAIL, MDP, ECOLE, PROMOTION) VALUES (?, ?, ?, ?, ?, ?)');
+//   $inscription = $inscriptionBDD->execute(array($nom, $prenom, $mail, $mdp, $ecole, $promotion));
+//   return $inscription;
+// }
+//
+// function mailExists($mail) {
+//   $bdd = connexionBDD();
+//   $mailBDD = $bdd->prepare('SELECT MAIL FROM utilisateurs WHERE MAIL = ?');
+//   $mailBDD->execute(array($mail));
+//   $mailExists = $mailBDD->fetch();
+//   return $mailExists;
+// }
 
 
 if (isset($_POST['btnInscrire'])) {
@@ -22,11 +23,11 @@ if (isset($_POST['btnInscrire'])) {
     echo "à faire";
     // en JS ?
   }
-  elseif (!empty(mailExists($_POST['mail']))) {
+  elseif (!empty(inscription::mailExists($_POST['mail']))) {
     $errorInscription[1] = '<div class="alert alert-danger" role="alert">L\'adresse mail est déjà utilisé pour un compte.</div>';
   }
   else {
-    inscription($_POST['nom'], $_POST['prenom'], $_POST['mail'], $_POST['mdp'], $_POST['ecole'], $_POST['promotion']);
+    inscrption::inscription($_POST['nom'], $_POST['prenom'], $_POST['mail'], $_POST['mdp'], $_POST['ecole'], $_POST['promotion']);
     $successInscription[1] = '<div class="alert alert-success" role="alert">Vous êtes inscris, vous pouvez désormais vous connecter.</div>';
   }
 }
