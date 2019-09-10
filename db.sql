@@ -109,10 +109,10 @@ alter table EVENNEMENTS add constraint FK_REFERENCE_4 foreign key (ID_UTILISATEU
 alter table GROUPES add constraint FK_REFERENCE_6 foreign key (ID_PHOTO_PROFIL)
       references PHOTOS (ID) on delete restrict on update restrict;
 
-alter table GROUPES_PARTICIPANT add constraint FK_INVITE foreign key (ID_EVENNEMENT)
+alter table GROUPES_PARTICIPANT add constraint FK_INVITE_G foreign key (ID_EVENNEMENT)
       references EVENNEMENTS (ID) on delete restrict on update restrict;
 
-alter table GROUPES_PARTICIPANT add constraint FK_PARTICIPE foreign key (ID_GROUPE)
+alter table GROUPES_PARTICIPANT add constraint FK_PARTICIPE_G foreign key (ID_GROUPE)
       references GROUPES (ID) on delete restrict on update restrict;
 
 alter table MEMBRES_GROUPE add constraint FK_FAIT_PARTIE_DE foreign key (ID_UTILISATEUR)
@@ -124,9 +124,9 @@ alter table MEMBRES_GROUPE add constraint FK_POSSEDE foreign key (ID_GROUPE)
 alter table UTILISATEURS add constraint FK_DETIENT foreign key (ID_PHOTO_PROFIL)
       references PHOTOS (ID) on delete restrict on update restrict;
 
-alter table UTILISATEURS_PARTICIPANT add constraint FK_INVITE foreign key (ID_EVENNEMENT)
+alter table UTILISATEURS_PARTICIPANT add constraint FK_INVITE_U foreign key (ID_EVENNEMENT)
       references EVENNEMENTS (ID) on delete restrict on update restrict;
 
-alter table UTILISATEURS_PARTICIPANT add constraint FK_PARTICIPE foreign key (ID_UTILISATEUR)
+alter table UTILISATEURS_PARTICIPANT add constraint FK_PARTICIPE_U foreign key (ID_UTILISATEUR)
       references UTILISATEURS (ID) on delete restrict on update restrict;
 
