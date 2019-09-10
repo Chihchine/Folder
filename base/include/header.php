@@ -4,7 +4,7 @@
 // 	die;
 // }
 
-require_once("../base/class/main.php");
+require_once("../class/main.php");
 
 ?>
 <head>
