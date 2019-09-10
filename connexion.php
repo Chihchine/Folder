@@ -1,5 +1,5 @@
 <?php
-require_once("base/class/main.php")
+require_once("base/class/main.php");
 #include('connexionBDD.php');
 
 
