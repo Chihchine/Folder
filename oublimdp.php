@@ -1,4 +1,5 @@
-<?php include('connexionBDD.php');
+<?php
+require_once("base/class/main.php");
 
 
 if (isset($_POST['resetMdp'])) {
