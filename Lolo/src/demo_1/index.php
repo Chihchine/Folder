@@ -146,7 +146,7 @@
                                 <p class="mb-1 mt-3 font-weight-semibold">Alexy fdspofsdiofj</p>
                                 <p class="font-weight-light text-muted mb-0">alexydeforgealexy@gmail.com</p>
                             </div>
-                            <a class="dropdown-item" href="/folder/lolo/src/demo_1/pages/profile/profile.html">Mon profile <span class="badge badge-pill badge-danger">1</span><i class="dropdown-item-icon ti-dashboard"></i></a>
+                            <a class="dropdown-item" href="/folder/lolo/src/demo_1/pages/profile/profile.php">Mon profile <span class="badge badge-pill badge-danger">1</span><i class="dropdown-item-icon ti-dashboard"></i></a>
                             <a class="dropdown-item">Messages<i class="dropdown-item-icon ti-comment-alt"></i></a>
                             <a class="dropdown-item">Activitées<i class="dropdown-item-icon ti-location-arrow"></i></a>
                             <a class="dropdown-item">FAQ<i class="dropdown-item-icon ti-help-alt"></i></a>
@@ -178,7 +178,7 @@
                     </li>
                     <li class="nav-item nav-category">Menu principal</li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">
+                        <a class="nav-link" href="index.php">
                             <i class="menu-icon typcn typcn-document-text"></i>
                             <span class="menu-title">Tableau de bord</span>
                         </a>
