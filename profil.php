@@ -1,27 +1,31 @@
 <?php
 require("base/include/header.php");
 
-$id = 1;
-//$nom = "Aurelien";
+if(isset($_GET['id']) AND $_GET['id'] > 0) {
+   $id = $_GET['id'];
 
-$result = Main::DataBase()->prepare("SELECT * FROM UTILISATEURS WHERE ID = ?");
-$result->execute(array($id));
 
-$image = Main::DataBase()->prepare("SELECT * FROM PHOTOS WHERE ID = ?");
-$image->execute(array($id));
 
-$userexist = $result->rowCount();
-$imageexist = $image->rowCount();
+	$result = Main::DataBase()->prepare("SELECT * FROM UTILISATEURS WHERE ID = ?");
+	$result->execute(array($id));
 
-$imageinfo = $image->fetch();
-$userinfo = $result->fetch();
+	$image = Main::DataBase()->prepare("SELECT * FROM PHOTOS WHERE ID = ?");
+	$image->execute(array($id));
 
-if($userexist == 1){
-	//$userinfo = $result->fetch();
-} else 
-{
-	header("Location: index.php");
-}
+	$userexist = $result->rowCount();
+	$imageexist = $image->rowCount();
+
+	$imageinfo = $image->fetch();
+	$userinfo = $result->fetch();
+
+
+
+	if($userexist == 1){
+		//$userinfo = $result->fetch();
+	} else 
+	{
+		header("Location: index.php");
+	}
 ?> 
 
 <html> 
@@ -46,3 +50,10 @@ if($userexist == 1){
 	</div>
 </body>
 </html>
+
+<?php 
+} 
+else{
+	header("Location: index.php");
+}
+?>
