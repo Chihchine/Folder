@@ -1,41 +1,13 @@
 <?php include('connexionBDD.php');
 
-function mailExists($mail) {
-  $bdd = connexionBDD();
-  $mailBDD = $bdd->prepare('SELECT MAIL FROM utilisateurs WHERE MAIL = ?');
-  $mailBDD->execute(array($mail));
-  $mailExists = $mailBDD->fetch();
-  return $mailExists;
-}
-
-function generatePassword() {
-  $caracteres = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-$longueurMax = strlen($caracteres);
-$chaineAleatoire = '';
-for ($i = 0; $i < 8; $i++)
-{
-$chaineAleatoire .= $caracteres[rand(0, $longueurMax - 1)];
-}
-return $chaineAleatoire;
-}
-
-function modifyPassword($mdp, $mail) {
-  $bdd = connexionBDD();
-  $request = $bdd->prepare('UPDATE UTILISATEURS SET MDP = ? WHERE mail = ?');
-  $request->execute(array($mdp, $mail));
-  return $request;
-}
-
-
 
 if (isset($_POST['resetMdp'])) {
-  if (!empty(mailExists($_POST['mail']))) {
-    $newPassword = generatePassword();
-    modifyPassword($newPassword, $_POST['mail']);
+  if (!empty(Oublimdp::mailExists($_POST['mail']))) {
+    $newPassword = Oublimdp::generatePassword();
+    Oublimdp::modifyPassword($newPassword, $_POST['mail']);
     // envoyer le mail
   }
 }
-
 
  ?>
 
