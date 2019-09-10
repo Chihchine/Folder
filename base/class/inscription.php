@@ -1,7 +1,7 @@
 <?php
 Class Inscription {
 
-  public static function inscription($nom, $prenom, $mail, $mdp, $ecole, $promotion) {
+  public static function signin($nom, $prenom, $mail, $mdp, $ecole, $promotion) {
     $request = Main::Database()->prepare('INSERT INTO UTILISATEURS(NOM, PRENOM, MAIL, MDP, ECOLE, PROMOTION) VALUES (?, ?, ?, ?, ?, ?)');
     $result = $request->execute(array($nom, $prenom, $mail, $mdp, $ecole, $promotion));
     return $result;
