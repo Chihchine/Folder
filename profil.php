@@ -8,7 +8,7 @@ require("base/class/main.php");
 //$request->execute(["id" => 1])
 
 
-$result = Main::DataBase()->prepare("SELECT * FROM UTILISATEURS WHERE ID = :id");
+$result = Main::DataBase()->prepare("SELECT * FROM UTILISATEURS");
 //$result->execute(["id" => 1]);
 
 //echo $result["id"];
