@@ -1,3 +1,22 @@
+<?php include('connexionBDD.php');
+
+function mailExists($mail) {
+  $bdd = connexionBDD();
+  $mailBDD = $bdd->prepare('SELECT MAIL FROM utilisateurs WHERE MAIL = ?');
+  $mailBDD->execute(array($mail));
+  $mailExists = $mailBDD->fetch();
+  return $mailExists;
+}
+
+if (isset($_POST['resetMdp'])) {
+  if (!empty(mailExists($_POST['mail']))) {
+    // envoyer le mail
+  }
+}
+
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <head>
@@ -10,16 +29,18 @@
     <title></title>
   </head>
   <body>
-    <form class="needs-validation form-signin" novalidate>
+    <form method="post" class="needs-validation form-signin" novalidate>
       <img class="mb-4">
       <h1 class="h3 mb-3 font-weight-normal">Mot de passe oublié</h1>
+      <?php if (isset($_POST['resetMdp'])) { echo '<div class="alert alert-primary" role="alert">Si cet email existe, un nouveau mot de passe temporaire vous a été envoyé.</div>'; } ?>
       <a href="connexion.php">Retour</a>
-      <input class="form-control" type="email" name="" value="" placeholder="Email de votre école." required>
+      <input class="form-control" type="email" name="mail" placeholder="Email de votre école." required>
+
       <div class="invalid-feedback">Veuillez-renseigner un email valide.</div>
-      <button class="btn btn-primary" type="submit" name="button">Envoyer</button>
+      <button class="btn btn-primary" type="submit" name="resetMdp">Envoyer</button>
     </form>
 
-    <script>
+    <!-- <script>
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function() {
   'use strict';
@@ -38,6 +59,7 @@
     });
   }, false);
 })();
-</script>
+</script> -->
+
   </body>
 </html>
