@@ -1,8 +1,8 @@
 <?php
-if (!isset($_SESSION['id_utilisateur'])) {
-	Header('Location: ../');
-	die;
-}
+// if (!isset($_SESSION['id_utilisateur'])) {
+// 	Header('Location: ../');
+// 	die;
+// }
 
 require_once("../base/class/main.php");
 
