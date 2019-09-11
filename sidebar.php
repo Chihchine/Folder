@@ -12,7 +12,7 @@ require("base/include/header.php");
     <nav id="sidebar" class="sidebar-wrapper">
       <div class="sidebar-content">
         <div class="sidebar-brand">
-          <a href="#">Nom du site</a>
+          <a href="#">My campus</a>
           <div id="close-sidebar">
             <i class="fas fa-times"></i>
           </div>
@@ -23,13 +23,13 @@ require("base/include/header.php");
             alt="User picture">
           </div>
           <div class="user-info">
-            <span class="user-name">Jhon
-              <strong>Smith</strong>
+            <span class="user-name">Alexy
+              <strong>DEFORGE</strong>
             </span>
-            <span class="user-role">Etudiant</span>
+            <span class="user-role">B2G1</span>
             <span class="user-status">
               <i class="fa fa-circle"></i>
-              <span>Online</span>
+              <span>Actif</span>
             </span>
           </div>
         </div>
@@ -37,7 +37,7 @@ require("base/include/header.php");
         <div class="sidebar-search">
           <div>
             <div class="input-group">
-              <input type="text" class="form-control search-menu" placeholder="Search...">
+              <input type="text" class="form-control search-menu" placeholder="Rechercher...">
               <div class="input-group-append">
                 <span class="input-group-text">
                   <i class="fa fa-search" aria-hidden="true"></i>
@@ -55,7 +55,7 @@ require("base/include/header.php");
             <li class="sidebar-dropdown">
               <a href="#">
                 <i class="fa fa-tachometer-alt"></i>
-                <span>Dashboard</span>
+                <span>Tableau de bord</span>
                 <span class="badge badge-pill badge-warning">New</span>
               </a>
               <div class="sidebar-submenu">
