@@ -94,7 +94,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 							foreach($membredeinfo as $valeur){
 								//echo $valeur["ID_GROUPE"];
 
-								$groupe = Main::DataBase()->("SELECT * FROM GROUPES WHERE ID = ?");
+								$groupe = Main::DataBase()->prepare("SELECT * FROM GROUPES WHERE ID = ?");
 								$groupe->execute(array($valeur["ID_GROUPE"]));
 
 								$groupeinfo = $groupe->fetch();
