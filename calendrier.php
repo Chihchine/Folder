@@ -2,6 +2,15 @@
 require_once("base/class/main.php");
 require("base/include/header.php");
 $dateDuJour = date("Y-m-d");
+
+if (isset($_POST['creer'])) {
+  $horraireDebut = $_POST['heure_debut']. ':' .$_POST['minute_debut'];
+  $horraireFin = $_POST['heure_fin']. ':' .$_POST['minute_fin'];
+  $dateDebut = Annuaire::joinDateHour($_POST['date_debut'], $horraireDebut);
+  $dateFin = Annuaire::joinDateHour($_POST['date_fin'], $horraireFin);
+  Annuaire::addEvent($_POST['nom'], $_POST['description'], $dateDebut, $dateFin, $_SESSION['id_utilisateur']);
+}
+
  ?>
 
 <link rel="stylesheet" href="base/css/calendrier.css">
@@ -18,7 +27,7 @@ $dateDuJour = date("Y-m-d");
 
 <div id='calendar'></div>
 
-<form class="" action="index.html" method="post">
+<form class=""  method="post">
   <div class="form-row">
     <div class="form-group  col-md-4">
       <label for="">Titre de l'évenement</label>
@@ -106,7 +115,7 @@ $dateDuJour = date("Y-m-d");
       <textarea class="form-control" name="description" rows="5" placeholder="Description de l'évenement que vous souhaitez créer (pour qui ? pour quoi ? où ? )"></textarea>
     </div>
   </div>
-  <button type="submit" name="btn btn-info">Créer</button>
+  <button class="btn btn-info" type="submit" name="creer">Créer</button>
 </form>
 
 <script type="text/javascript">
