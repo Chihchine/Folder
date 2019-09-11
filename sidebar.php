@@ -50,7 +50,7 @@ require("base/include/header.php");
         <div class="sidebar-menu">
           <ul>
             <li class="header-menu">
-              <span>Générale</span>
+              <span>Général</span>
             </li>
             <li class="sidebar-button">
               <a href="index.php">
@@ -62,7 +62,14 @@ require("base/include/header.php");
               <a href="messages.php">
                 <i class="fa fa-book"></i>
                 <span>Messages</span>
-                <span class="badge badge-pill badge-primary">3</span>
+                <span class="badge badge-pill badge-primary">4</span>
+              </a>
+            </li>
+            <li class="sidebar-button">
+              <a href="groupes.php">
+                <i class="fa fa-book"></i>
+                <span>Groupes</span>
+                <span class="badge badge-pill badge-primary">2</span>
               </a>
             </li>
             <li class="sidebar-button">
@@ -75,21 +82,9 @@ require("base/include/header.php");
               <span>Extra</span>
             </li>
             <li>
-              <a href="#">
+              <a href="contact.php">
                 <i class="fa fa-book"></i>
-                <span>Documentation</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="fa fa-calendar"></i>
-                <span>Calendar</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="fa fa-folder"></i>
-                <span>Examples</span>
+                <span>Nous contacter</span>
               </a>
             </li>
           </ul>
@@ -100,11 +95,11 @@ require("base/include/header.php");
       <div class="sidebar-footer">
         <a href="#">
           <i class="fa fa-bell"></i>
-          <span class="badge badge-pill badge-warning notification">3</span>
+          <span class="badge badge-pill badge-warning notification">7</span>
         </a>
         <a href="#">
           <i class="fa fa-envelope"></i>
-          <span class="badge badge-pill badge-success notification">7</span>
+          <span class="badge badge-pill badge-success notification">4</span>
         </a>
         <a href="#">
           <i class="fa fa-cog"></i>
