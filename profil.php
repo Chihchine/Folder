@@ -92,8 +92,18 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 
 							//echo $membredeinfo['ID_GROUPE'];
 							foreach($membredeinfo as $valeur){
-								echo $valeur["ID_GROUPE"];
+								//echo $valeur["ID_GROUPE"];
+
+								$groupe = Main::DataBase()->("SELECT * FROM GROUPES WHERE ID = ?");
+								$groupe->execute(array($valeur["ID_GROUPE"]));
+
+								$groupeinfo = $groupe->fetch();
+
+								echo $groupeinfo["NOM"];
+
 							}
+
+							//
 
 	                		/*foreach ($membredeinfo['ID_GROUPE'] as $key => $value) {
 	                			echo $key; echo $value;
