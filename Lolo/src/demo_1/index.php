@@ -434,22 +434,25 @@
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="d-flex align-items-center pb-2">
-                                                            <div class="dot-indicator bg-danger mr-2"></div>
-                                                            <p class="mb-0">Total Sales</p>
+                                                            <div class="dot-indicator bg-info mr-2"></div>
+                                                            <h4 class="mb-0">Facebook</h4>
                                                         </div>
-                                                        <h4 class="font-weight-semibold">$7,590</h4>
-                                                        <div class="progress progress-md">
-                                                            <div class="progress-bar bg-danger" role="progressbar" style="width: 78%" aria-valuenow="78" aria-valuemin="0" aria-valuemax="78"></div>
+                                                        <h4 class="font-weight-semibold"></h4>
+                                                        <div>
+                                                            <div><a name="fb_share" type="button">Partager</a>
+                                                                <script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6 mt-4 mt-md-0">
                                                         <div class="d-flex align-items-center pb-2">
-                                                            <div class="dot-indicator bg-success mr-2"></div>
-                                                            <p class="mb-0">Active Users</p>
+                                                            <div class="dot-indicator bg-primary mr-2"></div>
+                                                            <h4 class="mb-0">Twitter</h4>
                                                         </div>
-                                                        <h4 class="font-weight-semibold">$5,460</h4>
-                                                        <div class="progress progress-md">
-                                                            <div class="progress-bar bg-success" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="45"></div>
+                                                        <h4 class="font-weight-semibold"></h4>
+                                                        <div> <a href="http://twitter.com/share" class="twitter-share-button" data-count="vertical" data-via="InfoWebMaster">Tweet</a>
+                                                            <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+
                                                         </div>
                                                     </div>
                                                 </div>
