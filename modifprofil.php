@@ -52,6 +52,12 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 				    $insertpromotion->execute(array($newpromotion, $id));
 				    header('Location: modifprofil.php?id='.$id);
 				}
+				if(isset($_POST['pres']) AND !empty($_POST['pres']) AND $_POST['pres'] != $userinfo['PRESENTATION']) {
+					$newpres = htmlspecialchars($_POST['pres']);
+					$insertpres = Main::DataBase()->prepare("UPDATE UTILISATEURS SET PRESENTATION = ? WHERE ID = ?");
+				    $insertpres->execute(array($newpres, $id));
+				    header('Location: modifprofil.php?id='.$id);
+				}
 		} else {
 			header("Location: profil.php?id=".$_GET['id']);
 			die;
