@@ -69,12 +69,13 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	              <tr>
 	                <th class="colonnes-gauches" scope="row">Identité</th>
 	                <td class="colonnes-droites">
-	                	<?php echo $userinfo['NOM']; ?>
+	                	<?php echo $userinfo['NOM'] . " " . $userinfo['PRENOM'] ?>
 	                </td>
 	              </tr>
 	              <tr>
 	                <th class="colonnes-gauches" scope="row">Ecole</th>
 	                <td class="colonnes-droites">
+	                	<?php echo $userinfo['ECOLE']; ?>
 	                </td>
 	              </tr>
 	              <tr>
