@@ -97,12 +97,12 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	      if(in_array($extensionUpload, $extensionsValides)) {
 	      	$lenumimage = Main::DataBase()->prepare("SELECT COUNT(*) FROM IMAGES");
 	      	//$lenumimage = $numimage->rowCount();
-	      	$numimage = $lenumimage->fetch();
-	      	$numimage = $numimage + 1;
-	      	echo $numimage;
-	         $chemin = "images/uploads/".$numimage.".".$extensionUpload;
+	      	echo $lenumimage;
+	      	//$numimage = $numimage + 1;
+	      	//echo $numimage;
+	         $chemin = "images/uploads/".$lenumimage.".".$extensionUpload;
 	         echo $chemin;
-	         $cheminname = $numimage.".".$extensionUpload;
+	         $cheminname = $lenumimage.".".$extensionUpload;
 	         $resultat = move_uploaded_file($_FILES['avatar']['tmp_name'], $chemin);
 	         if($resultat) {
 	         	$insertimage = Main::DataBase()->prepare("INSERT INTO IMAGES(LIEN) VALUES(?)");
