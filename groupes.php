@@ -111,7 +111,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                     <td><?php echo $groupe['DESCRIPTION']; ?></td>
                     <td><?php echo $groupe['DATE CREATION']; ?></td>
                     <td><?php echo Groupe::CountMember($groupe['ID'])['NUMBER']; ?></td>
-                    <td><button class="btn btn-classic" href="?r=join&id=<?php echo $groupe['ID']; ?>">Rejoindre</button><button class="btn btn-danger" href="?r=leave&id=<?php echo $groupe['ID']; ?>">Quitter</button></td>
+                    <td><a href="?r=join&id=<?php echo $groupe['ID']; ?>"><button class="btn btn-classic">Rejoindre</button></a><a href="?r=leave&id=<?php echo $groupe['ID']; ?>"><button class="btn btn-danger">Quitter</button></a></td>
                   </tr>
                 <?php } ?>
                 </tbody>
