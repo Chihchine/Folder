@@ -14,13 +14,15 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	$userexist = $result->rowCount();
 	$imageexist = $image->rowCount();
 
-	$imageinfo = $image->fetch();
+	
 	$userinfo = $result->fetch();
 
-	echo $userinfo["ID_PHOTO_PROFIL"];
+
 	$imageid = $userinfo["ID_PHOTO_PROFIL"];
 	$image->execute(array($imageid));
+	$imageinfo = $image->fetch();
 
+	
 	if (isset($_SESSION['id_utilisateur'])) {
 		echo $_SESSION['id_utilisateur'];
 	}
