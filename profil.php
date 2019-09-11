@@ -128,7 +128,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 									echo "</br>";
 								}
 							} else {
-								echo "Membre de aucun groupe.";
+								echo "Membre de aucun groupe";
 							}
 
 							//
