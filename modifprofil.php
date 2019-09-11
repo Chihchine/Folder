@@ -25,10 +25,13 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 			   	$newmail = htmlspecialchars($_POST['newmail']);
 			    $insertmail = Main::DataBase()->prepare("UPDATE UTILISATEURS SET MAIL = ? WHERE ID = ?");
 			    $insertmail->execute(array($newmail, $id));
-			     // header('Location: profil.php?id='.$_SESSION['id']);
-
-
-
+			    header('Location: modifprofil.php?id='.$id);
+			   }
+			   if(isset($_POST['newmdp']) AND !empty($_POST['newmdp']) AND $_POST['newmdp'] != $userinfo['MDP']) {
+			   	$newmdp = htmlspecialchars($_POST['newmdp']);
+			    $insertmdp = Main::DataBase()->prepare("UPDATE UTILISATEURS SET MDP = ? WHERE ID = ?");
+			    $insertmdp->execute(array($newmdp, $id));
+			    header('Location: modifprofil.php?id='.$id);
 			   }
 		} else {
 			header("Location: profil.php?id=".$_GET['id']);
@@ -120,7 +123,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 					          </div>
 					          <div class="form-group col-md-4">
 					            <label for="">Nouveau Mot de passe</label>
-					            <input class="form-control" type="password" name="mdp"  placeholder="*********" required>
+					            <input class="form-control" type="password" name="newmdp"  placeholder="*********" required>
 					            <div class="invalid-feedback">Minimum 6 caractères.</div>
 					          </div>
 					          <div class="form-group col-md-4">
