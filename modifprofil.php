@@ -89,33 +89,13 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	}
 
 
+
 	if(isset($_FILES['avatar']) AND !empty($_FILES['avatar']['name'])) {
-	   $tailleMax = 2097152;
-	   $extensionsValides = array('jpg', 'jpeg', 'gif', 'png');
-	   if($_FILES['avatar']['size'] <= $tailleMax) {
-	      $extensionUpload = strtolower(substr(strrchr($_FILES['avatar']['name'], '.'), 1));
-	      if(in_array($extensionUpload, $extensionsValides)) {
-	      	$lenumimage = Main::DataBase()->prepare("SELECT COUNT(*) FROM IMAGES");
-	      	//$lenumimage = $numimage->rowCount();
-	      	echo $lenumimage;
-	      	//$numimage = $numimage + 1;
-	      	//echo $numimage;
-	         $chemin = "images/uploads/".$lenumimage.".".$extensionUpload;
-	         echo $chemin;
-	         $cheminname = $lenumimage.".".$extensionUpload;
-	         $resultat = move_uploaded_file($_FILES['avatar']['tmp_name'], $chemin);
-	         if($resultat) {
-	         	$insertimage = Main::DataBase()->prepare("INSERT INTO IMAGES(LIEN) VALUES(?)");
-	         	$insertimage->execute(array($cheminname));
+		$idimage = Image::Upload($extension, $_FILES['avatar']['tmp_name'], $_FILES['avatar']['error']);
 
-	         	$modifavatar = Main::DataBase()->prepare("UPDATE UTILISATEURS SET ID_IMAGE_PROFIL = ? WHERE ID = ?");
-	         	$modifavatar->execute(array($cheminname, $id));
-
-	         	echo "         YES.";
-	         	} else {echo "1";};
-	  	 	} else {echo "2";};
-		} else {echo "3";};
-	} else {echo "4";};
+		$modifavatar = Main::DataBase()->prepare("UPDATE UTILISATEURS SET ID_IMAGE_PROFIL = ? WHERE ID = ?");
+	    $modifavatar->execute(array($idimage, $id));
+	  }
 ?>
 
 <html> 
