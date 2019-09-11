@@ -107,7 +107,10 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	         	$insertimage = Main::DataBase()->prepare("INSERT INTO IMAGES(LIEN) VALUES(?)");
 	         	$insertimage->execute(array($cheminname));
 
-	         	echo "WORKEEEEED";
+	         	$modifavatar = Main::DataBase()->prepare("UPDATE UTILISATEURS SET ID_IMAGE_PROFIL WHERE ID = ?");
+	         	$modifavatar->execute(array($cheminname, $id));
+
+	         	echo "         YES.";
 	         	} else {echo "1";};
 	  	 	} else {echo "2";};
 		} else {echo "3";};
