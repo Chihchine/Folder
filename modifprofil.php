@@ -23,8 +23,8 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 		if($_SESSION['id_utilisateur'] == $id){
 			   if(isset($_POST['newmail']) AND !empty($_POST['newmail']) AND $_POST['newmail'] != $userinfo['MAIL']) {
 			   	$newmail = htmlspecialchars($_POST['newmail']);
-			      $insertmail = $bdd->prepare("UPDATE UTILISATEURS SET MAIL = ? WHERE ID = ?");
-			      $insertmail->execute(array($newmail, $id));
+			    $insertmail = Main::DataBase()->prepare("UPDATE UTILISATEURS SET MAIL = ? WHERE ID = ?");
+			    $insertmail->execute(array($newmail, $id));
 			     // header('Location: profil.php?id='.$_SESSION['id']);
 
 
