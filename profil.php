@@ -27,7 +27,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 
 	if (isset($_SESSION['id_utilisateur'])) {
 		//echo $_SESSION['id_utilisateur'];
-		echo "<a href='modifprofil.php?id=" . $_SESSION("id_utilisateur") . "'> Modifier votre profil </a>";
+		echo "<a href='modifprofil.php?id=" . $_SESSION["id_utilisateur"] . "'> Modifier votre profil </a>";
 	}
 
 
