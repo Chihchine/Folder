@@ -406,56 +406,56 @@
                     <div class="card">
                       <div class="card-body">
                         <div class="d-flex justify-content-between">
-                          <h4 class="card-title mb-0">Invoice</h4>
-                          <a href="#"><small>Show All</small></a>
+                          <h4 class="card-title mb-0">Groupes principaux</h4>
+                          <a href="#"><small>voir l'ensemble des groupes</small></a>
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est quod cupiditate esse fuga</p>
+                        <p>Voici les 5 groupes les plus populaires.</p>
                         <div class="table-responsive">
                           <table class="table table-striped table-hover">
                             <thead>
                               <tr>
-                                <th>Invoice ID</th>
-                                <th>Customer</th>
-                                <th>Status</th>
-                                <th>Due Date</th>
-                                <th>Amount</th>
+                                <th>Nom du groupe</th>
+                                <th>Créateur</th>
+                                <th>Sujet</th>
+                                <th>Date de creation</th>
+                                <th>nombres d'adhérents</th>
                               </tr>
                             </thead>
                             <tbody>
                               <tr>
-                                <td>INV-87239</td>
-                                <td>Viola Ford</td>
-                                <td>Paid</td>
-                                <td>20 Jan 2019</td>
-                                <td>$755</td>
+                                <td>Vitality</td>
+                                <td>Loic</td>
+                                <td>E-sport</td>
+                                <td>20 Janvier 2019</td>
+                                <td>755</td>
                               </tr>
                               <tr>
-                                <td>INV-87239</td>
-                                <td>Dylan Waters</td>
-                                <td>Unpaid</td>
-                                <td>23 Feb 2019</td>
-                                <td>$800</td>
+                                <td>Lyonnais</td>
+                                <td>Alexy</td>
+                                <td>Culture</td>
+                                <td>23 Fevrier 2019</td>
+                                <td>702</td>
                               </tr>
                               <tr>
-                                <td>INV-87239</td>
-                                <td>Louis Poole</td>
-                                <td>Unpaid</td>
-                                <td>25 Mar 2019</td>
-                                <td>$463</td>
+                                <td>Epsien</td>
+                                <td>Thomas</td>
+                                <td>Etudes</td>
+                                <td>25 Mars 2019</td>
+                                <td>663</td>
                               </tr>
                               <tr>
-                                <td>INV-87239</td>
-                                <td>Vera Howell</td>
-                                <td>Paid</td>
-                                <td>27 Mar 2019</td>
-                                <td>$235</td>
+                                <td>ScieFish</td>
+                                <td>Aurélien</td>
+                                <td>Developpement</td>
+                                <td>27 Mars 2019</td>
+                                <td>335</td>
                               </tr>
                               <tr>
-                                <td>INV-87239</td>
-                                <td>Allie Goodman</td>
-                                <td>Unpaid</td>
-                                <td>1 Apr 2019</td>
-                                <td>$657</td>
+                                <td>Club de Foot</td>
+                                <td>Gauthier</td>
+                                <td>Sport</td>
+                                <td>1 Avril 2019</td>
+                                <td>157</td>
                               </tr>
                             </tbody>
                           </table>
@@ -501,8 +501,8 @@
                           </div>
                         </div>
                         <div class="d-flex justify-content-between">
-                          <h5 class="font-weight-semibold mb-0">Average Price</h5>
-                          <p class="text-white mb-0">Since last month</p>
+                          <h5 class="font-weight-semibold mb-0">Messages envoyés</h5>
+                          <p class="text-white mb-0">Depuis les 2 derniers mois.</p>
                         </div>
                       </div>
                     </div>
