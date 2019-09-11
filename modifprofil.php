@@ -21,7 +21,15 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 
 	if (isset($_SESSION['id_utilisateur'])) {
 		if($_SESSION['id_utilisateur'] == $id){
-			echo "Worked";
+			   if(isset($_POST['newmail']) AND !empty($_POST['newmail']) AND $_POST['newmail'] != $userinfo['MAIL']) {
+			   	$newmail = htmlspecialchars($_POST['newmail']);
+			      $insertmail = $bdd->prepare("UPDATE UTILISATEURS SET MAIL = ? WHERE ID = ?");
+			      $insertmail->execute(array($newmail, $id));
+			     // header('Location: profil.php?id='.$_SESSION['id']);
+
+
+
+			   }
 		} else {
 			header("Location: profil.php?id=".$_GET['id']);
 			die;
@@ -102,12 +110,12 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 					        <div class="form-row">
 					          <div class="form-group col-md-4">
 					            <label for="">Nouvel Email</label>
-					            <input class="form-control" type="email" name="mail"  value="<?php echo $userinfo["MAIL"] ?>" required>
+					            <input class="form-control" type="email" name="newmail"  placeholder="<?php echo $userinfo["MAIL"] ?>" required>
 					            <div class="invalid-feedback">Veuillez renseigner un email valide.</div>
 					          </div>
 					          <div class="form-group col-md-4">
 					            <label for="">Presentation</label>
-					            <input class="form-control" type="text" name="pres"  value="<?php echo $userinfo["PRESENTATION"] ?>" required>
+					            <input class="form-control" type="text" name="pres"  placeholder="<?php echo $userinfo["PRESENTATION"] ?>" required>
 					            <div class="invalid-feedback">Ne pas dépasser 150 caractères</div>
 					          </div>
 					          <div class="form-group col-md-4">
