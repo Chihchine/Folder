@@ -1,10 +1,10 @@
 <?php
+require_once(__DIR__ . "/../class/main.php");
+
 if (!isset($_SESSION['id_utilisateur'])) {
 	Header('Location: index.php');
 	die;
 }
-
-require_once(__DIR__ . "/../class/main.php");
 
 ?>
 <head>
