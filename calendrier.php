@@ -4,8 +4,10 @@ require("base/include/header.php");
 $dateDuJour = date("Y-m-d");
 
 if (isset($_POST['creer'])) {
-  $dateDebut = Annuaire::joinDateHour($_POST['date_debut'], $_POST['heure_debut']. ':' .$_POST['minute_debut']);
-  $dateFin = Annuaire::joinDateHour($_POST['date_fin'], $_POST['heure_fin']. ':' .$_POST['minute_fin']);
+  $horraireDebut = $_POST['heure_debut']. ':' .$_POST['minute_debut'];
+  $horraireFin = $_POST['heure_fin']. ':' .$_POST['minute_fin'];
+  $dateDebut = Annuaire::joinDateHour($_POST['date_debut'],$horraireDebut);
+  $dateFin = Annuaire::joinDateHour($_POST['date_fin'], $horraireFin);
   Annuaire::addEvent($_POST['nom'], $_POST['description'], $dateDebut, $dateFin, $_SESSION['id_utilisateur']);
 }
 
