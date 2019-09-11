@@ -95,21 +95,19 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	   if($_FILES['avatar']['size'] <= $tailleMax) {
 	      $extensionUpload = strtolower(substr(strrchr($_FILES['avatar']['name'], '.'), 1));
 	      if(in_array($extensionUpload, $extensionsValides)) {
-	         $chemin = "images/uploads/".$id.".".$extensionUpload;
-	         $cheminname = $id.".".$extensionUpload;
+	      	$numimage = Main::DataBase()->prepare("SELECT * FROM IMAGES");
+	      	$lenumimage = $numimage->rowCount();
+	      	$lenumimage++;
+	      	echo $lenumimage;
+	         $chemin = "images/uploads/".$lenumimage.".".$extensionUpload;
+	         echo $chemin;
+	         $cheminname = $lenumimage.".".$extensionUpload;
 	         $resultat = move_uploaded_file($_FILES['avatar']['tmp_name'], $chemin);
 	         if($resultat) {
 	         	$insertimage = Main::DataBase()->prepare("INSERT INTO IMAGES(LIEN) VALUES(?)");
 	         	$insertimage->execute(array($cheminname));
 
 	         	echo "WORKEEEEED";
-
-	            /*$updateavatar = $bdd->prepare('UPDATE IMAGES SET avatar = :avatar WHERE id = :id');
-	            $updateavatar->execute(array(
-	               'avatar' => $_SESSION['id'].".".$extensionUpload,
-	               'id' => $_SESSION['id']
-	               ));
-	            header("Location: profil.php?id=".$_GET['id']);*/
 	         	} else {echo "1";};
 	  	 	} else {echo "2";};
 		} else {echo "3";};
@@ -146,7 +144,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	        <div class="card-header">
 	        </div>
 	        <div class="card-body card-body-right">
-	              	<form method="post" class="needs-validation form-signin" novalidate>
+	              	<form method="post" class="needs-validation form-signin" novalidate enctype="multipart/form-data">
 					      <img class="mb-4">
 					      <h1 class="h3 mb-3 font-weight-normal">Modification de votre profil</h1>
 					      <div class="form">
