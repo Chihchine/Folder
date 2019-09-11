@@ -62,7 +62,14 @@ require("base/include/header.php");
               <a href="messages.php">
                 <i class="fa fa-book"></i>
                 <span>Messages</span>
-                <span class="badge badge-pill badge-primary">3</span>
+                <span class="badge badge-pill badge-primary">4</span>
+              </a>
+            </li>
+            <li class="sidebar-button">
+              <a href="messages.php">
+                <i class="fa fa-book"></i>
+                <span>Groupes</span>
+                <span class="badge badge-pill badge-primary">2</span>
               </a>
             </li>
             <li class="sidebar-button">
@@ -77,19 +84,7 @@ require("base/include/header.php");
             <li>
               <a href="#">
                 <i class="fa fa-book"></i>
-                <span>Documentation</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="fa fa-calendar"></i>
-                <span>Calendar</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="fa fa-folder"></i>
-                <span>Examples</span>
+                <span>Nous contacter</span>
               </a>
             </li>
           </ul>
