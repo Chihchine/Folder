@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </button>
       </div>
       <div class="modal-body">
-        <form class="form-proposition-groupe" action="#" method="post">
+        <form id="createGroupe" class="form-proposition-groupe" action="#" method="post">
           <div class="form-group">
             <label for="groupeName">Nom du groupe</label>
             <input type="text" name="groupeName" id="groupeName" class="form-control" placeholder="Nom du groupe choisi...">
@@ -46,11 +46,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
               </div>
             </span>
           </div>
+        </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-        <submit type="button" class="btn btn-primary">Créer</submit>
-        </form>
+        <button type="button" class="btn btn-primary" onlick="document.forms["createGroupe"].submit();">Créer</button>
       </div>
     </div>
   </div>
