@@ -139,13 +139,8 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	  </div>
 	</div>
 
-
-
-
-	</body>
-</html>
-
 <?php
+include("base/include/footer.php");
 }
 else{
 	header("Location: index.php");

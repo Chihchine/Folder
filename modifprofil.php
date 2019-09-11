@@ -101,7 +101,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	  }
 ?>
 
-<html> 
+<html>
 	<body>
 	    <!--<div class="fil_arianne container">
 	    <nav aria-label="breadcrumb">
@@ -201,13 +201,8 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	</div>
 
 
-	  
-
-	</body>
-</html>
-
-
 <?php
+include("base/include/footer.php");
 }
 else{
 	header("Location: index.php");
