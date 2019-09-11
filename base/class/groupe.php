@@ -11,6 +11,18 @@ Class Groupe {
     // }
   }
 
+  public static function List() {
+    $request = Main::Database()->prepare("SELECT * FROM GROUPES");
+    $result = $request->execute();
+    return $result->fetchAll();
+  }
+
+  public static function CountMember($id) {
+    $request = Main::Database()->prepare("SELECT COUNT(*) AS NUMBER FROM MEMBRES_GROUPE WHERE ID_GROUPE = ?");
+    $result = $request->execute([$id]);
+    return $result->fetch();
+  }
+
 }
 
 ?>
