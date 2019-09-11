@@ -3,11 +3,9 @@ $pageTitle = "Groupes";
 require("base/include/header.php");
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  echo 1;
     if( !empty($_FILES['groupeImage']['name']) ) {
-      echo 2;
-      $extension  = pathinfo($_FILES['fichier']['name'], PATHINFO_EXTENSION);
-      Groupe::Create($_POST['groupeName'], $_POST['groupeDesc'], $extension, $_FILES['groupeName']['tmp_name'], $_FILES['groupeName']['error']);
+      $extension  = pathinfo($_FILES['groupeImage']['name'], PATHINFO_EXTENSION);
+      Groupe::Create($_POST['groupeName'], $_POST['groupeDesc'], $extension, $_FILES['groupeImage']['tmp_name'], $_FILES['groupeImage']['error']);
 			}
 }
 ?>
