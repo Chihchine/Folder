@@ -121,11 +121,11 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	                </td>
 	              </tr>
 	              <tr>
-	                <th class="colonnes-gauches" scope="row">Actualités</th>
-	                <td class="colonnes-droites">X actualités</td>
+	                <th class="colonnes-gauches" scope="row">PROMOTION</th>
+	                <td class="colonnes-droites"> <?php echo $userinfo['PROMOTION']; ?> </td>
 	              </tr>
 	              <tr>
-	                <th class="colonnes-gauches" scope="row">Commentaires</th>
+	                <th class="colonnes-gauches" scope="row"></th>
 	                <td class="colonnes-droites">X commentaires</td>
 	              </tr>
 	            </tbody>
