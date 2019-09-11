@@ -46,6 +46,12 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 				    $insertecole->execute(array($newecole, $id));
 				    header('Location: modifprofil.php?id='.$id);
 				}
+				if(isset($_POST['newpromotion']) AND !empty($_POST['newpromotion']) AND $_POST['newpromotion'] != $userinfo['PROMOTION']) {
+					$newpromotion = htmlspecialchars($_POST['newpromotion']);
+					$insertpromotion = Main::DataBase()->prepare("UPDATE UTILISATEURS SET PROMOTION = ? WHERE ID = ?");
+				    $insertpromotion->execute(array($newpromotion, $id));
+				    header('Location: modifprofil.php?id='.$id);
+				}
 		} else {
 			header("Location: profil.php?id=".$_GET['id']);
 			die;
@@ -156,7 +162,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 					          </div>
 					          <div class="form-group col-md-6">
 					            <label for="">Niveau d'étude</label>
-					            <select class="form-control" name="promotion">
+					            <select class="form-control" name="newpromotion">
 					              <option value="B1">1ère année</option>
 					              <option value="B2">2ème année</option>
 					              <option value="B3">3ème année</option>
