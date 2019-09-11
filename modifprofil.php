@@ -147,7 +147,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 					        </div>
 					        <div class="form-row">
 					          <div class="form-group col-md-6">
-					            <label for=""><?php echo $userinfo["ECOLE"] ?></label>
+					            <label for="">Nouvelle Ecole</label>
 					            <select class="form-control" name="newecole">
 					              <option value="EPSI">EPSI</option>
 					              <option value="IDRAC">IDRAC</option>
