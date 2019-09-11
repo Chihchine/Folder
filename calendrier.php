@@ -9,6 +9,7 @@ if (isset($_POST['creer'])) {
   $dateDebut = Annuaire::joinDateHour($_POST['date_debut'], $horraireDebut);
   $dateFin = Annuaire::joinDateHour($_POST['date_fin'], $horraireFin);
   Annuaire::addEvent($_POST['nom'], $_POST['description'], $dateDebut, $dateFin, $_SESSION['id_utilisateur']);
+  echo $horraireDebut;
 }
 
  ?>
