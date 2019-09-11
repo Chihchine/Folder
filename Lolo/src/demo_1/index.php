@@ -342,7 +342,7 @@
                       <img class="img-sm rounded-circle" src="../assets/images/faces/face3.jpg" alt="profile image">
                       <div class="wrapper ml-2">
                         <p class="mb-n1 font-weight-semibold">Gauthier Mairot</p>
-                        <small>162543</small>
+                        <small>EPSI B2G2</small>
                       </div>
                       <small class="text-muted ml-auto">Il y a 1 heure</small>
                     </div>
@@ -350,15 +350,15 @@
                       <span class="img-sm rounded-circle bg-warning text-white text-avatar">AR</span>
                       <div class="wrapper ml-2">
                         <p class="mb-n1 font-weight-semibold">Aurélien Reynard</p>
-                        <small>162543</small>
+                        <small>EPSI B2G2</small>
                       </div>
-                      <small class="text-muted ml-auto">Il y a 3 heures</small>
+                      <small class="text-muted ml-auto">Il y a 4 heures</small>
                     </div>
                     <div class="d-flex py-2 border-bottom">
                       <img class="img-sm rounded-circle" src="../assets/images/faces/face4.jpg" alt="profile image">
                       <div class="wrapper ml-2">
                         <p class="mb-n1 font-weight-semibold">Thomas Coche</p>
-                        <small>162543</small>
+                        <small>EPSI B2G2</small>
                       </div>
                       <small class="text-muted ml-auto">Il y a 7 heures</small>
                     </div>
@@ -366,7 +366,7 @@
                       <span class="img-sm rounded-circle bg-success text-white text-avatar">LD</span>
                       <div class="wrapper ml-2">
                         <p class="mb-n1 font-weight-semibold">Loic Ducornetz</p>
-                        <small>162543</small>
+                        <small>EPSI B2G2</small>
                       </div>
                       <small class="text-muted ml-auto">Il y a 1 jour</small>
                     </div>
@@ -377,49 +377,20 @@
             <div class="row">
               <div class="col-md-8">
                 <div class="row">
-                  <div class="col-md-6 grid-margin stretch-card">
-                    <div class="card">
-                      <div class="card-body pb-0">
-                        <div class="d-flex justify-content-between">
-                          <h4 class="card-title mb-0">Total Revenue</h4>
-                          <p class="font-weight-semibold mb-0">+1.37%</p>
-                        </div>
-                        <h3 class="font-weight-medium mb-4">184.42K</h3>
-                      </div>
-                      <canvas class="mt-n4" height="90" id="total-revenue"></canva>
-                    </div>
-                  </div>
-                  <div class="col-md-6 grid-margin stretch-card">
-                    <div class="card">
-                      <div class="card-body pb-0">
-                        <div class="d-flex justify-content-between">
-                          <h4 class="card-title mb-0">Transaction</h4>
-                          <p class="font-weight-semibold mb-0">-2.87%</p>
-                        </div>
-                        <h3 class="font-weight-medium">147.7K</h3>
-                      </div>
-                      <canvas class="mt-n3" height="90" id="total-transaction"></canva>
-                    </div>
-                  </div>
                   <div class="col-md-12 grid-margin">
                     <div class="card">
                       <div class="card-body">
-                        <h4 class="card-title mb-0">Market Overview</h4>
+                        <h4 class="card-title mb-0">Nouveautés</h4>
                         <div class="d-flex align-items-center justify-content-between w-100">
-                          <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                          <p class="mb-0">Ce qu'il ne faut pas louper !</p>
                           <div class="dropdown">
-                            <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dateSorter" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">This Month</button>
+                            <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dateSorter" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ce mois-ci</button>
                             <div class="dropdown-menu" aria-labelledby="dateSorter">
-                              <div class="dropdown-item" id="market-overview_1">Daily</div>
-                              <div class="dropdown-item" id="market-overview_2">Weekly</div>
-                              <div class="dropdown-item" id="market-overview_3">Monthly</div>
+                              <div class="dropdown-item" id="market-overview_1">Journalier</div>
+                              <div class="dropdown-item" id="market-overview_2">Cette semaine</div>
+                              <div class="dropdown-item" id="market-overview_3">Mensuel</div>
                             </div>
                           </div>
-                        </div>
-                        <div class="d-flex align-items-end">
-                          <h3 class="mb-0 font-weight-semibold">$36,2531.00</h3>
-                          <p class="mb-0 font-weight-medium mr-2 ml-2 mb-1">USD</p>
-                          <p class="mb-0 text-success font-weight-semibold mb-1">(+1.37%)</p>
                         </div>
                         <canvas class="mt-4" height="100" id="market-overview-chart"></canvas>
                       </div>
@@ -537,21 +508,21 @@
                   <div class="col-md-12 grid-margin">
                     <div class="card">
                       <div class="card-body">
-                        <h1 class="card-title mb-4">Website Audience Metrics</h1>
+                        <h1 class="card-title mb-4">Communauté</h1>
                         <div class="row">
                           <div class="col-5 col-md-5">
-                            <div class="wrapper border-bottom mb-2 pb-2">
-                              <h4 class="font-weight-semibold mb-0">523,200</h4>
+                            <div class="wrapper">
+                              <h4 class="font-weight-semibold mb-0">54 personnes</h4>
                               <div class="d-flex align-items-center">
-                                <p class="mb-0">Page Views</p>
-                                <div class="dot-indicator bg-secondary ml-auto"></div>
+                                <p class="mb-0">Actives</p>
+                                <div class="dot-indicator bg-primary ml-auto"></div>
                               </div>
                             </div>
-                            <div class="wrapper">
-                              <h4 class="font-weight-semibold mb-0">753,098</h4>
+                            <div class="wrapper border-bottom mb-2 pb-2">
+                              <h4 class="font-weight-semibold mb-0">176 personnes</h4>
                               <div class="d-flex align-items-center">
-                                <p class="mb-0">Bounce Rate</p>
-                                <div class="dot-indicator bg-primary ml-auto"></div>
+                                <p class="mb-0">Inactives</p>
+                                <div class="dot-indicator bg-secondary ml-auto"></div>
                               </div>
                             </div>
                           </div>
@@ -567,10 +538,9 @@
                               <div class="icon-holder bg-primary text-white py-1 px-3 rounded mr-2">
                                 <i class="icon ion-logo-buffer icon-sm"></i>
                               </div>
-                              <h2 class="font-weight-semibold mb-0">3,605</h2>
+                              <h2 class="font-weight-semibold mb-0">230</h2>
                             </div>
-                            <p>Since last week</p>
-                            <p><span class="font-weight-medium">0.51%</span> (30 days)</p>
+                            <p>Inscrites</p>
                           </div>
                           <div class="col-6">
                             <div class="mt-n3 ml-auto" id="dashboard-guage-chart"></div>
