@@ -12,7 +12,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	$image = Main::DataBase()->prepare("SELECT * FROM PHOTOS WHERE ID = ?");
 
 	$userexist = $result->rowCount();
-	$imageexist = $image->rowCount();
+	
 
 	
 	$userinfo = $result->fetch();
@@ -21,6 +21,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	$imageid = $userinfo["ID_PHOTO_PROFIL"];
 	$image->execute(array($imageid));
 	$imageinfo = $image->fetch();
+	$imageexist = $image->rowCount();
 	echo $imageinfo['LIEN'];
 
 
