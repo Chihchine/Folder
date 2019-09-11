@@ -1,22 +1,6 @@
 <?php
 require_once("base/class/main.php");
 
-// include('connexionBDD.php');
-// function inscription($nom, $prenom, $mail, $mdp, $ecole, $promotion) {
-//   $bdd = connexionBDD();
-//   $inscriptionBDD = $bdd->prepare('INSERT INTO utilisateurs(NOM, PRENOM, MAIL, MDP, ECOLE, PROMOTION) VALUES (?, ?, ?, ?, ?, ?)');
-//   $inscription = $inscriptionBDD->execute(array($nom, $prenom, $mail, $mdp, $ecole, $promotion));
-//   return $inscription;
-// }
-//
-// function mailExists($mail) {
-//   $bdd = connexionBDD();
-//   $mailBDD = $bdd->prepare('SELECT MAIL FROM utilisateurs WHERE MAIL = ?');
-//   $mailBDD->execute(array($mail));
-//   $mailExists = $mailBDD->fetch();
-//   return $mailExists;
-// }
-
 
 if (isset($_POST['btnInscrire'])) {
   if ($_POST['mdp'] != $_POST['confirmMdp']) {

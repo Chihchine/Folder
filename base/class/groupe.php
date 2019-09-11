@@ -23,6 +23,16 @@ Class Groupe {
     return $request->fetch();
   }
 
+  public static function Join($id) {
+    $request = Main::Database()->prepare("INSERT INTO MEMBRES_GROUPE(ID_GROUPE, ID_UTILISATEUR) VALUES(:idGroupe, :idUtilisateur)");
+    $request->execute(["idGroupe" => $id, "idUtilisateur" => $_SESSION["id_utilisateur"]]);
+  }
+
+  public static function Leave($id) {
+    $request = Main::Database()->prepare("DELETE FROM MEMBRES_GROUPE WHERE ID_GROUPE = :idGroupe AND ID_UTILISATEUR = :idUtilisateur");
+    $request->execute(["idGroupe" => $id, "idUtilisateur" => $_SESSION["id_utilisateur"]]);
+  }
+
 }
 
 ?>

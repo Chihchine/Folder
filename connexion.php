@@ -7,7 +7,6 @@ if (isset($_POST['connexion'])) {
     $errorConnexion[1] = '<div class="alert alert-danger" role="alert">La combinaison email et mot de passe n\'est pas bonne.</div>';
   }
   else {
-    session_start();
     $idUtilisateur = Connexion::verif($_POST['mail'], $_POST['mdp']);
     $_SESSION['id_utilisateur'] = $idUtilisateur['ID'];
     header('Location: profil.php?id='.$_SESSION['id_utilisateur'].'');
