@@ -64,65 +64,48 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   </nav>
 </div>
 
-<div class="container">
-  <div class="card groupes-crées">
-    <div class="card-header">
-      <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand">groupes créés</a>
-        <div class="form-inline">
-          <select id="input-classement" class="form-control">
-            <option selected>Trier par...</option>
-            <option>A/Z</option>
-            <option>Z/A</option>
-            <option>Récent</option>
-            <option>Ancien</option>
-            <option>Membres</option>
-          </select>
-          <button class="btn btn-primary" data-toggle="modal" data-target="#creationGroupe">Créer un groupe</button>
-        </div>
-      </nav>
-    </div>
-<div id="createdgroupes">
-    </div>
-    <div class="card-body row justify-content-center">
-      <nav aria-label="Page navigation example">
-        <ul class="pagination">
-          <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-          <li class="page-item active"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item"><a class="page-link" href="#">Next</a></li>
-        </ul>
-      </nav>
-    </div>
-  </div>
-</div>
+          <div class="card">
+            <div class="card-tittle">
+              <h5>Groupes</h5>
+            </div>
+            <div class="card-body">
+              <table
+              data-toggle="table"
+              data-search="true"
+              data-sortable="true"
+              data-filter-control="true"
+              data-sort-name="nom"
+              data-sort-order="asc"
+              data-show-toggle="true"
+              data-filter-show-clear="true"
+              data-pagination="true"
+              data-page-size="10"
+              data-page-list="[5, 10, 25, 50, Toutes]">
+                <thead>
+                  <tr>
+                    <th>Image</th>
+                    <th data-filter-control="input" data-field="nom" data-sortable="true">Nom</th>
+                    <th data-filter-control="input" data-field="description" data-sortable="true">Description</th>
+                    <th>Date de création</th>
+                    <th>Nombre de membre</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
 
-<div class="container">
-  <div class="card">
-    <div class="card-header">
-      <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand">Propositions de groupes</a>
-        <form class="form-inline">
-          <input class="form-control" type="search" placeholder="Mot clé" aria-label="Search">
-          <button class="btn btn-outline-primary" type="submit">Rechercher</button>
-        </form>
-      </nav>
-    </div>
-    <div id="onVotegroupes">
-</div>
-  <div class="card-body row justify-content-center">
-    <nav aria-label="Page navigation example">
-      <ul class="pagination">
-        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item"><a class="page-link" href="#">Next</a></li>
-      </ul>
-    </nav>
-  </div>
-
-</div>
-</div>
-</body>
+                  <?php
+                  $groupes = Groupe::List();
+                  foreach ($groupes as $groupe) { ?>
+                  <tr>
+                    <td><img src="<?php echo Settings::sitePathRoot . Image::Show($groupe['ID_IMAGE_GROUPE'])['LIEN']; ?>"></td>
+                    <td><?php echo $groupe['NOM']; ?></td>
+                    <td><?php echo $groupe['DESCRIPTION']; ?></td>
+                    <td><?php echo $groupe['DATE CREATION']; ?></td>
+                    <td><?php echo Groupe::CountMember($groupe['ID'])['NUMBER']; ?></td>
+                    <td><button class="btn btn-classic">Rejoindre</button><button class="btn btn-danger">Quitter</button></td>
+                  </tr>
+                <?php } ?>
+                </tbody>
+              </table>
+            </div>
+          </div>
