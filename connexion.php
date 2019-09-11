@@ -19,7 +19,7 @@ if (isset($_POST['connexion'])) {
     session_start();
     $idUtilisateur = Connexion::verif($_POST['mail'], $_POST['mdp']);
     $_SESSION['id_utilisateur'] = $idUtilisateur['ID'];
-    header('Location: index.php');
+    header('Location: profil.php?id='.$_SESSION['id_utilisateur'].'');
 
 
   }
