@@ -46,11 +46,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
               </div>
             </span>
           </div>
-        </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-        <button type="button" class="btn btn-primary">Créer</button>
+        <submit type="button" class="btn btn-primary">Créer</submit>
+        </form>
       </div>
     </div>
   </div>
