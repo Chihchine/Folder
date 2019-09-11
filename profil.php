@@ -90,9 +90,13 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	                		$membrede->execute(array($id));
 	                		$membredeinfo = $membrede->fetch();
 
-	                		foreach ($membredeinfo['ID_GROUPE'] as $key => $value) {
+							while($row = mysql_fetch_array($membrede)){
+								echo $row['ID_GROUPE'];
+							}
+
+	                		/*foreach ($membredeinfo['ID_GROUPE'] as $key => $value) {
 	                			echo $key; echo $value;
-	                		}
+	                		}*/
 
 	                	?>
 
