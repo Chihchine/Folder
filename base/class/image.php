@@ -40,16 +40,16 @@
              {
 
                $uniqueId = md5(uniqid());
-               $request = Main::Database()->prepare('INSERT INTO IMAGES(IMAGE_LOCALE, IMAGE_URL) VALUES(1, :hash)');
+               $request = Main::Database()->prepare('INSERT INTO IMAGES(LIEN) VALUES(:hash)');
                $request->execute(['hash' => $uniqueId]);
 
-               $request = Main::Database()->prepare('SELECT IMAGE_ID FROM IMAGES WHERE IMAGE_URL=:url');
+               $request = Main::Database()->prepare('SELECT ID FROM IMAGES WHERE LIEN=:url');
                $request->execute(['url' => $uniqueId]);
                $result = $request->fetch();
 
-               $id = $result['IMAGE_ID'];
+               $id = $result['ID'];
 
-               $request = Main::Database()->prepare('UPDATE IMAGES SET IMAGE_URL=:url WHERE IMAGE_ID=:id');
+               $request = Main::Database()->prepare('UPDATE IMAGES SET LIEN=:url WHERE ID=:id');
                $request->execute(['url' => Settings::imageFolder.$id.".".$extension, 'id' => $id]);
 
                // On renomme le fichier
@@ -93,7 +93,7 @@
      }
 
      public static function Show($id) {
-       $request = Main::Database()->prepare('SELECT * FROM IMAGES WHERE IMAGE_ID = :id');
+       $request = Main::Database()->prepare('SELECT * FROM IMAGES WHERE ID = :id');
        $request->execute(['id' => $id]);
        $image = $request->fetch();
 
