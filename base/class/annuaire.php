@@ -6,6 +6,13 @@ Class Annuaire {
     $result = $request;
     return $result;
   }
+  public static function addEvent($nom, $description, $dateDebut, $dateFin, $heureDebut, $heureFin, $idCreateur) {
+    $request = Main::Database()->prepare('INSERT INTO EVENEMENTS(NOM, DESCRIPTION, DATE_DEBUT, DATE_FIN, ID_UTILISATEUR_CREATEUR) VALUES (?,?,?,?,?)');
+    $result = $request->execute(array($nom, $description, $dateDebut, $dateFin, $heureDebut, $heureFin, $idCreateur));
+    return $result;
+  }
 }
+
+
 
  ?>
