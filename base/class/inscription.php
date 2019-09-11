@@ -2,7 +2,7 @@
 Class Inscription {
 
   public static function signin($nom, $prenom, $mail, $mdp, $ecole, $promotion) {
-    $request = Main::Database()->prepare('INSERT INTO UTILISATEURS(NOM, PRENOM, MAIL, MDP, ECOLE, PROMOTION) VALUES (?, ?, ?, ?, ?, ?)');
+    $request = Main::Database()->prepare('INSERT INTO UTILISATEURS(NOM, PRENOM, MAIL, MDP, ECOLE, PROMOTION, DATE_INSCRIPTION) VALUES (?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)');
     $result = $request->execute(array($nom, $prenom, $mail, $mdp, $ecole, $promotion));
     return $result;
   }
