@@ -6,7 +6,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if( !empty($_FILES['groupeImage']['name']) ) {
       $extension  = pathinfo($_FILES['groupeImage']['name'], PATHINFO_EXTENSION);
       Groupe::Create($_POST['groupeName'], $_POST['groupeDesc'], $extension, $_FILES['groupeImage']['tmp_name'], $_FILES['groupeImage']['error']);
-			}
+    }
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+  if($_GET['r']=="join") {
+    Groupe::Join($_GET['id']);
+  } elseif($_GET['r']=="join") {
+    Groupe::Leave($_GET['id']);
+  }
 }
 ?>
 <?php /*<-- DEBUT - Popup création de groupe -->*/ ?>
@@ -74,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
               data-search="true"
               data-sortable="true"
               data-filter-control="true"
-              data-sort-name="nom"
+              data-sort-name="membres"
               data-sort-order="asc"
               data-show-toggle="true"
               data-filter-show-clear="true"
@@ -87,8 +95,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <th>Image</th>
                     <th data-filter-control="input" data-field="nom" data-sortable="true">Nom</th>
                     <th data-filter-control="input" data-field="description" data-sortable="true">Description</th>
-                    <th>Date de création</th>
-                    <th>Nombre de membre</th>
+                    <th data-field="date" data-sortable="true">Date de création</th>
+                    <th data-field="membres" data-sortable="true">Nombre de membre</th>
                     <th>Action</th>
                   </tr>
                 </thead>
@@ -103,7 +111,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <td><?php echo $groupe['DESCRIPTION']; ?></td>
                     <td><?php echo $groupe['DATE CREATION']; ?></td>
                     <td><?php echo Groupe::CountMember($groupe['ID'])['NUMBER']; ?></td>
-                    <td><button class="btn btn-classic">Rejoindre</button><button class="btn btn-danger">Quitter</button></td>
+                    <td><button class="btn btn-classic" href="?r=join&id=<?php echo $groupe['ID']; ?>">Rejoindre</button><button class="btn btn-danger" href="?r=leave&id=<?php echo $groupe['ID']; ?>">Quitter</button></td>
                   </tr>
                 <?php } ?>
                 </tbody>
