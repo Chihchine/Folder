@@ -9,21 +9,64 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	$result = Main::DataBase()->prepare("SELECT * FROM UTILISATEURS WHERE ID = ?");
 	$result->execute(array($id));
 
-	$image = Main::DataBase()->prepare("SELECT * FROM PHOTOS WHERE ID = ?");
-	$image->execute(array($id));
+	$image = Main::DataBase()->prepare("SELECT * FROM IMAGES WHERE ID = ?");
 
 	$userexist = $result->rowCount();
-	$imageexist = $image->rowCount();
-
-	$imageinfo = $image->fetch();
 	$userinfo = $result->fetch();
 
+	$imageid = $userinfo["ID_IMAGE_PROFIL"];
+	$image->execute(array($imageid));
+	$imageinfo = $image->fetch();
+	$imageexist = $image->rowCount();
+
 	if (isset($_SESSION['id_utilisateur'])) {
-		echo $_SESSION['id_utilisateur'];
+		if($_SESSION['id_utilisateur'] == $id){
+			   if(isset($_POST['newmail']) AND !empty($_POST['newmail']) AND $_POST['newmail'] != $userinfo['MAIL']) {
+			   	$newmail = htmlspecialchars($_POST['newmail']);
+			    $insertmail = Main::DataBase()->prepare("UPDATE UTILISATEURS SET MAIL = ? WHERE ID = ?");
+			    $insertmail->execute(array($newmail, $id));
+			    header('Location: modifprofil.php?id='.$id);
+			   }
+			   if(isset($_POST['newmdp']) AND !empty($_POST['newmdp']) AND $_POST['newmdp'] != $userinfo['MDP']) {
+				   	if($_POST['newmdp'] == $_POST['confirmMdp'])
+				   	{
+					   	$newmdp = htmlspecialchars($_POST['newmdp']);
+					    $insertmdp = Main::DataBase()->prepare("UPDATE UTILISATEURS SET MDP = ? WHERE ID = ?");
+					    $insertmdp->execute(array($newmdp, $id));
+					    header('Location: modifprofil.php?id='.$id);
+				   } else {
+				   	// error handle: MDP pas le meme que Confirm MDP
+				   }
+				} else {
+					// error handle: MDP is empty
+				}
+				if(isset($_POST['newecole']) AND !empty($_POST['newecole']) AND $_POST['newecole'] != $userinfo['ECOLE']) {
+					$newecole = htmlspecialchars($_POST['newecole']);
+					$insertecole = Main::DataBase()->prepare("UPDATE UTILISATEURS SET ECOLE = ? WHERE ID = ?");
+				    $insertecole->execute(array($newecole, $id));
+				    header('Location: modifprofil.php?id='.$id);
+				}
+				if(isset($_POST['newpromotion']) AND !empty($_POST['newpromotion']) AND $_POST['newpromotion'] != $userinfo['PROMOTION']) {
+					$newpromotion = htmlspecialchars($_POST['newpromotion']);
+					$insertpromotion = Main::DataBase()->prepare("UPDATE UTILISATEURS SET PROMOTION = ? WHERE ID = ?");
+				    $insertpromotion->execute(array($newpromotion, $id));
+				    header('Location: modifprofil.php?id='.$id);
+				}
+				if(isset($_POST['pres']) AND !empty($_POST['pres']) AND $_POST['pres'] != $userinfo['PRESENTATION']) {
+					$newpres = htmlspecialchars($_POST['pres']);
+					$insertpres = Main::DataBase()->prepare("UPDATE UTILISATEURS SET PRESENTATION = ? WHERE ID = ?");
+				    $insertpres->execute(array($newpres, $id));
+				    header('Location: modifprofil.php?id='.$id);
+				}
+		} else {
+			header("Location: profil.php?id=".$_GET['id']);
+			die;
+		}
 	}
 	else
 	{
 		header("Location: profil.php?id=".$_GET['id']);
+		die;
 	}
 
 
@@ -35,30 +78,149 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 		header("Location: index.php");
 		die;
 	}
+
+
+	$profilimage = "";
+
+	if($imageexist==1){
+		$profilimage = "images/uploads/" .$imageinfo['LIEN'];
+	} else {
+		$profilimage = "images/basicprofil.png";
+	}
+
+
+	if(isset($_FILES['avatar']) AND !empty($_FILES['avatar']['name'])) {
+	   $tailleMax = 2097152;
+	   $extensionsValides = array('jpg', 'jpeg', 'gif', 'png');
+	   if($_FILES['avatar']['size'] <= $tailleMax) {
+	      $extensionUpload = strtolower(substr(strrchr($_FILES['avatar']['name'], '.'), 1));
+	      if(in_array($extensionUpload, $extensionsValides)) {
+	         $chemin = "images/uploads/".$id.".".$extensionUpload;
+	         $cheminname = $id.".".$extensionUpload;
+	         $resultat = move_uploaded_file($_FILES['avatar']['tmp_name'], $chemin);
+	         if($resultat) {
+	         	$insertimage = Main::DataBase()->prepare("INSERT INTO IMAGES(LIEN) VALUES(?)");
+	         	$insertimage->execute(array($cheminname));
+
+	         	echo "WORKEEEEED";
+
+	            /*$updateavatar = $bdd->prepare('UPDATE IMAGES SET avatar = :avatar WHERE id = :id');
+	            $updateavatar->execute(array(
+	               'avatar' => $_SESSION['id'].".".$extensionUpload,
+	               'id' => $_SESSION['id']
+	               ));
+	            header("Location: profil.php?id=".$_GET['id']);*/
+	         	} else {echo "1";};
+	  	 	} else {echo "2";};
+		} else {echo "3";};
+	} else {echo "4";};
 ?>
 
-<html>
-<head>
-  <link rel="stylesheet" type="text/css" href="<?php echo Settings::sitePathRoot; ?>base/css/main.css"/>
-	<link rel="icon" href=""/>
+<html> 
+	<body>
+	    <!--<div class="fil_arianne container">
+	    <nav aria-label="breadcrumb">
+	        <ol class="breadcrumb">
+	            <li class="breadcrumb-item"><a href="?p=dashboard">Tableau de bord</a></li>
+	            <li class="breadcrumb-item active" aria-current="page">Mon profil</li>
+	        </ol>
+	    </nav>
+	</div>-->
 
-</head>
-<body>
-	<div id="presentation">
-		<img id="profil-image" src="images/uploads/<?php if($imageexist==1){echo $imageinfo['LIEN'];} ?>" />
-		<h4> Nom: <?php echo $userinfo['NOM']; ?> </h4>
-		<h4> Prénom: <?php echo $userinfo['PRENOM']; ?> </h4>
-		<h4> Ecole: <?php echo $userinfo['ECOLE']; ?> </h4>
-		<h4> Promotion: <?php echo $userinfo['PROMOTION']; ?> </h4>
+	<div class="container-fluid profil-content">
+	  <h1>Profil</h1>
+	  <div class="row">
+	    <div class="col-md-3">
+	      <div class="card">
+	        <div class="card-body card-body-left">
+	          <img class="rounded" height="400px" src="<?php echo $profilimage; ?>" alt="Image du compte" style="width:100%">
+	          <h5>
+	          </h5>
+	          <h6>
+	          </h6>
+	        </div>
+	      </div>
+	    </div>
+	    <div class="col-md-9">
+	      <div class="card">
+	        <div class="card-header">
+	        </div>
+	        <div class="card-body card-body-right">
+	              	<form method="post" class="needs-validation form-signin" novalidate>
+					      <img class="mb-4">
+					      <h1 class="h3 mb-3 font-weight-normal">Modification de votre profil</h1>
+					      <div class="form">
+					        <div class="form-row">
+					          <!--<div class="form-group col-md-6">
+					            <label for="">Prénom</label>
+					            <input class="form-control" type="text" name="prenom"  placeholder="Prénom" required>
+					            <div class="invalid-feedback">Veuillez-renseigner votre prénom.</div>
+					          </div>
+					          <div class="form-group col-md-6">
+					            <label for="">Nom</label>
+					            <input class="form-control" type="text" name="nom"  placeholder="Nom" required>
+					            <div class="invalid-feedback">Veuillez-renseigner votre nom.</div>
+					          </div>
+					        </div>-->
+					        <div class="form-row">
+					          <div class="form-group col-md-4">
+					            <label for="">Nouvel Email</label>
+					            <input class="form-control" type="email" name="newmail"  placeholder="<?php echo $userinfo["MAIL"] ?>" required>
+					            <div class="invalid-feedback">Veuillez renseigner un email valide.</div>
+					          </div>
+					          <div class="form-group col-md-4">
+					            <label for="">Presentation</label>
+					            <input class="form-control" type="text" name="pres" value="<?php echo $userinfo["PRESENTATION"] ?>" required>
+					            <div class="invalid-feedback">Ne pas dépasser 150 caractères</div>
+					          </div>
+					          <div class="form-group col-md-4">
+					            <label for="">Nouveau Mot de passe</label>
+					            <input class="form-control" type="password" name="newmdp"  placeholder="*********" required>
+					            <div class="invalid-feedback">Minimum 6 caractères.</div>
+					          </div>
+					          <div class="form-group col-md-4">
+					            <label for="">Confirmer votre nouveau mot de passe</label>
+					            <input class="form-control" type="password" name="confirmMdp" placeholder="*********" required>
+					            <div class="invalid-feedback">Veuillez confirmer votre nouveau mot de passe.</div>
+					          </div>
+					        </div>
+					        <div class="form-row">
+					          <div class="form-group col-md-6">
+					            <label for="">Nouvelle Ecole</label>
+					            <select class="form-control" name="newecole">
+					              <option value="EPSI">EPSI</option>
+					              <option value="IDRAC">IDRAC</option>
+					              <option value="WIS">WIS</option>
+					            </select>
+					          </div>
+					          <div class="form-group col-md-6">
+					            <label for="">Niveau d'étude</label>
+					            <select class="form-control" name="newpromotion">
+					              <option value="B1">1ère année</option>
+					              <option value="B2">2ème année</option>
+					              <option value="B3">3ème année</option>
+					              <option value="M1">4ème année</option>
+					              <option value="M2">5ème année</option>
+					            </select>
+					          </div>
+					          <input type="file" name="avatar">
+					        </div>
+					      </div>
+					      <button class="btn btn-lg btn-primary btn-block" type="submit" name="btnInscrire">Sauvegarder</button>
+					    </form>
+					    <?php echo "<a href='profil.php?id=" . $_SESSION["id_utilisateur"] . "'> Retourner à votre profil </a>"; ?>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
 	</div>
 
-	<div id="description">
-		<?php
-			echo $userinfo['PRESENTATION'];
-		?>
-	</div>
-</body>
+
+	  
+
+	</body>
 </html>
+
 
 <?php
 }

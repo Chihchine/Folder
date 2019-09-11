@@ -1,15 +1,6 @@
 <?php
 require_once("base/class/main.php");
-#include('connexionBDD.php');
 
-
-// function verifConnexion($mail, $mdp) {
-//   #$bdd = connexionBDD();
-//   $informations = Main::Database()->prepare('SELECT ID, MAIL, MDP FROM utilisateurs WHERE MAIL = ? AND MDP = ?');
-//   $informations->execute(array($mail, $mdp));
-//   $verifConnexion = $informations->fetch();
-//   return $verifConnexion;
-// }
 
 if (isset($_POST['connexion'])) {
   if (empty(Connexion::verif($_POST['mail'], $_POST['mdp']))) {
@@ -19,7 +10,7 @@ if (isset($_POST['connexion'])) {
     session_start();
     $idUtilisateur = Connexion::verif($_POST['mail'], $_POST['mdp']);
     $_SESSION['id_utilisateur'] = $idUtilisateur['ID'];
-    header('Location: index.php');
+    header('Location: profil.php?id='.$_SESSION['id_utilisateur'].'');
 
 
   }

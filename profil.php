@@ -9,17 +9,25 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	$result = Main::DataBase()->prepare("SELECT * FROM UTILISATEURS WHERE ID = ?");
 	$result->execute(array($id));
 
-	$image = Main::DataBase()->prepare("SELECT * FROM PHOTOS WHERE ID = ?");
-	$image->execute(array($id));
+	$image = Main::DataBase()->prepare("SELECT * FROM IMAGES WHERE ID = ?");
 
 	$userexist = $result->rowCount();
-	$imageexist = $image->rowCount();
+	
 
-	$imageinfo = $image->fetch();
+	
 	$userinfo = $result->fetch();
 
+
+	$imageid = $userinfo["ID_IMAGE_PROFIL"];
+	$image->execute(array($imageid));
+	$imageinfo = $image->fetch();
+	$imageexist = $image->rowCount();
+	//echo $imageinfo['LIEN'];
+
+
 	if (isset($_SESSION['id_utilisateur'])) {
-		echo $_SESSION['id_utilisateur'];
+		//echo $_SESSION['id_utilisateur'];
+		echo "<a href='modifprofil.php?id=" . $_SESSION["id_utilisateur"] . "'> Modifier votre profil </a>";
 	}
 
 
@@ -30,6 +38,15 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	{
 		header("Location: index.php");
 		die;
+	}
+
+
+	$profilimage = "";
+
+	if($imageexist==1){
+		$profilimage = "images/uploads/" .$imageinfo['LIEN'];
+	} else {
+		$profilimage = "images/basicprofil.png";
 	}
 ?>
 
@@ -50,7 +67,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	    <div class="col-md-3">
 	      <div class="card">
 	        <div class="card-body card-body-left">
-	          <img class="rounded" src="images/uploads/<?php if($imageexist==1){echo $imageinfo['LIEN'];} ?>" alt="Image du compte" style="width:100%">
+	          <img class="rounded" height="400px" src="<?php echo $profilimage; ?>" alt="Image du compte" style="width:100%">
 	          <h5>
 	          </h5>
 	          <h6>
@@ -80,20 +97,42 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	              </tr>
 	              <tr>
 	                <th class="colonnes-gauches" scope="row">Date d'inscription</th>
-	                <td class="colonnes-droites">           </td>
+	                <td class="colonnes-droites"> <?php
+	                	if(!is_null($userinfo['DATE_INSCRIPTION'])){
+	                	 $olddate = $userinfo['DATE_INSCRIPTION']; $newDate = date("d-m-Y", strtotime($olddate)); echo $newDate;  
+	                	} else {
+	                		echo "Inconnue";
+	                	}
+
+
+	                 ?></td>
 	              </tr>
 	              <tr>
-	                <th class="colonnes-gauches" scope="row">Clubs adhéré</th>
-	                <td class="colonnes-droites">clubs
-	                	<?php
+	                <th class="colonnes-gauches" scope="row">Groupes</th>
+	                <td class="colonnes-droites">
+	               		<?php
 	                		$membrede = Main::DataBase()->prepare("SELECT * FROM MEMBRES_GROUPE WHERE ID_UTILISATEUR = ?");
 	                		$membrede->execute(array($id));
 	                		$membredeinfo = $membrede->fetchAll();
-
+	                		$nombremembre = $membrede->rowCount();
 							//echo $membredeinfo['ID_GROUPE'];
-							foreach($membredeinfo as $valeur){
-								echo $valeur;
+	                		if($nombremembre > 0){
+								foreach($membredeinfo as $valeur){
+									//echo $valeur["ID_GROUPE"];
+
+									$groupe = Main::DataBase()->prepare("SELECT * FROM GROUPES WHERE ID = ?");
+									$groupe->execute(array($valeur["ID_GROUPE"]));
+
+									$groupeinfo = $groupe->fetch();
+			
+									echo '<a href="'.'groupe.php?id=' .$valeur["ID_GROUPE"].'">' .$groupeinfo["NOM"]. '</a>';
+									echo "</br>";
+								}
+							} else {
+								echo "Membre de aucun groupe";
 							}
+
+							//
 
 	                		/*foreach ($membredeinfo['ID_GROUPE'] as $key => $value) {
 	                			echo $key; echo $value;
@@ -110,12 +149,12 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	                </td>
 	              </tr>
 	              <tr>
-	                <th class="colonnes-gauches" scope="row">Actualités</th>
-	                <td class="colonnes-droites">X actualités</td>
+	                <th class="colonnes-gauches" scope="row">Promotion</th>
+	                <td class="colonnes-droites"> <?php echo $userinfo['PROMOTION']; ?> </td>
 	              </tr>
 	              <tr>
-	                <th class="colonnes-gauches" scope="row">Commentaires</th>
-	                <td class="colonnes-droites">X commentaires</td>
+	                <th class="colonnes-gauches" scope="row">Presentation</th>
+	                <td class="colonnes-droites"><?php echo $userinfo['PRESENTATION'];?></td>
 	              </tr>
 	            </tbody>
 	          </table>

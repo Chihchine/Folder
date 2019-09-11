@@ -27,4 +27,6 @@ require(__DIR__ . "/image.php");
 require(__DIR__ . "/connexion.php");
 require(__DIR__ . "/inscription.php");
 require(__DIR__ . "/oublimdp.php");
+require(__DIR__ . "/groupe.php");
+require(__DIR__ . "/annuaire.php");
 ?>
