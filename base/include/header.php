@@ -43,7 +43,7 @@ $utilisateur = Utilisateur::Show($_SESSION['id_utilisateur']);
 				</div>
 				<div class="sidebar-header">
 					<div class="user-pic">
-						<img class="img-responsive img-rounded" src="<?php echo Settings::sitePathRoot.Image::Show($utilisateur['ID_IMAGE_PROFILE'])['LIEN']; ?>"
+						<img class="img-responsive img-rounded" src="<?php echo Settings::sitePathRoot . Image::Show($utilisateur['ID_IMAGE_PROFIL'])['LIEN']; ?>"
 						alt="User picture">
 					</div>
 					<div class="user-info">
