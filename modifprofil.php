@@ -93,9 +93,11 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	if(isset($_FILES['avatar']) AND !empty($_FILES['avatar']['name'])) {
 		$extension  = pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION);
 		$idimage = Image::Upload($extension, $_FILES['avatar']['tmp_name'], $_FILES['avatar']['error']);
-		echo $idimage;
 		$modifavatar = Main::DataBase()->prepare("UPDATE UTILISATEURS SET ID_IMAGE_PROFIL = ? WHERE ID = ?");
 	    $modifavatar->execute(array($idimage, $id));
+
+	    header('Location: modifprofil.php?id='.$id);
+	    die;
 	  }
 ?>
 
