@@ -99,7 +99,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 
 								$groupeinfo = $groupe->fetch();
 
-								echo $groupeinfo["NOM"];
+								echo '<a href="">' .$groupeinfo["NOM"]. '</a>';
 
 							}
 
