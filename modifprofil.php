@@ -19,11 +19,14 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	$userinfo = $result->fetch();
 
 	if (isset($_SESSION['id_utilisateur'])) {
-		echo $_SESSION['id_utilisateur'];
+		if($_SESSION['id_utilisateur'] == $id){
+			echo "Worked";
+		}
 	}
 	else
 	{
 		header("Location: profil.php?id=".$_GET['id']);
+		die;
 	}
 
 
