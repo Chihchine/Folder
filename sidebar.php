@@ -59,14 +59,14 @@ require("base/include/header.php");
                 <span class="badge badge-pill badge-warning">New</span>
               </a>
             </li>
-            <li class="sidebar-dropdown">
+            <li class="sidebar-button">
               <a href="#">
                 <i class="fa fa-shopping-cart"></i>
                 <span>Messages</span>
                 <span class="badge badge-pill badge-primary">3</span>
               </a>
             </li>
-            <li class="sidebar-dropdown">
+            <li class="sidebar-button">
               <a href="#">
                 <i class="fa fa-globe"></i>
                 <span>Annuaire</span>
