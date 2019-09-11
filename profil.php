@@ -18,7 +18,8 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	$userinfo = $result->fetch();
 
 	echo $userinfo["ID_PHOTO_PROFIL"];
-	$image->execute(array($userinfo["ID_PHOTO_PROFIL"]));
+	$imageid = $userinfo["ID_PHOTO_PROFIL"];
+	$image->execute(array($imageid));
 
 	if (isset($_SESSION['id_utilisateur'])) {
 		echo $_SESSION['id_utilisateur'];
