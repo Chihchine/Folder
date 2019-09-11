@@ -8,6 +8,11 @@ if (!isset($_SESSION['id_utilisateur'])) {
 
 $utilisateur = Utilisateur::Show($_SESSION['id_utilisateur']);
 
+$imageProfil = Image::Show($utilisateur['ID_IMAGE_PROFIL'])['LIEN'];
+if (empty($imageProfil)) {
+  $imageProfil = Image::Show("1")['LIEN']
+}
+
 ?>
 <head>
   <title>myCampus - <?php echo $pageTitle ?></title>
@@ -43,7 +48,7 @@ $utilisateur = Utilisateur::Show($_SESSION['id_utilisateur']);
 				</div>
 				<div class="sidebar-header">
 					<div class="user-pic">
-						<img class="img-responsive img-rounded" src="<?php echo Settings::sitePathRoot . Image::Show($utilisateur['ID_IMAGE_PROFIL'])['LIEN']; ?>"
+						<img class="img-responsive img-rounded" src="<?php echo Settings::sitePathRoot . ; ?>"
 						alt="User picture">
 					</div>
 					<div class="user-info">
