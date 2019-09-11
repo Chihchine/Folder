@@ -29,11 +29,18 @@
       </thead>
       <tbody>
         <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td>Gauthier</td>
+          <td>Mairot</td>
+          <td>EPSI</td>
+          <td>B2</td>
+          <td>gauthier.mairot@epsi.fr</td>
+        </tr>
+        <tr>
+          <td>Thomas</td>
+          <td>Coche</td>
+          <td>EPSI</td>
+          <td>B2</td>
+          <td>thomas.coche@epsi.fr</td>
         </tr>
       </tbody>
   </div>
