@@ -86,7 +86,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	        <div class="card-body card-body-right">
 	              	<form method="post" class="needs-validation form-signin" novalidate>
 					      <img class="mb-4">
-					      <h1 class="h3 mb-3 font-weight-normal">Inscription</h1>
+					      <h1 class="h3 mb-3 font-weight-normal">Modification de votre profil</h1>
 					      <div class="form">
 					        <div class="form-row">
 					          <!--<div class="form-group col-md-6">
@@ -105,6 +105,11 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 					            <label for="">Nouvel Email</label>
 					            <input class="form-control" type="email" name="mail"  placeholder="<?php echo $userinfo["MAIL"] ?>" required>
 					            <div class="invalid-feedback">Veuillez renseigner un email valide.</div>
+					          </div>
+					          <div class="form-group col-md-4">
+					            <label for="">Presentation</label>
+					            <input class="form-control" type="text" name="pres"  placeholder="<?php echo $userinfo["PRESENTATION"] ?>" required>
+					            <div class="invalid-feedback">Ne pas dépasser 150 caractères</div>
 					          </div>
 					          <div class="form-group col-md-4">
 					            <label for="">Nouveau Mot de passe</label>
