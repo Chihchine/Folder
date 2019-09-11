@@ -1,6 +1,14 @@
 <?php
 $pageTitle = "Groupes";
 require("base/include/header.php");
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    if( !empty($_FILES['fichier']['name']) ) {
+      $extension  = pathinfo($_FILES['fichier']['name'], PATHINFO_EXTENSION);
+      Groupe::Create($_POST['groupeName'], $_POST['groupeDesc'], $extension, $_FILES['fichier']['tmp_name'], $_FILES['fichier']['error']);
+			}
+}
 ?>
 <?php /*<-- DEBUT - Popup création de groupe -->*/ ?>
 <div class="modal fade" id="creationGroupe" tabindex="-1" role="dialog" aria-labelledby="creationGroupeLabel" aria-hidden="true">
@@ -13,7 +21,7 @@ require("base/include/header.php");
         </button>
       </div>
       <div class="modal-body">
-        <form class="form-proposition-groupe" action="#" method="post">
+        <form id="createGroupe" class="form-proposition-groupe" action="#" method="post">
           <div class="form-group">
             <label for="groupeName">Nom du groupe</label>
             <input type="text" name="groupeName" id="groupeName" class="form-control" placeholder="Nom du groupe choisi...">
@@ -42,7 +50,7 @@ require("base/include/header.php");
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-        <button type="button" class="btn btn-primary">Créer</button>
+        <button type="button" class="btn btn-primary" onlick="document.forms["createGroupe"].submit();">Créer</button>
       </div>
     </div>
   </div>

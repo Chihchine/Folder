@@ -182,6 +182,12 @@
               </a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="pages/messages/messages.php">
+                <i class="menu-icon typcn typcn-shopping-bag"></i>
+                <span class="menu-title">Messages</span>
+              </a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="pages/annuaire/annuaire.php">
                 <i class="menu-icon typcn typcn-shopping-bag"></i>
                 <span class="menu-title">Annuaire</span>
@@ -289,7 +295,7 @@
                     <a href="#" class="advanced-link toolbar-item">Options avancées</a>
                   </div>
                   <div class="sort-wrapper">
-                    <button type="button" class="btn btn-primary toolbar-item">Nouveau</button>
+                    <button type="button" class="btn btn-primary toolbar-item">Nouveaux posts</button>
                   </div>
                 </div>
               </div>
@@ -312,7 +318,7 @@
                   <div class="card-body">
                     <h2 class="title mb-0">Actualités</h2>
                     <div class="d-flex flex-column flex-lg-row">
-                      <p>Nouveaux posts</p>
+                      <p>Posts Récents</p>
                       <ul class="nav nav-tabs sales-mini-tabs ml-lg-auto mb-4 mb-md-0" role="tablist">
                         <li class="nav-item">
                           <a class="nav-link active" id="sales-statistics_switch_1" data-toggle="tab" role="tab" aria-selected="true">1 jour</a>
@@ -324,7 +330,7 @@
                           <a class="nav-link" id="sales-statistics_switch_3" data-toggle="tab" role="tab" aria-selected="false">1 mois</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" id="sales-statistics_switch_4" data-toggle="tab" role="tab" aria-selected="false">1 ans</a>
+                          <a class="nav-link" id="sales-statistics_switch_4" data-toggle="tab" role="tab" aria-selected="false">1 an</a>
                         </li>
                       </ul>
                     </div>
@@ -342,7 +348,7 @@
                       <img class="img-sm rounded-circle" src="../assets/images/faces/face3.jpg" alt="profile image">
                       <div class="wrapper ml-2">
                         <p class="mb-n1 font-weight-semibold">Gauthier Mairot</p>
-                        <small>EPSI B2G2</small>
+                        <small>EPSI B2G1</small>
                       </div>
                       <small class="text-muted ml-auto">Il y a 1 heure</small>
                     </div>
@@ -350,7 +356,7 @@
                       <span class="img-sm rounded-circle bg-warning text-white text-avatar">AR</span>
                       <div class="wrapper ml-2">
                         <p class="mb-n1 font-weight-semibold">Aurélien Reynard</p>
-                        <small>EPSI B2G2</small>
+                        <small>EPSI B2G1</small>
                       </div>
                       <small class="text-muted ml-auto">Il y a 4 heures</small>
                     </div>
@@ -358,7 +364,7 @@
                       <img class="img-sm rounded-circle" src="../assets/images/faces/face4.jpg" alt="profile image">
                       <div class="wrapper ml-2">
                         <p class="mb-n1 font-weight-semibold">Thomas Coche</p>
-                        <small>EPSI B2G2</small>
+                        <small>EPSI B2G1</small>
                       </div>
                       <small class="text-muted ml-auto">Il y a 7 heures</small>
                     </div>
@@ -366,7 +372,7 @@
                       <span class="img-sm rounded-circle bg-success text-white text-avatar">LD</span>
                       <div class="wrapper ml-2">
                         <p class="mb-n1 font-weight-semibold">Loic Ducornetz</p>
-                        <small>EPSI B2G2</small>
+                        <small>EPSI B2G1</small>
                       </div>
                       <small class="text-muted ml-auto">Il y a 1 jour</small>
                     </div>
@@ -719,7 +725,7 @@
       </div>
       <!-- page-body-wrapper ends -->
     </div>
-    
+
     <!-- container-scroller -->
     <!-- plugins:js -->
     <script src="../assets/vendors/js/vendor.bundle.base.js"></script>
