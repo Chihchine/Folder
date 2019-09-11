@@ -1,8 +1,12 @@
-<?php require("base/include/header.php"); ?>
+<?php
+require_once("base/class/main.php");
+require("base/include/header.php"); ?>
 
+<script src="base/js/bootstrap-table.min.js"></script>
+<script src="base/js/bootstrap-table-fr-FR.js"></script>
 <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.15.4/dist/bootstrap-table.min.css">
-<script src="https://unpkg.com/bootstrap-table@1.15.4/dist/bootstrap-table.min.js"></script>
 <script src="https://unpkg.com/bootstrap-table@1.14.2/dist/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
+
 
 <div class="card">
   <div class="card-tittle">
@@ -14,8 +18,9 @@
     data-search="true"
     data-sortable="true"
     data-filter-control="true"
-    data-sort-name="devis"
+    data-sort-name="nom"
     data-sort-order="asc"
+    data-show-toggle="true"
     data-filter-show-clear="true"
     data-pagination="true"
     data-page-size="10"
@@ -26,24 +31,19 @@
           <th data-filter-control="input" data-field="nom" data-sortable="true">Nom</th>
           <th data-filter-control="select" data-field="ecole" data-sortable="true">Ecole</th>
           <th data-filter-control="select" data-field="promotion" data-sortable="true">Promotion</th>
-          <th data-field="mail">Email</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
+        <?php while $utilisateur = Annuaire::displayUsers()->fetch() { ?>
         <tr>
-          <td>Gauthier</td>
-          <td>Mairot</td>
-          <td>EPSI</td>
-          <td>B2</td>
-          <td>gauthier.mairot@epsi.fr</td>
-        </tr>
-        <tr>
-          <td>Thomas</td>
-          <td>Coche</td>
-          <td>EPSI</td>
-          <td>B2</td>
-          <td>thomas.coche@epsi.fr</td>
+          <td><?php echo $utilisateur['prenom'] ?></td>
+          <td><?php echo $utilisateur['nom'] ?></td>
+          <td><?php echo $utilisateur['ecole'] ?></td>
+          <td><?php echo $utilisateur['promotion'] ?></td>
+          <td><i class="fas fa-user-plus"></i><i class="fas fa-envelope"></i></td>
         </tr>
       </tbody>
+    </table>
   </div>
 </div>
