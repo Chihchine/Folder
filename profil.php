@@ -10,14 +10,19 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	$result->execute(array($id));
 
 	$image = Main::DataBase()->prepare("SELECT * FROM PHOTOS WHERE ID = ?");
-	$image->execute(array($id));
 
 	$userexist = $result->rowCount();
 	$imageexist = $image->rowCount();
 
-	$imageinfo = $image->fetch();
+	
 	$userinfo = $result->fetch();
 
+
+	$imageid = $userinfo["ID_PHOTO_PROFIL"];
+	$image->execute(array($imageid));
+	$imageinfo = $image->fetch();
+
+	
 	if (isset($_SESSION['id_utilisateur'])) {
 		echo $_SESSION['id_utilisateur'];
 	}
@@ -83,7 +88,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	                <td class="colonnes-droites">           </td>
 	              </tr>
 	              <tr>
-	                <th class="colonnes-gauches" scope="row">Clubs adhéré</th>
+	                <th class="colonnes-gauches" scope="row">Groupes</th>
 	                <td class="colonnes-droites">
 	               		<?php
 	                		$membrede = Main::DataBase()->prepare("SELECT * FROM MEMBRES_GROUPE WHERE ID_UTILISATEUR = ?");
@@ -121,11 +126,11 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	                </td>
 	              </tr>
 	              <tr>
-	                <th class="colonnes-gauches" scope="row">PROMOTION</th>
+	                <th class="colonnes-gauches" scope="row">Promotion</th>
 	                <td class="colonnes-droites"> <?php echo $userinfo['PROMOTION']; ?> </td>
 	              </tr>
 	              <tr>
-	                <th class="colonnes-gauches" scope="row"></th>
+	                <th class="colonnes-gauches" scope="row">Oof</th>
 	                <td class="colonnes-droites">X commentaires</td>
 	              </tr>
 	            </tbody>
