@@ -40,10 +40,10 @@ require("base/include/header.php"); ?>
         $utilisateurs = Annuaire::displayUsers();
         while ($utilisateur = $utilisateurs ->fetch()) { ?>
         <tr>
-          <td><?php echo $utilisateur['prenom'] ?></td>
-          <td><?php echo $utilisateur['nom'] ?></td>
-          <td><?php echo $utilisateur['ecole'] ?></td>
-          <td><?php echo $utilisateur['promotion'] ?></td>
+          <td><?php echo $utilisateur['PRENOM'] ?></td>
+          <td><?php echo $utilisateur['NOM'] ?></td>
+          <td><?php echo $utilisateur['ECOLE'] ?></td>
+          <td><?php echo $utilisateur['PROMOTION'] ?></td>
           <td><i class="fas fa-user-plus"></i><i class="fas fa-envelope"></i></td>
         </tr>
       <?php } ?>
