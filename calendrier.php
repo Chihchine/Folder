@@ -102,6 +102,9 @@ $dateDuJour = date("Y-m-d");
         </div>
       </div>
     </div>
+    <div class="form-group col-md-12">
+      <input type="text" name="description" value="" placeholder="Description de l'évenement que vous souhaitez créer (pour qui ? pour quoi ? où ? )">
+    </div>
   </div>
   <button type="submit" name="btn btn-info">Créer</button>
 </form>
