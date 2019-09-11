@@ -110,9 +110,9 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	               'id' => $_SESSION['id']
 	               ));
 	            header("Location: profil.php?id=".$_GET['id']);*/
-	         	} 	
-	  	 	}
-		}
+	         	} else {echo "1"};
+	  	 	} else {echo "2"};
+		} else {echo "3"};
 	}
 ?>
 
