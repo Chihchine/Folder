@@ -22,7 +22,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	$image->execute(array($imageid));
 	$imageinfo = $image->fetch();
 	$imageexist = $image->rowCount();
-	echo $imageinfo['LIEN'];
+	//echo $imageinfo['LIEN'];
 
 
 	if (isset($_SESSION['id_utilisateur'])) {
@@ -66,7 +66,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	    <div class="col-md-3">
 	      <div class="card">
 	        <div class="card-body card-body-left">
-	          <img class="rounded" src="<?php echo $profilimage; ?>" alt="Image du compte" style="width:100%">
+	          <img class="rounded" height="200px" src="<?php echo $profilimage; ?>" alt="Image du compte" style="width:100%">
 	          <h5>
 	          </h5>
 	          <h6>
