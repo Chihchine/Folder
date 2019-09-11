@@ -1,39 +1,10 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-       <meta charset="utf-8">
-
-    <title>Profile</title>
-    <link rel="stylesheet" href="../../../assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="../../../assets/vendors/iconfonts/ionicons/css/ionicons.css">
-    <link rel="stylesheet" href="../../../assets/vendors/iconfonts/typicons/src/font/typicons.css">
-    <link rel="stylesheet" href="../../../assets/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css">
-    <link rel="stylesheet" href="../../../assets/vendors/css/vendor.bundle.base.css">
-    <link rel="stylesheet" href="../../../assets/vendors/css/vendor.bundle.addons.css">
-    <!-- endinject -->
-    <!-- plugin css for this page -->
-    <link rel="stylesheet" href="../../../assets/vendors/icheck/skins/all.css">
-    <!-- End plugin css for this page -->
-    <!-- inject:css -->
-    <link rel="stylesheet" href="../../../assets/css/shared/style.css">
-    <!-- endinject -->
-    <!-- Layout styles -->
-    <link rel="stylesheet" href="../../../assets/css/demo_1/style.css">
-    <!-- End Layout styles -->
-    <link rel="shortcut icon" href="../../../assets/images/favicon.png" />
-
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <link href="/folder/lolo/src/demo_1/pages/profile/profile.css" rel="stylesheet" id="css">
-    <link href="/folder/lolo/src/demo_1/pages/profile/profile.js" rel="stylesheet" id="js">
-
-    <script src="/src/demo_1/pages/profile/profile.css"></script>
-    <script src="/src/demo_1/pages/profile/profile.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-</head>
-
-<body>
+<?php
+$pageTitle = "Profile";
+include("base/include/header.php");
+?>
+   
+    <link href="base/css/profile.css" rel="stylesheet" id="css">
+    <script src="base/js/profile.js"></script>
 
 
 
