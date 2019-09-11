@@ -83,59 +83,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	        <div class="card-header">
 	          Vous regardez le profil de: <?php echo $userinfo['NOM'] . " " . $userinfo['PRENOM'] ?>
 	        </div>
-	        <div class="card-body card-body-right">
-	          <table class="table">
-	            <tbody>
-	              <tr>
-	                <th class="colonnes-gauches" scope="row">Identité</th>
-	                <td class="colonnes-droites">
-	                	<?php echo $userinfo['NOM'] . " " . $userinfo['PRENOM'] ?>
-	                </td>
-	              </tr>
-	              <tr>
-	                <th class="colonnes-gauches" scope="row">Ecole</th>
-	                <td class="colonnes-droites">
-	                	<?php echo $userinfo['ECOLE']; ?>
-	                </td>
-	              </tr>
-	              <tr>
-	                <th class="colonnes-gauches" scope="row">Date d'inscription</th>
-	                <td class="colonnes-droites">           </td>
-	              </tr>
-	              <tr>
-	                <th class="colonnes-gauches" scope="row">Groupes</th>
-	                <td class="colonnes-droites">
-	               		<?php
-	                		$membrede = Main::DataBase()->prepare("SELECT * FROM MEMBRES_GROUPE WHERE ID_UTILISATEUR = ?");
-	                		$membrede->execute(array($id));
-	                		$membredeinfo = $membrede->fetchAll();
-
-							//echo $membredeinfo['ID_GROUPE'];
-
-							foreach($membredeinfo as $valeur){
-								$groupe = Main::DataBase()->prepare("SELECT * FROM GROUPES WHERE ID = ?");
-								$groupe->execute(array($valeur["ID_GROUPE"]));
-
-								$groupeinfo = $groupe->fetch();
-		
-								echo '<a href="'.'groupe.php?id=' .$valeur["ID_GROUPE"].'">' .$groupeinfo["NOM"]. '</a>';
-								echo "</br>";
-							}
-
-	                	?>
-	                </td>
-	              </tr>
-	              <tr>
-	                <th class="colonnes-gauches" scope="row">Promotion</th>
-	                <td class="colonnes-droites"> <?php echo $userinfo['PROMOTION']; ?> </td>
-	              </tr>
-	              <tr>
-	                <th class="colonnes-gauches" scope="row">Oof</th>
-	                <td class="colonnes-droites">X commentaires</td>
-	              </tr>
-	              				</tbody>
-	              	          </table>
-
+	        <div class="card-body card-body-right">s
 	              	<form method="post" class="needs-validation form-signin" novalidate>
 					      <img class="mb-4">
 					      <h1 class="h3 mb-3 font-weight-normal">Inscription</h1>
