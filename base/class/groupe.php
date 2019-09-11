@@ -1,6 +1,6 @@
 <?php
 
-Class Groupes {
+Class Groupe {
 
   public static function Create($name, $desc, $imageExtension, $imageTmp_name, $imageFile_error) {
     if !empty($name) && !empty($desc) && !empty($imageExtension) && !empty($imageTmp_name) && !empty($imageFile_error) {
