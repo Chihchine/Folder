@@ -29,7 +29,7 @@ Class Groupe {
   }
 
   public static function Leave($id) {
-    $request = Main::Database()->prepare("DELETE * FROM MEMBRES_GROUPE WHERE ID_GROUPE = :idGroupe AND ID_UTILISATEUR = :idUtilisateur");
+    $request = Main::Database()->prepare("DELETE FROM MEMBRES_GROUPE WHERE ID_GROUPE = :idGroupe AND ID_UTILISATEUR = :idUtilisateur");
     $request->execute(["idGroupe" => $id, "idUtilisateur" => $_SESSION["id_utilisateur"]]);
   }
 
