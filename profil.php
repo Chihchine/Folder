@@ -92,7 +92,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 
 							//echo $membredeinfo['ID_GROUPE'];
 							foreach($membredeinfo as $valeur){
-								echo $valeur;
+								echo $valeur["ID_GROUPE"];
 							}
 
 	                		/*foreach ($membredeinfo['ID_GROUPE'] as $key => $value) {
