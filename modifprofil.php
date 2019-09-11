@@ -99,6 +99,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	      	$lenumimage = $numimage->rowCount();
 	      	$lenumimage++;
 	         $chemin = "images/uploads/".$lenumimage.".".$extensionUpload;
+	         echo $chemin;
 	         $cheminname = $lenumimage.".".$extensionUpload;
 	         $resultat = move_uploaded_file($_FILES['avatar']['tmp_name'], $chemin);
 	         if($resultat) {
@@ -106,13 +107,6 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	         	$insertimage->execute(array($cheminname));
 
 	         	echo "WORKEEEEED";
-
-	            /*$updateavatar = $bdd->prepare('UPDATE IMAGES SET avatar = :avatar WHERE id = :id');
-	            $updateavatar->execute(array(
-	               'avatar' => $_SESSION['id'].".".$extensionUpload,
-	               'id' => $_SESSION['id']
-	               ));
-	            header("Location: profil.php?id=".$_GET['id']);*/
 	         	} else {echo "1";};
 	  	 	} else {echo "2";};
 		} else {echo "3";};
