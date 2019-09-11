@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if( !empty($_FILES['groupeImage']['name']) ) {
       echo 2;
       $extension  = pathinfo($_FILES['fichier']['name'], PATHINFO_EXTENSION);
-      Groupe::Create($_POST['groupeName'], $_POST['groupeDesc'], $extension, $_FILES['fichier']['tmp_name'], $_FILES['fichier']['error']);
+      Groupe::Create($_POST['groupeName'], $_POST['groupeDesc'], $extension, $_FILES['groupeName']['tmp_name'], $_FILES['groupeName']['error']);
 			}
 }
 ?>
