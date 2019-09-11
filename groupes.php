@@ -31,7 +31,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <textarea class="col-12" id="groupeDesc" name="groupeDesc" rows="3" placeholder="Une description simple du groupe avec ses objectifs, pour qui, quand, etc..."></textarea>
           </div>
           <div class="input-group image-preview">
-            <label>Image du groupe</label><br />
             <input type="text" class="form-control image-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
             <span class="input-group-btn">
               <!-- image-preview-clear button -->
