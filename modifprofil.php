@@ -28,11 +28,18 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 			    header('Location: modifprofil.php?id='.$id);
 			   }
 			   if(isset($_POST['newmdp']) AND !empty($_POST['newmdp']) AND $_POST['newmdp'] != $userinfo['MDP']) {
-			   	$newmdp = htmlspecialchars($_POST['newmdp']);
-			    $insertmdp = Main::DataBase()->prepare("UPDATE UTILISATEURS SET MDP = ? WHERE ID = ?");
-			    $insertmdp->execute(array($newmdp, $id));
-			    header('Location: modifprofil.php?id='.$id);
-			   }
+				   	if($_POST['newmdp'] == $_POST['confirmMdp'])
+				   	{
+					   	$newmdp = htmlspecialchars($_POST['newmdp']);
+					    $insertmdp = Main::DataBase()->prepare("UPDATE UTILISATEURS SET MDP = ? WHERE ID = ?");
+					    $insertmdp->execute(array($newmdp, $id));
+					    header('Location: modifprofil.php?id='.$id);
+				   } else {
+				   	// error handle: MDP pas le meme que Confirm MDP
+				   }
+				} else {
+					// error handle: MDP is empty
+				}
 		} else {
 			header("Location: profil.php?id=".$_GET['id']);
 			die;
