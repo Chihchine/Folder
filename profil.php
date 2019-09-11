@@ -88,7 +88,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	                	<?php
 	                		$membrede = Main::DataBase()->prepare("SELECT * FROM MEMBRES_GROUPE WHERE ID_UTILISATEUR = ?");
 	                		$membrede->execute(array($id));
-	                		$membredeinfo = $membrede->fetch();
+	                		$membredeinfo = $membrede->fetchAll();
 
 							//echo $membredeinfo['ID_GROUPE'];
 							foreach($membredeinfo as $valeur){
