@@ -13,27 +13,28 @@ require("base/include/header.php");
         </button>
       </div>
       <div class="modal-body">
-        <form class="form-proposition-club" action="#" method="post">
+        <form class="form-proposition-groupe" action="#" method="post">
           <div class="form-group">
-            <label for="clubName">Nom du groupe</label>
-            <input type="text" name="clubName" id="clubName" class="form-control" placeholder="Nom du club choisi...">
+            <label for="groupeName">Nom du groupe</label>
+            <input type="text" name="groupeName" id="groupeName" class="form-control" placeholder="Nom du groupe choisi...">
           </div>
           <div class="form-group">
-            <label for="clubDesc">Description du groupe</label>
-            <textarea class="col-12" id="clubDesc" name="clubDesc" rows="3" placeholder="Une description simple du club avec ses objectifs, pour qui, quand, etc..."></textarea>
+            <label for="groupeDesc">Description du groupe</label>
+            <textarea class="col-12" id="groupeDesc" name="groupeDesc" rows="3" placeholder="Une description simple du groupe avec ses objectifs, pour qui, quand, etc..."></textarea>
           </div>
           <div class="input-group image-preview">
+            <label>Image du groupe</label>
             <input type="text" class="form-control image-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
             <span class="input-group-btn">
               <!-- image-preview-clear button -->
               <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
-                <span class="glyphicon glyphicon-remove"></span> Clear
+                <span class="glyphicon glyphicon-remove"></span> Annuler
               </button>
               <!-- image-preview-input -->
               <div class="btn btn-default image-preview-input">
                 <span class="glyphicon glyphicon-folder-open"></span>
-                <span class="image-preview-input-title">Browse</span>
-                <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/> <!-- rename it -->
+                <span class="image-preview-input-title">Ajoutez une image</span>
+                <input type="file" accept="image/png, image/jpeg, image/gif" id="groupeImage" name="groupeImage"/> <!-- rename it -->
               </div>
             </span>
           </div>
@@ -52,16 +53,16 @@ require("base/include/header.php");
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="#" onClick="setActivePage('home')">Tableau de bord</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Clubs</li>
+      <li class="breadcrumb-item active" aria-current="page">Groupes</li>
     </ol>
   </nav>
 </div>
 
 <div class="container">
-  <div class="card clubs-crées">
+  <div class="card groupes-crées">
     <div class="card-header">
       <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand">Clubs créés</a>
+        <a class="navbar-brand">groupes créés</a>
         <div class="form-inline">
           <select id="input-classement" class="form-control">
             <option selected>Trier par...</option>
@@ -75,7 +76,7 @@ require("base/include/header.php");
         </div>
       </nav>
     </div>
-<div id="createdClubs">
+<div id="createdgroupes">
     </div>
     <div class="card-body row justify-content-center">
       <nav aria-label="Page navigation example">
@@ -95,14 +96,14 @@ require("base/include/header.php");
   <div class="card">
     <div class="card-header">
       <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand">Propositions de clubs</a>
+        <a class="navbar-brand">Propositions de groupes</a>
         <form class="form-inline">
           <input class="form-control" type="search" placeholder="Mot clé" aria-label="Search">
           <button class="btn btn-outline-primary" type="submit">Rechercher</button>
         </form>
       </nav>
     </div>
-    <div id="onVoteClubs">
+    <div id="onVotegroupes">
 </div>
   <div class="card-body row justify-content-center">
     <nav aria-label="Page navigation example">
