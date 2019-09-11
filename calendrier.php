@@ -36,59 +36,71 @@ $dateDuJour = date("Y-m-d");
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="">Heure de début</label>
-      <select class="form-control" name="heure_debut">
-        <option value="07">7H</option>
-        <option value="08">8H</option>
-        <option value="09">9H</option>
-        <option value="10">10H</option>
-        <option value="11">11H</option>
-        <option value="12">12H</option>
-        <option value="13">13H</option>
-        <option value="14">14H</option>
-        <option value="15">15H</option>
-        <option value="16">16H</option>
-        <option value="17">17H</option>
-        <option value="18">18H</option>
-        <option value="19">19H</option>
-        <option value="20">20H</option>
-        <option value="21">21H</option>
-        <option value="22">22H</option>
-        <option value="23">23H</option>
-      </select>
-      <select class="form-control" name="minute_debut">
-        <option value="00">00</option>
-        <option value="15">15</option>
-        <option value="30">30</option>
-        <option value="45">45</option>
-      </select>
+      <div class="row">
+        <div class="col-md-6">
+          <select class="form-control" name="heure_debut">
+            <option value="07">7H</option>
+            <option value="08">8H</option>
+            <option value="09">9H</option>
+            <option value="10">10H</option>
+            <option value="11">11H</option>
+            <option value="12">12H</option>
+            <option value="13">13H</option>
+            <option value="14">14H</option>
+            <option value="15">15H</option>
+            <option value="16">16H</option>
+            <option value="17">17H</option>
+            <option value="18">18H</option>
+            <option value="19">19H</option>
+            <option value="20">20H</option>
+            <option value="21">21H</option>
+            <option value="22">22H</option>
+            <option value="23">23H</option>
+          </select>
+        </div>
+        <div class="col-md-6">
+          <select class="form-control" name="minute_debut">
+            <option value="00">00MIN</option>
+            <option value="15">15MIN</option>
+            <option value="30">30MIN</option>
+            <option value="45">45MIN</option>
+          </select>
+        </div>
+      </div>
     </div>
     <div class="form-group col-md-6">
       <label for="">Heure de fin</label>
-      <select class="form-control" name="heure_fin">
-        <option value="07">7H</option>
-        <option value="08">8H</option>
-        <option value="09">9H</option>
-        <option value="10">10H</option>
-        <option value="11">11H</option>
-        <option value="12">12H</option>
-        <option value="13">13H</option>
-        <option value="14">14H</option>
-        <option value="15">15H</option>
-        <option value="16">16H</option>
-        <option value="17">17H</option>
-        <option value="18">18H</option>
-        <option value="19">19H</option>
-        <option value="20">20H</option>
-        <option value="21">21H</option>
-        <option value="22">22H</option>
-        <option value="23">23H</option>
-      </select>
-      <select class="form-control" name="minute_fin">
-        <option value="00">00</option>
-        <option value="15">15</option>
-        <option value="30">30</option>
-        <option value="45">45</option>
-      </select>
+      <div class="row">
+        <div class="col-md-6">
+          <select class="form-control" name="heure_fin">
+            <option value="07">7H</option>
+            <option value="08">8H</option>
+            <option value="09">9H</option>
+            <option value="10">10H</option>
+            <option value="11">11H</option>
+            <option value="12">12H</option>
+            <option value="13">13H</option>
+            <option value="14">14H</option>
+            <option value="15">15H</option>
+            <option value="16">16H</option>
+            <option value="17">17H</option>
+            <option value="18">18H</option>
+            <option value="19">19H</option>
+            <option value="20">20H</option>
+            <option value="21">21H</option>
+            <option value="22">22H</option>
+            <option value="23">23H</option>
+          </select>
+        </div>
+        <div class="col-md-6">
+          <select class="form-control" name="minute_fin">
+            <option value="00">00MIN</option>
+            <option value="15">15MIN</option>
+            <option value="30">30MIN</option>
+            <option value="45">45MIN</option>
+          </select>
+        </div>
+      </div>
     </div>
   </div>
   <button type="submit" name="btn btn-info">Créer</button>
