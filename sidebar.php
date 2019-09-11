@@ -52,7 +52,7 @@ require("base/include/header.php");
             <li class="header-menu">
               <span>General</span>
             </li>
-            <li class="sidebar-dropdown">
+            <li class="sidebar-button">
               <a href="#">
                 <i class="fa fa-tachometer-alt"></i>
                 <span>Tableau de bord</span>
