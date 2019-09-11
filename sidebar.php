@@ -53,21 +53,20 @@ require("base/include/header.php");
               <span>General</span>
             </li>
             <li class="sidebar-button">
-              <a href="#">
+              <a href="index.php">
                 <i class="fa fa-tachometer-alt"></i>
                 <span>Tableau de bord</span>
-                <span class="badge badge-pill badge-warning">New</span>
               </a>
             </li>
             <li class="sidebar-button">
-              <a href="#">
+              <a href="messages.php">
                 <i class="fa fa-shopping-cart"></i>
                 <span>Messages</span>
                 <span class="badge badge-pill badge-primary">3</span>
               </a>
             </li>
             <li class="sidebar-button">
-              <a href="#">
+              <a href="annuaire.php">
                 <i class="fa fa-globe"></i>
                 <span>Annuaire</span>
               </a>
