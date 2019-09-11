@@ -6,6 +6,8 @@ if (!isset($_SESSION['id_utilisateur'])) {
 	die;
 }
 
+$utilisateur = Utilisateur::Show($_SESSION['id_utilisateur']);
+
 ?>
 <head>
   <title>myCampus - <?php echo $pageTitle ?></title>
@@ -45,10 +47,10 @@ if (!isset($_SESSION['id_utilisateur'])) {
 						alt="User picture">
 					</div>
 					<div class="user-info">
-						<span class="user-name">Alexy
-							<strong>DEFORGE</strong>
+						<span class="user-name"><?php echo $utilisateur['PRENOM']; ?>
+							<strong><?php echo $utilisateur['NOM']; ?></strong>
 						</span>
-						<span class="user-role">B2G1</span>
+						<span class="user-role"><?php echo $utilisateur['ECOLE'] . " " . <?php echo $utilisateur['PROMOTION']; ?>; ?></span>
 						<span class="user-status">
 							<i class="fa fa-circle"></i>
 							<span>Actif</span>
