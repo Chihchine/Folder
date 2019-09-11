@@ -38,6 +38,15 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 		header("Location: index.php");
 		die;
 	}
+
+
+	$profilimage = "";
+
+	if($imageexist==1){
+		$profilimage = "images/uploads/" .$imageinfo['LIEN']
+	} else {
+		$profilimage = "images/basicprofil.png"
+	}
 ?>
 
 <html> 
@@ -57,7 +66,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	    <div class="col-md-3">
 	      <div class="card">
 	        <div class="card-body card-body-left">
-	          <img class="rounded" src="images/uploads/<?php if($imageexist==1){echo $imageinfo['LIEN'];} ?>" alt="Image du compte" style="width:100%">
+	          <img class="rounded" src="<?php echo $profilimage; ?>" alt="Image du compte" style="width:100%">
 	          <h5>
 	          </h5>
 	          <h6>
