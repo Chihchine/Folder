@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
     weekLabel: "S",
     eventLimit: true,
     eventLimitText: 'de plus',
-    events: <?php echo $dataJson ?>
+    events: 'en.usa#holiday@group.v.calendar.google.com'
 
 
 
