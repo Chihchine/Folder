@@ -344,6 +344,335 @@
                             </div>
                         </div>
 
+
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="row">
+                                    <div class="col-md-12 grid-margin">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h4 class="card-title mb-0">Nouveautés</h4>
+                                                <div class="d-flex align-items-center justify-content-between w-100">
+                                                    <p class="mb-0">Ce qu'il ne faut pas louper !</p>
+                                                    <div class="dropdown">
+                                                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dateSorter" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ce mois-ci</button>
+                                                        <div class="dropdown-menu" aria-labelledby="dateSorter">
+                                                            <div class="dropdown-item" id="market-overview_1">Journalier</div>
+                                                            <div class="dropdown-item" id="market-overview_2">Cette semaine</div>
+                                                            <div class="dropdown-item" id="market-overview_3">Mensuel</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <canvas class="mt-4" height="100" id="market-overview-chart"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 grid-margin">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div class="d-flex justify-content-between">
+                                                    <h4 class="card-title mb-0">Groupes principaux</h4>
+                                                    <a href="#"><small>voir l'ensemble des groupes</small></a>
+                                                </div>
+                                                <p>Voici les 5 groupes les plus populaires.</p>
+                                                <div class="table-responsive">
+                                                    <table class="table table-striped table-hover">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Nom du groupe</th>
+                                                                <th>Créateur</th>
+                                                                <th>Sujet</th>
+                                                                <th>Date de creation</th>
+                                                                <th>nombres d'adhérents</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Vitality</td>
+                                                                <td>Loic</td>
+                                                                <td>E-sport</td>
+                                                                <td>20 Janvier 2019</td>
+                                                                <td>755</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Lyonnais</td>
+                                                                <td>Alexy</td>
+                                                                <td>Culture</td>
+                                                                <td>23 Fevrier 2019</td>
+                                                                <td>702</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Epsien</td>
+                                                                <td>Thomas</td>
+                                                                <td>Etudes</td>
+                                                                <td>25 Mars 2019</td>
+                                                                <td>663</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>ScieFish</td>
+                                                                <td>Aurélien</td>
+                                                                <td>Developpement</td>
+                                                                <td>27 Mars 2019</td>
+                                                                <td>335</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Club de Foot</td>
+                                                                <td>Gauthier</td>
+                                                                <td>Sport</td>
+                                                                <td>1 Avril 2019</td>
+                                                                <td>157</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 grid-margin stretch-card">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="d-flex align-items-center pb-2">
+                                                            <div class="dot-indicator bg-danger mr-2"></div>
+                                                            <p class="mb-0">Total Sales</p>
+                                                        </div>
+                                                        <h4 class="font-weight-semibold">$7,590</h4>
+                                                        <div class="progress progress-md">
+                                                            <div class="progress-bar bg-danger" role="progressbar" style="width: 78%" aria-valuenow="78" aria-valuemin="0" aria-valuemax="78"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 mt-4 mt-md-0">
+                                                        <div class="d-flex align-items-center pb-2">
+                                                            <div class="dot-indicator bg-success mr-2"></div>
+                                                            <p class="mb-0">Active Users</p>
+                                                        </div>
+                                                        <h4 class="font-weight-semibold">$5,460</h4>
+                                                        <div class="progress progress-md">
+                                                            <div class="progress-bar bg-success" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="45"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 grid-margin stretch-card average-price-card">
+                                        <div class="card text-white">
+                                            <div class="card-body">
+                                                <div class="d-flex justify-content-between pb-2 align-items-center">
+                                                    <h2 class="font-weight-semibold mb-0">4,624</h2>
+                                                    <div class="icon-holder">
+                                                        <i class="mdi mdi-briefcase-outline"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex justify-content-between">
+                                                    <h5 class="font-weight-semibold mb-0">Posts </h5>
+                                                    <p class="text-white mb-0">Depuis les 2 derniers mois.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <div class="col-md-12 grid-margin">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h1 class="card-title mb-4">Communauté</h1>
+                                                <div class="row">
+                                                    <div class="col-5 col-md-5">
+                                                        <div class="wrapper">
+                                                            <h4 class="font-weight-semibold mb-0">54 personnes</h4>
+                                                            <div class="d-flex align-items-center">
+                                                                <p class="mb-0">Actives</p>
+                                                                <div class="dot-indicator bg-primary ml-auto"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="wrapper border-bottom mb-2 pb-2">
+                                                            <h4 class="font-weight-semibold mb-0">176 personnes</h4>
+                                                            <div class="d-flex align-items-center">
+                                                                <p class="mb-0">Inactives</p>
+                                                                <div class="dot-indicator bg-secondary ml-auto"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-5 col-md-7 d-flex pl-4">
+                                                        <div class="ml-auto">
+                                                            <canvas height="100" id="realtime-statistics"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-5">
+                                                    <div class="col-6">
+                                                        <div class="d-flex align-items-center mb-2">
+                                                            <div class="icon-holder bg-primary text-white py-1 px-3 rounded mr-2">
+                                                                <i class="icon ion-logo-buffer icon-sm"></i>
+                                                            </div>
+                                                            <h2 class="font-weight-semibold mb-0">230</h2>
+                                                        </div>
+                                                        <p>Inscrites</p>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="mt-n3 ml-auto" id="dashboard-guage-chart"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 grid-margin">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h4 class="card-title mb-4">World sellings</h4>
+                                                <div id="dashboard-vmap" class="vector-map"></div>
+                                                <div class="wrapper">
+                                                    <div class="d-flex w-100 pt-2 mt-4">
+                                                        <p class="mb-0 font-weight-semibold">California</p>
+                                                        <div class="wrapper ml-auto d-flex align-items-center">
+                                                            <p class="font-weight-semibold mb-0">26,437</p>
+                                                            <p class="ml-1 mb-0">26%</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="d-flex w-100 pt-2">
+                                                        <p class="mb-0 font-weight-semibold">Washington</p>
+                                                        <div class="wrapper ml-auto d-flex align-items-center">
+                                                            <p class="font-weight-semibold mb-0">3252</p>
+                                                            <p class="ml-1 mb-0">64%</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="d-flex w-100 pt-2">
+                                                        <p class="mb-0 font-weight-semibold">Michigan</p>
+                                                        <div class="wrapper ml-auto d-flex align-items-center">
+                                                            <p class="font-weight-semibold mb-0">4,987</p>
+                                                            <p class="ml-1 mb-0">30%</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 grid-margin">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title mb-0">Evénements Récents</h4>
+                                    <div class="d-flex py-2 border-bottom">
+                                        <div class="wrapper">
+                                            <small class="text-muted">13-14 septembre 2019</small>
+                                            <p class="font-weight-semibold text-gray mb-0">Musique</p>
+                                        </div>
+                                        <small class="text-muted ml-auto">En savoir plus</small>
+                                    </div>
+                                    <div class="d-flex py-2 border-bottom">
+                                        <div class="wrapper">
+                                            <small class="text-muted">17 septembre 2019</small>
+                                            <p class="font-weight-semibold text-gray mb-0">Jeux-vidéos</p>
+                                        </div>
+                                        <small class="text-muted ml-auto">En savoir plus</small>
+                                    </div>
+                                    <div class="d-flex py-2 border-bottom">
+                                        <div class="wrapper">
+                                            <small class="text-muted">21 septembre 2019</small>
+                                            <p class="font-weight-semibold text-gray mb-0">Divertissement</p>
+                                        </div>
+                                        <small class="text-muted ml-auto">En savoir plus</small>
+                                    </div>
+                                    <div class="d-flex pt-2">
+                                        <div class="wrapper">
+                                            <small class="text-muted">29 septembre 2019</small>
+                                            <p class="font-weight-semibold text-gray mb-0">Football</p>
+                                        </div>
+                                        <small class="text-muted ml-auto">En savoir plus</small>
+                                    </div>
+                                    <a class="d-block mt-5" href="#">Voir tous les événements</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between pb-3">
+                                        <h4 class="card-title mb-0">Activities</h4>
+                                        <p class="mb-0 text-muted">20 finished, 5 remaining</p>
+                                    </div>
+                                    <ul class="timeline">
+                                        <li class="timeline-item">
+                                            <p class="timeline-content"><a href="#">Ben Tossell</a> assign you a task</p>
+                                            <p class="event-time">Just now</p>
+                                        </li>
+                                        <li class="timeline-item">
+                                            <p class="timeline-content"><a href="#">Ben Tossell</a> assign you a task</p>
+                                            <p class="event-time">Just now</p>
+                                        </li>
+                                        <li class="timeline-item">
+                                            <p class="timeline-content"><a href="#">Ben Tossell</a> assign you a task</p>
+                                            <p class="event-time">Just now</p>
+                                        </li>
+                                        <li class="timeline-item">
+                                            <p class="timeline-content"><a href="#">Ben Tossell</a> assign you a task</p>
+                                            <p class="event-time">Just now</p>
+                                        </li>
+                                        <li class="timeline-item">
+                                            <p class="timeline-content"><a href="#">Ben Tossell</a> assign you a task</p>
+                                            <p class="event-time">Just now</p>
+                                        </li>
+                                    </ul>
+                                    <a class="d-block mt-3" href="#">Show all</a>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 grid-margin stretch-card">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title mb-0">People Also Watch</h4>
+                                        <div class="table-responsive">
+                                            <table class="table table-stretched">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Symbol</th>
+                                                        <th>Last Price</th>
+                                                        <th>Change</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <p class="mb-1 text-dark font-weight-medium">NFLX</p><small class="font-weight-medium">Netflix, Inc.</small>
+                                                        </td>
+                                                        <td class="font-weight-medium">$250.00</td>
+                                                        <td class="text-success font-weight-medium">+12.64</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <p class="mb-1 text-dark font-weight-medium">TSLA</p><small class="font-weight-medium">Tesla, Inc.</small>
+                                                        </td>
+                                                        <td class="font-weight-medium">$458.00</td>
+                                                        <td class="text-danger font-weight-medium">-14.53</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <p class="mb-1 text-dark font-weight-medium">GOOG</p><small class="font-weight-medium">Alphabet, Inc.</small>
+                                                        </td>
+                                                        <td class="font-weight-medium">$250.00</td>
+                                                        <td class="text-danger font-weight-medium">+12.64</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <p class="mb-1 text-dark font-weight-medium">AMZN</p><small class="font-weight-medium">Amazon.com, Inc.</small>
+                                                        </td>
+                                                        <td class="font-weight-medium">$546.00</td>
+                                                        <td class="text-success font-weight-medium">+24.34</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <a class="d-block mt-3" href="#">Show all</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="col-md-12 grid-margin">
                             <div class="card">
                                 <div class="card-body">
@@ -384,365 +713,38 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-8">
-                            <div class="row">
-                                <div class="col-md-12 grid-margin">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <h4 class="card-title mb-0">Nouveautés</h4>
-                                            <div class="d-flex align-items-center justify-content-between w-100">
-                                                <p class="mb-0">Ce qu'il ne faut pas louper !</p>
-                                                <div class="dropdown">
-                                                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dateSorter" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ce mois-ci</button>
-                                                    <div class="dropdown-menu" aria-labelledby="dateSorter">
-                                                        <div class="dropdown-item" id="market-overview_1">Journalier</div>
-                                                        <div class="dropdown-item" id="market-overview_2">Cette semaine</div>
-                                                        <div class="dropdown-item" id="market-overview_3">Mensuel</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <canvas class="mt-4" height="100" id="market-overview-chart"></canvas>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-12 grid-margin">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <div class="d-flex justify-content-between">
-                                                <h4 class="card-title mb-0">Groupes principaux</h4>
-                                                <a href="#"><small>voir l'ensemble des groupes</small></a>
-                                            </div>
-                                            <p>Voici les 5 groupes les plus populaires.</p>
-                                            <div class="table-responsive">
-                                                <table class="table table-striped table-hover">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Nom du groupe</th>
-                                                            <th>Créateur</th>
-                                                            <th>Sujet</th>
-                                                            <th>Date de creation</th>
-                                                            <th>nombres d'adhérents</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>Vitality</td>
-                                                            <td>Loic</td>
-                                                            <td>E-sport</td>
-                                                            <td>20 Janvier 2019</td>
-                                                            <td>755</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Lyonnais</td>
-                                                            <td>Alexy</td>
-                                                            <td>Culture</td>
-                                                            <td>23 Fevrier 2019</td>
-                                                            <td>702</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Epsien</td>
-                                                            <td>Thomas</td>
-                                                            <td>Etudes</td>
-                                                            <td>25 Mars 2019</td>
-                                                            <td>663</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>ScieFish</td>
-                                                            <td>Aurélien</td>
-                                                            <td>Developpement</td>
-                                                            <td>27 Mars 2019</td>
-                                                            <td>335</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Club de Foot</td>
-                                                            <td>Gauthier</td>
-                                                            <td>Sport</td>
-                                                            <td>1 Avril 2019</td>
-                                                            <td>157</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 grid-margin stretch-card">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="d-flex align-items-center pb-2">
-                                                        <div class="dot-indicator bg-danger mr-2"></div>
-                                                        <p class="mb-0">Total Sales</p>
-                                                    </div>
-                                                    <h4 class="font-weight-semibold">$7,590</h4>
-                                                    <div class="progress progress-md">
-                                                        <div class="progress-bar bg-danger" role="progressbar" style="width: 78%" aria-valuenow="78" aria-valuemin="0" aria-valuemax="78"></div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6 mt-4 mt-md-0">
-                                                    <div class="d-flex align-items-center pb-2">
-                                                        <div class="dot-indicator bg-success mr-2"></div>
-                                                        <p class="mb-0">Active Users</p>
-                                                    </div>
-                                                    <h4 class="font-weight-semibold">$5,460</h4>
-                                                    <div class="progress progress-md">
-                                                        <div class="progress-bar bg-success" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="45"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 grid-margin stretch-card average-price-card">
-                                    <div class="card text-white">
-                                        <div class="card-body">
-                                            <div class="d-flex justify-content-between pb-2 align-items-center">
-                                                <h2 class="font-weight-semibold mb-0">4,624</h2>
-                                                <div class="icon-holder">
-                                                    <i class="mdi mdi-briefcase-outline"></i>
-                                                </div>
-                                            </div>
-                                            <div class="d-flex justify-content-between">
-                                                <h5 class="font-weight-semibold mb-0">Posts </h5>
-                                                <p class="text-white mb-0">Depuis les 2 derniers mois.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="row">
-                                <div class="col-md-12 grid-margin">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <h1 class="card-title mb-4">Communauté</h1>
-                                            <div class="row">
-                                                <div class="col-5 col-md-5">
-                                                    <div class="wrapper">
-                                                        <h4 class="font-weight-semibold mb-0">54 personnes</h4>
-                                                        <div class="d-flex align-items-center">
-                                                            <p class="mb-0">Actives</p>
-                                                            <div class="dot-indicator bg-primary ml-auto"></div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="wrapper border-bottom mb-2 pb-2">
-                                                        <h4 class="font-weight-semibold mb-0">176 personnes</h4>
-                                                        <div class="d-flex align-items-center">
-                                                            <p class="mb-0">Inactives</p>
-                                                            <div class="dot-indicator bg-secondary ml-auto"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-5 col-md-7 d-flex pl-4">
-                                                    <div class="ml-auto">
-                                                        <canvas height="100" id="realtime-statistics"></canvas>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row mt-5">
-                                                <div class="col-6">
-                                                    <div class="d-flex align-items-center mb-2">
-                                                        <div class="icon-holder bg-primary text-white py-1 px-3 rounded mr-2">
-                                                            <i class="icon ion-logo-buffer icon-sm"></i>
-                                                        </div>
-                                                        <h2 class="font-weight-semibold mb-0">230</h2>
-                                                    </div>
-                                                    <p>Inscrites</p>
-                                                </div>
-                                                <div class="col-6">
-                                                    <div class="mt-n3 ml-auto" id="dashboard-guage-chart"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-12 grid-margin">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <h4 class="card-title mb-4">World sellings</h4>
-                                            <div id="dashboard-vmap" class="vector-map"></div>
-                                            <div class="wrapper">
-                                                <div class="d-flex w-100 pt-2 mt-4">
-                                                    <p class="mb-0 font-weight-semibold">California</p>
-                                                    <div class="wrapper ml-auto d-flex align-items-center">
-                                                        <p class="font-weight-semibold mb-0">26,437</p>
-                                                        <p class="ml-1 mb-0">26%</p>
-                                                    </div>
-                                                </div>
-                                                <div class="d-flex w-100 pt-2">
-                                                    <p class="mb-0 font-weight-semibold">Washington</p>
-                                                    <div class="wrapper ml-auto d-flex align-items-center">
-                                                        <p class="font-weight-semibold mb-0">3252</p>
-                                                        <p class="ml-1 mb-0">64%</p>
-                                                    </div>
-                                                </div>
-                                                <div class="d-flex w-100 pt-2">
-                                                    <p class="mb-0 font-weight-semibold">Michigan</p>
-                                                    <div class="wrapper ml-auto d-flex align-items-center">
-                                                        <p class="font-weight-semibold mb-0">4,987</p>
-                                                        <p class="ml-1 mb-0">30%</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12 grid-margin">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title mb-0">Evénements Récents</h4>
-                                <div class="d-flex py-2 border-bottom">
-                                    <div class="wrapper">
-                                        <small class="text-muted">13-14 septembre 2019</small>
-                                        <p class="font-weight-semibold text-gray mb-0">Musique</p>
-                                    </div>
-                                    <small class="text-muted ml-auto">En savoir plus</small>
-                                </div>
-                                <div class="d-flex py-2 border-bottom">
-                                    <div class="wrapper">
-                                        <small class="text-muted">17 septembre 2019</small>
-                                        <p class="font-weight-semibold text-gray mb-0">Jeux-vidéos</p>
-                                    </div>
-                                    <small class="text-muted ml-auto">En savoir plus</small>
-                                </div>
-                                <div class="d-flex py-2 border-bottom">
-                                    <div class="wrapper">
-                                        <small class="text-muted">21 septembre 2019</small>
-                                        <p class="font-weight-semibold text-gray mb-0">Divertissement</p>
-                                    </div>
-                                    <small class="text-muted ml-auto">En savoir plus</small>
-                                </div>
-                                <div class="d-flex pt-2">
-                                    <div class="wrapper">
-                                        <small class="text-muted">29 septembre 2019</small>
-                                        <p class="font-weight-semibold text-gray mb-0">Football</p>
-                                    </div>
-                                    <small class="text-muted ml-auto">En savoir plus</small>
-                                </div>
-                                <a class="d-block mt-5" href="#">Voir tous les événements</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 grid-margin stretch-card">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between pb-3">
-                                    <h4 class="card-title mb-0">Activities</h4>
-                                    <p class="mb-0 text-muted">20 finished, 5 remaining</p>
-                                </div>
-                                <ul class="timeline">
-                                    <li class="timeline-item">
-                                        <p class="timeline-content"><a href="#">Ben Tossell</a> assign you a task</p>
-                                        <p class="event-time">Just now</p>
-                                    </li>
-                                    <li class="timeline-item">
-                                        <p class="timeline-content"><a href="#">Ben Tossell</a> assign you a task</p>
-                                        <p class="event-time">Just now</p>
-                                    </li>
-                                    <li class="timeline-item">
-                                        <p class="timeline-content"><a href="#">Ben Tossell</a> assign you a task</p>
-                                        <p class="event-time">Just now</p>
-                                    </li>
-                                    <li class="timeline-item">
-                                        <p class="timeline-content"><a href="#">Ben Tossell</a> assign you a task</p>
-                                        <p class="event-time">Just now</p>
-                                    </li>
-                                    <li class="timeline-item">
-                                        <p class="timeline-content"><a href="#">Ben Tossell</a> assign you a task</p>
-                                        <p class="event-time">Just now</p>
-                                    </li>
-                                </ul>
-                                <a class="d-block mt-3" href="#">Show all</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 grid-margin stretch-card">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title mb-0">People Also Watch</h4>
-                                <div class="table-responsive">
-                                    <table class="table table-stretched">
-                                        <thead>
-                                            <tr>
-                                                <th>Symbol</th>
-                                                <th>Last Price</th>
-                                                <th>Change</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    <p class="mb-1 text-dark font-weight-medium">NFLX</p><small class="font-weight-medium">Netflix, Inc.</small>
-                                                </td>
-                                                <td class="font-weight-medium">$250.00</td>
-                                                <td class="text-success font-weight-medium">+12.64</td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <p class="mb-1 text-dark font-weight-medium">TSLA</p><small class="font-weight-medium">Tesla, Inc.</small>
-                                                </td>
-                                                <td class="font-weight-medium">$458.00</td>
-                                                <td class="text-danger font-weight-medium">-14.53</td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <p class="mb-1 text-dark font-weight-medium">GOOG</p><small class="font-weight-medium">Alphabet, Inc.</small>
-                                                </td>
-                                                <td class="font-weight-medium">$250.00</td>
-                                                <td class="text-danger font-weight-medium">+12.64</td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <p class="mb-1 text-dark font-weight-medium">AMZN</p><small class="font-weight-medium">Amazon.com, Inc.</small>
-                                                </td>
-                                                <td class="font-weight-medium">$546.00</td>
-                                                <td class="text-success font-weight-medium">+24.34</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <a class="d-block mt-3" href="#">Show all</a>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-            </div>
-            <!-- content-wrapper ends -->
-            <!-- partial:partials/_footer.html -->
-            <footer class="footer">
-                <div class="container-fluid clearfix">
-                    <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2019 <a href="http://www.bootstrapdash.com/" target="_blank">Bootstrapdash</a>. All rights reserved.</span>
-                    <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="mdi mdi-heart text-danger"></i>
-                    </span>
-                </div>
-            </footer>
-            <!-- partial -->
-        </div>
-        <!-- main-panel ends -->
-    </div>
-    <!-- page-body-wrapper ends -->
-    </div>
 
-    <!-- container-scroller -->
-    <!-- plugins:js -->
-    <script src="../assets/vendors/js/vendor.bundle.base.js"></script>
-    <script src="../assets/vendors/js/vendor.bundle.addons.js"></script>
-    <!-- endinject -->
-    <!-- Plugin js for this page-->
-    <!-- End plugin js for this page-->
-    <!-- inject:js -->
-    <script src="../assets/js/shared/off-canvas.js"></script>
-    <script src="../assets/js/shared/misc.js"></script>
-    <!-- endinject -->
-    <!-- Custom js for this page-->
-    <script src="../assets/js/demo_1/dashboard.js"></script>
-    <!-- End custom js for this page-->
+                <!-- content-wrapper ends -->
+                <!-- partial:partials/_footer.html -->
+                <footer class="footer">
+                    <div class="container-fluid clearfix">
+                        <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2019 <a href="http://www.bootstrapdash.com/" target="_blank">Bootstrapdash</a>. All rights reserved.</span>
+                        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="mdi mdi-heart text-danger"></i>
+                        </span>
+                    </div>
+                </footer>
+                <!-- partial -->
+            </div>
+            <!-- main-panel ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+
+
+        <!-- container-scroller -->
+        <!-- plugins:js -->
+        <script src="../assets/vendors/js/vendor.bundle.base.js"></script>
+        <script src="../assets/vendors/js/vendor.bundle.addons.js"></script>
+        <!-- endinject -->
+        <!-- Plugin js for this page-->
+        <!-- End plugin js for this page-->
+        <!-- inject:js -->
+        <script src="../assets/js/shared/off-canvas.js"></script>
+        <script src="../assets/js/shared/misc.js"></script>
+        <!-- endinject -->
+        <!-- Custom js for this page-->
+        <script src="../assets/js/demo_1/dashboard.js"></script>
+        <!-- End custom js for this page-->
 </body>
 
 </html>
