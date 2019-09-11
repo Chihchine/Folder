@@ -10,7 +10,7 @@ $utilisateur = Utilisateur::Show($_SESSION['id_utilisateur']);
 
 $imageProfil = Image::Show($utilisateur['ID_IMAGE_PROFIL'])['LIEN'];
 if (empty($imageProfil)) {
-  $imageProfil = Image::Show("1")['LIEN']
+  $imageProfil = Image::Show("1")['LIEN'];
 }
 
 ?>
