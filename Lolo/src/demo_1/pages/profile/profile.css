@@ -37,6 +37,6 @@ body {
 .container-scroller {
     z-index: 10;
     position: absolute;
-    top: -1px;
+    top: -0.1px;
     left: -15px;
 }
