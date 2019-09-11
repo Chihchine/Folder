@@ -113,7 +113,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	         	} else {echo "1";};
 	  	 	} else {echo "2";};
 		} else {echo "3";};
-	}
+	} else {echo "4";};
 ?>
 
 <html> 
