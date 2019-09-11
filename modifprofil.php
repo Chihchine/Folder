@@ -81,7 +81,6 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	    <div class="col-md-9">
 	      <div class="card">
 	        <div class="card-header">
-	          Vous regardez le profil de: <?php echo $userinfo['NOM'] . " " . $userinfo['PRENOM'] ?>
 	        </div>
 	        <div class="card-body card-body-right">
 	              	<form method="post" class="needs-validation form-signin" novalidate>
