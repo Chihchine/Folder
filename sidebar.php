@@ -50,7 +50,7 @@ require("base/include/header.php");
         <div class="sidebar-menu">
           <ul>
             <li class="header-menu">
-              <span>General</span>
+              <span>Générale</span>
             </li>
             <li class="sidebar-button">
               <a href="index.php">
@@ -60,7 +60,7 @@ require("base/include/header.php");
             </li>
             <li class="sidebar-button">
               <a href="messages.php">
-                <i class="fa fa-shopping-cart"></i>
+                <i class="fa fa-book"></i>
                 <span>Messages</span>
                 <span class="badge badge-pill badge-primary">3</span>
               </a>
@@ -78,7 +78,6 @@ require("base/include/header.php");
               <a href="#">
                 <i class="fa fa-book"></i>
                 <span>Documentation</span>
-                <span class="badge badge-pill badge-primary">Beta</span>
               </a>
             </li>
             <li>
