@@ -96,7 +96,15 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	              </tr>
 	              <tr>
 	                <th class="colonnes-gauches" scope="row">Date d'inscription</th>
-	                <td class="colonnes-droites"> <?php $olddate = $userinfo['DATE_INSCRIPTION']; $newDate = date("d-m-Y", strtotime($olddate)); echo $newDate;  ?></td>
+	                <td class="colonnes-droites"> <?php
+	                	if(!is_null($userinfo['DATE_INSCRIPTION'])){
+	                	 $olddate = $userinfo['DATE_INSCRIPTION']; $newDate = date("d-m-Y", strtotime($olddate)); echo $newDate;  
+	                	} else {
+	                		echo "Inconnue";
+	                	}
+
+
+	                 ?></td>
 	              </tr>
 	              <tr>
 	                <th class="colonnes-gauches" scope="row">Groupes</th>
