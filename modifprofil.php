@@ -179,9 +179,8 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 					        </div>
 					      </div>
 					      <button class="btn btn-lg btn-primary btn-block" type="submit" name="btnInscrire">Sauvegarder</button>
-					      <p class="text-muted">&copy; 2019 - Nom du site</p>
 					    </form>
-
+					    <?php echo "<a href='profil.php?id=" . $_SESSION["id_utilisateur"] . "'> Retourner à votre profil </a>"; ?>
 	        </div>
 	      </div>
 	    </div>
