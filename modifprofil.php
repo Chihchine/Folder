@@ -9,12 +9,12 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	$result = Main::DataBase()->prepare("SELECT * FROM UTILISATEURS WHERE ID = ?");
 	$result->execute(array($id));
 
-	$image = Main::DataBase()->prepare("SELECT * FROM PHOTOS WHERE ID = ?");
+	$image = Main::DataBase()->prepare("SELECT * FROM IMAGES WHERE ID = ?");
 
 	$userexist = $result->rowCount();
 	$userinfo = $result->fetch();
 
-	$imageid = $userinfo["ID_PHOTO_PROFIL"];
+	$imageid = $userinfo["ID_IMAGE_PROFIL"];
 	$image->execute(array($imageid));
 	$imageinfo = $image->fetch();
 	$imageexist = $image->rowCount();
@@ -86,6 +86,27 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 		$profilimage = "images/uploads/" .$imageinfo['LIEN'];
 	} else {
 		$profilimage = "images/basicprofil.png";
+	}
+
+
+	if(isset($_FILES['avatar']) AND !empty($_FILES['avatar']['name'])) {
+	   $tailleMax = 2097152;
+	   $extensionsValides = array('jpg', 'jpeg', 'gif', 'png');
+	   if($_FILES['avatar']['size'] <= $tailleMax) {
+	      $extensionUpload = strtolower(substr(strrchr($_FILES['avatar']['name'], '.'), 1));
+	      if(in_array($extensionUpload, $extensionsValides)) {
+	         $chemin = "membres/avatars/".$_SESSION['id'].".".$extensionUpload;
+	         $resultat = move_uploaded_file($_FILES['avatar']['tmp_name'], $chemin);
+	         if($resultat) {
+	            $updateavatar = $bdd->prepare('UPDATE membres SET avatar = :avatar WHERE id = :id');
+	            $updateavatar->execute(array(
+	               'avatar' => $_SESSION['id'].".".$extensionUpload,
+	               'id' => $_SESSION['id']
+	               ));
+	            header('Location: profil.php?id='.$_SESSION['id']);
+	         	} 	
+	  	 	}
+		}
 	}
 ?>
 
@@ -176,6 +197,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 					              <option value="M2">5ème année</option>
 					            </select>
 					          </div>
+					          <input type="file" name="avatar">
 					        </div>
 					      </div>
 					      <button class="btn btn-lg btn-primary btn-block" type="submit" name="btnInscrire">Sauvegarder</button>
