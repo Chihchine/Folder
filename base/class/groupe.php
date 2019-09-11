@@ -18,7 +18,7 @@ Class Groupe {
   }
 
   public static function CountMember($id) {
-    $request = Main::Database()->("SELECT COUNT(*) AS NUMBER FROM MEMBRES_GROUPE WHERE ID_GROUPE = ?");
+    $request = Main::Database()->prepare("SELECT COUNT(*) AS NUMBER FROM MEMBRES_GROUPE WHERE ID_GROUPE = ?");
     $result = $request->execute([$id]);
     return $result->fetch();
   }
