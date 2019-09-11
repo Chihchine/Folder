@@ -133,8 +133,8 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	                <th class="colonnes-gauches" scope="row">Oof</th>
 	                <td class="colonnes-droites">X commentaires</td>
 	              </tr>
-
-
+	              				</tbody>
+	              	          </table>
 
 	              	<form method="post" class="needs-validation form-signin" novalidate>
 					      <img class="mb-4">
@@ -195,10 +195,6 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 					      <p class="text-muted">&copy; 2019 - Nom du site</p>
 					    </form>
 
-
-
-	            </body>
-	          </table>
 	        </div>
 	      </div>
 	    </div>
