@@ -29,5 +29,5 @@ require(__DIR__ . "/inscription.php");
 require(__DIR__ . "/oublimdp.php");
 require(__DIR__ . "/groupe.php");
 require(__DIR__ . "/annuaire.php");
-require(__DIR__ . "/utilisateurs.php");
+require(__DIR__ . "/utilisateur.php");
 ?>
