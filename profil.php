@@ -91,6 +91,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	                		$membredeinfo = $membrede->fetchAll();
 
 							//echo $membredeinfo['ID_GROUPE'];
+
 							foreach($membredeinfo as $valeur){
 								//echo $valeur["ID_GROUPE"];
 
@@ -98,9 +99,9 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 								$groupe->execute(array($valeur["ID_GROUPE"]));
 
 								$groupeinfo = $groupe->fetch();
-
+								echo "</br>";		
 								echo '<a href="">' .$groupeinfo["NOM"]. '</a>';
-								echo "</br>";
+								
 							}
 
 							//
