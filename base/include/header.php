@@ -43,14 +43,14 @@ $utilisateur = Utilisateur::Show($_SESSION['id_utilisateur']);
 				</div>
 				<div class="sidebar-header">
 					<div class="user-pic">
-						<img class="img-responsive img-rounded" src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
+						<img class="img-responsive img-rounded" src="<?php echo Settings::sitePathRoot.Image::Show($utilisateur['ID_IMAGE_PROFILE'])['LIEN']; ?>"
 						alt="User picture">
 					</div>
 					<div class="user-info">
 						<span class="user-name"><?php echo $utilisateur['PRENOM']; ?>
 							<strong><?php echo $utilisateur['NOM']; ?></strong>
 						</span>
-						<span class="user-role"><?php echo $utilisateur['ECOLE'] . " " . $utilisateur['PROMOTION']; ?>; ?></span>
+						<span class="user-role"><?php echo $utilisateur['ECOLE'] . " " . $utilisateur['PROMOTION']; ?></span>
 						<span class="user-status">
 							<i class="fa fa-circle"></i>
 							<span>Actif</span>
