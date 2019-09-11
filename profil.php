@@ -96,7 +96,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	              </tr>
 	              <tr>
 	                <th class="colonnes-gauches" scope="row">Date d'inscription</th>
-	                <td class="colonnes-droites">           </td>
+	                <td class="colonnes-droites"> <?php echo $userinfo['DATE_INSCRIPTION'] ?></td>
 	              </tr>
 	              <tr>
 	                <th class="colonnes-gauches" scope="row">Groupes</th>
