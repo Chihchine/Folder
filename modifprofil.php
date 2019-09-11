@@ -102,6 +102,8 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	         	$insertimage = Main::DataBase()->prepare("INSERT INTO IMAGES(ID, LIEN) VALUES(?, ?)");
 	         	$insertimage->execute(array($id, $cheminname));
 
+	         	echo "WORKEEEEED";
+
 	            /*$updateavatar = $bdd->prepare('UPDATE IMAGES SET avatar = :avatar WHERE id = :id');
 	            $updateavatar->execute(array(
 	               'avatar' => $_SESSION['id'].".".$extensionUpload,
