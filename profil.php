@@ -141,8 +141,8 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	                <td class="colonnes-droites"> <?php echo $userinfo['PROMOTION']; ?> </td>
 	              </tr>
 	              <tr>
-	                <th class="colonnes-gauches" scope="row">Oof</th>
-	                <td class="colonnes-droites">X commentaires</td>
+	                <th class="colonnes-gauches" scope="row">Presentation</th>
+	                <td class="colonnes-droites"><?php echo $userinfo['PRESENTATION'];?></td>
 	              </tr>
 	            </tbody>
 	          </table>
