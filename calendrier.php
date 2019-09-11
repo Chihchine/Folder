@@ -6,7 +6,7 @@ $dateDuJour = date("Y-m-d");
 if (isset($_POST['creer'])) {
   $dateDebut = Annuaire::joinDateHour($_POST['date_debut'], $_POST['heure_debut']);
   $dateFin = Annuaire::joinDateHour($_POST['date_fin'], $_POST['heure_fin']);
-  Annuaire::addEvent($_POST['nom'], $_POST['description'], $dateDebut, $dateFin, '1');
+  Annuaire::addEvent($_POST['nom'], $_POST['description'], $dateDebut, $dateFin, $_SESSION['id_utilisateur']);
 }
 
  ?>
