@@ -25,7 +25,7 @@ if (isset($_POST['creer'])) {
 
 <div id='calendar'></div>
 
-<form class="" action="index.html" method="post">
+<form class=""  method="post">
   <div class="form-row">
     <div class="form-group  col-md-4">
       <label for="">Titre de l'évenement</label>
