@@ -82,6 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
               data-page-size="10"
               data-page-list="[5, 10, 25, 50, Toutes]">
                 <thead>
+                <button class="btn btn-primary" data-toggle="modal" data-target="#creationGroupe">Créer un groupe</button>
                   <tr>
                     <th>Image</th>
                     <th data-filter-control="input" data-field="nom" data-sortable="true">Nom</th>
