@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-        <button type="button" class="btn btn-primary" onlick="document.forms["createGroupe"].submit();">Créer</button>
+        <button type="button" class="btn btn-primary" onlick="document.forms["createGroupe"].submit()">Créer</button>
       </div>
     </div>
   </div>
