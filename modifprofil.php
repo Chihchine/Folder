@@ -99,7 +99,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	         $cheminname = $id.".".$extensionUpload;
 	         $resultat = move_uploaded_file($_FILES['avatar']['tmp_name'], $chemin);
 	         if($resultat) {
-	         	$insertimage = Main::DataBase()->prepare("INSERT INTO IMAGES(ID, LIEN) VALUES(?, ?)")
+	         	$insertimage = Main::DataBase()->prepare("INSERT INTO IMAGES(ID, LIEN) VALUES(?, ?)");
 	         	$insertimage->execute(array($id, $cheminname));
 
 	            /*$updateavatar = $bdd->prepare('UPDATE IMAGES SET avatar = :avatar WHERE id = :id');
