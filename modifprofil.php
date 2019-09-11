@@ -10,13 +10,14 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	$result->execute(array($id));
 
 	$image = Main::DataBase()->prepare("SELECT * FROM PHOTOS WHERE ID = ?");
-	$image->execute(array($id));
 
 	$userexist = $result->rowCount();
-	$imageexist = $image->rowCount();
-
-	$imageinfo = $image->fetch();
 	$userinfo = $result->fetch();
+
+	$imageid = $userinfo["ID_PHOTO_PROFIL"];
+	$image->execute(array($imageid));
+	$imageinfo = $image->fetch();
+	$imageexist = $image->rowCount();
 
 	if (isset($_SESSION['id_utilisateur'])) {
 		if($_SESSION['id_utilisateur'] == $id){
@@ -40,6 +41,15 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	{
 		header("Location: index.php");
 		die;
+	}
+
+
+	$profilimage = "";
+
+	if($imageexist==1){
+		$profilimage = "images/uploads/" .$imageinfo['LIEN'];
+	} else {
+		$profilimage = "images/basicprofil.png";
 	}
 ?>
 
