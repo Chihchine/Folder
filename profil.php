@@ -52,15 +52,6 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 
 <html> 
 	<body>
-	    <!--<div class="fil_arianne container">
-	    <nav aria-label="breadcrumb">
-	        <ol class="breadcrumb">
-	            <li class="breadcrumb-item"><a href="?p=dashboard">Tableau de bord</a></li>
-	            <li class="breadcrumb-item active" aria-current="page">Mon profil</li>
-	        </ol>
-	    </nav>
-	</div>-->
-
 	<div class="container-fluid profil-content">
 	  <h1>Profil</h1>
 	  <div class="row">
@@ -131,21 +122,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 							} else {
 								echo "Membre de aucun groupe";
 							}
-
-							//
-
-	                		/*foreach ($membredeinfo['ID_GROUPE'] as $key => $value) {
-	                			echo $key; echo $value;
-	                		}*/
-
 	                	?>
-
-
-
-
-
-
-
 	                </td>
 	              </tr>
 	              <tr>
