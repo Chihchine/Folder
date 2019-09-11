@@ -523,197 +523,84 @@
                                     <div class="col-md-12 grid-margin">
                                         <div class="card">
                                             <div class="card-body">
-                                                <h4 class="card-title mb-4">World sellings</h4>
-                                                <div id="dashboard-vmap" class="vector-map"></div>
-                                                <div class="wrapper">
-                                                    <div class="d-flex w-100 pt-2 mt-4">
-                                                        <p class="mb-0 font-weight-semibold">California</p>
-                                                        <div class="wrapper ml-auto d-flex align-items-center">
-                                                            <p class="font-weight-semibold mb-0">26,437</p>
-                                                            <p class="ml-1 mb-0">26%</p>
-                                                        </div>
+                                                <h4 class="card-title mb-0">Evénements Récents</h4>
+                                                <div class="d-flex py-2 border-bottom">
+                                                    <div class="wrapper">
+                                                        <small class="text-muted">13-14 septembre 2019</small>
+                                                        <p class="font-weight-semibold text-gray mb-0">Musique</p>
                                                     </div>
-                                                    <div class="d-flex w-100 pt-2">
-                                                        <p class="mb-0 font-weight-semibold">Washington</p>
-                                                        <div class="wrapper ml-auto d-flex align-items-center">
-                                                            <p class="font-weight-semibold mb-0">3252</p>
-                                                            <p class="ml-1 mb-0">64%</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="d-flex w-100 pt-2">
-                                                        <p class="mb-0 font-weight-semibold">Michigan</p>
-                                                        <div class="wrapper ml-auto d-flex align-items-center">
-                                                            <p class="font-weight-semibold mb-0">4,987</p>
-                                                            <p class="ml-1 mb-0">30%</p>
-                                                        </div>
-                                                    </div>
+                                                    <small class="text-muted ml-auto">En savoir plus</small>
                                                 </div>
+                                                <div class="d-flex py-2 border-bottom">
+                                                    <div class="wrapper">
+                                                        <small class="text-muted">17 septembre 2019</small>
+                                                        <p class="font-weight-semibold text-gray mb-0">Jeux-vidéos</p>
+                                                    </div>
+                                                    <small class="text-muted ml-auto">En savoir plus</small>
+                                                </div>
+                                                <div class="d-flex py-2 border-bottom">
+                                                    <div class="wrapper">
+                                                        <small class="text-muted">21 septembre 2019</small>
+                                                        <p class="font-weight-semibold text-gray mb-0">Divertissement</p>
+                                                    </div>
+                                                    <small class="text-muted ml-auto">En savoir plus</small>
+                                                </div>
+                                                <div class="d-flex pt-2">
+                                                    <div class="wrapper">
+                                                        <small class="text-muted">29 septembre 2019</small>
+                                                        <p class="font-weight-semibold text-gray mb-0">Football</p>
+                                                    </div>
+                                                    <small class="text-muted ml-auto">En savoir plus</small>
+                                                </div>
+                                                <a class="d-block mt-5" href="#">Voir tous les événements</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-12 grid-margin">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h4 class="card-title mb-0">Evénements Récents</h4>
-                                    <div class="d-flex py-2 border-bottom">
-                                        <div class="wrapper">
-                                            <small class="text-muted">13-14 septembre 2019</small>
-                                            <p class="font-weight-semibold text-gray mb-0">Musique</p>
-                                        </div>
-                                        <small class="text-muted ml-auto">En savoir plus</small>
+                    </div>
+                    <div class="col-md-12 grid-margin">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title mb-0">Amis</h4>
+                                <div class="d-flex mt-3 py-2 border-bottom">
+                                    <img class="img-sm rounded-circle" src="../assets/images/faces/face3.jpg" alt="profile image">
+                                    <div class="wrapper ml-2">
+                                        <p class="mb-n1 font-weight-semibold">Gauthier Mairot</p>
+                                        <small>EPSI B2G1</small>
                                     </div>
-                                    <div class="d-flex py-2 border-bottom">
-                                        <div class="wrapper">
-                                            <small class="text-muted">17 septembre 2019</small>
-                                            <p class="font-weight-semibold text-gray mb-0">Jeux-vidéos</p>
-                                        </div>
-                                        <small class="text-muted ml-auto">En savoir plus</small>
-                                    </div>
-                                    <div class="d-flex py-2 border-bottom">
-                                        <div class="wrapper">
-                                            <small class="text-muted">21 septembre 2019</small>
-                                            <p class="font-weight-semibold text-gray mb-0">Divertissement</p>
-                                        </div>
-                                        <small class="text-muted ml-auto">En savoir plus</small>
-                                    </div>
-                                    <div class="d-flex pt-2">
-                                        <div class="wrapper">
-                                            <small class="text-muted">29 septembre 2019</small>
-                                            <p class="font-weight-semibold text-gray mb-0">Football</p>
-                                        </div>
-                                        <small class="text-muted ml-auto">En savoir plus</small>
-                                    </div>
-                                    <a class="d-block mt-5" href="#">Voir tous les événements</a>
+                                    <small class="text-muted ml-auto">Il y a 1 heure</small>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 grid-margin stretch-card">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="d-flex justify-content-between pb-3">
-                                        <h4 class="card-title mb-0">Activities</h4>
-                                        <p class="mb-0 text-muted">20 finished, 5 remaining</p>
+                                <div class="d-flex py-2 border-bottom">
+                                    <span class="img-sm rounded-circle bg-warning text-white text-avatar">AR</span>
+                                    <div class="wrapper ml-2">
+                                        <p class="mb-n1 font-weight-semibold">Aurélien Reynard</p>
+                                        <small>EPSI B2G1</small>
                                     </div>
-                                    <ul class="timeline">
-                                        <li class="timeline-item">
-                                            <p class="timeline-content"><a href="#">Ben Tossell</a> assign you a task</p>
-                                            <p class="event-time">Just now</p>
-                                        </li>
-                                        <li class="timeline-item">
-                                            <p class="timeline-content"><a href="#">Ben Tossell</a> assign you a task</p>
-                                            <p class="event-time">Just now</p>
-                                        </li>
-                                        <li class="timeline-item">
-                                            <p class="timeline-content"><a href="#">Ben Tossell</a> assign you a task</p>
-                                            <p class="event-time">Just now</p>
-                                        </li>
-                                        <li class="timeline-item">
-                                            <p class="timeline-content"><a href="#">Ben Tossell</a> assign you a task</p>
-                                            <p class="event-time">Just now</p>
-                                        </li>
-                                        <li class="timeline-item">
-                                            <p class="timeline-content"><a href="#">Ben Tossell</a> assign you a task</p>
-                                            <p class="event-time">Just now</p>
-                                        </li>
-                                    </ul>
-                                    <a class="d-block mt-3" href="#">Show all</a>
+                                    <small class="text-muted ml-auto">Il y a 4 heures</small>
                                 </div>
-                            </div>
-
-                            <div class="col-md-4 grid-margin stretch-card">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h4 class="card-title mb-0">People Also Watch</h4>
-                                        <div class="table-responsive">
-                                            <table class="table table-stretched">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Symbol</th>
-                                                        <th>Last Price</th>
-                                                        <th>Change</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>
-                                                            <p class="mb-1 text-dark font-weight-medium">NFLX</p><small class="font-weight-medium">Netflix, Inc.</small>
-                                                        </td>
-                                                        <td class="font-weight-medium">$250.00</td>
-                                                        <td class="text-success font-weight-medium">+12.64</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <p class="mb-1 text-dark font-weight-medium">TSLA</p><small class="font-weight-medium">Tesla, Inc.</small>
-                                                        </td>
-                                                        <td class="font-weight-medium">$458.00</td>
-                                                        <td class="text-danger font-weight-medium">-14.53</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <p class="mb-1 text-dark font-weight-medium">GOOG</p><small class="font-weight-medium">Alphabet, Inc.</small>
-                                                        </td>
-                                                        <td class="font-weight-medium">$250.00</td>
-                                                        <td class="text-danger font-weight-medium">+12.64</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <p class="mb-1 text-dark font-weight-medium">AMZN</p><small class="font-weight-medium">Amazon.com, Inc.</small>
-                                                        </td>
-                                                        <td class="font-weight-medium">$546.00</td>
-                                                        <td class="text-success font-weight-medium">+24.34</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <a class="d-block mt-3" href="#">Show all</a>
+                                <div class="d-flex py-2 border-bottom">
+                                    <img class="img-sm rounded-circle" src="../assets/images/faces/face4.jpg" alt="profile image">
+                                    <div class="wrapper ml-2">
+                                        <p class="mb-n1 font-weight-semibold">Thomas Coche</p>
+                                        <small>EPSI B2G1</small>
                                     </div>
+                                    <small class="text-muted ml-auto">Il y a 7 heures</small>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-md-12 grid-margin">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h4 class="card-title mb-0">Amis</h4>
-                                    <div class="d-flex mt-3 py-2 border-bottom">
-                                        <img class="img-sm rounded-circle" src="../assets/images/faces/face3.jpg" alt="profile image">
-                                        <div class="wrapper ml-2">
-                                            <p class="mb-n1 font-weight-semibold">Gauthier Mairot</p>
-                                            <small>EPSI B2G1</small>
-                                        </div>
-                                        <small class="text-muted ml-auto">Il y a 1 heure</small>
+                                <div class="d-flex pt-2">
+                                    <span class="img-sm rounded-circle bg-success text-white text-avatar">LD</span>
+                                    <div class="wrapper ml-2">
+                                        <p class="mb-n1 font-weight-semibold">Loic Ducornetz</p>
+                                        <small>EPSI B2G1</small>
                                     </div>
-                                    <div class="d-flex py-2 border-bottom">
-                                        <span class="img-sm rounded-circle bg-warning text-white text-avatar">AR</span>
-                                        <div class="wrapper ml-2">
-                                            <p class="mb-n1 font-weight-semibold">Aurélien Reynard</p>
-                                            <small>EPSI B2G1</small>
-                                        </div>
-                                        <small class="text-muted ml-auto">Il y a 4 heures</small>
-                                    </div>
-                                    <div class="d-flex py-2 border-bottom">
-                                        <img class="img-sm rounded-circle" src="../assets/images/faces/face4.jpg" alt="profile image">
-                                        <div class="wrapper ml-2">
-                                            <p class="mb-n1 font-weight-semibold">Thomas Coche</p>
-                                            <small>EPSI B2G1</small>
-                                        </div>
-                                        <small class="text-muted ml-auto">Il y a 7 heures</small>
-                                    </div>
-                                    <div class="d-flex pt-2">
-                                        <span class="img-sm rounded-circle bg-success text-white text-avatar">LD</span>
-                                        <div class="wrapper ml-2">
-                                            <p class="mb-n1 font-weight-semibold">Loic Ducornetz</p>
-                                            <small>EPSI B2G1</small>
-                                        </div>
-                                        <small class="text-muted ml-auto">Il y a 1 jour</small>
-                                    </div>
+                                    <small class="text-muted ml-auto">Il y a 1 jour</small>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
 
                 <!-- content-wrapper ends -->
                 <!-- partial:partials/_footer.html -->
