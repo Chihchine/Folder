@@ -35,17 +35,17 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 
 <html> 
 	<body>
-	    <div class="fil_arianne container">
+	    <!--<div class="fil_arianne container">
 	    <nav aria-label="breadcrumb">
 	        <ol class="breadcrumb">
 	            <li class="breadcrumb-item"><a href="?p=dashboard">Tableau de bord</a></li>
 	            <li class="breadcrumb-item active" aria-current="page">Mon profil</li>
 	        </ol>
 	    </nav>
-	</div>
+	</div>-->
 
 	<div class="container-fluid profil-content">
-	  <h1>Mon profil</h1>
+	  <h1>Profil</h1>
 	  <div class="row">
 	    <div class="col-md-3">
 	      <div class="card">
@@ -61,7 +61,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	    <div class="col-md-9">
 	      <div class="card">
 	        <div class="card-header">
-	          Informations relatives à votre compte
+	          Vous regardez le profil de: <?php echo $userinfo['NOM'] . " " . $userinfo['PRENOM'] ?>
 	        </div>
 	        <div class="card-body card-body-right">
 	          <table class="table">
@@ -84,7 +84,27 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	              </tr>
 	              <tr>
 	                <th class="colonnes-gauches" scope="row">Clubs adhéré</th>
-	                <td class="colonnes-droites">clubs</td>
+	                <td class="colonnes-droites">clubs
+	                	<?php
+	                		$membrede = Main::DataBase()->prepare("SELECT * FROM MEMBRES_GROUPE WHERE ID_UTILISATEUR = ?");
+	                		$membrede->execute(array($id));
+	                		$membredeinfo = $membrede->fetch();
+
+								echo $membredeinfo['ID_GROUPE'];
+
+	                		/*foreach ($membredeinfo['ID_GROUPE'] as $key => $value) {
+	                			echo $key; echo $value;
+	                		}*/
+
+	                	?>
+
+
+
+
+
+
+
+	                </td>
 	              </tr>
 	              <tr>
 	                <th class="colonnes-gauches" scope="row">Actualités</th>
