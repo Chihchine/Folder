@@ -18,6 +18,94 @@ $dateDuJour = date("Y-m-d");
 
 <div id='calendar'></div>
 
+<form class="" action="index.html" method="post">
+  <div class="form-row">
+    <div class="form-group  col-md-4">
+      <label for="">Titre de l'évenement</label>
+      <input class="form-control" type="text" name="nom" value="">
+    </div>
+    <div class="form-group  col-md-4">
+      <label for="">Date de début</label>
+      <input class="form-control" type="date" name="date_debut" value="">
+    </div>
+    <div class="form-group  col-md-4">
+      <label for="">Date de fin</label>
+      <input class="form-control" type="date" name="date_fin" value="">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="">Heure de début</label>
+      <div class="row">
+        <div class="col-md-6">
+          <select class="form-control" name="heure_debut">
+            <option value="07">7H</option>
+            <option value="08">8H</option>
+            <option value="09">9H</option>
+            <option value="10">10H</option>
+            <option value="11">11H</option>
+            <option value="12">12H</option>
+            <option value="13">13H</option>
+            <option value="14">14H</option>
+            <option value="15">15H</option>
+            <option value="16">16H</option>
+            <option value="17">17H</option>
+            <option value="18">18H</option>
+            <option value="19">19H</option>
+            <option value="20">20H</option>
+            <option value="21">21H</option>
+            <option value="22">22H</option>
+            <option value="23">23H</option>
+          </select>
+        </div>
+        <div class="col-md-6">
+          <select class="form-control" name="minute_debut">
+            <option value="00">00MIN</option>
+            <option value="15">15MIN</option>
+            <option value="30">30MIN</option>
+            <option value="45">45MIN</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="">Heure de fin</label>
+      <div class="row">
+        <div class="col-md-6">
+          <select class="form-control" name="heure_fin">
+            <option value="07">7H</option>
+            <option value="08">8H</option>
+            <option value="09">9H</option>
+            <option value="10">10H</option>
+            <option value="11">11H</option>
+            <option value="12">12H</option>
+            <option value="13">13H</option>
+            <option value="14">14H</option>
+            <option value="15">15H</option>
+            <option value="16">16H</option>
+            <option value="17">17H</option>
+            <option value="18">18H</option>
+            <option value="19">19H</option>
+            <option value="20">20H</option>
+            <option value="21">21H</option>
+            <option value="22">22H</option>
+            <option value="23">23H</option>
+          </select>
+        </div>
+        <div class="col-md-6">
+          <select class="form-control" name="minute_fin">
+            <option value="00">00MIN</option>
+            <option value="15">15MIN</option>
+            <option value="30">30MIN</option>
+            <option value="45">45MIN</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button type="submit" name="btn btn-info">Créer</button>
+</form>
+
 <script type="text/javascript">
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -43,12 +131,14 @@ document.addEventListener('DOMContentLoaded', function() {
     header: {
       left: 'title',
       right: 'prev, next ,today',
-      center: 'dayGridMonth, listMonth'
+      center: 'dayGridMonth, timeGridWeek, listMonth, listYear'
     },
     buttonText: {
       today:    'Aujourd\'hui',
       month:    'mois',
-      listMonth: 'liste',
+      week:     'semaine',
+      listMonth: 'Evenements du mois',
+      listYear: 'Evenements de l\'année'
     },
     listDayFormat: {
       day: 'numeric',
@@ -59,8 +149,12 @@ document.addEventListener('DOMContentLoaded', function() {
       titleFormat: ' MMM, YYYY'
     },
     // allDaySlot: true, //affiche les évenements de toute la journée
-    // allDayText: '',
+    allDayText: 'Journée complète',
     // listDayAltFormat: true,
+    defaultView: 'timeGridWeek',
+    slotDuration: '01:00:00',
+    minTime: '07:00:00',
+    maxTime: '23:00:00',
     columnHeaderFormat: { weekday: 'long' },
     weekends: true, // on affiche les week end
     showNonCurrentDates: false, // affiche en grisé les jours hors du mois
@@ -69,8 +163,7 @@ document.addEventListener('DOMContentLoaded', function() {
     weekNumbersWithinDays: true, // == n° de semaine dans la case
     weekLabel: "S",
     eventLimit: true,
-    eventLimitText: 'de plus',
-    events: 'en.usa#holiday@group.v.calendar.google.com'
+    eventLimitText: 'de plus'
 
 
 
