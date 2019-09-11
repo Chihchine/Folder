@@ -44,7 +44,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	$profilimage = "";
 
 	if($imageexist==1){
-		$profilimage = "images/uploads/" .$imageinfo['LIEN'];
+		$profilimage = $imageinfo['LIEN'];
 	} else {
 		$profilimage = "images/basicprofil.png";
 	}
