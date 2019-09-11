@@ -24,7 +24,7 @@
     <nav id="sidebar" class="sidebar-wrapper">
       <div class="sidebar-content">
         <div class="sidebar-brand">
-          <a href="#">pro sidebar</a>
+          <a href="#">Nom du site</a>
           <div id="close-sidebar">
             <i class="fas fa-times"></i>
           </div>
@@ -38,7 +38,7 @@
             <span class="user-name">Jhon
               <strong>Smith</strong>
             </span>
-            <span class="user-role">Administrator</span>
+            <span class="user-role">Etudiant</span>
             <span class="user-status">
               <i class="fa fa-circle"></i>
               <span>Online</span>
