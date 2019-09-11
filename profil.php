@@ -84,16 +84,27 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	              </tr>
 	              <tr>
 	                <th class="colonnes-gauches" scope="row">Clubs adhéré</th>
-	                <td class="colonnes-droites">clubs
-	                	<?php
+	                <td class="colonnes-droites">
+	               		<?php
 	                		$membrede = Main::DataBase()->prepare("SELECT * FROM MEMBRES_GROUPE WHERE ID_UTILISATEUR = ?");
 	                		$membrede->execute(array($id));
-	                		$membredeinfo = $membrede->fetch();
+	                		$membredeinfo = $membrede->fetchAll();
 
-							echo $membredeinfo['ID_GROUPE'];
+							//echo $membredeinfo['ID_GROUPE'];
+
 							foreach($membredeinfo as $valeur){
-								echo $valeur['ID_GROUPE'];
+								//echo $valeur["ID_GROUPE"];
+
+								$groupe = Main::DataBase()->prepare("SELECT * FROM GROUPES WHERE ID = ?");
+								$groupe->execute(array($valeur["ID_GROUPE"]));
+
+								$groupeinfo = $groupe->fetch();
+		
+								echo '<a href="'.'groupe.php?id=' .$valeur["ID_GROUPE"].'">' .$groupeinfo["NOM"]. '</a>';
+								echo "</br>";
 							}
+
+							//
 
 	                		/*foreach ($membredeinfo['ID_GROUPE'] as $key => $value) {
 	                			echo $key; echo $value;
@@ -110,11 +121,11 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	                </td>
 	              </tr>
 	              <tr>
-	                <th class="colonnes-gauches" scope="row">Actualités</th>
-	                <td class="colonnes-droites">X actualités</td>
+	                <th class="colonnes-gauches" scope="row">PROMOTION</th>
+	                <td class="colonnes-droites"> <?php echo $userinfo['PROMOTION']; ?> </td>
 	              </tr>
 	              <tr>
-	                <th class="colonnes-gauches" scope="row">Commentaires</th>
+	                <th class="colonnes-gauches" scope="row"></th>
 	                <td class="colonnes-droites">X commentaires</td>
 	              </tr>
 	            </tbody>
