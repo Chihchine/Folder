@@ -135,6 +135,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 					            <input class="form-control" type="email" name="newmail"  placeholder="<?php echo $userinfo["MAIL"] ?>" required>
 					            <div class="invalid-feedback">Veuillez renseigner un email valide.</div>
 					          </div>
+					        </div>
 					        </br>
 					          <div class="form-group col-md-4">
 					            <label for="">Presentation</label>
@@ -148,6 +149,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 					            <div class="invalid-feedback">Minimum 6 caractères.</div>
 					          </div>
 					  		</br>
+					  		<div>
 					          <div class="form-group col-md-4">
 					            <label for="">Confirmer</label>
 					            <input class="form-control" type="password" name="confirmMdp" placeholder="*********" required>
@@ -164,6 +166,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 					              <option value="WIS">WIS</option>
 					            </select>
 					          </div>
+					        </div>
 					        </br>
 					          <div class="form-group col-md-6">
 					            <label for="">Niveau d'étude</label>
@@ -175,7 +178,6 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 					              <option value="M2">5ème année</option>
 					            </select>
 					          </div>
-					        </div>
 					      </div>
 					      <button class="btn btn-lg btn-primary btn-block" type="submit" name="btnInscrire">Sauvegarder</button>
 					      <p class="text-muted">&copy; 2019 - Nom du site</p>
