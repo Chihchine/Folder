@@ -23,20 +23,20 @@ require("base/include/header.php");
             <textarea class="col-12" id="clubDesc" name="clubDesc" rows="3" placeholder="Une description simple du club avec ses objectifs, pour qui, quand, etc..."></textarea>
           </div>
           <div class="input-group image-preview">
-                  <input type="text" class="form-control image-preview-filename" disabled="disabled">
-                  <span class="input-group-btn">
-                      <!-- image-preview-clear button -->
-                      <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
-                          <span class="glyphicon glyphicon-remove"></span> Annuler
-                      </button>
-                      <!-- image-preview-input -->
-                      <div class="btn btn-default image-preview-input">
-                          <span class="glyphicon glyphicon-folder-open"></span>
-                          <span class="image-preview-input-title">Choisissez une image</span>
-                          <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/> <!-- rename it -->
-                      </div>
-                  </span>
+            <input type="text" class="form-control image-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
+            <span class="input-group-btn">
+              <!-- image-preview-clear button -->
+              <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+                <span class="glyphicon glyphicon-remove"></span> Clear
+              </button>
+              <!-- image-preview-input -->
+              <div class="btn btn-default image-preview-input">
+                <span class="glyphicon glyphicon-folder-open"></span>
+                <span class="image-preview-input-title">Browse</span>
+                <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/> <!-- rename it -->
               </div>
+            </span>
+          </div>
         </form>
       </div>
       <div class="modal-footer">
@@ -48,7 +48,6 @@ require("base/include/header.php");
 </div>
 <?php /*<-- FIN - Popup création de groupe -->*/ ?>
 
-<?php /*<-- DEBUT - Tableau des groupes existants -->*/ ?>
 <div class="fil-arianne container">
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
@@ -119,4 +118,4 @@ require("base/include/header.php");
 
 </div>
 </div>
-<?php /*<-- FIN - Tableau des groupes existants -->*/ ?>
+</body>
