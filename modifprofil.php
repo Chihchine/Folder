@@ -146,7 +146,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	        <div class="card-header">
 	        </div>
 	        <div class="card-body card-body-right">
-	              	<form method="post" class="needs-validation form-signin" novalidate>
+	              	<form method="post" class="needs-validation form-signin" novalidate enctype="multipart/form-data">
 					      <img class="mb-4">
 					      <h1 class="h3 mb-3 font-weight-normal">Modification de votre profil</h1>
 					      <div class="form">
