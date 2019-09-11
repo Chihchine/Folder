@@ -3,8 +3,9 @@ $pageTitle = "Groupes";
 require("base/include/header.php");
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-    if( !empty($_FILES['fichier']['name']) ) {
+  echo 1;
+    if( !empty($_FILES['groupeImage']['name']) ) {
+      echo 2;
       $extension  = pathinfo($_FILES['fichier']['name'], PATHINFO_EXTENSION);
       Groupe::Create($_POST['groupeName'], $_POST['groupeDesc'], $extension, $_FILES['fichier']['tmp_name'], $_FILES['fichier']['error']);
 			}
@@ -21,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </button>
       </div>
       <div class="modal-body">
-        <form id="createGroupe" class="form-proposition-groupe" action="#" method="post">
+        <form enctype="multipart/form-data" id="createGroupe" class="form-proposition-groupe" action="groupes.php" method="post">
           <div class="form-group">
             <label for="groupeName">Nom du groupe</label>
             <input type="text" name="groupeName" id="groupeName" class="form-control" placeholder="Nom du groupe choisi...">
@@ -31,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <textarea class="col-12" id="groupeDesc" name="groupeDesc" rows="3" placeholder="Une description simple du groupe avec ses objectifs, pour qui, quand, etc..."></textarea>
           </div>
           <div class="input-group image-preview">
-            <input type="text" class="form-control image-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
+            <input type="text" class="form-control image-preview-filename" disabled="disabled">
             <span class="input-group-btn">
               <!-- image-preview-clear button -->
               <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
@@ -41,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
               <div class="btn btn-default image-preview-input">
                 <span class="glyphicon glyphicon-folder-open"></span>
                 <span class="image-preview-input-title">Ajoutez une image</span>
-                <input type="file" accept="image/png, image/jpeg, image/gif" id="groupeImage" name="groupeImage"/> <!-- rename it -->
+                <input type="file" accept="image/png, image/jpeg, image/gif" id="groupeImage" name="groupeImage"/>
               </div>
             </span>
           </div>
@@ -49,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-        <button type="button" class="btn btn-primary" onlick="document.forms["createGroupe"].submit()">Créer</button>
+        <button type="button" class="btn btn-primary" onclick="document.forms['createGroupe'].submit();">Créer</button>
       </div>
     </div>
   </div>
