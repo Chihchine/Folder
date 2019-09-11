@@ -84,7 +84,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	              </tr>
 	              <tr>
 	                <th class="colonnes-gauches" scope="row">Clubs adhéré</th>
-	                <td class="colonnes-droites">clubs
+	                <td class="colonnes-droites">
 	                	<?php
 	                		$membrede = Main::DataBase()->prepare("SELECT * FROM MEMBRES_GROUPE WHERE ID_UTILISATEUR = ?");
 	                		$membrede->execute(array($id));
@@ -100,7 +100,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 
 								$groupeinfo = $groupe->fetch();
 								echo "</br>";		
-								echo '<a href="">' .$groupeinfo["NOM"]. '</a>';
+								echo '<a href="'.'groupe.php?id=' .$valeur["ID_GROUPE"].'">' .$groupeinfo["NOM"]. '</a>';
 								
 							}
 
