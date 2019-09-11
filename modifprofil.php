@@ -40,6 +40,12 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 				} else {
 					// error handle: MDP is empty
 				}
+				if(isset($_POST['newecole']) AND !empty($_POST['newecole']) AND $_POST['newecole'] != $userinfo['ECOLE']) {
+					$newecole = htmlspecialchars($_POST['newecole']);
+					$insertecole = Main::DataBase()->prepare("UPDATE UTILISATEURS SET ECOLE = ? WHERE ID = ?");
+				    $insertecole->execute(array($newecole, $id));
+				    header('Location: modifprofil.php?id='.$id);
+				}
 		} else {
 			header("Location: profil.php?id=".$_GET['id']);
 			die;
