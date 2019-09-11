@@ -135,22 +135,26 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 					            <input class="form-control" type="email" name="newmail"  placeholder="<?php echo $userinfo["MAIL"] ?>" required>
 					            <div class="invalid-feedback">Veuillez renseigner un email valide.</div>
 					          </div>
+					        </br>
 					          <div class="form-group col-md-4">
 					            <label for="">Presentation</label>
 					            <input class="form-control" type="text" name="pres"  placeholder="<?php echo $userinfo["PRESENTATION"] ?>" required>
 					            <div class="invalid-feedback">Ne pas dépasser 150 caractères</div>
 					          </div>
+					        </br>
 					          <div class="form-group col-md-4">
 					            <label for="">Nouveau Mot de passe</label>
 					            <input class="form-control" type="password" name="newmdp"  placeholder="*********" required>
 					            <div class="invalid-feedback">Minimum 6 caractères.</div>
 					          </div>
+					  		</br>
 					          <div class="form-group col-md-4">
 					            <label for="">Confirmer</label>
 					            <input class="form-control" type="password" name="confirmMdp" placeholder="*********" required>
 					            <div class="invalid-feedback">Veuillez confirmer votre nouveau mot de passe.</div>
 					          </div>
 					        </div>
+					    	</br>
 					        <div class="form-row">
 					          <div class="form-group col-md-6">
 					            <label for="">Nouvelle Ecole</label>
@@ -160,6 +164,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 					              <option value="WIS">WIS</option>
 					            </select>
 					          </div>
+					        </br>
 					          <div class="form-group col-md-6">
 					            <label for="">Niveau d'étude</label>
 					            <select class="form-control" name="newpromotion">
