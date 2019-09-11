@@ -97,7 +97,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                   $groupes = Groupe::List();
                   foreach ($groupes as $groupe) { ?>
                   <tr>
-                    <td><img src="<?php echo Settings::sitePathRoot . Image::Show($groupe['ID_IMAGE_GROUPE'])['LIEN']; ?>"></td>
+                    <td><img class="groupes-image" src="<?php echo Settings::sitePathRoot . Image::Show($groupe['ID_IMAGE_GROUPE'])['LIEN']; ?>"></td>
                     <td><?php echo $groupe['NOM']; ?></td>
                     <td><?php echo $groupe['DESCRIPTION']; ?></td>
                     <td><?php echo $groupe['DATE CREATION']; ?></td>
