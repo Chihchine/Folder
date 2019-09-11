@@ -58,7 +58,7 @@
                // Si c'est OK, on teste l'upload
                if(move_uploaded_file($tmp_name, $TARGET.$nomImage))
                {
-                 return 'success';
+                 return $id;
                }
                else
                {
@@ -96,7 +96,7 @@
        $request = Main::Database()->prepare('SELECT * FROM IMAGES WHERE IMAGE_ID = :id');
        $request->execute(['id' => $id]);
        $image = $request->fetch();
-   
+
        return $image;
      }
    }
