@@ -9,12 +9,12 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	$result = Main::DataBase()->prepare("SELECT * FROM UTILISATEURS WHERE ID = ?");
 	$result->execute(array($id));
 
-	$image = Main::DataBase()->prepare("SELECT * FROM PHOTOS WHERE ID = ?");
+	$image = Main::DataBase()->prepare("SELECT * FROM IMAGES WHERE ID = ?");
 
 	$userexist = $result->rowCount();
 	$userinfo = $result->fetch();
 
-	$imageid = $userinfo["ID_PHOTO_PROFIL"];
+	$imageid = $userinfo["ID_IMAGE_PROFIL"];
 	$image->execute(array($imageid));
 	$imageinfo = $image->fetch();
 	$imageexist = $image->rowCount();
