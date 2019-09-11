@@ -118,3 +118,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
               </table>
             </div>
           </div>
+
+<?php require("base/include/footer.php"); ?>

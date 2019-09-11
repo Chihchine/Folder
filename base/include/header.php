@@ -134,9 +134,3 @@ if (!isset($_SESSION['id_utilisateur'])) {
 		</nav>
 		<main class="page-content">
 			<div class="container-fluid">
-				<!-- Contenu à droite -->
-			</div>
-
-		</main>
-
-	</div>
