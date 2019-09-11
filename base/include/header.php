@@ -50,7 +50,7 @@ $utilisateur = Utilisateur::Show($_SESSION['id_utilisateur']);
 						<span class="user-name"><?php echo $utilisateur['PRENOM']; ?>
 							<strong><?php echo $utilisateur['NOM']; ?></strong>
 						</span>
-						<span class="user-role"><?php echo $utilisateur['ECOLE'] . " " . <?php echo $utilisateur['PROMOTION']; ?>; ?></span>
+						<span class="user-role"><?php echo $utilisateur['ECOLE'] . " " . echo $utilisateur['PROMOTION']; ?>; ?></span>
 						<span class="user-status">
 							<i class="fa fa-circle"></i>
 							<span>Actif</span>
