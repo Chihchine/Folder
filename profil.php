@@ -113,19 +113,22 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	                		$membrede = Main::DataBase()->prepare("SELECT * FROM MEMBRES_GROUPE WHERE ID_UTILISATEUR = ?");
 	                		$membrede->execute(array($id));
 	                		$membredeinfo = $membrede->fetchAll();
-
+	                		$nombremembre = $membrede->rowCount();
 							//echo $membredeinfo['ID_GROUPE'];
+	                		if($nombremembre > 0){
+								foreach($membredeinfo as $valeur){
+									//echo $valeur["ID_GROUPE"];
 
-							foreach($membredeinfo as $valeur){
-								//echo $valeur["ID_GROUPE"];
+									$groupe = Main::DataBase()->prepare("SELECT * FROM GROUPES WHERE ID = ?");
+									$groupe->execute(array($valeur["ID_GROUPE"]));
 
-								$groupe = Main::DataBase()->prepare("SELECT * FROM GROUPES WHERE ID = ?");
-								$groupe->execute(array($valeur["ID_GROUPE"]));
-
-								$groupeinfo = $groupe->fetch();
-		
-								echo '<a href="'.'groupe.php?id=' .$valeur["ID_GROUPE"].'">' .$groupeinfo["NOM"]. '</a>';
-								echo "</br>";
+									$groupeinfo = $groupe->fetch();
+			
+									echo '<a href="'.'groupe.php?id=' .$valeur["ID_GROUPE"].'">' .$groupeinfo["NOM"]. '</a>';
+									echo "</br>";
+								}
+							} else {
+								echo "Membre de aucun groupe";
 							}
 
 							//
