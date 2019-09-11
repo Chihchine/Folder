@@ -95,8 +95,8 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	   if($_FILES['avatar']['size'] <= $tailleMax) {
 	      $extensionUpload = strtolower(substr(strrchr($_FILES['avatar']['name'], '.'), 1));
 	      if(in_array($extensionUpload, $extensionsValides)) {
-	      	$numimage = Main:DataBase()->prepare("SELECT * FROM IMAGES");
-	      	$lenumimage = $numimage->rowCount()
+	      	$numimage = Main::DataBase()->prepare("SELECT * FROM IMAGES");
+	      	$lenumimage = $numimage->rowCount();
 	      	$lenumimage++;
 	         $chemin = "images/uploads/".$lenumimage.".".$extensionUpload;
 	         $cheminname = $lenumimage.".".$extensionUpload;
