@@ -98,6 +98,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	      	$numimage = Main::DataBase()->prepare("SELECT * FROM IMAGES");
 	      	$lenumimage = $numimage->rowCount();
 	      	$lenumimage++;
+	      	echo $lenumimage;
 	         $chemin = "images/uploads/".$lenumimage.".".$extensionUpload;
 	         echo $chemin;
 	         $cheminname = $lenumimage.".".$extensionUpload;
