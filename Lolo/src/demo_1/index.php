@@ -144,7 +144,7 @@
                   <p class="mb-1 mt-3 font-weight-semibold">Alexy DEFORGE</p>
                   <p class="font-weight-light text-muted mb-0">alexydeforgealexy@gmail.com</p>
                 </div>
-                <a class="dropdown-item">Mon profil <span class="badge badge-pill badge-danger">1</span><i class="dropdown-item-icon ti-dashboard"></i></a>
+                <a class="dropdown-item" href="/folder/lolo/src/demo_1/pages/profile/profile.php">Mon profil <span class="badge badge-pill badge-danger">1</span><i class="dropdown-item-icon ti-dashboard"></i></a>
                 <a class="dropdown-item">Messages<i class="dropdown-item-icon ti-comment-alt"></i></a>
                 <a class="dropdown-item">Activitées<i class="dropdown-item-icon ti-location-arrow"></i></a>
                 <a class="dropdown-item">FAQ<i class="dropdown-item-icon ti-help-alt"></i></a>
@@ -749,6 +749,7 @@
       </div>
       <!-- page-body-wrapper ends -->
     </div>
+    
     <!-- container-scroller -->
     <!-- plugins:js -->
     <script src="../assets/vendors/js/vendor.bundle.base.js"></script>
