@@ -1,4 +1,4 @@
-<link href="<?php echo Settings::sitePathRoot; ?>/base/css/footer.css" rel="stylesheet" id="css">
+<!-- <link href="<?php #echo Settings::sitePathRoot; ?>/base/css/footer.css" rel="stylesheet" id="css">
 <footer class="site-footer">
     <div class="container">
         <div class="row">
@@ -26,7 +26,7 @@
         </div>
     </div>
 
-</footer>
+</footer> -->
 
 
 
