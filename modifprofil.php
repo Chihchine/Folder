@@ -149,6 +149,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	        <div class="card-header">
 	        </div>
 	        <div class="card-body card-body-right">
+	        	<div class="row">
 	              	<form method="post" class="needs-validation form-signin" novalidate enctype="multipart/form-data">
 					      <img class="mb-4">
 					      <h1 class="h3 mb-3 font-weight-normal">Modification de votre profil</h1>
@@ -164,7 +165,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 					            <input class="form-control" type="text" name="pres" value="<?php echo $userinfo["PRESENTATION"] ?>" required>
 					            <div class="invalid-feedback">Ne pas dépasser 150 caractères</div>
 					          </div>
-					          <hr/>
+					          <br/>
 					          <div class="form-group col-md-4">
 					            <label for="">Nouveau Mot de passe</label>
 					            <input class="form-control" type="password" name="newmdp"  placeholder="*********" required>
@@ -175,7 +176,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 					            <input class="form-control" type="password" name="confirmMdp" placeholder="*********" required>
 					            <div class="invalid-feedback">Veuillez confirmer votre nouveau mot de passe.</div>
 					          </div>
-					         <hr/>
+					         <br/>
 					        </div>
 					        <div class="form-row">
 					          <div class="form-group col-md-6">
@@ -204,6 +205,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 					      </div>
 					      <button class="btn btn-lg btn-primary btn-block" type="submit" name="btnInscrire">Sauvegarder</button>
 					    </form>
+					</div>
 	        </div>
 	      </div>
 	    </div>
