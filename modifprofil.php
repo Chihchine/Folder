@@ -173,7 +173,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 					          <div class="form-group col-md-6">
 					            <label for="">Nouvelle Ecole</label>
 					            <select class="form-control" name="newecole">
-					  				<option value="Basic"> <?php $userinfo["ECOLE"]?></option>
+					  				<option value="Basic"><?php echo $userinfo["ECOLE"]?></option>
 					              <option value="EPSI">EPSI</option>
 					              <option value="IDRAC">IDRAC</option>
 					              <option value="WIS">WIS</option>
