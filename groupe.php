@@ -34,11 +34,11 @@ if (empty($groupe)) {
           </div>
           <div class="form-group">
             <label for="groupeDesc">Description du groupe</label>
-            <textarea class="col-12" id="groupeDesc" name="groupeDesc" rows="3" placeholder="Une description simple du groupe avec ses objectifs, pour qui, quand, etc..."><?php echo $groupe['DESCRIPTION']; ?>"</textarea>
+            <textarea class="col-12" id="groupeDesc" name="groupeDesc" rows="3" placeholder="Une description simple du groupe avec ses objectifs, pour qui, quand, etc..."><?php echo $groupe['DESCRIPTION']; ?></textarea>
           </div>
           <div class="form-group">
             <label for="groupeDesc">Visible</label>
-            <input type="checkbox" class="col-12" id="groupeVisible" name="groupeVisislbe" <?php if($groupe['VISIBLE']==true || $groupe['VISIBLE']==NULL) { echo "checked"; }?>
+            <input type="checkbox" class="col-12" id="groupeVisible" name="groupeVisislbe" <?php if($groupe['VISIBLE']==true || $groupe['VISIBLE']==NULL) { echo "checked"; }?>>
           </div>
           <div class="input-group image-preview">
             <input type="text" class="form-control image-preview-filename" disabled="disabled">
