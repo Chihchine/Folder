@@ -27,6 +27,7 @@ if (isset($_POST['creer'])) {
 
 
 <div id='calendar'></div>
+<?php Calendrier::eventCalendar(); ?>
 
 <form class=""  method="post">
   <div class="form-row">
