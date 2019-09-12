@@ -155,7 +155,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 					      <img class="mb-4">
 					      <h1 class="h3 mb-3 font-weight-normal">Modification de votre profil</h1>
 					      <div class="form">
-					        <div class="form-row">
+					        <div class="row">
 					          <div class="form-group col-md-4">
 					            <label for="">Nouvel Email</label>
 					            <input class="form-control" type="email" name="newmail"  placeholder="<?php echo $userinfo["MAIL"] ?>" required>
@@ -167,22 +167,19 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 					            <div class="invalid-feedback">Ne pas dépasser 150 caractères</div>
 					          </div>
 					          <br/>
-					          <div class="row">
-						          <div class="form-group col-md-4">
-						            <label for="">Nouveau Mot de passe</label>
-						            <input class="form-control" type="password" name="newmdp"  placeholder="*********" required>
-						            <div class="invalid-feedback">Minimum 6 caractères.</div>
-						          </div>
-						          <div class="form-group col-md-4">
-						            <label for="">Confirmer votre nouveau mot de passe</label>
-						            <input class="form-control" type="password" name="confirmMdp" placeholder="*********" required>
-						            <div class="invalid-feedback">Veuillez confirmer votre nouveau mot de passe.</div>
-						          </div>
-					      		</div>
+					          <div class="form-group col-md-4">
+					            <label for="">Nouveau Mot de passe</label>
+					            <input class="form-control" type="password" name="newmdp"  placeholder="*********" required>
+					            <div class="invalid-feedback">Minimum 6 caractères.</div>
+					          </div>
+					          <div class="form-group col-md-4">
+					            <label for="">Confirmer votre nouveau mot de passe</label>
+					            <input class="form-control" type="password" name="confirmMdp" placeholder="*********" required>
+					            <div class="invalid-feedback">Veuillez confirmer votre nouveau mot de passe.</div>
+					          </div>
 					         <br/>
 					        </div>
 					        <div class="row">
-					        <div class="form-row">
 					          <div class="form-group col-md-6">
 					            <label for="">Nouvelle Ecole</label>
 					            <select class="form-control" name="newecole">
@@ -192,8 +189,6 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 					              <option value="WIS">WIS</option>
 					            </select>
 					          </div>
-					         </div>
-					         <div class="row">
 					          <div class="form-group col-md-6">
 					            <label for="">Niveau d'étude</label>
 					            <select class="form-control" name="newpromotion">
@@ -205,7 +200,6 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 					              <option value="M2">5ème année</option>
 					            </select>
 					          </div>
-					      </div>
 					          <lalel> Téléverser un nouvel avatar:    </lalel>
 					          <input type="file" name="avatar">
 					        </div>
