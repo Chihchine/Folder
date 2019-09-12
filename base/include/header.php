@@ -23,18 +23,15 @@ if (empty($imageProfil)) {
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.15.4/dist/bootstrap-table.min.css">
 	<link rel="stylesheet" href="<?php echo Settings::sitePathRoot; ?>base/css/sidebar.css">
-<<<<<<< HEAD
-<<<<<<< HEAD
-	<link rel="stylesheet" href="<?php echo Settings::sitePathRoot; ?>../assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
-	<link rel="stylesheet" href="<?php echo Settings::sitePathRoot; ?>../assets/vendors/iconfonts/ionicons/css/ionicons.css">
-	<link rel="stylesheet" href="<?php echo Settings::sitePathRoot; ?>../assets/vendors/iconfonts/typicons/src/font/typicons.css">
-	<link rel="stylesheet" href="<?php echo Settings::sitePathRoot; ?>../assets/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css">
-	<link rel="stylesheet" href="<?php echo Settings::sitePathRoot; ?>../assets/vendors/css/vendor.bundle.base.css">
-	<link rel="stylesheet" href="<?php echo Settings::sitePathRoot; ?>../assets/vendors/css/vendor.bundle.addons.css">
-=======
->>>>>>> 6d5666f81f1e9501135405f45c39cdbd67eb1b76
-=======
->>>>>>> 6f8cde34c2cc08529352917fa2139c5e6a3e3326
+	<link rel="stylesheet" href="<?php echo Settings::sitePathRoot; ?>base/template/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+	<link rel="stylesheet" href="<?php echo Settings::sitePathRoot; ?>base/template/vendors/iconfonts/ionicons/css/ionicons.css">
+	<link rel="stylesheet" href="<?php echo Settings::sitePathRoot; ?>base/template/vendors/iconfonts/typicons/src/font/typicons.css">
+	<link rel="stylesheet" href="<?php echo Settings::sitePathRoot; ?>base/template/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css">
+	<link rel="stylesheet" href="<?php echo Settings::sitePathRoot; ?>base/template/vendors/css/vendor.bundle.base.css">
+	<link rel="stylesheet" href="<?php echo Settings::sitePathRoot; ?>base/template/vendors/css/vendor.bundle.addons.css">
+  <link rel="stylesheet" href="<?php echo Settings::sitePathRoot; ?>base/template/assets/css/shared/style0.css">
+  <link rel="stylesheet" href="<?php echo Settings::sitePathRoot; ?>base/template/assets/css/demo_1/style.css">
+  <link rel="shortcut icon" href="<?php echo Settings::sitePathRoot; ?>base/template/assets/images/favicon.png" />
 
 	<script src="<?php echo Settings::sitePathRoot; ?>base/js/jQuery.min.js"></script>
   <script src="<?php echo Settings::sitePathRoot; ?>base/js/popper.js"></script>
