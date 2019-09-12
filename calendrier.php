@@ -28,6 +28,7 @@ while ($event = $events->fetch()) {
   $dataEvent[] = array(
     'title'       => $event['NOM'],
     'start'       => $debut,
+    'end'         => $fin,
     'color'       => $color
   );
   $i = $i + 1;
