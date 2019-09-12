@@ -35,7 +35,7 @@ require("base/include/header.php"); ?>
 
         while ($utilisateur = $utilisateurs->fetch()) { ?>
         <tr>
-          <td><?php echo $utilisateur['PRENOM'] ?></td>
+          <td><a href="profil.php?id=<?php echo $utilisateur['ID'] ?>"><?php echo $utilisateur['PRENOM'] ?></a></td>
           <td><?php echo $utilisateur['NOM'] ?></td>
           <td><?php echo $utilisateur['ECOLE'] ?></td>
           <td><?php echo $utilisateur['PROMOTION'] ?></td>
