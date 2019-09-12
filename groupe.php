@@ -12,21 +12,24 @@ if (empty($groupe)) {
   echo "erreur, groupe inconnu";
 }
 
-if (isset($_GET['r']) && $_GET['r']=="editInfo") {
-  if (isset($_POST['groupeVisible'])) {
-    $visible = true;
-  } else {
-    $visible = false;
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  if (isset($_GET['r']) && $_GET['r']=="editInfo") {
+    if (isset($_POST['groupeVisible'])) {
+      $visible = 1;
+    } else {
+      $visible = 0;
+    }
+    Groupe::Edit($_GET['id'], $_POST['groupeName'], $_POST['groupeDesc'], $visible, $groupe['ID_IMAGE_GROUPE']);
+
+  } elseif (isset($_GET['r']) && $_GET['r']=="editImage") {
+
+      $extension  = pathinfo($_FILES['groupeImage']['name'], PATHINFO_EXTENSION);
+
+      Groupe::Edit($_GET['id'], $groupe['NOM'], $groupe['DESCRIPTION'], $groupe['VISIBLE'], Image::Upload($extension, $_FILES['groupeImage']['tmp_name'], $_FILES['groupeImage']['error']));
   }
-  echo 1;
-  Groupe::Edit($_GET['id'], $_POST['groupeName'], $_POST['groupeDesc'], $visible, $groupe['ID_IMAGE_GROUPE']);
-
-} elseif (isset($_GET['r']) && $_GET['r']=="editImage") {
-
-    $extension  = pathinfo($_FILES['groupeImage']['name'], PATHINFO_EXTENSION);
-
-    Groupe::Edit($_GET['id'], $groupe['NOM'], $groupe['DESCRIPTION'], $groupe['VISIBLE'], Image::Upload($extension, $_FILES['groupeImage']['tmp_name'], $_FILES['groupeImage']['error']));
 }
+
+$groupe = Groupe::Show($_GET['id']);
 ?>
 
 <link href="base/css/profile.css" rel="stylesheet" id="css">
