@@ -12,15 +12,23 @@ if (isset($_POST['creer'])) {
 }
 
 $events = Calendrier::eventsDataBase();
+$i = 1;
 while ($event = $events->fetch()) {
   $debut = substr($event['DATE_DEBUT'], 0, 10).'T'.substr($event['DATE_DEBUT'], 11, 19);
   $fin = substr($event['DATE_FIN'], 0, 10).'T'.substr($event['DATE_FIN'], 11, 19);
+  if ($i % 2 != 0) {
+    $color = '#2ca8ff';
+  }
+  else {
+    $color = '048b9a';
+  }
   $dataEvent[] = array(
     'title'       => $event['NOM'],
     'start'       => $debut,
     'end'         => $fin,
-    'color'       => '#2ca8ff'
+    'color'       => $color
   );
+  $i = i + 1;
 }
 
 $dataEventJson = json_encode($dataEvent);
@@ -56,7 +64,7 @@ $dataEventJson = json_encode($dataEvent);
           <div class="form-row">
             <div class="form-group  col-md-4">
               <label for="">Titre de l'évenement</label>
-              <input class="form-control" type="text" name="nom" value="">
+              <input class="form-control" type="text" name="nom" value="" placeholder="Titre de l'évenement à créer">
             </div>
             <div class="form-group  col-md-4">
               <label for="">Date de début</label>
