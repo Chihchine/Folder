@@ -44,7 +44,6 @@ if (empty($imageProfil)) {
 			<div class="sidebar-content">
 				<div class="sidebar-brand">
 					<a href="#">My campus</a>
-					<?php echo $_SESSION['id_utilisateur']?>
 					<div id="close-sidebar">
 						<i class="fas fa-times"></i>
 					</div>
@@ -55,7 +54,7 @@ if (empty($imageProfil)) {
 						alt="User picture">
 					</div>
 					<div class="user-info">
-						<a href="profil.php?id='<?php echo $_SESSION['id_utilisateur']?>'">
+						<a href="profil.php?id=<?php echo $_SESSION['id_utilisateur']?>">
 							<span class="user-name"><?php echo $utilisateur['PRENOM']; ?>
 								<strong><?php echo $utilisateur['NOM']; ?></strong>
 							</span>
@@ -87,7 +86,7 @@ if (empty($imageProfil)) {
 							<span>Général</span>
 						</li>
 						<li>
-							<a href="profil.php?id='<?php echo $_SESSION['id_utilisateur']?>'">
+							<a href="profil.php?id=<?php echo $_SESSION['id_utilisateur']?>">
 								<i class="fas fa-user"></i>
 								<span>Profil</span>
 							</a>
