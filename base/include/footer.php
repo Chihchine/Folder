@@ -1,9 +1,10 @@
-    <footer class="site-footer">
+   <link href="base/css/footer.css" rel="stylesheet" id="css">
+        <footer class="site-footer">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-md-6">
                     <h6>Informations</h6>
-                    <p class="text-justify"> Créé par COCHE Thomas, REYNARD Aurélien, MAISROT Gauthier, DEFORGE Alexy et DUCORNETZ Loïc pour le WorkShop de deuxième année.</p>
+                    <p class="text-justify"> Créé par COCHE Thomas, REYNARD Aurélien, MAIROT Gauthier, DEFORGE Alexy et DUCORNETZ Loïc pour le WorkShop de deuxième année.</p>
                 </div>
             </div>
             <hr>
