@@ -198,7 +198,7 @@ document.addEventListener('DOMContentLoaded', function() {
     allDayText: 'Journée complète',
     // listDayAltFormat: true,
     defaultView: 'timeGridWeek',
-    slotDuration: '01:00:00',
+    slotDuration: '02:00:00',
     minTime: '07:00:00',
     maxTime: '23:00:00',
     columnHeaderFormat: { weekday: 'long' },
