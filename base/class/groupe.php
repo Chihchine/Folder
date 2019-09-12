@@ -39,6 +39,11 @@ Class Groupe {
     $request->execute(["idGroupe" => $id, "idUtilisateur" => $_SESSION["id_utilisateur"]]);
   }
 
+  public static function Edit($id, $nom, $description, $visible, $imageID) {
+      $request = Main::Database()->prepare("UPDATE GROUPES(NOM, DESCRIPTION, VISIBLE, ID_IMAGE_GROUPE) VALUES(:nom, :desc, :visible, :imageID) WHERE ID=:id");
+      $request->execute(["id" => $id, "nom" => $nom, "desc" => $description, "visisble" => $visible]);
+  }
+
 }
 
 ?>
