@@ -310,7 +310,7 @@ require("base/include/header.php");
                                     <small class="text-muted ml-auto">Il y a 1 heure</small>
                                 </div>
                                 <div class="d-flex py-2 border-bottom">
-                                    <span class="img-sm rounded-circle bg-warning text-white text-avatar">AR</span>
+                                    <span class="img-sm rounded-circle bg-danger text-white text-avatar">AR</span>
                                     <div class="wrapper ml-2">
                                         <p class="mb-n1 font-weight-semibold">Aurélien Reynard</p>
                                         <small>EPSI B2G1</small>
