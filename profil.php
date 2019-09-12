@@ -91,11 +91,10 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 
                                 if($_SESSION["id_utilisateur"]){
                                 echo '
-                                <div class="middle">
                                 <form method="post" class="needs-validation form-signin" novalidate enctype="multipart/form-data"> 
                                     <input type="button" class="btn btn-secondary" id="btnChangePicture" value="Change" />
                                     <input type="file" style="display: none;" id="profilePicture" name="avatar" />
-                                </div><button class="btn btn-primary d-none" id="btnDiscard" type="submit" name="btnInscrire">Sauvegarder</button></form>';}
+                                </div>';}
 
                                 ?>
                             </div>
