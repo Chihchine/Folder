@@ -95,7 +95,8 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
                                 <h6 class="d-block"><?php echo $userinfo["PROMOTION"]?></h6>
                             </div>
                             <div class="ml-auto">
-                                <button class="btn btn-lg btn-primary btn-block" type="submit" name="btnInscrire">Sauvegarder</button>
+                                <button class="btn btn-primary d-none" id="btnDiscard" type="submit" name="btnInscrire">Sauvegarder</button>-->
+                                <!--<input type="button" class="btn btn-primary d-none" id="btnDiscard" value="Changer" />-->
                             </div> 
                         </div>
                     </div>
