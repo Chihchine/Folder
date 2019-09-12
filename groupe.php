@@ -12,7 +12,7 @@ if (empty($groupe)) {
   echo "erreur, groupe inconnu";
 }
 
-if (isset($_GET['r']) && $_GET['r']=="editInfo ") {
+if (isset($_GET['r']) && $_GET['r']=="editInfo") {
   if (isset($_POST['groupeVisible'])) {
     $visible = true;
   } else {
