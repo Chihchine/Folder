@@ -148,12 +148,12 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	    <div class="col-md-9">
 	      <div class="card">
 	        <div class="card-header">
+						<h2>Modification de votre profil</h2>
 	        </div>
 	        <div class="card-body card-body-right">
 	        	<div class="row">
-	              	<form method="post" class="needs-validation form-signin" novalidate enctype="multipart/form-data">
+	             <form method="post" class="needs-validation form-signin" novalidate enctype="multipart/form-data">
 					      <img class="mb-4">
-					      <h1 class="h3 mb-3 font-weight-normal">Modification de votre profil</h1>
 					      <div class="form">
 					        <div class="row">
 					          <div class="form-group col-md-4">
@@ -195,13 +195,13 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 					            </select>
 					          </div>
 										<div class="form-group col-md-12">
-											<div class="form-group col-md-4">
 												<textarea class="form-control" name="pres" value="<?php echo $userinfo["PRESENTATION"] ?>" required rows="6" placeholder="Une description de vous, sur vos intérêts, vos compétences, vos projets, etc"></textarea>
 						            <div class="invalid-feedback">Ne pas dépasser 150 caractères</div>
-						          </div>
 										</div>
-					          <lalel> Téléverser un nouvel avatar:    </lalel>
-					          <input type="file" name="avatar">
+										<div class="download-img">
+											<lalel> Téléverser un nouvel avatar:    </lalel>
+						          <input type="file" name="avatar">
+										</div>          
 					        </div>
 					      </div>
 					      <button class="btn btn-lg btn-primary btn-block" type="submit" name="btnInscrire">Sauvegarder</button>
