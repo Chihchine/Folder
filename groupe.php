@@ -16,7 +16,7 @@ if (isset($_GET['r']) && $_GET['r']=="delete") {
   Groupe::Delete($_GET['id']);
   echo '
   <SCRIPT LANGUAGE="JavaScript">
-  document.location.href="groupes.php"
+  document.location.href="groupes.php";
   </SCRIPT>
   ';
 }
