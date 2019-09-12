@@ -2,7 +2,7 @@
 require("base/include/header.php");
 ?>
 
-    <div class="container-scroller">
+    <div class="container-fluid-scroller">
       <div class="main-panel">
         <div class="content-wrapper">
                     <div class="row page-title-header">
