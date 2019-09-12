@@ -15,7 +15,6 @@ if (isset($_POST['connexion'])) {
   }
 }
 session_destroy();
-echo $_SESSION['id_utilisateur'];
  ?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
