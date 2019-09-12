@@ -60,8 +60,10 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 				    header('Location: modifprofil.php?id='.$id);
 				}
 		} else {
-			echo "Test";
-			header("Location: modifprofil.php?id=". $_SESSION['id_utilisateur']);
+			echo '
+			<SCRIPT LANGUAGE="JavaScript">
+			document.location.href="modifprofil.php?id="' . $_SESSION["id_utilisateur"];'
+			</SCRIPT>'
 			die;
 		}
 	}
