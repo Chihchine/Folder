@@ -16,6 +16,55 @@ if (empty($groupe)) {
 <link href="base/css/profile.css" rel="stylesheet" id="css">
 <script src="base/js/profile.js"></script>
 
+<?php /*<-- DEBUT - Popup modification de groupe -->*/ ?>
+<div class="modal fade" id="creationGroupe" tabindex="-1" role="dialog" aria-labelledby="creationGroupeLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="creationGroupeLabel">Modifier le groupe</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form enctype="multipart/form-data" id="createGroupe" class="form-proposition-groupe" action="groupes.php" method="post">
+          <div class="form-group">
+            <label for="groupeName">Nom du groupe</label>
+            <input type="text" name="groupeName" id="groupeName" class="form-control" placeholder="Nom du groupe choisi..." value="<?php echo $groupe['NOM']; ?>">
+          </div>
+          <div class="form-group">
+            <label for="groupeDesc">Description du groupe</label>
+            <textarea class="col-12" id="groupeDesc" name="groupeDesc" rows="3" placeholder="Une description simple du groupe avec ses objectifs, pour qui, quand, etc..."><?php echo $groupe['DESCRIPTION']; ?>"</textarea>
+          </div>
+          <div class="form-group">
+            <label for="groupeDesc">Visible</label>
+            <input type="checkbox" class="col-12" id="groupeVisible" name="groupeVisislbe" <?php if($groupe['VISIBLE']==true || $groupe['VISIBLE']==NULL) { echo "checked"; }?>
+          </div>
+          <div class="input-group image-preview">
+            <input type="text" class="form-control image-preview-filename" disabled="disabled">
+            <span class="input-group-btn">
+              <!-- image-preview-clear button -->
+              <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+                <span class="glyphicon glyphicon-remove"></span> Annuler
+              </button>
+              <!-- image-preview-input -->
+              <div class="btn btn-default image-preview-input">
+                <span class="glyphicon glyphicon-folder-open"></span>
+                <span class="image-preview-input-title">Ajoutez une image</span>
+                <input type="file" accept="image/png, image/jpeg, image/gif" id="groupeImage" name="groupeImage"/>
+              </div>
+            </span>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+        <button type="button" class="btn btn-primary" onclick="document.forms['createGroupe'].submit();">Créer</button>
+      </div>
+    </div>
+  </div>
+</div>
+<?php /*<-- FIN - Popup modification de groupe -->*/ ?>
 
 <div class="container">
     <div class="row">
