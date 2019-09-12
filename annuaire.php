@@ -17,7 +17,7 @@ require("base/include/header.php"); ?>
     data-show-toggle="true"
     data-filter-show-clear="true"
     data-pagination="true"
-    data-page-size="10"
+    data-page-size="5"
     data-page-list="[5, 10, 25, 50, Toutes]">
       <thead>
         <tr>
