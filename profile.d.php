@@ -72,13 +72,13 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
                                 </div>
                             </div>
                             <div class="userData ml-3">
-                                <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold"><a href="javascript:void(0);"><?php echo $userinfo["NOM"] . $userinfo["PRENOM"]?></a></h2>
-                                <h6 class="d-block"></h6>
-                                <h6 class="d-block"></h6>
+                                <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold"><a href="javascript:void(0);"><?php echo $userinfo["NOM"] . " " . $userinfo["PRENOM"]?></a></h2>
+                                <h6 class="d-block"><?php echo $userinfo["ECOLE"]?></h6>
+                                <h6 class="d-block"><?php echo $userinfo["PROMOTION"]?></h6>
                             </div>
                             <div class="ml-auto">
                                 <input type="button" class="btn btn-primary d-none" id="btnDiscard" value="Discard Changes" />
-                            </div>
+                            </div> 
                         </div>
                     </div>
 
@@ -89,7 +89,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
                                     <a class="nav-link active" id="basicInfo-tab" data-toggle="tab" href="#basicInfo" role="tab" aria-controls="basicInfo" aria-selected="true">Informations</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="connectedServices-tab" data-toggle="tab" href="#connectedServices" role="tab" aria-controls="connectedServices" aria-selected="false">Autres</a>
+                                    <a class="nav-link" id="connectedServices-tab" data-toggle="tab" href="#connectedServices" role="tab" aria-controls="connectedServices" aria-selected="false">PRESENTATION</a>
                                 </li>
                             </ul>
                             <div class="tab-content ml-1" id="myTabContent">
@@ -101,7 +101,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
                                             <label style="font-weight:bold;">Nom</label>
                                         </div>
                                         <div class="col-md-8 col-6">
-                                            DEFORGE
+                                            <?php echo $userinfo["NOM"]?>
                                         </div>
                                     </div>
                                     <hr />
@@ -111,7 +111,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
                                             <label style="font-weight:bold;">Prénom</label>
                                         </div>
                                         <div class="col-md-8 col-6">
-                                            Alexy
+                                            <?php echo $userinfo["PRENOM"]?>
                                         </div>
                                     </div>
                                     <hr />
@@ -119,10 +119,10 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 
                                     <div class="row">
                                         <div class="col-sm-3 col-md-2 col-5">
-                                            <label style="font-weight:bold;">Anniversaire</label>
+                                            <label style="font-weight:bold;">Date d'inscription</label>
                                         </div>
                                         <div class="col-md-8 col-6">
-                                            ...
+                                            <?php echo $userinfo["DATE_INSCRIPTION"]?>
                                         </div>
                                     </div>
                                     <hr />
@@ -131,7 +131,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
                                             <label style="font-weight:bold;">Ecole</label>
                                         </div>
                                         <div class="col-md-8 col-6">
-                                            EPSI
+                                            <?php echo $userinfo["ECOLE"]?>
                                         </div>
                                     </div>
                                     <hr />
@@ -140,14 +140,14 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
                                             <label style="font-weight:bold;">Classe</label>
                                         </div>
                                         <div class="col-md-8 col-6">
-                                            B2-Gr1
+                                            <?php echo $userinfo["PROMOTION"]?>
                                         </div>
                                     </div>
                                     <hr />
 
                                 </div>
                                 <div class="tab-pane fade" id="connectedServices" role="tabpanel" aria-labelledby="ConnectedServices-tab">
-                                    Facebook, Google et Twitter sont connectés à ce compte.
+                                    <?php echo $userinfo["PRESENTATION"]?>
                                 </div>
                             </div>
                         </div>
