@@ -67,7 +67,7 @@ $dataEventJson = json_encode($dataEvent);
           <div class="form-row">
             <div class="form-group  col-md-4">
               <label for="">Titre de l'évenement</label>
-              <input class="form-control" type="text" name="nom" value="" placeholder="Titre de l'évenement à créer">
+              <input class="form-control" type="text" name="nom" value="" placeholder="Nommer votre évenement">
             </div>
             <div class="form-group  col-md-4">
               <label for="">Date de début</label>
