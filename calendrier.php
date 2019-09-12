@@ -11,6 +11,21 @@ if (isset($_POST['creer'])) {
   Annuaire::addEvent($_POST['nom'], $_POST['description'], $dateDebut, $dateFin, $_SESSION['id_utilisateur']);
 }
 
+$events = Calendrier::eventsDataBase();
+while ($event = $events->fetch()) {
+  $debut = substr($event['DATE_DEBUT'], 0, 10).'T'.substr($event['DATE_DEBUT'], 11, 19);
+  $fin = substr($event['DATE_FIN'], 0, 10).'T'.substr($event['DATE_FIN'], 11, 19);
+  echo $debut;
+  echo "<br>";
+  echo $test2;
+  $dataEvent[] = array(
+    'title'     => $event['NOM'],
+    'start'     => $debut,
+    'end'       => $fin,
+    'color'     => '#2ca8ff'
+  );
+}
+
  ?>
 
 <link rel="stylesheet" href="base/css/calendrier.css">
