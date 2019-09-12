@@ -16,7 +16,7 @@ $i = 1;
 while ($event = $events->fetch()) {
   $debut = substr($event['DATE_DEBUT'], 0, 10).'T'.substr($event['DATE_DEBUT'], 11, 19);
   $fin = substr($event['DATE_FIN'], 0, 10).'T'.substr($event['DATE_FIN'], 11, 19);
-  if ($i = 1) {
+  if ($i % 2 != 0) {
     $color = '#2ca8ff';
   }
   else {
@@ -28,7 +28,7 @@ while ($event = $events->fetch()) {
     'end'         => $fin,
     'color'       => $color
   );
-  $i = i + 1;
+  $i = $i + 1;
 }
 
 $dataEventJson = json_encode($dataEvent);
