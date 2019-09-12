@@ -103,7 +103,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                 <tbody>
 
                   <?php
-                  $groupes = Groupe::List();
+                  $groupes = Groupe::ListAll();
                   foreach ($groupes as $groupe) { ?>
                   <tr>
                     <td><img class="groupe-image" src="<?php echo Settings::sitePathRoot . Image::Show($groupe['ID_IMAGE_GROUPE'])['LIEN']; ?>"></td>

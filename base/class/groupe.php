@@ -23,6 +23,12 @@ Class Groupe {
     return $request->fetchAll();
   }
 
+  public static function ListAll() {
+    $request = Main::Database()->prepare("SELECT * FROM GROUPES WHERE VISIBLE=1");
+    $request->execute();
+    return $request->fetchAll();
+  }
+
   public static function CountMember($id) {
     $request = Main::Database()->prepare("SELECT COUNT(*) AS NUMBER FROM MEMBRES_GROUPE WHERE ID_GROUPE = ?");
     $request->execute([$id]);

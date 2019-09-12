@@ -23,9 +23,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   } elseif (isset($_GET['r']) && $_GET['r']=="editImage") {
 
-      $extension  = pathinfo($_FILES['groupeImage']['name'], PATHINFO_EXTENSION);
+      $extension  = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
 
-      Groupe::Edit($_GET['id'], $groupe['NOM'], $groupe['DESCRIPTION'], $groupe['VISIBLE'], Image::Upload($extension, $_FILES['groupeImage']['tmp_name'], $_FILES['groupeImage']['error']));
+      Groupe::Edit($_GET['id'], $groupe['NOM'], $groupe['DESCRIPTION'], $groupe['VISIBLE'], Image::Upload($extension, $_FILES['image']['tmp_name'], $_FILES['image']['error']));
   }
 }
 
@@ -83,13 +83,13 @@ $groupe = Groupe::Show($_GET['id']);
                                 <div class="middle">
                                   <input type="button" class="btn btn-secondary" id="btnChangePicture" value="Modifier" />
                                   <form enctype="multipart/form-data" id="editImage" class="form-proposition-groupe" action="groupe.php?id=<?php echo $groupe['ID']; ?>&r=editImage" method="post">
-                                    <input type="file" style="display: none;" id="imageProfil" name="image" />
+                                    <input type="file" style="display: none;" id="profilePicture" name="image" />
                                   </form>
                                 </div>
                             </div>
                             <div class="userData ml-3">
                                 <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold"><a href="javascript:void(0);"><?php echo $groupe['NOM']; ?></a></h2>
-                                <button class="btn btn-primary" data-toggle="modal" data-target="#modificationGroupe">Créer un groupe</button>
+                                <button class="btn btn-primary" data-toggle="modal" data-target="#modificationGroupe">Modifier</button>
                             </div>
                             <div class="ml-auto">
                                 <input type="button" class="btn btn-warning d-none" id="btnDiscard" value="Annuler" />
