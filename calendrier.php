@@ -205,7 +205,7 @@ document.addEventListener('DOMContentLoaded', function() {
     dayGrid: {
       titleFormat: ' MMM, YYYY'
     },
-    allDaySlot: false, //affiche les évenements de toute la journée
+    allDaySlot: true, //affiche les évenements de toute la journée
     allDayText: 'Journée complète',
     // listDayAltFormat: true,
     defaultView: 'timeGridWeek',
