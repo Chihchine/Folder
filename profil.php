@@ -28,7 +28,17 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 
     if (isset($_SESSION['id_utilisateur'])) {
         //echo $_SESSION['id_utilisateur'];
-        echo "<a href='modifprofil.php?id=" . $_SESSION["id_utilisateur"] . "'> Modifier votre profil </a>";
+        ?>
+            <div class="fil-arianne container">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#" onClick="setActivePage('home')">Tableau de bord</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Profil</li>
+                  <li class="breadcrumb-item active" aria-current="page"><a href="modifprofil.php?id=<?php echo $_SESSION['id_utilisateur']?>"> Modifier votre profil</a></li>
+                </ol>
+              </nav>
+            </div>
+        <?php 
     }
 
 
@@ -61,7 +71,6 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
         die;
       }
 ?>
-?>
 
 <link href="base/css/profile.css" rel="stylesheet" id="css">
 <script src="base/js/profile.js"></script>
@@ -71,7 +80,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
     <div class="row">
         <div class="col-12">
             <div class="card">
-                <form method="post" class="needs-validation form-signin" novalidate enctype="multipart/form-data"> 
+                
                 <div class="card-body">
                     <div class="card-title mb-4">
                         <div class="d-flex justify-content-start">
@@ -83,9 +92,10 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
                                 if($_SESSION["id_utilisateur"]){
                                 echo '
                                 <div class="middle">
+                                <form method="post" class="needs-validation form-signin" novalidate enctype="multipart/form-data"> 
                                     <input type="button" class="btn btn-secondary" id="btnChangePicture" value="Change" />
                                     <input type="file" style="display: none;" id="profilePicture" name="avatar" />
-                                </div>';}
+                                </div><button class="btn btn-primary d-none" id="btnDiscard" type="submit" name="btnInscrire">Sauvegarder</button></form>';}
 
                                 ?>
                             </div>
@@ -100,7 +110,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
                             </div> 
                         </div>
                     </div>
-                </form>
+                
 
                     <div class="row">
                         <div class="col-12">

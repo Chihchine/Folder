@@ -5,6 +5,22 @@ if(!isset($_GET['id'])){
 	header("Location: index.html");
 }
 
+
+if (isset($_SESSION['id_utilisateur'])) {
+        //echo $_SESSION['id_utilisateur'];
+        ?>
+            <div class="fil-arianne container">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#" onClick="setActivePage('home')">Tableau de bord</a></li>
+                  <li class="breadcrumb-item active" aria-current="page"><a href="profil.php?id=<?php echo $_SESSION['id_utilisateur']?>">Profil</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Modifier votre profil</li>
+                </ol>
+              </nav>
+            </div>
+        <?php 
+    }
+
 if(isset($_GET['id']) AND $_GET['id'] > 0) {
    $id = $_GET['id'];
 	$result = Main::DataBase()->prepare("SELECT * FROM UTILISATEURS WHERE ID = ?");
@@ -96,6 +112,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 
 
 	if(isset($_FILES['avatar']) AND !empty($_FILES['avatar']['name'])) {
+		echo "debug";
 		$extension  = pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION);
 		$idimage = Image::Upload($extension, $_FILES['avatar']['tmp_name'], $_FILES['avatar']['error']);
 		$modifavatar = Main::DataBase()->prepare("UPDATE UTILISATEURS SET ID_IMAGE_PROFIL = ? WHERE ID = ?");
@@ -114,13 +131,13 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	    </nav>
 	</div>-->
 
-	<div class="container-fluid profil-content">
+	<div class="container">
 	  <h1>Profil</h1>
 	  <div class="row">
 	    <div class="col-md-3">
 	      <div class="card">
 	        <div class="card-body card-body-left">
-	          <img class="rounded" height="400px" src="<?php echo $profilimage; ?>" alt="Image du compte" style="width:100%">
+	          <img class="rounded" height="150px" src="<?php echo $profilimage; ?>" alt="Image du compte" style="width:100%">
 	          <h5>
 	          </h5>
 	          <h6>
@@ -133,22 +150,11 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	        <div class="card-header">
 	        </div>
 	        <div class="card-body card-body-right">
+	        	<div class="row">
 	              	<form method="post" class="needs-validation form-signin" novalidate enctype="multipart/form-data">
 					      <img class="mb-4">
 					      <h1 class="h3 mb-3 font-weight-normal">Modification de votre profil</h1>
 					      <div class="form">
-					        <div class="form-row">
-					          <!--<div class="form-group col-md-6">
-					            <label for="">Prénom</label>
-					            <input class="form-control" type="text" name="prenom"  placeholder="Prénom" required>
-					            <div class="invalid-feedback">Veuillez-renseigner votre prénom.</div>
-					          </div>
-					          <div class="form-group col-md-6">
-					            <label for="">Nom</label>
-					            <input class="form-control" type="text" name="nom"  placeholder="Nom" required>
-					            <div class="invalid-feedback">Veuillez-renseigner votre nom.</div>
-					          </div>
-					        </div>-->
 					        <div class="form-row">
 					          <div class="form-group col-md-4">
 					            <label for="">Nouvel Email</label>
@@ -160,6 +166,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 					            <input class="form-control" type="text" name="pres" value="<?php echo $userinfo["PRESENTATION"] ?>" required>
 					            <div class="invalid-feedback">Ne pas dépasser 150 caractères</div>
 					          </div>
+					          <br/>
 					          <div class="form-group col-md-4">
 					            <label for="">Nouveau Mot de passe</label>
 					            <input class="form-control" type="password" name="newmdp"  placeholder="*********" required>
@@ -170,6 +177,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 					            <input class="form-control" type="password" name="confirmMdp" placeholder="*********" required>
 					            <div class="invalid-feedback">Veuillez confirmer votre nouveau mot de passe.</div>
 					          </div>
+					         <br/>
 					        </div>
 					        <div class="form-row">
 					          <div class="form-group col-md-6">
@@ -192,12 +200,13 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 					              <option value="M2">5ème année</option>
 					            </select>
 					          </div>
+					          <lalel> Téléverser un nouvel avatar:    </lalel>
 					          <input type="file" name="avatar">
 					        </div>
 					      </div>
 					      <button class="btn btn-lg btn-primary btn-block" type="submit" name="btnInscrire">Sauvegarder</button>
 					    </form>
-					    <?php echo "<a href='profil.php?id=" . $_SESSION["id_utilisateur"] . "'> Retourner à votre profil </a>"; ?>
+					</div>
 	        </div>
 	      </div>
 	    </div>

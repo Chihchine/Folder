@@ -14,24 +14,8 @@ Class Calendrier {
 
   public static function eventsDataBase() {
     $request = Main::Database()->prepare('SELECT NOM, DESCRIPTION, DATE_DEBUT, DATE_FIN FROM EVENEMENTS');
-    $result = $request->execute();
-    return $result;
-  }
-
-  public static function eventCalendar() {
-      $events = Calendrier::eventsDataBase();
-      while ($event = $events->fetch()) {
-        $test1 = substr($event['DATE_DEBUT'], 0, 10).'T'.substr($event['DATE_DEBUT'], 11, 19);
-        $test2 = substr($event['DATE_FIN'], 0, 10).'T'.substr($event['DATE_FIN'], 11, 19);
-        echo $test1;
-        echo $test2;
-        // $dataEvent[] = array(
-        //   'title'     => $event['NOM'],
-        //   'start'     => substr($event['DATE_DEBUT'], 0, 10).'T'.substr($event['DATE_DEBUT'], 11, 19),
-        //   'end'       => substr($event['DATE_FIN'], 0, 10).'T'.substr($event['DATE_FIN'], 11, 19),
-        //   'color'     => '#2ca8ff'
-        // );
-      }
+    $request->execute();
+    return $request;
   }
 }
 
