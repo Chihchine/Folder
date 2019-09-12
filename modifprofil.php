@@ -164,6 +164,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 					            <input class="form-control" type="text" name="pres" value="<?php echo $userinfo["PRESENTATION"] ?>" required>
 					            <div class="invalid-feedback">Ne pas dépasser 150 caractères</div>
 					          </div>
+					          <hr/>
 					          <div class="form-group col-md-4">
 					            <label for="">Nouveau Mot de passe</label>
 					            <input class="form-control" type="password" name="newmdp"  placeholder="*********" required>
@@ -174,6 +175,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 					            <input class="form-control" type="password" name="confirmMdp" placeholder="*********" required>
 					            <div class="invalid-feedback">Veuillez confirmer votre nouveau mot de passe.</div>
 					          </div>
+					         <hr/>
 					        </div>
 					        <div class="form-row">
 					          <div class="form-group col-md-6">
