@@ -2,7 +2,7 @@
 require_once(__DIR__ . "/../class/main.php");
 
 if (!isset($_SESSION['id_utilisateur'])) {
-	Header('Location: index.php');
+	Header('Location: connexion.php');
 	die;
 }
 
@@ -98,14 +98,14 @@ if (empty($imageProfil)) {
 						</li>
 						<li class="sidebar-button">
 							<a href="messages.php">
-								<i class="fa fa-book"></i>
+								<i class="fas fa-envelope"></i>
 								<span>Messages</span>
 								<span class="badge badge-pill badge-primary">4</span>
 							</a>
 						</li>
 						<li class="sidebar-button">
 							<a href="groupes.php">
-								<i class="fa fa-book"></i>
+								<i class="fas fa-users"></i>
 								<span>Groupes</span>
 								<span class="badge badge-pill badge-primary">2</span>
 							</a>
@@ -114,6 +114,12 @@ if (empty($imageProfil)) {
 							<a href="annuaire.php">
 								<i class="fa fa-globe"></i>
 								<span>Annuaire</span>
+							</a>
+						</li>
+						<li class="sidebar-button">
+							<a href="calendrier.php">
+								<i class="fas fa-calendar-alt"></i>
+								<span>Calendrier</span>
 							</a>
 						</li>
 						<li class="header-menu">
