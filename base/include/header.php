@@ -8,7 +8,14 @@ if (!isset($_SESSION['id_utilisateur'])) {
 
 $utilisateur = Utilisateur::Show($_SESSION['id_utilisateur']);
 
+$imageProfil = Image::Show($utilisateur['ID_IMAGE_PROFIL'])['LIEN'];
+if (empty($imageProfil)) {
+  $imageProfil = Image::Show("1")['LIEN'];
+}
+
 ?>
+<!DOCTYPE HTML>
+<html>
 <head>
   <title>myCampus - <?php echo $pageTitle ?></title>
   <link rel="shortcut icon" type="image/x-icon" href="<?php echo Settings::sitePathRoot; ?>base/img/favicon.ico"/>
@@ -43,13 +50,14 @@ $utilisateur = Utilisateur::Show($_SESSION['id_utilisateur']);
 				</div>
 				<div class="sidebar-header">
 					<div class="user-pic">
-						<img class="img-responsive img-rounded" src="<?php echo Settings::sitePathRoot . Image::Show($utilisateur['ID_IMAGE_PROFIL'])['LIEN']; ?>"
-						alt="User picture">
+						<img class="img-responsive img-rounded" src="<?php echo Settings::sitePathRoot . $imageProfil; ?>" alt="User picture">
 					</div>
 					<div class="user-info">
-						<span class="user-name"><?php echo $utilisateur['PRENOM']; ?>
-							<strong><?php echo $utilisateur['NOM']; ?></strong>
-						</span>
+						<a href="profil.php?id=<?php echo $_SESSION['id_utilisateur']?>">
+							<span class="user-name"><?php echo $utilisateur['PRENOM']; ?>
+								<strong><?php echo $utilisateur['NOM']; ?></strong>
+							</span>
+						</a>
 						<span class="user-role"><?php echo $utilisateur['ECOLE'] . " " . $utilisateur['PROMOTION']; ?></span>
 						<span class="user-status">
 							<i class="fa fa-circle"></i>
@@ -75,6 +83,12 @@ $utilisateur = Utilisateur::Show($_SESSION['id_utilisateur']);
 					<ul>
 						<li class="header-menu">
 							<span>Général</span>
+						</li>
+						<li>
+							<a href="profil.php?id=<?php echo $_SESSION['id_utilisateur']?>">
+								<i class="fas fa-user"></i>
+								<span>Profil</span>
+							</a>
 						</li>
 						<li class="sidebar-button">
 							<a href="index.php">

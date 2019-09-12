@@ -1,6 +1,16 @@
 <?php
-$pageTitle = "Profile";
+if (!isset($_GET['id'])) {
+  header("Location: groupes.php");
+}
+
+$pageTitle = "Groupe";
 include("base/include/header.php");
+
+$groupe = Groupe::Show($_GET['id']);
+
+if (empty($groupe)) {
+  echo "erreur, groupe inconnu";
+}
 ?>
 
 <link href="base/css/profile.css" rel="stylesheet" id="css">
@@ -23,9 +33,7 @@ include("base/include/header.php");
                                 </div>
                             </div>
                             <div class="userData ml-3">
-                                <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold"><a href="javascript:void(0);">Alexy DEFORGE</a></h2>
-                                <h6 class="d-block"><a href="javascript:void(0)">1,500</a> Messages envoyés</h6>
-                                <h6 class="d-block"><a href="javascript:void(0)">300</a> groupes créés</h6>
+                                <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold"><a href="javascript:void(0);"><?php echo $groupe['NOM']; ?></a></h2>
                             </div>
                             <div class="ml-auto">
                                 <input type="button" class="btn btn-primary d-none" id="btnDiscard" value="Discard Changes" />
@@ -52,17 +60,7 @@ include("base/include/header.php");
                                             <label style="font-weight:bold;">Nom</label>
                                         </div>
                                         <div class="col-md-8 col-6">
-                                            DEFORGE
-                                        </div>
-                                    </div>
-                                    <hr />
-
-                                    <div class="row">
-                                        <div class="col-sm-3 col-md-2 col-5">
-                                            <label style="font-weight:bold;">Prénom</label>
-                                        </div>
-                                        <div class="col-md-8 col-6">
-                                            Alexy
+                                            <?php echo $groupe['NOM']; ?>
                                         </div>
                                     </div>
                                     <hr />
@@ -70,25 +68,31 @@ include("base/include/header.php");
 
                                     <div class="row">
                                         <div class="col-sm-3 col-md-2 col-5">
-                                            <label style="font-weight:bold;">Anniversaire</label>
+                                            <label style="font-weight:bold;">Date de création</label>
                                         </div>
                                         <div class="col-md-8 col-6">
-                                            ...
+                                            <?php echo substr($groupe['DATE_CREATION'], 0, 10); ?>
                                         </div>
                                     </div>
                                     <hr />
                                     <div class="row">
                                         <div class="col-sm-3 col-md-2 col-5">
-                                            <label style="font-weight:bold;">Ecole</label>
+                                            <label style="font-weight:bold;">Visible</label>
                                         </div>
                                         <div class="col-md-8 col-6">
-                                            EPSI
+                                            <?php
+                                            if($groupe['VISIBLE']==true || $groupe['VISIBLE']==NULL) {
+                                              echo "Oui";
+                                            } else {
+                                              echo "Non";
+                                            }
+                                            ?>
                                         </div>
                                     </div>
                                     <hr />
                                     <div class="row">
                                         <div class="col-sm-3 col-md-2 col-5">
-                                            <label style="font-weight:bold;">Classe</label>
+                                            <label style="font-weight:bold;">Activé</label>
                                         </div>
                                         <div class="col-md-8 col-6">
                                             B2-Gr1
@@ -112,3 +116,7 @@ include("base/include/header.php");
     </div>
 
 </div>
+
+<?php
+include("base/include/footer.php");
+?>
