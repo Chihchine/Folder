@@ -14,6 +14,11 @@ if (empty($groupe)) {
 
 if (isset($_GET['r']) && $_GET['r']=="delete") {
   Groupe::Delete($_GET['id']);
+  echo "
+  <SCRIPT LANGUAGE="JavaScript">
+  document.location.href="groupes.php"
+  </SCRIPT>
+  ";
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
