@@ -1,5 +1,5 @@
 <?php
-if (isset($_GET['id'])) {
+if (!isset($_GET['id'])) {
   header("Location: groupes.php");
 }
 
@@ -8,7 +8,7 @@ include("base/include/header.php");
 
 $groupe = Groupe::Show($_GET['id']);
 
-if (empty($groupe["id"])) {
+if (empty($groupe)) {
   echo "erreur, groupe inconnu";
 }
 ?>
