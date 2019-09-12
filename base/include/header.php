@@ -50,13 +50,14 @@ if (empty($imageProfil)) {
 				</div>
 				<div class="sidebar-header">
 					<div class="user-pic">
-						<img class="img-responsive img-rounded" src="<?php echo Settings::sitePathRoot . $imageProfil; ?>"
-						alt="User picture">
+						<img class="img-responsive img-rounded" src="<?php echo Settings::sitePathRoot . $imageProfil; ?>" alt="User picture">
 					</div>
 					<div class="user-info">
-						<span class="user-name"><?php echo $utilisateur['PRENOM']; ?>
-							<strong><?php echo $utilisateur['NOM']; ?></strong>
-						</span>
+						<a href="profil.php?id=<?php echo $_SESSION['id_utilisateur']?>">
+							<span class="user-name"><?php echo $utilisateur['PRENOM']; ?>
+								<strong><?php echo $utilisateur['NOM']; ?></strong>
+							</span>
+						</a>
 						<span class="user-role"><?php echo $utilisateur['ECOLE'] . " " . $utilisateur['PROMOTION']; ?></span>
 						<span class="user-status">
 							<i class="fa fa-circle"></i>
@@ -82,6 +83,12 @@ if (empty($imageProfil)) {
 					<ul>
 						<li class="header-menu">
 							<span>Général</span>
+						</li>
+						<li>
+							<a href="profil.php?id=<?php echo $_SESSION['id_utilisateur']?>">
+								<i class="fas fa-user"></i>
+								<span>Profil</span>
+							</a>
 						</li>
 						<li class="sidebar-button">
 							<a href="index.php">
