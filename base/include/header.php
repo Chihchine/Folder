@@ -14,6 +14,8 @@ if (empty($imageProfil)) {
 }
 
 ?>
+<!DOCTYPE HTML>
+<html>
 <head>
   <title>myCampus - <?php echo $pageTitle ?></title>
   <link rel="shortcut icon" type="image/x-icon" href="<?php echo Settings::sitePathRoot; ?>base/img/favicon.ico"/>
@@ -87,22 +89,16 @@ if (empty($imageProfil)) {
 								<span>Tableau de bord</span>
 							</a>
 						</li>
-						<li>
-							<a href="calendrier.php">
-								<i class="fas fa-calendar-alt"></i>
-								<span>Calendrier</span>
-							</a>
-						</li>
 						<li class="sidebar-button">
 							<a href="messages.php">
-								<i class="fas fa-envelope"></i>
+								<i class="fa fa-book"></i>
 								<span>Messages</span>
 								<span class="badge badge-pill badge-primary">4</span>
 							</a>
 						</li>
 						<li class="sidebar-button">
 							<a href="groupes.php">
-								<i class="fas fa-users"></i>
+								<i class="fa fa-book"></i>
 								<span>Groupes</span>
 								<span class="badge badge-pill badge-primary">2</span>
 							</a>
