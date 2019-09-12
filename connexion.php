@@ -13,7 +13,7 @@ if (isset($_POST['connexion'])) {
   }
 }
 
-if ($_GET['deconnect'] == 1) {
+if ($_POST['deconnect']) {
   session_destroy();
 }
 
