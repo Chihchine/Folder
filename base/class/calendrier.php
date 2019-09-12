@@ -19,7 +19,8 @@ Class Calendrier {
   }
 
   public static function eventCalendar() {
-      while ($event = Calendrier::eventsDataBase()->fetch()) {
+      $events = Calendrier::eventsDataBase();
+      while ($event = $events->fetch()) {
         $test1 = substr($event['DATE_DEBUT'], 0, 10).'T'.substr($event['DATE_DEBUT'], 11, 19);
         $test2 = substr($event['DATE_FIN'], 0, 10).'T'.substr($event['DATE_FIN'], 11, 19);
         echo $test1;
