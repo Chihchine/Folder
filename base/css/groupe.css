@@ -29,3 +29,7 @@
   height: 75px;
   border-radius: 50px;
 }
+
+img#dynamic {
+  width: 250px;
+}
