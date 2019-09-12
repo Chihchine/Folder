@@ -15,9 +15,9 @@ if (empty($groupe)) {
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   if (isset($_GET['r']) && $_GET['r']=="editInfo") {
     if (isset($_POST['groupeVisible'])) {
-      $visible = 1;
+      $visible = true;
     } else {
-      $visible = 0;
+      $visible = false;
     }
     Groupe::Edit($_GET['id'], $_POST['groupeName'], $_POST['groupeDesc'], $visible, $groupe['ID_IMAGE_GROUPE']);
 
@@ -57,7 +57,7 @@ $groupe = Groupe::Show($_GET['id']);
           </div>
           <div class="form-group">
             <label for="groupeDesc">Visible</label>
-            <input type="checkbox" class="col-12" id="groupeVisible" name="groupeVisislbe" <?php if($groupe['VISIBLE']==true || $groupe['VISIBLE']==NULL) { echo "checked"; }?>>
+            <input type="checkbox" class="col-12" id="groupeVisible" name="groupeVisisble" <?php if($groupe['VISIBLE']==true || $groupe['VISIBLE']==NULL) { echo "checked"; }?>>
           </div>
         </form>
       </div>
