@@ -8,7 +8,7 @@ include("base/include/header.php");
 
 $groupe = Groupe::Show($_GET['id']);
 
-if (empty($groupe)) {
+if (empty($groupe["id"])) {
   echo "erreur, groupe inconnu";
 }
 ?>
