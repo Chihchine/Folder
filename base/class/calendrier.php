@@ -17,6 +17,6 @@ Class Calendrier {
     $request->execute();
     return $request;
   }
-
+}
 
  ?>
