@@ -11,6 +11,22 @@ $groupe = Groupe::Show($_GET['id']);
 if (empty($groupe)) {
   echo "erreur, groupe inconnu";
 }
+
+if (isset($_GET['r']) && $_GET['r']=="editInfo ") {
+  if (isset($_POST['groupeVisible'])) {
+    $visible = true;
+  } else {
+    $visible = false;
+  }
+
+  Groupe::Edit($_GET['id'], $_POST['groupeName'], $_POST['groupeDesc'], $visible, $groupe['IMAGE_ID_GROUPE'])
+
+} elseif (isset($_GET['r']) && $_GET['r']=="editImage ") {
+
+    $extension  = pathinfo($_FILES['groupeImage']['name'], PATHINFO_EXTENSION);
+
+    Groupe::Edit($_GET['id'], $groupe['NOM'], $groupe['DESCRIPTION'], $groupe['VISIBLE'], Image::Upload($extension, $_FILES['groupeImage']['tmp_name'], $_FILES['groupeImage']['error']))
+}
 ?>
 
 <link href="base/css/profile.css" rel="stylesheet" id="css">
@@ -27,7 +43,7 @@ if (empty($groupe)) {
         </button>
       </div>
       <div class="modal-body">
-        <form enctype="multipart/form-data" id="createGroupe" class="form-proposition-groupe" action="groupes.php" method="post">
+        <form enctype="multipart/form-data" id="createGroupe" class="form-proposition-groupe" action="groupe.php?id=<?php echo $groupe['ID']; ?>&r=editInfo" method="post">
           <div class="form-group">
             <label for="groupeName">Nom du groupe</label>
             <input type="text" name="groupeName" id="groupeName" class="form-control" placeholder="Nom du groupe choisi..." value="<?php echo $groupe['NOM']; ?>">
@@ -40,26 +56,11 @@ if (empty($groupe)) {
             <label for="groupeDesc">Visible</label>
             <input type="checkbox" class="col-12" id="groupeVisible" name="groupeVisislbe" <?php if($groupe['VISIBLE']==true || $groupe['VISIBLE']==NULL) { echo "checked"; }?>>
           </div>
-          <div class="input-group image-preview">
-            <input type="text" class="form-control image-preview-filename" disabled="disabled">
-            <span class="input-group-btn">
-              <!-- image-preview-clear button -->
-              <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
-                <span class="glyphicon glyphicon-remove"></span> Annuler
-              </button>
-              <!-- image-preview-input -->
-              <div class="btn btn-default image-preview-input">
-                <span class="glyphicon glyphicon-folder-open"></span>
-                <span class="image-preview-input-title">Ajoutez une image</span>
-                <input type="file" accept="image/png, image/jpeg, image/gif" id="groupeImage" name="groupeImage"/>
-              </div>
-            </span>
-          </div>
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-        <button type="button" class="btn btn-primary" onclick="document.forms['createGroupe'].submit();">Créer</button>
+        <button type="button" class="btn btn-primary" onclick="document.forms['editInfo'].submit();">Créer</button>
       </div>
     </div>
   </div>
@@ -77,8 +78,10 @@ if (empty($groupe)) {
                             <div class="image-container">
                                 <img src="<?php echo Settings::sitePathRoot . Image::Show($groupe['ID_IMAGE_GROUPE'])['LIEN']; ?>" id="imgProfile" style="width: 150px; height: 150px" class="img-thumbnail" />
                                 <div class="middle">
-                                    <input type="button" class="btn btn-secondary" id="btnChangePicture" value="Change" />
-                                    <input type="file" style="display: none;" id="profilePicture" name="file" />
+                                  <form enctype="multipart/form-data" id="editImage" class="form-proposition-groupe" action="groupe.php?id=<?php echo $groupe['ID']; ?>&r=editImage" method="post">
+                                    <input type="button" class="btn btn-secondary" id="btnChangePicture" value="Changer" />
+                                    <input type="file" style="display: none;" id="imageProfil" name="image" />
+                                  </form>
                                 </div>
                             </div>
                             <div class="userData ml-3">
@@ -86,7 +89,8 @@ if (empty($groupe)) {
                                 <button class="btn btn-primary" data-toggle="modal" data-target="#modificationGroupe">Créer un groupe</button>
                             </div>
                             <div class="ml-auto">
-                                <input type="button" class="btn btn-primary d-none" id="btnDiscard" value="Discard Changes" />
+                                <input type="button" class="btn btn-warning d-none" id="btnDiscard" value="Annuler" />
+                                <input type="button" class="btn btn-primary d-none" onclick="document.forms['editImage'].submit();" value="Sauvegarder" />
                             </div>
                         </div>
                     </div>
