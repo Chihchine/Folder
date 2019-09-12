@@ -92,7 +92,7 @@ if (isset($_POST['btnInscrire'])) {
       </div>
       <a href="connexion.php">Vous avez déjà un compte ?</a>
       <button class="btn btn-lg btn-primary btn-block" type="submit" name="btnInscrire">S'inscrire</button>
-      <p class="text-muted">&copy; 2019 - Nom du site</p>
+      <p class="text-muted">&copy; 2019 - My Campus</p>
     </form>
 
 
