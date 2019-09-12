@@ -51,8 +51,10 @@ Class Groupe {
   }
 
   public static function Delete($id) {
-      $request = Main::Database()->prepare("DELETE FROM GROUPES WHERE ID = :id");
-      $request->execute(["id" => $id]);
+    $request = Main::Database()->prepare("DELETE FROM MEMBBRES_GROUPE WHERE ID_GROUPE = :id");
+    $request->execute(["id" => $id]);
+    $request = Main::Database()->prepare("DELETE FROM GROUPES WHERE ID = :id");
+    $request->execute(["id" => $id]);
   }
 
 }
