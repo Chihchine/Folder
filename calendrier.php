@@ -19,7 +19,7 @@ while ($event = $events->fetch()) {
   if ($i % 2 != 0) {
     $color = '#2ca8ff';
   }
-  elseif ($i % 2 = 1) {
+  elseif ($i % 2 == 1) {
     $color = '#048b9a';
   }
   else {
