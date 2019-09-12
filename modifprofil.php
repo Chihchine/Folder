@@ -61,7 +61,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 				}
 		} else {
 			echo "Test";
-			header("Location: profil.php?id=".$_GET['id']);
+			header("Location: modifprofil.php?id=". $_SESSION['id_utilisateur']);
 			die;
 		}
 	}
