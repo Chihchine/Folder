@@ -17,11 +17,11 @@ if (empty($groupe)) {
 <script src="base/js/profile.js"></script>
 
 <?php /*<-- DEBUT - Popup modification de groupe -->*/ ?>
-<div class="modal fade" id="creationGroupe" tabindex="-1" role="dialog" aria-labelledby="creationGroupeLabel" aria-hidden="true">
+<div class="modal fade" id="modificationGroupe" tabindex="-1" role="dialog" aria-labelledby="modificationGroupeLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="creationGroupeLabel">Modifier le groupe</h5>
+        <h5 class="modal-title" id="modificationGroupeLabel">Modifier le groupe</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -83,6 +83,7 @@ if (empty($groupe)) {
                             </div>
                             <div class="userData ml-3">
                                 <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold"><a href="javascript:void(0);"><?php echo $groupe['NOM']; ?></a></h2>
+                                <button class="btn btn-primary" data-toggle="modal" data-target="#modificationGroupe">Créer un groupe</button>
                             </div>
                             <div class="ml-auto">
                                 <input type="button" class="btn btn-primary d-none" id="btnDiscard" value="Discard Changes" />
