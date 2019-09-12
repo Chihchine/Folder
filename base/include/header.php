@@ -14,6 +14,8 @@ if (empty($imageProfil)) {
 }
 
 ?>
+<!DOCTYPE HTML>
+<html>
 <head>
   <title>myCampus - <?php echo $pageTitle ?></title>
   <link rel="shortcut icon" type="image/x-icon" href="<?php echo Settings::sitePathRoot; ?>base/img/favicon.ico"/>
@@ -48,13 +50,14 @@ if (empty($imageProfil)) {
 				</div>
 				<div class="sidebar-header">
 					<div class="user-pic">
-						<img class="img-responsive img-rounded" src="<?php echo Settings::sitePathRoot . $imageProfil; ?>"
-						alt="User picture">
+						<img class="img-responsive img-rounded" src="<?php echo Settings::sitePathRoot . $imageProfil; ?>" alt="User picture">
 					</div>
 					<div class="user-info">
-						<span class="user-name"><?php echo $utilisateur['PRENOM']; ?>
-							<strong><?php echo $utilisateur['NOM']; ?></strong>
-						</span>
+						<a href="profil.php?id=<?php echo $_SESSION['id_utilisateur']?>">
+							<span class="user-name"><?php echo $utilisateur['PRENOM']; ?>
+								<strong><?php echo $utilisateur['NOM']; ?></strong>
+							</span>
+						</a>
 						<span class="user-role"><?php echo $utilisateur['ECOLE'] . " " . $utilisateur['PROMOTION']; ?></span>
 						<span class="user-status">
 							<i class="fa fa-circle"></i>
@@ -81,28 +84,28 @@ if (empty($imageProfil)) {
 						<li class="header-menu">
 							<span>Général</span>
 						</li>
+						<li>
+							<a href="profil.php?id=<?php echo $_SESSION['id_utilisateur']?>">
+								<i class="fas fa-user"></i>
+								<span>Profil</span>
+							</a>
+						</li>
 						<li class="sidebar-button">
 							<a href="index.php">
 								<i class="fa fa-tachometer-alt"></i>
 								<span>Tableau de bord</span>
 							</a>
 						</li>
-						<li>
-							<a href="calendrier.php">
-								<i class="fas fa-calendar-alt"></i>
-								<span>Calendrier</span>
-							</a>
-						</li>
 						<li class="sidebar-button">
 							<a href="messages.php">
-								<i class="fas fa-envelope"></i>
+								<i class="fa fa-book"></i>
 								<span>Messages</span>
 								<span class="badge badge-pill badge-primary">4</span>
 							</a>
 						</li>
 						<li class="sidebar-button">
 							<a href="groupes.php">
-								<i class="fas fa-users"></i>
+								<i class="fa fa-book"></i>
 								<span>Groupes</span>
 								<span class="badge badge-pill badge-primary">2</span>
 							</a>

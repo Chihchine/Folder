@@ -1,55 +1,16 @@
 <?php
-$pageTitle = "Profil";
+if (isset($_GET['id'])) {
+  header("Location: groupes.php");
+}
+
+$pageTitle = "Groupe";
 include("base/include/header.php");
 
-if(isset($_GET['id']) AND $_GET['id'] > 0) {
-   $id = $_GET['id'];
+$groupe = Groupe::Show($_GET['id'])
 
-
-
-    $result = Main::DataBase()->prepare("SELECT * FROM UTILISATEURS WHERE ID = ?");
-    $result->execute(array($id));
-
-    $image = Main::DataBase()->prepare("SELECT * FROM IMAGES WHERE ID = ?");
-
-    $userexist = $result->rowCount();
-
-
-
-    $userinfo = $result->fetch();
-
-
-    $imageid = $userinfo["ID_IMAGE_PROFIL"];
-    $image->execute(array($imageid));
-    $imageinfo = $image->fetch();
-    $imageexist = $image->rowCount();
-    //echo $imageinfo['LIEN'];
-
-
-    if (isset($_SESSION['id_utilisateur'])) {
-        //echo $_SESSION['id_utilisateur'];
-        echo "<a href='modifprofil.php?id=" . $_SESSION["id_utilisateur"] . "'> Modifier votre profil </a>";
-    }
-
-
-
-    if($userexist == 1){
-        //$userinfo = $result->fetch();
-    } else
-    {
-        header("Location: index.php");
-        die;
-    }
-
-
-    $profilimage = "";
-
-    if($imageexist==1){
-        $profilimage = Settings::sitePathRoot . $imageinfo['LIEN'];
-    } else {
-        $profilimage = "images/basicprofil.png";
-    }
-?>
+if (empty($groupe)) {
+  echo "erreur, groupe inconnu";
+}
 ?>
 
 <link href="base/css/profile.css" rel="stylesheet" id="css">
@@ -72,9 +33,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
                                 </div>
                             </div>
                             <div class="userData ml-3">
-                                <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold"><a href="javascript:void(0);"><?php echo $userinfo["NOM"] . $userinfo["PRENOM"]?></a></h2>
-                                <h6 class="d-block"></h6>
-                                <h6 class="d-block"></h6>
+                                <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold"><a href="javascript:void(0);"><?php echo $groupe['NOM']; ?></a></h2>
                             </div>
                             <div class="ml-auto">
                                 <input type="button" class="btn btn-primary d-none" id="btnDiscard" value="Discard Changes" />
@@ -101,17 +60,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
                                             <label style="font-weight:bold;">Nom</label>
                                         </div>
                                         <div class="col-md-8 col-6">
-                                            DEFORGE
-                                        </div>
-                                    </div>
-                                    <hr />
-
-                                    <div class="row">
-                                        <div class="col-sm-3 col-md-2 col-5">
-                                            <label style="font-weight:bold;">Prénom</label>
-                                        </div>
-                                        <div class="col-md-8 col-6">
-                                            Alexy
+                                            <?php echo $groupe['NOM']; ?>
                                         </div>
                                     </div>
                                     <hr />
@@ -119,25 +68,31 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 
                                     <div class="row">
                                         <div class="col-sm-3 col-md-2 col-5">
-                                            <label style="font-weight:bold;">Anniversaire</label>
+                                            <label style="font-weight:bold;">Date de création</label>
                                         </div>
                                         <div class="col-md-8 col-6">
-                                            ...
+                                            <?php echo substr($groupe['DATE_CREATION'], 0, 10); ?>
                                         </div>
                                     </div>
                                     <hr />
                                     <div class="row">
                                         <div class="col-sm-3 col-md-2 col-5">
-                                            <label style="font-weight:bold;">Ecole</label>
+                                            <label style="font-weight:bold;">Visible</label>
                                         </div>
                                         <div class="col-md-8 col-6">
-                                            EPSI
+                                            <?php
+                                            if($groupe['VISIBLE']==true || $groupe['VISIBLE']==NULL) {
+                                              echo "Oui";
+                                            } else {
+                                              echo "Non";
+                                            }
+                                            ?>
                                         </div>
                                     </div>
                                     <hr />
                                     <div class="row">
                                         <div class="col-sm-3 col-md-2 col-5">
-                                            <label style="font-weight:bold;">Classe</label>
+                                            <label style="font-weight:bold;">Activé</label>
                                         </div>
                                         <div class="col-md-8 col-6">
                                             B2-Gr1
@@ -164,9 +119,4 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 
 <?php
 include("base/include/footer.php");
-}
-else{
-    echo '<SCRIPT LANGUAGE="JavaScript"> document.location.href="modifprofil.php?id=' . $_SESSION["id_utilisateur"] . '"</SCRIPT>';
-    die;
-}
 ?>

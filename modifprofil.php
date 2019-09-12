@@ -26,7 +26,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 			   	$newmail = htmlspecialchars($_POST['newmail']);
 			    $insertmail = Main::DataBase()->prepare("UPDATE UTILISATEURS SET MAIL = ? WHERE ID = ?");
 			    $insertmail->execute(array($newmail, $id));
-			    header('Location: modifprofil.php?id='.$id);
+			    echo '<SCRIPT LANGUAGE="JavaScript"> document.location.href="modifprofil.php?id=' . $_SESSION["id_utilisateur"] . '"</SCRIPT>';
 			   }
 			   if(isset($_POST['newmdp']) AND !empty($_POST['newmdp']) AND $_POST['newmdp'] != $userinfo['MDP']) {
 				   	if($_POST['newmdp'] == $_POST['confirmMdp'])
@@ -34,7 +34,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 					   	$newmdp = htmlspecialchars($_POST['newmdp']);
 					    $insertmdp = Main::DataBase()->prepare("UPDATE UTILISATEURS SET MDP = ? WHERE ID = ?");
 					    $insertmdp->execute(array($newmdp, $id));
-					    header('Location: modifprofil.php?id='.$id);
+					    echo '<SCRIPT LANGUAGE="JavaScript"> document.location.href="modifprofil.php?id=' . $_SESSION["id_utilisateur"] . '"</SCRIPT>';
 				   } else {
 				   	// error handle: MDP pas le meme que Confirm MDP
 				   }
@@ -43,31 +43,34 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 				}
 				if(isset($_POST['newecole']) AND !empty($_POST['newecole']) AND $_POST['newecole'] != $userinfo['ECOLE']) {
 					$newecole = htmlspecialchars($_POST['newecole']);
-					$insertecole = Main::DataBase()->prepare("UPDATE UTILISATEURS SET ECOLE = ? WHERE ID = ?");
-				    $insertecole->execute(array($newecole, $id));
-				    header('Location: modifprofil.php?id='.$id);
+					if($newecole != "Basic"){
+						$insertecole = Main::DataBase()->prepare("UPDATE UTILISATEURS SET ECOLE = ? WHERE ID = ?");
+					    $insertecole->execute(array($newecole, $id));
+					    echo '<SCRIPT LANGUAGE="JavaScript"> document.location.href="modifprofil.php?id=' . $_SESSION["id_utilisateur"] . '"</SCRIPT>';
+					}
 				}
 				if(isset($_POST['newpromotion']) AND !empty($_POST['newpromotion']) AND $_POST['newpromotion'] != $userinfo['PROMOTION']) {
 					$newpromotion = htmlspecialchars($_POST['newpromotion']);
+					if($newpromotion!="Basic"){
 					$insertpromotion = Main::DataBase()->prepare("UPDATE UTILISATEURS SET PROMOTION = ? WHERE ID = ?");
 				    $insertpromotion->execute(array($newpromotion, $id));
-				    header('Location: modifprofil.php?id='.$id);
+				    echo '<SCRIPT LANGUAGE="JavaScript"> document.location.href="modifprofil.php?id=' . $_SESSION["id_utilisateur"] . '"</SCRIPT>';
+				}
 				}
 				if(isset($_POST['pres']) AND !empty($_POST['pres']) AND $_POST['pres'] != $userinfo['PRESENTATION']) {
 					$newpres = htmlspecialchars($_POST['pres']);
 					$insertpres = Main::DataBase()->prepare("UPDATE UTILISATEURS SET PRESENTATION = ? WHERE ID = ?");
 				    $insertpres->execute(array($newpres, $id));
-				    header('Location: modifprofil.php?id='.$id);
+				    echo '<SCRIPT LANGUAGE="JavaScript"> document.location.href="modifprofil.php?id=' . $_SESSION["id_utilisateur"] . '"</SCRIPT>';
 				}
 		} else {
-			echo "Test";
-			header("Location: profil.php?id=".$_GET['id']);
+			echo '<SCRIPT LANGUAGE="JavaScript"> document.location.href="modifprofil.php?id=' . $_SESSION["id_utilisateur"] . '"</SCRIPT>';
 			die;
 		}
 	}
 	else
 	{
-		header("Location: profil.php?id=".$_GET['id']);
+		echo '<SCRIPT LANGUAGE="JavaScript"> document.location.href="modifprofil.php?id=' . $_SESSION["id_utilisateur"] . '"</SCRIPT>';
 		die;
 	}
 
@@ -98,7 +101,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 		$modifavatar = Main::DataBase()->prepare("UPDATE UTILISATEURS SET ID_IMAGE_PROFIL = ? WHERE ID = ?");
 	    $modifavatar->execute(array($idimage, $id));
 
-	    header('Location: modifprofil.php?id='.$id);
+	    echo '<SCRIPT LANGUAGE="JavaScript"> document.location.href="modifprofil.php?id=' . $_SESSION["id_utilisateur"] . '"</SCRIPT>';
 	    die;
 	  }
 ?>
@@ -172,6 +175,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 					          <div class="form-group col-md-6">
 					            <label for="">Nouvelle Ecole</label>
 					            <select class="form-control" name="newecole">
+					  				<option value="Basic">Votre école: <?php echo $userinfo["ECOLE"]?></option>
 					              <option value="EPSI">EPSI</option>
 					              <option value="IDRAC">IDRAC</option>
 					              <option value="WIS">WIS</option>
@@ -180,6 +184,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 					          <div class="form-group col-md-6">
 					            <label for="">Niveau d'étude</label>
 					            <select class="form-control" name="newpromotion">
+					            	<option value = "Basic"> Votre niveau d'étude: <?php echo $userinfo["PROMOTION"]?></option>
 					              <option value="B1">1ère année</option>
 					              <option value="B2">2ème année</option>
 					              <option value="B3">3ème année</option>
@@ -204,7 +209,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 include("base/include/footer.php");
 }
 else{
-	header("Location: index.php");
+	echo '<SCRIPT LANGUAGE="JavaScript"> document.location.href="modifprofil.php?id=' . $_SESSION["id_utilisateur"] . '"</SCRIPT>';
 	die;
 }
 ?>
