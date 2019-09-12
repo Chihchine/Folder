@@ -71,7 +71,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
     <div class="row">
         <div class="col-12">
             <div class="card">
-
+                <form method="post" class="needs-validation form-signin" novalidate enctype="multipart/form-data"> 
                 <div class="card-body">
                     <div class="card-title mb-4">
                         <div class="d-flex justify-content-start">
@@ -99,6 +99,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
                             </div> 
                         </div>
                     </div>
+                </form>
 
                     <div class="row">
                         <div class="col-12">
