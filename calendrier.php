@@ -176,7 +176,8 @@ document.addEventListener('DOMContentLoaded', function() {
     weekNumbersWithinDays: true, // == n° de semaine dans la case
     weekLabel: "S",
     eventLimit: true,
-    eventLimitText: 'de plus'
+    eventLimitText: 'de plus',
+    events: '<?php echo Calendrier::eventCalendar() ?>'
 
 
 
