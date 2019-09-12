@@ -50,8 +50,7 @@ if (empty($imageProfil)) {
 				</div>
 				<div class="sidebar-header">
 					<div class="user-pic">
-						<img class="img-responsive img-rounded" src="<?php echo Settings::sitePathRoot . $imageProfil; ?>"
-						alt="User picture">
+						<img class="img-responsive img-rounded" src="<?php echo Settings::sitePathRoot . $imageProfil; ?>" alt="User picture">
 					</div>
 					<div class="user-info">
 						<a href="profil.php?id=<?php echo $_SESSION['id_utilisateur']?>">
