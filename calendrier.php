@@ -28,7 +28,7 @@ while ($event = $events->fetch()) {
     'end'         => $fin,
     'color'       => $color
   );
-  $i = i + 1;
+  $i = $i + 1;
 }
 
 $dataEventJson = json_encode($dataEvent);
