@@ -136,7 +136,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	    <div class="col-md-3">
 	      <div class="card">
 	        <div class="card-body card-body-left">
-	          <img class="rounded" height="400px" src="<?php echo $profilimage; ?>" alt="Image du compte" style="width:100%">
+	          
 	          <h5>
 	          </h5>
 	          <h6>
@@ -166,6 +166,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 					          </div>
 					        </div>-->
 					        <div class="form-row">
+					        <img class="rounded" height="150px" width="150px" src="<?php echo $profilimage; ?>" alt="Image du compte" style="width:100%">
 					          <div class="form-group col-md-4">
 					            <label for="">Nouvel Email</label>
 					            <input class="form-control" type="email" name="newmail"  placeholder="<?php echo $userinfo["MAIL"] ?>" required>
