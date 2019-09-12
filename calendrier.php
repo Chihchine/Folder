@@ -9,7 +9,6 @@ if (isset($_POST['creer'])) {
   $dateDebut = Annuaire::joinDateHour($_POST['date_debut'], $horraireDebut);
   $dateFin = Annuaire::joinDateHour($_POST['date_fin'], $horraireFin);
   Annuaire::addEvent($_POST['nom'], $_POST['description'], $dateDebut, $dateFin, $_SESSION['id_utilisateur']);
-  echo $horraireDebut;
 }
 
  ?>
@@ -25,6 +24,7 @@ if (isset($_POST['creer'])) {
 <script src='base/js/fullcalendar/packages/timegrid/main.js'></script>
 <script src='base/js/fullcalendar/packages/list/main.js'></script>
 
+<?php Calendrier::eventCalendar(); ?>
 
 <div id='calendar'></div>
 
@@ -177,7 +177,18 @@ document.addEventListener('DOMContentLoaded', function() {
     weekLabel: "S",
     eventLimit: true,
     eventLimitText: 'de plus',
-    events: '<?php echo Calendrier::eventCalendar() ?>'
+    events: [
+  {
+    title: 'BCH237',
+    start: '2019-09-12T10:30:00',
+    end: '2019-09-13T11:30:00',
+    extendedProps: {
+      department: 'BioChemistry'
+    },
+    description: 'Lecture'
+  }
+  // more events ...
+],
 
 
 

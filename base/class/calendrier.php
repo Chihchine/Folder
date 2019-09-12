@@ -14,8 +14,8 @@ Class Calendrier {
 
   public static function eventsDataBase() {
     $request = Main::Database()->prepare('SELECT NOM, DESCRIPTION, DATE_DEBUT, DATE_FIN FROM EVENEMENTS');
-    $result = $request->execute();
-    return $result;
+    $request->execute();
+    return $request;
   }
 
   public static function eventCalendar() {
