@@ -18,7 +18,7 @@ if (isset($_SESSION['id_utilisateur'])) {
                 </ol>
               </nav>
             </div>
-        <?php 
+        <?php
     }
 
 if(isset($_GET['id']) AND $_GET['id'] > 0) {
@@ -162,12 +162,6 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 					            <div class="invalid-feedback">Veuillez renseigner un email valide.</div>
 					          </div>
 					          <div class="form-group col-md-4">
-					            <label for="">Presentation</label>
-					            <input class="form-control" type="text" name="pres" value="<?php echo $userinfo["PRESENTATION"] ?>" required>
-					            <div class="invalid-feedback">Ne pas dépasser 150 caractères</div>
-					          </div>
-					          <br/>
-					          <div class="form-group col-md-4">
 					            <label for="">Nouveau Mot de passe</label>
 					            <input class="form-control" type="password" name="newmdp"  placeholder="*********" required>
 					            <div class="invalid-feedback">Minimum 6 caractères.</div>
@@ -200,6 +194,12 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 					              <option value="M2">5ème année</option>
 					            </select>
 					          </div>
+										<div class="form-group col-md-12">
+											<div class="form-group col-md-4">
+												<textarea class="form-control" name="pres" value="<?php echo $userinfo["PRESENTATION"] ?>" required rows="6" placeholder="Une description de vous, sur vos intérêts, vos compétences, vos projets, etc"></textarea>
+						            <div class="invalid-feedback">Ne pas dépasser 150 caractères</div>
+						          </div>
+										</div>
 					          <lalel> Téléverser un nouvel avatar:    </lalel>
 					          <input type="file" name="avatar">
 					        </div>
