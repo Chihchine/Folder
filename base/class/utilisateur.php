@@ -9,7 +9,7 @@ Class Utilisateur {
   }
 
   public static function onGroup($idUtilisateur, $idGroupe) {
-    $request = Main::DataBase()->prepare("SELECT * FROM MEMBRES_GROUPES WHERE ID_UTILISATEUR = :idUtilisateur AND ID_GROUPE = :idGroupe");
+    $request = Main::DataBase()->prepare("SELECT * FROM MEMBRES_GROUPE WHERE ID_UTILISATEUR = :idUtilisateur AND ID_GROUPE = :idGroupe");
     $request->execute(["idUtilisateur" => $idUtilisateur, "idGroupe" => $idGroupe]);
     if (!empty($request->fetch())) {
       return 1;
