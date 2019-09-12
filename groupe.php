@@ -94,7 +94,7 @@ $groupe = Groupe::Show($_GET['id']);
                             <div class="userData ml-3">
                                 <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold"><a href="javascript:void(0);"><?php echo $groupe['NOM']; ?></a></h2>
                                 <button class="btn btn-primary" data-toggle="modal" data-target="#modificationGroupe">Modifier</button>
-                                <button type="button" class="btn btn-primary" onclick="document.forms['editImage'].submit();" value="Sauvegarder" ></button>
+                                <button class="btn btn-primary" onclick="document.forms['editImage'].submit();" value="Sauvegarder" ></button>
                                 <a href="?id=<?php echo $groupe['ID']; ?>&r=delete"<button class="btn btn-danger" data-toggle="modal">Supprimer</button></a>
                             </div>
                             <div class="ml-auto">
