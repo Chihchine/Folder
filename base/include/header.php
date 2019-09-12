@@ -23,6 +23,16 @@ if (empty($imageProfil)) {
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.15.4/dist/bootstrap-table.min.css">
 	<link rel="stylesheet" href="<?php echo Settings::sitePathRoot; ?>base/css/sidebar.css">
+	<link rel="stylesheet" href="<?php echo Settings::sitePathRoot; ?>base/css/materialdesignicons.min.css">
+	<link rel="stylesheet" href="<?php echo Settings::sitePathRoot; ?>base/css/ionicons.css">
+	<link rel="stylesheet" href="<?php echo Settings::sitePathRoot; ?>base/css/typicons.css">
+	<link rel="stylesheet" href="<?php echo Settings::sitePathRoot; ?>base/css/flag-icon.min.css">
+	<link rel="stylesheet" href="<?php echo Settings::sitePathRoot; ?>base/css/vendor.bundle.base.css">
+	<link rel="stylesheet" href="<?php echo Settings::sitePathRoot; ?>base/css/vendor.bundle.addons.css">
+	<link rel="stylesheet" href="<?php echo Settings::sitePathRoot; ?>base/css/style.css">
+	<link rel="stylesheet" href="<?php echo Settings::sitePathRoot; ?>base/css/style.css">
+	<link rel="shortcut icon" href="<?php echo Settings::sitePathRoot; ?>base/css/favicon.png">
+
 
 	<script src="<?php echo Settings::sitePathRoot; ?>base/js/jQuery.min.js"></script>
   <script src="<?php echo Settings::sitePathRoot; ?>base/js/popper.js"></script>
