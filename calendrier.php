@@ -67,15 +67,15 @@ $dataEventJson = json_encode($dataEvent);
           <div class="form-row">
             <div class="form-group  col-md-4">
               <label for="">Titre de l'évenement</label>
-              <input class="form-control" type="text" name="nom" value="" placeholder="Nommer votre évenement" value="Worskshop B1">
+              <input class="form-control" type="text" name="nom" placeholder="Nommer votre évenement" value="Worskshop B1">
             </div>
             <div class="form-group  col-md-4">
               <label for="">Date de début</label>
-              <input class="form-control" type="date" name="date_debut" value="23/09/2019">
+              <input class="form-control" type="date" name="date_debut" value="2019-09-23">
             </div>
             <div class="form-group  col-md-4">
               <label for="">Date de fin</label>
-              <input class="form-control" type="date" name="date_fin" value="27/09/2019">
+              <input class="form-control" type="date" name="date_fin" value="2019-09-27">
             </div>
           </div>
           <div class="form-row">
@@ -148,7 +148,7 @@ $dataEventJson = json_encode($dataEvent);
               </div>
             </div>
             <div class="form-group col-md-12">
-              <textarea class="form-control" name="description" rows="5" placeholder="Description de l'évenement que vous souhaitez créer (pour qui ? pour quoi ? où ? )" value="Workshop pour tous les B1, pret à relever le defi ?"></textarea>
+              <textarea class="form-control" name="description" rows="5" placeholder="Description de l'évenement que vous souhaitez créer (pour qui ? pour quoi ? où ? )">Workshop pour tous les B1, pret à relever le defi ?</textarea>
             </div>
           </div>
 

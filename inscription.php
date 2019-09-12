@@ -43,29 +43,29 @@ if (isset($_POST['btnInscrire'])) {
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="">Prénom</label>
-            <input class="form-control" type="text" name="prenom"  placeholder="Prénom" required>
+            <input class="form-control" type="text" name="prenom"  placeholder="Prénom" required value="Jhon">
             <div class="invalid-feedback">Veuillez-renseigner votre prénom.</div>
           </div>
           <div class="form-group col-md-6">
             <label for="">Nom</label>
-            <input class="form-control" type="text" name="nom"  placeholder="Nom" required>
+            <input class="form-control" type="text" name="nom"  placeholder="Nom" required value="Doe">
             <div class="invalid-feedback">Veuillez-renseigner votre nom.</div>
           </div>
         </div>
         <div class="form-row">
           <div class="form-group col-md-4">
             <label for="">Email</label>
-            <input class="form-control" type="email" name="mail"  placeholder="Email de votre école" required>
+            <input class="form-control" type="email" name="mail"  placeholder="Email de votre école" required value="jhon.doe@epsi.fr">
             <div class="invalid-feedback">Veuillez-renseigner un email valide.</div>
           </div>
           <div class="form-group col-md-4">
             <label for="">Mot de passe</label>
-            <input class="form-control" type="password" name="mdp"  placeholder="*********" required>
+            <input class="form-control" type="password" name="mdp"  placeholder="*********" required value="motdepasse">
             <div class="invalid-feedback">Minimum 6 caractères.</div>
           </div>
           <div class="form-group col-md-4">
             <label for="">Confirmer</label>
-            <input class="form-control" type="password" name="confirmMdp" placeholder="*********" required>
+            <input class="form-control" type="password" name="confirmMdp" placeholder="*********" required value="motdepasse">
             <div class="invalid-feedback">Veuillez confirmer votre mot de passe.</div>
           </div>
         </div>
@@ -73,7 +73,7 @@ if (isset($_POST['btnInscrire'])) {
           <div class="form-group col-md-6">
             <label for="">Ecole</label>
             <select class="form-control" name="ecole">
-              <option value="EPSI">EPSI</option>
+              <option value="EPSI" selected>EPSI</option>
               <option value="IDRAC">IDRAC</option>
               <option value="WIZ">WIZ</option>
             </select>
@@ -81,7 +81,7 @@ if (isset($_POST['btnInscrire'])) {
           <div class="form-group col-md-6">
             <label for="">Niveau d'étude</label>
             <select class="form-control" name="promotion">
-              <option value="B1">1ère année</option>
+              <option value="B1" selected>1ère année</option>
               <option value="B2">2ème année</option>
               <option value="B3">3ème année</option>
               <option value="M1">4ème année</option>

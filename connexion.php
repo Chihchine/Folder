@@ -33,9 +33,9 @@ session_destroy();
       <h1 class="h3 mb-3 font-weight-normal">Se connecter</h1>
       <?php if (!empty($errorConnexion[1])) { echo $errorConnexion[1]; } ?>
       <label for="inputEmail" class="sr-only">Adresse email</label>
-      <input type="email" id="inputEmail" name="mail" class="form-control" placeholder="Adresse email" required autofocus>
+      <input type="email" id="inputEmail" name="mail" class="form-control" placeholder="Adresse email" required autofocus value="jhon.doe@epsi.fr">
       <label for="inputPassword" class="sr-only">Mot de passe</label>
-      <input type="password" id="inputPassword" name="mdp" class="form-control" placeholder="Mot de passe" required>
+      <input type="password" id="inputPassword" name="mdp" class="form-control" placeholder="Mot de passe" required value="motdepasse">
       <a href="oublimdp.php">Mot de passe oublié ?</a>
       <a class="link-inscription" href="inscription.php">S'inscrire</a>
       <div class="invalid-feedback">Veuillez-renseigner un email valide.</div>
