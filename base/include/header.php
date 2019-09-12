@@ -30,7 +30,7 @@ if (empty($imageProfil)) {
 	<link rel="stylesheet" href="<?php echo Settings::sitePathRoot; ?>base/css/vendor.bundle.base.css">
 	<link rel="stylesheet" href="<?php echo Settings::sitePathRoot; ?>base/css/vendor.bundle.addons.css">
 	<link rel="stylesheet" href="<?php echo Settings::sitePathRoot; ?>base/css/style.css">
-	<link rel="stylesheet" href="<?php echo Settings::sitePathRoot; ?>base/css/style.css">
+	<link rel="stylesheet" href="<?php echo Settings::sitePathRoot; ?>base/css/style0.css">
 	<link rel="shortcut icon" href="<?php echo Settings::sitePathRoot; ?>base/css/favicon.png">
 
 	<script src="<?php echo Settings::sitePathRoot; ?>base/js/jQuery.min.js"></script>
