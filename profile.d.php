@@ -1,6 +1,55 @@
 <?php
-$pageTitle = "Profile";
+$pageTitle = "Profil";
 include("base/include/header.php");
+
+if(isset($_GET['id']) AND $_GET['id'] > 0) {
+   $id = $_GET['id'];
+
+
+
+    $result = Main::DataBase()->prepare("SELECT * FROM UTILISATEURS WHERE ID = ?");
+    $result->execute(array($id));
+
+    $image = Main::DataBase()->prepare("SELECT * FROM IMAGES WHERE ID = ?");
+
+    $userexist = $result->rowCount();
+
+
+
+    $userinfo = $result->fetch();
+
+
+    $imageid = $userinfo["ID_IMAGE_PROFIL"];
+    $image->execute(array($imageid));
+    $imageinfo = $image->fetch();
+    $imageexist = $image->rowCount();
+    //echo $imageinfo['LIEN'];
+
+
+    if (isset($_SESSION['id_utilisateur'])) {
+        //echo $_SESSION['id_utilisateur'];
+        echo "<a href='modifprofil.php?id=" . $_SESSION["id_utilisateur"] . "'> Modifier votre profil </a>";
+    }
+
+
+
+    if($userexist == 1){
+        //$userinfo = $result->fetch();
+    } else
+    {
+        header("Location: index.php");
+        die;
+    }
+
+
+    $profilimage = "";
+
+    if($imageexist==1){
+        $profilimage = Settings::sitePathRoot . $imageinfo['LIEN'];
+    } else {
+        $profilimage = "images/basicprofil.png";
+    }
+?>
 ?>
 
 <link href="base/css/profile.css" rel="stylesheet" id="css">
@@ -23,9 +72,9 @@ include("base/include/header.php");
                                 </div>
                             </div>
                             <div class="userData ml-3">
-                                <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold"><a href="javascript:void(0);">Alexy DEFORGE</a></h2>
-                                <h6 class="d-block"><a href="javascript:void(0)">1,500</a> Messages envoyés</h6>
-                                <h6 class="d-block"><a href="javascript:void(0)">300</a> groupes créés</h6>
+                                <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold"><a href="javascript:void(0);"><?php echo $userinfo["NOM"] . $userinfo["PRENOM"]?></a></h2>
+                                <h6 class="d-block"></h6>
+                                <h6 class="d-block"></h6>
                             </div>
                             <div class="ml-auto">
                                 <input type="button" class="btn btn-primary d-none" id="btnDiscard" value="Discard Changes" />
@@ -112,3 +161,12 @@ include("base/include/header.php");
     </div>
 
 </div>
+
+<?php
+include("base/include/footer.php");
+}
+else{
+    echo '<SCRIPT LANGUAGE="JavaScript"> document.location.href="modifprofil.php?id=' . $_SESSION["id_utilisateur"] . '"</SCRIPT>';
+    die;
+}
+?>
