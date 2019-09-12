@@ -181,6 +181,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 					      		</div>
 					         <br/>
 					        </div>
+					        <div class="row">
 					        <div class="form-row">
 					          <div class="form-group col-md-6">
 					            <label for="">Nouvelle Ecole</label>
@@ -191,6 +192,8 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 					              <option value="WIS">WIS</option>
 					            </select>
 					          </div>
+					         </div>
+					         <div class="row">
 					          <div class="form-group col-md-6">
 					            <label for="">Niveau d'étude</label>
 					            <select class="form-control" name="newpromotion">
@@ -202,6 +205,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 					              <option value="M2">5ème année</option>
 					            </select>
 					          </div>
+					      </div>
 					          <lalel> Téléverser un nouvel avatar:    </lalel>
 					          <input type="file" name="avatar">
 					        </div>
