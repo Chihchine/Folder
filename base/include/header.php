@@ -99,16 +99,16 @@ if (empty($imageProfil)) {
 						<li class="header-menu">
 							<span>Général</span>
 						</li>
-						<li>
-							<a href="profil.php?id=<?php echo $_SESSION['id_utilisateur']?>">
-								<i class="fas fa-user"></i>
-								<span>Profil</span>
-							</a>
-						</li>
 						<li class="sidebar-button">
 							<a href="index.php">
 								<i class="fa fa-tachometer-alt"></i>
 								<span>Tableau de bord</span>
+							</a>
+						</li>
+						<li>
+							<a href="profil.php?id=<?php echo $_SESSION['id_utilisateur']?>">
+								<i class="fas fa-user"></i>
+								<span>Profil</span>
 							</a>
 						</li>
 						<li class="sidebar-button">
