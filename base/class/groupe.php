@@ -40,8 +40,8 @@ Class Groupe {
   }
 
   public static function Edit($id, $nom, $description, $visible, $imageID) {
-      $request = Main::Database()->prepare("UPDATE GROUPES(NOM, DESCRIPTION, VISIBLE, ID_IMAGE_GROUPE) VALUES(:nom, :desc, :visible, :imageID) WHERE ID=:id");
-      $request->execute(["id" => $id, "nom" => $nom, "desc" => $description, "visisble" => $visible]);
+      $request = Main::Database()->prepare("UPDATE GROUPES SET NOM=:nom, DESCRIPTION=:description, VISIBLE=:visisble, ID_IMAGE_GROUPE=:imageID WHERE ID=:id");
+      $request->execute(["id" => $id, "nom" => $nom, "description" => $description, "visisble" => $visible, "imageID" => $imageID]);
   }
 
 }

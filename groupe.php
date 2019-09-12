@@ -12,13 +12,13 @@ if (empty($groupe)) {
   echo "erreur, groupe inconnu";
 }
 
-if (isset($_GET['r']) && $_GET['r']=="editInfo ") {
+if (isset($_GET['r']) && $_GET['r']=="editInfo") {
   if (isset($_POST['groupeVisible'])) {
     $visible = true;
   } else {
     $visible = false;
   }
-
+  echo 1;
   Groupe::Edit($_GET['id'], $_POST['groupeName'], $_POST['groupeDesc'], $visible, $groupe['IMAGE_ID_GROUPE']);
 
 } elseif (isset($_GET['r']) && $_GET['r']=="editImage") {
