@@ -96,7 +96,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                     <th data-filter-control="input" data-field="nom" data-sortable="true">Nom</th>
                     <th data-filter-control="input" data-field="description" data-sortable="true">Description</th>
                     <th data-field="date" data-sortable="true">Date de création</th>
-                    <th data-field="membres" data-sortable="true">Nombre de membre</th>
+                    <th data-field="membres" data-sortable="true">Membres</th>
                     <th>Action</th>
                   </tr>
                 </thead>
