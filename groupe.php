@@ -6,7 +6,7 @@ if (isset($_GET['id'])) {
 $pageTitle = "Groupe";
 include("base/include/header.php");
 
-$groupe = Groupe::Show($_GET['id'])
+$groupe = Groupe::Show($_GET['id']);
 
 if (empty($groupe)) {
   echo "erreur, groupe inconnu";
