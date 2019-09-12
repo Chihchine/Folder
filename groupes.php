@@ -107,11 +107,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                   foreach ($groupes as $groupe) { ?>
                   <tr>
                     <td><img class="groupe-image" src="<?php echo Settings::sitePathRoot . Image::Show($groupe['ID_IMAGE_GROUPE'])['LIEN']; ?>"></td>
-                    <td><?php echo $groupe['NOM']; ?></td>
+                    <td><a href="groupe.php?id=<?php echo $groupe['ID']; ?>"><?php echo $groupe['NOM']; ?></a></td>
                     <td><?php echo $groupe['DESCRIPTION']; ?></td>
                     <td><?php echo substr($groupe['DATE_CREATION'], 0, 10); ?></td>
                     <td><?php echo Groupe::CountMember($groupe['ID'])['NUMBER']; ?></td>
-                    <td><a href="?r=join&id=<?php echo $groupe['ID']; ?>"><button class="btn btn-classic">Rejoindre</button></a><a href="?r=leave&id=<?php echo $groupe['ID']; ?>"><button class="btn btn-danger">Quitter</button></a></td>
+                    <td><a href="?r=join&id=<?php echo $groupe['ID']; ?>"><button class="btn btn-primary">Rejoindre</button></a>
+                        <a href="?r=leave&id=<?php echo $groupe['ID']; ?>"><button class="btn btn-danger">Quitter</button></a></td>
                   </tr>
                 <?php } ?>
                 </tbody>
