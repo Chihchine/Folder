@@ -18,23 +18,5 @@ Class Calendrier {
     return $request;
   }
 
-  public static function eventCalendar() {
-      $events = Calendrier::eventsDataBase();
-      while ($event = $events->fetch()) {
-        $debut = substr($event['DATE_DEBUT'], 0, 10).'T'.substr($event['DATE_DEBUT'], 11, 19);
-        $fin = substr($event['DATE_FIN'], 0, 10).'T'.substr($event['DATE_FIN'], 11, 19);
-        echo $debut;
-        echo "<br>";
-        echo $test2;
-        $dataEvent[] = array(
-          'title'     => $event['NOM'],
-          'start'     => $debut,
-          'end'       => $fin,
-          'color'     => '#2ca8ff'
-        );
-      }
-  }
-  return $dataEvent;
-}
 
  ?>
