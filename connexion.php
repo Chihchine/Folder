@@ -11,6 +11,7 @@ if (isset($_POST['connexion'])) {
     $idUtilisateur = Connexion::verif($_POST['mail'], $_POST['mdp']);
     $_SESSION['id_utilisateur'] = $idUtilisateur['ID'];
     header('Location: profil.php?id='.$_SESSION['id_utilisateur'].'');
+    die;
   }
 }
 session_destroy();
