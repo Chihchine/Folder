@@ -195,10 +195,8 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 					            </select>
 					          </div>
 										<div class="form-group col-md-12">
-											<div class="form-group col-md-4">
 												<textarea class="form-control" name="pres" value="<?php echo $userinfo["PRESENTATION"] ?>" required rows="6" placeholder="Une description de vous, sur vos intérêts, vos compétences, vos projets, etc"></textarea>
 						            <div class="invalid-feedback">Ne pas dépasser 150 caractères</div>
-						          </div>
 										</div>
 					          <lalel> Téléverser un nouvel avatar:    </lalel>
 					          <input type="file" name="avatar">
