@@ -187,7 +187,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 					            </select>
 					          </div>
 										<div class="form-group col-md-12">
-												<textarea class="form-control" name="pres" value="<?php echo $userinfo["PRESENTATION"] ?>" required rows="6" placeholder="Une description de vous, sur vos intérêts, vos compétences, vos projets, etc" value="Actuellement en école d'informatique à l'EPSI, je suis disponible et intéressé par un projet novateur, j'aime aussi la musique pourquoi pas créer un groupe ? :)"></textarea>
+												<textarea class="form-control" name="pres" value="<?php echo $userinfo["PRESENTATION"] ?>" required rows="6"  value="Actuellement en école d'informatique à l'EPSI, je suis disponible et intéressé par un projet novateur, j'aime aussi la musique pourquoi pas créer un groupe ? "></textarea>
 						            <div class="invalid-feedback">Ne pas dépasser 150 caractères</div>
 										</div>
 										<div class="form-group col-md-12 download-img">
