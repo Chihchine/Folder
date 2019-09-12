@@ -32,11 +32,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         <form enctype="multipart/form-data" id="createGroupe" class="form-proposition-groupe" action="groupes.php" method="post">
           <div class="form-group">
             <label for="groupeName">Nom du groupe</label>
-            <input type="text" name="groupeName" id="groupeName" class="form-control" placeholder="Nom du groupe choisi...">
+            <input type="text" name="groupeName" id="groupeName" class="form-control" placeholder="Nom du groupe choisi..." value="Natation">
           </div>
           <div class="form-group">
             <label for="groupeDesc">Description du groupe</label>
-            <textarea class="col-12" id="groupeDesc" name="groupeDesc" rows="3" placeholder="Une description simple du groupe avec ses objectifs, pour qui, quand, etc..."></textarea>
+            <textarea class="col-12" id="groupeDesc" name="groupeDesc" rows="3" placeholder="Une description simple du groupe avec ses objectifs, pour qui, quand, etc...">Pour les grands sportifs</textarea>
           </div>
           <div class="input-group image-preview">
             <input type="text" class="form-control image-preview-filename" disabled="disabled">
