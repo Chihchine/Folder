@@ -49,7 +49,7 @@ $dataEventJson = json_encode($dataEvent);
 <script src='base/js/fullcalendar/packages/timegrid/main.js'></script>
 <script src='base/js/fullcalendar/packages/list/main.js'></script>
 
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Créer un évenement</button>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Ajouter un évenement</button>
 
 <div id='calendar'></div>
 
@@ -57,7 +57,7 @@ $dataEventJson = json_encode($dataEvent);
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Ajouter un évenement</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -67,15 +67,15 @@ $dataEventJson = json_encode($dataEvent);
           <div class="form-row">
             <div class="form-group  col-md-4">
               <label for="">Titre de l'évenement</label>
-              <input class="form-control" type="text" name="nom" value="" placeholder="Nommer votre évenement">
+              <input class="form-control" type="text" name="nom" value="" placeholder="Nommer votre évenement" value="Worskshop B1">
             </div>
             <div class="form-group  col-md-4">
               <label for="">Date de début</label>
-              <input class="form-control" type="date" name="date_debut" value="">
+              <input class="form-control" type="date" name="date_debut" value="23/09/2019">
             </div>
             <div class="form-group  col-md-4">
               <label for="">Date de fin</label>
-              <input class="form-control" type="date" name="date_fin" value="">
+              <input class="form-control" type="date" name="date_fin" value="27/09/2019">
             </div>
           </div>
           <div class="form-row">
@@ -86,7 +86,7 @@ $dataEventJson = json_encode($dataEvent);
                   <select class="form-control" name="heure_debut">
                     <option value="07">7H</option>
                     <option value="08">8H</option>
-                    <option value="09">9H</option>
+                    <option value="09" selected>9H</option>
                     <option value="10">10H</option>
                     <option value="11">11H</option>
                     <option value="12">12H</option>
@@ -107,7 +107,7 @@ $dataEventJson = json_encode($dataEvent);
                   <select class="form-control" name="minute_debut">
                     <option value="00">00MIN</option>
                     <option value="15">15MIN</option>
-                    <option value="30">30MIN</option>
+                    <option value="30" selected>30MIN</option>
                     <option value="45">45MIN</option>
                   </select>
                 </div>
@@ -127,7 +127,7 @@ $dataEventJson = json_encode($dataEvent);
                     <option value="13">13H</option>
                     <option value="14">14H</option>
                     <option value="15">15H</option>
-                    <option value="16">16H</option>
+                    <option value="16" selected>16H</option>
                     <option value="17">17H</option>
                     <option value="18">18H</option>
                     <option value="19">19H</option>
@@ -139,7 +139,7 @@ $dataEventJson = json_encode($dataEvent);
                 </div>
                 <div class="col-md-6">
                   <select class="form-control" name="minute_fin">
-                    <option value="00">00MIN</option>
+                    <option value="00" selected>00MIN</option>
                     <option value="15">15MIN</option>
                     <option value="30">30MIN</option>
                     <option value="45">45MIN</option>
@@ -148,7 +148,7 @@ $dataEventJson = json_encode($dataEvent);
               </div>
             </div>
             <div class="form-group col-md-12">
-              <textarea class="form-control" name="description" rows="5" placeholder="Description de l'évenement que vous souhaitez créer (pour qui ? pour quoi ? où ? )"></textarea>
+              <textarea class="form-control" name="description" rows="5" placeholder="Description de l'évenement que vous souhaitez créer (pour qui ? pour quoi ? où ? )" value="Workshop pour tous les B1, pret à relever le defi ?"></textarea>
             </div>
           </div>
 
