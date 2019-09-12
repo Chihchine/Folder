@@ -61,9 +61,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 				}
 		} else {
 			echo '
-			<SCRIPT LANGUAGE="JavaScript">
-			document.location.href="modifprofil.php?id="' . $_SESSION["id_utilisateur"];'
-			</SCRIPT>'
+			<SCRIPT LANGUAGE="JavaScript"> document.location.href="modifprofil.php?id="' . $_SESSION["id_utilisateur"] . '</SCRIPT>';
 			die;
 		}
 	}
