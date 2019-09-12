@@ -9,7 +9,21 @@ if (isset($_POST['creer'])) {
   $dateDebut = Annuaire::joinDateHour($_POST['date_debut'], $horraireDebut);
   $dateFin = Annuaire::joinDateHour($_POST['date_fin'], $horraireFin);
   Annuaire::addEvent($_POST['nom'], $_POST['description'], $dateDebut, $dateFin, $_SESSION['id_utilisateur']);
-  echo $horraireDebut;
+}
+
+$events = Calendrier::eventsDataBase();
+while ($event = $events->fetch()) {
+  $debut = substr($event['DATE_DEBUT'], 0, 10).'T'.substr($event['DATE_DEBUT'], 11, 19);
+  $fin = substr($event['DATE_FIN'], 0, 10).'T'.substr($event['DATE_FIN'], 11, 19);
+  echo $debut;
+  echo "<br>";
+  echo $test2;
+  $dataEvent[] = array(
+    'title'     => $event['NOM'],
+    'start'     => $debut,
+    'end'       => $fin,
+    'color'     => '#2ca8ff'
+  );
 }
 
  ?>
@@ -176,7 +190,19 @@ document.addEventListener('DOMContentLoaded', function() {
     weekNumbersWithinDays: true, // == n° de semaine dans la case
     weekLabel: "S",
     eventLimit: true,
-    eventLimitText: 'de plus'
+    eventLimitText: 'de plus',
+    events: [
+  {
+    title: 'BCH237',
+    start: '2019-09-12T10:30:00',
+    end: '2019-09-13T11:30:00',
+    extendedProps: {
+      department: 'BioChemistry'
+    },
+    description: 'Lecture'
+  }
+  // more events ...
+],
 
 
 
