@@ -122,17 +122,9 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	    die;
 	  }
 ?>
-	    <!--<div class="fil_arianne container">
-	    <nav aria-label="breadcrumb">
-	        <ol class="breadcrumb">
-	            <li class="breadcrumb-item"><a href="?p=dashboard">Tableau de bord</a></li>
-	            <li class="breadcrumb-item active" aria-current="page">Mon profil</li>
-	        </ol>
-	    </nav>
-	</div>-->
+
 
 	<div class="container">
-	  <h1>Profil</h1>
 	  <div class="row">
 	    <div class="col-md-3">
 	      <div class="card">
