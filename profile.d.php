@@ -147,7 +147,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 
                                 </div>
                                 <div class="tab-pane fade" id="connectedServices" role="tabpanel" aria-labelledby="ConnectedServices-tab">
-                                    Facebook, Google et Twitter sont connectés à ce compte.
+                                    <?php echo $userinfo["PRESENTATION"]?>
                                 </div>
                             </div>
                         </div>
