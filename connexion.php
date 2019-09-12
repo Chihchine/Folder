@@ -1,6 +1,7 @@
 <?php
 require_once("base/class/main.php");
 
+session_destroy();
 
 if (isset($_POST['connexion'])) {
   if (empty(Connexion::verif($_POST['mail'], $_POST['mdp']))) {
@@ -11,10 +12,6 @@ if (isset($_POST['connexion'])) {
     $_SESSION['id_utilisateur'] = $idUtilisateur['ID'];
     header('Location: profil.php?id='.$_SESSION['id_utilisateur'].'');
   }
-}
-
-if ($_POST['deconnect']) {
-  session_destroy();
 }
 
 echo $_SESSION['id_utilisateur'];
