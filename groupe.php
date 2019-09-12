@@ -81,8 +81,8 @@ $groupe = Groupe::Show($_GET['id']);
                             <div class="image-container">
                                 <img src="<?php echo Settings::sitePathRoot . Image::Show($groupe['ID_IMAGE_GROUPE'])['LIEN']; ?>" id="imgProfile" style="width: 150px; height: 150px" class="img-thumbnail" />
                                 <div class="middle">
-                                  <input type="button" class="btn btn-secondary" id="btnChangePicture" value="Modifier" />
                                   <form enctype="multipart/form-data" id="editImage" class="form-proposition-groupe" action="groupe.php?id=<?php echo $groupe['ID']; ?>&r=editImage" method="post">
+                                    <input type="button" class="btn btn-secondary" id="btnChangePicture" value="Modifier" />
                                     <input type="file" style="display: none;" id="profilePicture" name="image" />
                                   </form>
                                 </div>
@@ -93,7 +93,6 @@ $groupe = Groupe::Show($_GET['id']);
                             </div>
                             <div class="ml-auto">
                                 <input type="button" class="btn btn-warning d-none" id="btnDiscard" value="Annuler" />
-                                <input type="button" class="btn btn-primary d-none" onclick="document.forms['editImage'].submit();" value="Sauvegarder" />
                             </div>
                         </div>
                     </div>
