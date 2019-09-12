@@ -28,7 +28,17 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 
     if (isset($_SESSION['id_utilisateur'])) {
         //echo $_SESSION['id_utilisateur'];
-        echo "<a href='modifprofil.php?id=" . $_SESSION["id_utilisateur"] . "'> Modifier votre profil </a>";
+        ?>
+            <div class="fil-arianne container">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#" onClick="setActivePage('home')">Tableau de bord</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Profil</li>
+                  <li class="breadcrumb-item active" aria-current="page"><a href="modifprofil.php?id=<?php $_SESSION['id_utilisateur']?>"> Modifier votre profil</a></li>
+                </ol>
+              </nav>
+            </div>
+        <?php 
     }
 
 
@@ -60,7 +70,6 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
         echo '<SCRIPT LANGUAGE="JavaScript"> document.location.href="modifprofil.php?id=' . $_SESSION["id_utilisateur"] . '"</SCRIPT>';
         die;
       }
-?>
 ?>
 
 <link href="base/css/profile.css" rel="stylesheet" id="css">
