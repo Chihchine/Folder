@@ -33,7 +33,7 @@ require("base/include/header.php"); ?>
         <?php
         $utilisateurs = Annuaire::displayUsers();
 
-        while ($utilisateur = $utilisateurs->fetch_assoc()) { ?>
+        while ($utilisateur = $utilisateurs->fetch()) { ?>
         <tr>
           <td><?php echo $utilisateur['PRENOM'] ?></td>
           <td><?php echo $utilisateur['NOM'] ?></td>
