@@ -50,6 +50,11 @@ Class Groupe {
       $request->execute(["id" => $id, "nom" => $nom, "description" => $description, "visisble" => $visible, "imageID" => $imageID]);
   }
 
+  public static function Delete($id) {
+      $request = Main::Database()->prepare("DELETE * FROM GROUPES WHERE ID = :id");
+      $request->execute(["id" => $id]);
+  }
+
 }
 
 ?>
