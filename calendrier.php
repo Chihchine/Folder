@@ -6,18 +6,15 @@ $dateDuJour = date("Y-m-d");
 if (isset($_POST['creer'])) {
   $horraireDebut = $_POST['heure_debut']. ':' .$_POST['minute_debut']. ':00';
   $horraireFin = $_POST['heure_fin']. ':' .$_POST['minute_fin']. ':00';
-  $dateDebut = Annuaire::joinDateHour($_POST['date_debut'], $horraireDebut);
-  $dateFin = Annuaire::joinDateHour($_POST['date_fin'], $horraireFin);
-  Annuaire::addEvent($_POST['nom'], $_POST['description'], $dateDebut, $dateFin, $_SESSION['id_utilisateur']);
+  $dateDebut = Calendrier::joinDateHour($_POST['date_debut'], $horraireDebut);
+  $dateFin = Calendrier::joinDateHour($_POST['date_fin'], $horraireFin);
+  Calendrier::addEvent($_POST['nom'], $_POST['description'], $dateDebut, $dateFin, $_SESSION['id_utilisateur']);
 }
 
 $events = Calendrier::eventsDataBase();
 while ($event = $events->fetch()) {
   $debut = substr($event['DATE_DEBUT'], 0, 10).'T'.substr($event['DATE_DEBUT'], 11, 19);
   $fin = substr($event['DATE_FIN'], 0, 10).'T'.substr($event['DATE_FIN'], 11, 19);
-  echo $debut;
-  echo "<br>";
-  echo $test2;
   $dataEvent[] = array(
     'title'     => $event['NOM'],
     'start'     => $debut,
