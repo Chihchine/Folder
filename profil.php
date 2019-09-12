@@ -50,8 +50,6 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
         $profilimage = "images/basicprofil.png";
     }
 
-    if(isset($_FILES['avatar'])){ echo "yo"};
-
     if(isset($_FILES['avatar']) AND !empty($_FILES['avatar']['name'])) {
         echo "yo";
         $extension  = pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION);
