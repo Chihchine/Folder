@@ -32,7 +32,8 @@ require("base/include/header.php"); ?>
 
         <?php
         $utilisateurs = Annuaire::displayUsers();
-        while ($utilisateur = $utilisateurs ->fetch()) { ?>
+
+        /*while ($utilisateur = $utilisateurs->fetch()) { ?>
         <tr>
           <td><?php echo $utilisateur['PRENOM'] ?></td>
           <td><?php echo $utilisateur['NOM'] ?></td>
@@ -40,7 +41,10 @@ require("base/include/header.php"); ?>
           <td><?php echo $utilisateur['PROMOTION'] ?></td>
           <td><i class="fas fa-user-plus"></i><i class="fas fa-envelope"></i></td>
         </tr>
-      <?php } ?>
+      <?php } ?>*/
+
+        print_r($utilisateurs);
+      ?>
       </tbody>
     </table>
   </div>
