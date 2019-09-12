@@ -33,14 +33,14 @@ if (empty($imageProfil)) {
 	<link rel="stylesheet" href="<?php echo Settings::sitePathRoot; ?>base/css/style.css">
 	<link rel="shortcut icon" href="<?php echo Settings::sitePathRoot; ?>base/css/favicon.png">
 
+	<script src="<?php echo Settings::sitePathRoot; ?>base/js/jQuery.min.js"></script>
+	<script src="<?php echo Settings::sitePathRoot; ?>base/js/popper.js"></script>
+	<script src="<?php echo Settings::sitePathRoot; ?>base/js/bootstrap.min.js"></script>
 	<script src="<?php echo Settings::sitePathRoot; ?>base/js/vendor.bundle.base.js"></script>
 	<script src="<?php echo Settings::sitePathRoot; ?>base/js/vendor.bundle.addons.js"></script>
 	<script src="<?php echo Settings::sitePathRoot; ?>base/js/shared/off-canvas.js"></script>
 	<script src="<?php echo Settings::sitePathRoot; ?>base/js/shared/misc.js"></script>
 	<script src="<?php echo Settings::sitePathRoot; ?>base/js/dashboard.js"></script>
-	<script src="<?php echo Settings::sitePathRoot; ?>base/js/jQuery.min.js"></script>
-  <script src="<?php echo Settings::sitePathRoot; ?>base/js/popper.js"></script>
-  <script src="<?php echo Settings::sitePathRoot; ?>base/js/bootstrap.min.js"></script>
   <script src="base/js/bootstrap-table.min.js"></script>
   <script src="base/js/bootstrap-table-fr-FR.js"></script>
   <script src="https://unpkg.com/bootstrap-table@1.14.2/dist/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
