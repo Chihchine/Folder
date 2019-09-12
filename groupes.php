@@ -111,8 +111,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                     <td><?php echo $groupe['DESCRIPTION']; ?></td>
                     <td><?php echo substr($groupe['DATE_CREATION'], 0, 10); ?></td>
                     <td><?php echo Groupe::CountMember($groupe['ID'])['NUMBER']; ?></td>
-                    <td><a href="?r=join&id=<?php echo $groupe['ID']; ?>"><button class="btn btn-primary">Rejoindre</button></a>
-                        <a href="?r=leave&id=<?php echo $groupe['ID']; ?>"><button class="btn btn-danger">Quitter</button></a></td>
+                    <td>
+                      <?php if (Utilisateur::onGroup($_SESSION['id_utilisateur'], $groupe['ID']) == 0) { ?>
+                      <a href="?r=join&id=<?php echo $groupe['ID']; ?>"><button class="btn btn-primary">Rejoindre</button></a>
+                      <?php } else { ?>
+                      <a href="?r=leave&id=<?php echo $groupe['ID']; ?>"><button class="btn btn-danger">Quitter</button></a>
+                      <?php } ?>
+                      </td>
                   </tr>
                 <?php } ?>
                 </tbody>
