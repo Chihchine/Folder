@@ -65,11 +65,11 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
                     <div class="card-title mb-4">
                         <div class="d-flex justify-content-start">
                             <div class="image-container">
-                                <img src="http://placehold.it/150x150" id="imgProfile" style="width: 150px; height: 150px" class="img-thumbnail" />
-                                <div class="middle">
+                                <img src="<?php echo $profilimage; ?>" id="imgProfile" style="width: 150px; height: 150px" class="img-thumbnail" />
+                                <!--<div class="middle">
                                     <input type="button" class="btn btn-secondary" id="btnChangePicture" value="Change" />
                                     <input type="file" style="display: none;" id="profilePicture" name="file" />
-                                </div>
+                                </div>-->
                             </div>
                             <div class="userData ml-3">
                                 <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold"><a href="javascript:void(0);"><?php echo $userinfo["NOM"] . " " . $userinfo["PRENOM"]?></a></h2>
