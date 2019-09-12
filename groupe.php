@@ -12,6 +12,10 @@ if (empty($groupe)) {
   echo "erreur, groupe inconnu";
 }
 
+if (isset($_GET['r']) && $_GET['r']=="delete") {
+  Groupe::Delete($_GET['id']);
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   if (isset($_GET['r']) && $_GET['r']=="editInfo") {
     if (isset($_POST['groupeVisible'])) {
@@ -91,7 +95,7 @@ $groupe = Groupe::Show($_GET['id']);
                                 <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold"><a href="javascript:void(0);"><?php echo $groupe['NOM']; ?></a></h2>
                                 <button class="btn btn-primary" data-toggle="modal" data-target="#modificationGroupe">Modifier</button>
                                 <button type="button" class="btn btn-primary" onclick="document.forms['editImage'].submit();" value="Sauvegarder" />
-                                <a href="?id=<?php echo $groupe['ID']; ?>&r=delete"<button class="btn btn-danger" data-toggle="modal">Supprimer</button>
+                                <a href="?id=<?php echo $groupe['ID']; ?>&r=delete"<button class="btn btn-danger" data-toggle="modal">Supprimer</button></a>
                             </div>
                             <div class="ml-auto">
                                 <input type="button" class="btn btn-warning d-none" id="btnDiscard" value="Annuler" />
