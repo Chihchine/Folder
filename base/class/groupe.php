@@ -24,7 +24,7 @@ Class Groupe {
   }
 
   public static function ListAll() {
-    $request = Main::Database()->prepare("SELECT * FROM GROUPES WHERE VISIBLE=1");
+    $request = Main::Database()->prepare("SELECT * FROM GROUPES WHERE VISIBLE=1 OR VISIBLE=NULL");
     $request->execute();
     return $request->fetchAll();
   }
