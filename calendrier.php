@@ -16,10 +16,10 @@ $i = 1;
 while ($event = $events->fetch()) {
   $debut = substr($event['DATE_DEBUT'], 0, 10).'T'.substr($event['DATE_DEBUT'], 11, 19);
   $fin = substr($event['DATE_FIN'], 0, 10).'T'.substr($event['DATE_FIN'], 11, 19);
-  if ($i % 2 != 0) {
+  if ($i % 3 == 0) {
     $color = '#2ca8ff';
   }
-  elseif ($i % 2 == 1) {
+  elseif ($i % 3 == 1) {
     $color = '#048b9a';
   }
   else {
