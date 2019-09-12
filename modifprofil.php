@@ -167,18 +167,21 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 					            <div class="invalid-feedback">Ne pas dépasser 150 caractères</div>
 					          </div>
 					          <br/>
-					          <div class="form-group col-md-4">
-					            <label for="">Nouveau Mot de passe</label>
-					            <input class="form-control" type="password" name="newmdp"  placeholder="*********" required>
-					            <div class="invalid-feedback">Minimum 6 caractères.</div>
-					          </div>
-					          <div class="form-group col-md-4">
-					            <label for="">Confirmer votre nouveau mot de passe</label>
-					            <input class="form-control" type="password" name="confirmMdp" placeholder="*********" required>
-					            <div class="invalid-feedback">Veuillez confirmer votre nouveau mot de passe.</div>
-					          </div>
+					          <div class="row">
+						          <div class="form-group col-md-4">
+						            <label for="">Nouveau Mot de passe</label>
+						            <input class="form-control" type="password" name="newmdp"  placeholder="*********" required>
+						            <div class="invalid-feedback">Minimum 6 caractères.</div>
+						          </div>
+						          <div class="form-group col-md-4">
+						            <label for="">Confirmer votre nouveau mot de passe</label>
+						            <input class="form-control" type="password" name="confirmMdp" placeholder="*********" required>
+						            <div class="invalid-feedback">Veuillez confirmer votre nouveau mot de passe.</div>
+						          </div>
+					      		</div>
 					         <br/>
 					        </div>
+					        <div class="row">
 					        <div class="form-row">
 					          <div class="form-group col-md-6">
 					            <label for="">Nouvelle Ecole</label>
@@ -189,6 +192,8 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 					              <option value="WIS">WIS</option>
 					            </select>
 					          </div>
+					         </div>
+					         <div class="row">
 					          <div class="form-group col-md-6">
 					            <label for="">Niveau d'étude</label>
 					            <select class="form-control" name="newpromotion">
@@ -200,6 +205,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 					              <option value="M2">5ème année</option>
 					            </select>
 					          </div>
+					      </div>
 					          <lalel> Téléverser un nouvel avatar:    </lalel>
 					          <input type="file" name="avatar">
 					        </div>

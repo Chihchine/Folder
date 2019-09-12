@@ -43,7 +43,7 @@ if (isset($_GET['r']) && $_GET['r']=="editInfo ") {
         </button>
       </div>
       <div class="modal-body">
-        <form enctype="multipart/form-data" id="createGroupe" class="form-proposition-groupe" action="groupe.php?id=<?php echo $groupe['ID']; ?>&r=editInfo" method="post">
+        <form enctype="multipart/form-data" id="editInfo" class="form-proposition-groupe" action="groupe.php?id=<?php echo $groupe['ID']; ?>&r=editInfo" method="post">
           <div class="form-group">
             <label for="groupeName">Nom du groupe</label>
             <input type="text" name="groupeName" id="groupeName" class="form-control" placeholder="Nom du groupe choisi..." value="<?php echo $groupe['NOM']; ?>">
@@ -60,7 +60,7 @@ if (isset($_GET['r']) && $_GET['r']=="editInfo ") {
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-        <button type="button" class="btn btn-primary" onclick="document.forms['editInfo'].submit();">Créer</button>
+        <button type="button" class="btn btn-primary" onclick="document.forms['editInfo'].submit();">Modifier</button>
       </div>
     </div>
   </div>
@@ -78,8 +78,8 @@ if (isset($_GET['r']) && $_GET['r']=="editInfo ") {
                             <div class="image-container">
                                 <img src="<?php echo Settings::sitePathRoot . Image::Show($groupe['ID_IMAGE_GROUPE'])['LIEN']; ?>" id="imgProfile" style="width: 150px; height: 150px" class="img-thumbnail" />
                                 <div class="middle">
+                                  <input type="button" class="btn btn-secondary" id="btnChangePicture" value="Modifier" />
                                   <form enctype="multipart/form-data" id="editImage" class="form-proposition-groupe" action="groupe.php?id=<?php echo $groupe['ID']; ?>&r=editImage" method="post">
-                                    <input type="button" class="btn btn-secondary" id="btnChangePicture" value="Changer" />
                                     <input type="file" style="display: none;" id="imageProfil" name="image" />
                                   </form>
                                 </div>
