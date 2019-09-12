@@ -49,6 +49,16 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
     } else {
         $profilimage = "images/basicprofil.png";
     }
+
+    if(isset($_FILES['avatar']) AND !empty($_FILES['avatar']['name'])) {
+        $extension  = pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION);
+        $idimage = Image::Upload($extension, $_FILES['avatar']['tmp_name'], $_FILES['avatar']['error']);
+        $modifavatar = Main::DataBase()->prepare("UPDATE UTILISATEURS SET ID_IMAGE_PROFIL = ? WHERE ID = ?");
+        $modifavatar->execute(array($idimage, $id));
+
+        echo '<SCRIPT LANGUAGE="JavaScript"> document.location.href="profil.php?id=' . $_SESSION["id_utilisateur"] . '"</SCRIPT>';
+        die;
+      }
 ?>
 ?>
 
@@ -68,7 +78,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
                                 <img src="<?php echo $profilimage; ?>" id="imgProfile" style="width: 150px; height: 150px" class="img-thumbnail" />
                                 <div class="middle">
                                     <input type="button" class="btn btn-secondary" id="btnChangePicture" value="Change" />
-                                    <input type="file" style="display: none;" id="profilePicture" name="file" />
+                                    <input type="file" style="display: none;" id="profilePicture" name="avatar" />
                                 </div>
                             </div>
                             <div class="userData ml-3">
@@ -141,7 +151,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
                                     <hr />
                                     <div class="row">
                                         <div class="col-sm-3 col-md-2 col-5">
-                                            <label style="font-weight:bold;">Classe</label>
+                                            <label style="font-weight:bold;">Promotion</label>
                                         </div>
                                         <div class="col-md-8 col-6">
                                             <?php echo $userinfo["PROMOTION"]?>
