@@ -34,7 +34,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="#" onClick="setActivePage('home')">Tableau de bord</a></li>
                   <li class="breadcrumb-item active" aria-current="page">Profil</li>
-                  <li class="breadcrumb-item active" aria-current="page"><a href="modifprofil.php?id=<?php echo $_SESSION['id_utilisateur']?>"> Modifier votre profil</a></li>
+                  <li class="breadcrumb-item active" aria-current="page"><a href="modifprofil.php?id=<?php $_SESSION['id_utilisateur']?>"> Modifier votre profil</a></li>
                 </ol>
               </nav>
             </div>
@@ -91,10 +91,11 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 
                                 if($_SESSION["id_utilisateur"]){
                                 echo '
+                                <div class="middle">
                                 <form method="post" class="needs-validation form-signin" novalidate enctype="multipart/form-data"> 
                                     <input type="button" class="btn btn-secondary" id="btnChangePicture" value="Change" />
                                     <input type="file" style="display: none;" id="profilePicture" name="avatar" />
-                                </div>';}
+                                </div><button class="btn btn-primary d-none" id="btnDiscard" type="submit" name="btnInscrire">Sauvegarder</button></form>';}
 
                                 ?>
                             </div>
