@@ -51,9 +51,11 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 				}
 				if(isset($_POST['newpromotion']) AND !empty($_POST['newpromotion']) AND $_POST['newpromotion'] != $userinfo['PROMOTION']) {
 					$newpromotion = htmlspecialchars($_POST['newpromotion']);
+					if($newpromotion!="Basic"){
 					$insertpromotion = Main::DataBase()->prepare("UPDATE UTILISATEURS SET PROMOTION = ? WHERE ID = ?");
 				    $insertpromotion->execute(array($newpromotion, $id));
 				    echo '<SCRIPT LANGUAGE="JavaScript"> document.location.href="modifprofil.php?id=' . $_SESSION["id_utilisateur"] . '"</SCRIPT>';
+				}
 				}
 				if(isset($_POST['pres']) AND !empty($_POST['pres']) AND $_POST['pres'] != $userinfo['PRESENTATION']) {
 					$newpres = htmlspecialchars($_POST['pres']);
@@ -182,6 +184,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 					          <div class="form-group col-md-6">
 					            <label for="">Niveau d'étude</label>
 					            <select class="form-control" name="newpromotion">
+					            	<option value = "Basic"> Votre niveau d'étude: <?php echo $userinfo["PROMOTION"]?></option>
 					              <option value="B1">1ère année</option>
 					              <option value="B2">2ème année</option>
 					              <option value="B3">3ème année</option>
