@@ -17,7 +17,7 @@ if ($_GET['deconnect'] == 1) {
   session_destroy();
 }
 
-
+echo $_SESSION['id_utilisateur'];
  ?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
