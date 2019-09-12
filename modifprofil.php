@@ -112,7 +112,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 
 
 	if(isset($_FILES['avatar']) AND !empty($_FILES['avatar']['name'])) {
-		echo "debug";
+		//echo "debug";
 		$extension  = pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION);
 		$idimage = Image::Upload($extension, $_FILES['avatar']['tmp_name'], $_FILES['avatar']['error']);
 		$modifavatar = Main::DataBase()->prepare("UPDATE UTILISATEURS SET ID_IMAGE_PROFIL = ? WHERE ID = ?");
@@ -167,16 +167,18 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 					            <div class="invalid-feedback">Ne pas dépasser 150 caractères</div>
 					          </div>
 					          <br/>
-					          <div class="form-group col-md-4">
-					            <label for="">Nouveau Mot de passe</label>
-					            <input class="form-control" type="password" name="newmdp"  placeholder="*********" required>
-					            <div class="invalid-feedback">Minimum 6 caractères.</div>
-					          </div>
-					          <div class="form-group col-md-4">
-					            <label for="">Confirmer votre nouveau mot de passe</label>
-					            <input class="form-control" type="password" name="confirmMdp" placeholder="*********" required>
-					            <div class="invalid-feedback">Veuillez confirmer votre nouveau mot de passe.</div>
-					          </div>
+					          <div class="row">
+						          <div class="form-group col-md-4">
+						            <label for="">Nouveau Mot de passe</label>
+						            <input class="form-control" type="password" name="newmdp"  placeholder="*********" required>
+						            <div class="invalid-feedback">Minimum 6 caractères.</div>
+						          </div>
+						          <div class="form-group col-md-4">
+						            <label for="">Confirmer votre nouveau mot de passe</label>
+						            <input class="form-control" type="password" name="confirmMdp" placeholder="*********" required>
+						            <div class="invalid-feedback">Veuillez confirmer votre nouveau mot de passe.</div>
+						          </div>
+					      		</div>
 					         <br/>
 					        </div>
 					        <div class="form-row">
