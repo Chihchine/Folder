@@ -26,7 +26,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 			   	$newmail = htmlspecialchars($_POST['newmail']);
 			    $insertmail = Main::DataBase()->prepare("UPDATE UTILISATEURS SET MAIL = ? WHERE ID = ?");
 			    $insertmail->execute(array($newmail, $id));
-			    echo '<SCRIPT LANGUAGE="JavaScript"> document.location.href="modifprofil.php?id="' . $_SESSION["id_utilisateur"] . '</SCRIPT>';
+			    echo '<SCRIPT LANGUAGE="JavaScript">document.location.href="modifprofil.php?id="' . $_SESSION["id_utilisateur"] . '</SCRIPT>';
 			   }
 			   if(isset($_POST['newmdp']) AND !empty($_POST['newmdp']) AND $_POST['newmdp'] != $userinfo['MDP']) {
 				   	if($_POST['newmdp'] == $_POST['confirmMdp'])
@@ -60,7 +60,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 				    echo '<SCRIPT LANGUAGE="JavaScript"> document.location.href="modifprofil.php?id="' . $_SESSION["id_utilisateur"] . '</SCRIPT>';
 				}
 		} else {
-			echo '<SCRIPT LANGUAGE="JavaScript"> document.location.href="modifprofil.php?id="' . $_SESSION["id_utilisateur"] . '</SCRIPT>';
+			echo '<SCRIPT LANGUAGE="JavaScript"> document.location.href="modifprofil.php?id=' . $_SESSION["id_utilisateur"] . '"</SCRIPT>';
 			die;
 		}
 	}
@@ -97,7 +97,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 		$modifavatar = Main::DataBase()->prepare("UPDATE UTILISATEURS SET ID_IMAGE_PROFIL = ? WHERE ID = ?");
 	    $modifavatar->execute(array($idimage, $id));
 
-	    echo '<SCRIPT LANGUAGE="JavaScript"> document.location.href="modifprofil.php?id="' . $_SESSION["id_utilisateur"] . '</SCRIPT>';
+	    echo '<SCRIPT LANGUAGE="JavaScript"> document.location.href="modifprofil.php?id=' . $_SESSION["id_utilisateur"] . '"</SCRIPT>';
 	    die;
 	  }
 ?>
