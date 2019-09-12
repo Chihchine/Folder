@@ -16,6 +16,55 @@ if (empty($groupe)) {
 <link href="base/css/profile.css" rel="stylesheet" id="css">
 <script src="base/js/profile.js"></script>
 
+<?php /*<-- DEBUT - Popup modification de groupe -->*/ ?>
+<div class="modal fade" id="modificationGroupe" tabindex="-1" role="dialog" aria-labelledby="modificationGroupeLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modificationGroupeLabel">Modifier le groupe</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form enctype="multipart/form-data" id="createGroupe" class="form-proposition-groupe" action="groupes.php" method="post">
+          <div class="form-group">
+            <label for="groupeName">Nom du groupe</label>
+            <input type="text" name="groupeName" id="groupeName" class="form-control" placeholder="Nom du groupe choisi..." value="<?php echo $groupe['NOM']; ?>">
+          </div>
+          <div class="form-group">
+            <label for="groupeDesc">Description du groupe</label>
+            <textarea class="col-12" id="groupeDesc" name="groupeDesc" rows="3" placeholder="Une description simple du groupe avec ses objectifs, pour qui, quand, etc..."><?php echo $groupe['DESCRIPTION']; ?></textarea>
+          </div>
+          <div class="form-group">
+            <label for="groupeDesc">Visible</label>
+            <input type="checkbox" class="col-12" id="groupeVisible" name="groupeVisislbe" <?php if($groupe['VISIBLE']==true || $groupe['VISIBLE']==NULL) { echo "checked"; }?>>
+          </div>
+          <div class="input-group image-preview">
+            <input type="text" class="form-control image-preview-filename" disabled="disabled">
+            <span class="input-group-btn">
+              <!-- image-preview-clear button -->
+              <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+                <span class="glyphicon glyphicon-remove"></span> Annuler
+              </button>
+              <!-- image-preview-input -->
+              <div class="btn btn-default image-preview-input">
+                <span class="glyphicon glyphicon-folder-open"></span>
+                <span class="image-preview-input-title">Ajoutez une image</span>
+                <input type="file" accept="image/png, image/jpeg, image/gif" id="groupeImage" name="groupeImage"/>
+              </div>
+            </span>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+        <button type="button" class="btn btn-primary" onclick="document.forms['createGroupe'].submit();">Créer</button>
+      </div>
+    </div>
+  </div>
+</div>
+<?php /*<-- FIN - Popup modification de groupe -->*/ ?>
 
 <div class="container">
     <div class="row">
@@ -26,7 +75,7 @@ if (empty($groupe)) {
                     <div class="card-title mb-4">
                         <div class="d-flex justify-content-start">
                             <div class="image-container">
-                                <img src="http://placehold.it/150x150" id="imgProfile" style="width: 150px; height: 150px" class="img-thumbnail" />
+                                <img src="<?php echo Image::Show($groupe['ID_IMAGE_GROUPE'])['LIEN']; ?>" id="imgProfile" style="width: 150px; height: 150px" class="img-thumbnail" />
                                 <div class="middle">
                                     <input type="button" class="btn btn-secondary" id="btnChangePicture" value="Change" />
                                     <input type="file" style="display: none;" id="profilePicture" name="file" />
@@ -34,6 +83,7 @@ if (empty($groupe)) {
                             </div>
                             <div class="userData ml-3">
                                 <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold"><a href="javascript:void(0);"><?php echo $groupe['NOM']; ?></a></h2>
+                                <button class="btn btn-primary" data-toggle="modal" data-target="#modificationGroupe">Créer un groupe</button>
                             </div>
                             <div class="ml-auto">
                                 <input type="button" class="btn btn-primary d-none" id="btnDiscard" value="Discard Changes" />
@@ -48,7 +98,7 @@ if (empty($groupe)) {
                                     <a class="nav-link active" id="basicInfo-tab" data-toggle="tab" href="#basicInfo" role="tab" aria-controls="basicInfo" aria-selected="true">Informations</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="connectedServices-tab" data-toggle="tab" href="#connectedServices" role="tab" aria-controls="connectedServices" aria-selected="false">Autres</a>
+                                    <a class="nav-link" id="connectedServices-tab" data-toggle="tab" href="#connectedServices" role="tab" aria-controls="connectedServices" aria-selected="false">Description</a>
                                 </li>
                             </ul>
                             <div class="tab-content ml-1" id="myTabContent">
@@ -90,19 +140,10 @@ if (empty($groupe)) {
                                         </div>
                                     </div>
                                     <hr />
-                                    <div class="row">
-                                        <div class="col-sm-3 col-md-2 col-5">
-                                            <label style="font-weight:bold;">Activé</label>
-                                        </div>
-                                        <div class="col-md-8 col-6">
-                                            B2-Gr1
-                                        </div>
-                                    </div>
-                                    <hr />
 
                                 </div>
                                 <div class="tab-pane fade" id="connectedServices" role="tabpanel" aria-labelledby="ConnectedServices-tab">
-                                    Facebook, Google et Twitter sont connectés à ce compte.
+                                    <?php echo $groupe['DESCRIPTION']; ?>
                                 </div>
                             </div>
                         </div>
