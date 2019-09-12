@@ -38,8 +38,8 @@ if (empty($imageProfil)) {
 	<script src="<?php echo Settings::sitePathRoot; ?>base/js/bootstrap.min.js"></script>
 	<script src="<?php echo Settings::sitePathRoot; ?>base/js/vendor.bundle.base.js"></script>
 	<script src="<?php echo Settings::sitePathRoot; ?>base/js/vendor.bundle.addons.js"></script>
-	<script src="<?php echo Settings::sitePathRoot; ?>base/js/shared/off-canvas.js"></script>
-	<script src="<?php echo Settings::sitePathRoot; ?>base/js/shared/misc.js"></script>
+	<script src="<?php echo Settings::sitePathRoot; ?>base/js/off-canvas.js"></script>
+	<script src="<?php echo Settings::sitePathRoot; ?>base/js/misc.js"></script>
 	<script src="<?php echo Settings::sitePathRoot; ?>base/js/dashboard.js"></script>
   <script src="base/js/bootstrap-table.min.js"></script>
   <script src="base/js/bootstrap-table-fr-FR.js"></script>
