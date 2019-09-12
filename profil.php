@@ -49,6 +49,17 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
     } else {
         $profilimage = "images/basicprofil.png";
     }
+
+    if(isset($_FILES['avatar']) AND !empty($_FILES['avatar']['name'])) {
+        echo "yo";
+        $extension  = pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION);
+        $idimage = Image::Upload($extension, $_FILES['avatar']['tmp_name'], $_FILES['avatar']['error']);
+        $modifavatar = Main::DataBase()->prepare("UPDATE UTILISATEURS SET ID_IMAGE_PROFIL = ? WHERE ID = ?");
+        $modifavatar->execute(array($idimage, $id));
+
+        echo '<SCRIPT LANGUAGE="JavaScript"> document.location.href="modifprofil.php?id=' . $_SESSION["id_utilisateur"] . '"</SCRIPT>';
+        die;
+      }
 ?>
 ?>
 
@@ -60,16 +71,23 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
     <div class="row">
         <div class="col-12">
             <div class="card">
-
+                <form method="post" class="needs-validation form-signin" novalidate enctype="multipart/form-data"> 
                 <div class="card-body">
                     <div class="card-title mb-4">
                         <div class="d-flex justify-content-start">
                             <div class="image-container">
                                 <img src="<?php echo $profilimage; ?>" id="imgProfile" style="width: 150px; height: 150px" class="img-thumbnail" />
+
+                                <?php 
+
+                                if($_SESSION["id_utilisateur"]){
+                                echo '
                                 <div class="middle">
                                     <input type="button" class="btn btn-secondary" id="btnChangePicture" value="Change" />
                                     <input type="file" style="display: none;" id="profilePicture" name="avatar" />
-                                </div>
+                                </div>';}
+
+                                ?>
                             </div>
                             <div class="userData ml-3">
                                 <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold"><a href="javascript:void(0);"><?php echo $userinfo["NOM"] . " " . $userinfo["PRENOM"]?></a></h2>
@@ -77,10 +95,12 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
                                 <h6 class="d-block"><?php echo $userinfo["PROMOTION"]?></h6>
                             </div>
                             <div class="ml-auto">
-                                <input type="button" class="btn btn-primary d-none" id="btnDiscard" value="Discard Changes" />
+                                <button class="btn btn-primary d-none" id="btnDiscard" type="submit" name="btnInscrire">Sauvegarder</button>
+                                <!--<input type="button" class="btn btn-primary d-none" id="btnDiscard" value="Changer" />-->
                             </div> 
                         </div>
                     </div>
+                </form>
 
                     <div class="row">
                         <div class="col-12">
