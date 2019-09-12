@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
   }
 }
 ?>
-<link rel="stylesheet" href="<?php echo Settings::sitePathRoot; ?>base/css/groupe.min.css">
+<link rel="stylesheet" href="<?php echo Settings::sitePathRoot; ?>base/css/groupe.css">
 <?php /*<-- DEBUT - Popup création de groupe -->*/ ?>
 <div class="modal fade" id="creationGroupe" tabindex="-1" role="dialog" aria-labelledby="creationGroupeLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
