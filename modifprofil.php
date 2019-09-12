@@ -130,7 +130,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	    </nav>
 	</div>-->
 
-	<div class="container-fluid profil-content">
+	<div class="container">
 	  <h1>Profil</h1>
 	  <div class="row">
 	    <div class="col-md-3">
