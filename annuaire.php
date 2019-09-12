@@ -17,7 +17,7 @@ require("base/include/header.php"); ?>
     data-show-toggle="true"
     data-filter-show-clear="true"
     data-pagination="true"
-    data-page-size="10"
+    data-page-size="5"
     data-page-list="[5, 10, 25, 50, Toutes]">
       <thead>
         <tr>
@@ -35,7 +35,7 @@ require("base/include/header.php"); ?>
 
         while ($utilisateur = $utilisateurs->fetch()) { ?>
         <tr>
-          <td><?php echo $utilisateur['PRENOM'] ?></td>
+          <td><a href="profil.php?id=<?php echo $utilisateur['ID'] ?>"><?php echo $utilisateur['PRENOM'] ?></a></td>
           <td><?php echo $utilisateur['NOM'] ?></td>
           <td><?php echo $utilisateur['ECOLE'] ?></td>
           <td><?php echo $utilisateur['PROMOTION'] ?></td>
