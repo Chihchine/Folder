@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', function() {
         info.jsEvent.preventDefault();
       }
     },
-    contentHeight: 1000,
+    contentHeight: 100,
     firstDay: 1,
     defaultView: 'dayGridMonth',
     defaultDate: '<?php echo $dateDuJour ?>',
