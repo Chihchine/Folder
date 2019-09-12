@@ -44,6 +44,7 @@ if (empty($imageProfil)) {
 			<div class="sidebar-content">
 				<div class="sidebar-brand">
 					<a href="#">My campus</a>
+					<?php echo $_SESSION['id_utilisateur']?>
 					<div id="close-sidebar">
 						<i class="fas fa-times"></i>
 					</div>
