@@ -154,18 +154,6 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 					      <h1 class="h3 mb-3 font-weight-normal">Modification de votre profil</h1>
 					      <div class="form">
 					        <div class="form-row">
-					          <!--<div class="form-group col-md-6">
-					            <label for="">Prénom</label>
-					            <input class="form-control" type="text" name="prenom"  placeholder="Prénom" required>
-					            <div class="invalid-feedback">Veuillez-renseigner votre prénom.</div>
-					          </div>
-					          <div class="form-group col-md-6">
-					            <label for="">Nom</label>
-					            <input class="form-control" type="text" name="nom"  placeholder="Nom" required>
-					            <div class="invalid-feedback">Veuillez-renseigner votre nom.</div>
-					          </div>
-					        </div>-->
-					        <div class="form-row">
 					          <div class="form-group col-md-4">
 					            <label for="">Nouvel Email</label>
 					            <input class="form-control" type="email" name="newmail"  placeholder="<?php echo $userinfo["MAIL"] ?>" required>
