@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // listDayAltFormat: true,
     defaultView: 'timeGridWeek',
     slotDuration: '02:00:00',
-    minTime: '06:00:00',
+    minTime: '07:00:00',
     maxTime: '23:00:00',
     columnHeaderFormat: { weekday: 'long' },
     weekends: true, // on affiche les week end
