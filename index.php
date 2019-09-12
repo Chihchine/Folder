@@ -2,7 +2,7 @@
 require("base/include/header.php");
 ?>
 
-    <div class="container-fluid-scroller">
+    <div class="container-scroller">
       <div class="main-panel">
         <div class="content-wrapper">
                     <div class="row page-title-header">
@@ -302,7 +302,7 @@ require("base/include/header.php");
                             <div class="card-body">
                                 <h4 class="card-title mb-0">Amis</h4>
                                 <div class="d-flex mt-3 py-2 border-bottom">
-                                    <img class="img-sm rounded-circle" src="../assets/images/faces/face3.jpg" alt="profile image">
+                                    <span class="img-sm rounded-circle bg-warning text-white text-avatar">GM</span>
                                     <div class="wrapper ml-2">
                                         <p class="mb-n1 font-weight-semibold">Gauthier Mairot</p>
                                         <small>EPSI B2G1</small>
@@ -318,7 +318,7 @@ require("base/include/header.php");
                                     <small class="text-muted ml-auto">Il y a 4 heures</small>
                                 </div>
                                 <div class="d-flex py-2 border-bottom">
-                                    <img class="img-sm rounded-circle" src="../assets/images/faces/face4.jpg" alt="profile image">
+                                    <span class="img-sm rounded-circle bg-warning text-white text-avatar">TC</span>
                                     <div class="wrapper ml-2">
                                         <p class="mb-n1 font-weight-semibold">Thomas Coche</p>
                                         <small>EPSI B2G1</small>
