@@ -208,7 +208,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 					              <option value="M2">5ème année</option>
 					            </select>
 					          </div>
-					          <lalel> Nouveau avatar:</lalel>
+					          <lalel> Téléverser un nouvel avatar: </lalel>
 					          <input type="file" name="avatar">
 					        </div>
 					      </div>
