@@ -11,6 +11,23 @@ if (isset($_POST['creer'])) {
   Annuaire::addEvent($_POST['nom'], $_POST['description'], $dateDebut, $dateFin, $_SESSION['id_utilisateur']);
 }
 
+$events = Calendrier::eventsDataBase();
+while ($event = $events->fetch()) {
+  $debut = substr($event['DATE_DEBUT'], 0, 10).'T'.substr($event['DATE_DEBUT'], 11, 19);
+  $fin = substr($event['DATE_FIN'], 0, 10).'T'.substr($event['DATE_FIN'], 11, 19);
+  echo $debut;
+  echo "<br>";
+  echo $test2;
+  $dataEvent[] = array(
+    'title'     => $event['NOM'],
+    'start'     => $debut,
+    'end'       => $fin,
+    'color'     => '#2ca8ff'
+  );
+}
+
+$dataEventJson = json_encode($dataEvent);
+
  ?>
 
 <link rel="stylesheet" href="base/css/calendrier.css">
@@ -24,7 +41,6 @@ if (isset($_POST['creer'])) {
 <script src='base/js/fullcalendar/packages/timegrid/main.js'></script>
 <script src='base/js/fullcalendar/packages/list/main.js'></script>
 
-<?php Calendrier::eventCalendar(); ?>
 
 <div id='calendar'></div>
 
@@ -177,18 +193,7 @@ document.addEventListener('DOMContentLoaded', function() {
     weekLabel: "S",
     eventLimit: true,
     eventLimitText: 'de plus',
-    events: [
-  {
-    title: 'BCH237',
-    start: '2019-09-12T10:30:00',
-    end: '2019-09-13T11:30:00',
-    extendedProps: {
-      department: 'BioChemistry'
-    },
-    description: 'Lecture'
-  }
-  // more events ...
-],
+    events: <?php echo $dataEventJson ?>
 
 
 
