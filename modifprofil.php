@@ -1,11 +1,12 @@
 <?php
 require("base/include/header.php");
 
+if(!isset($_GET['id'])){
+	header("Location: index.html");
+}
+
 if(isset($_GET['id']) AND $_GET['id'] > 0) {
    $id = $_GET['id'];
-
-
-
 	$result = Main::DataBase()->prepare("SELECT * FROM UTILISATEURS WHERE ID = ?");
 	$result->execute(array($id));
 
@@ -59,6 +60,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 				    header('Location: modifprofil.php?id='.$id);
 				}
 		} else {
+			echo "Test";
 			header("Location: profil.php?id=".$_GET['id']);
 			die;
 		}
