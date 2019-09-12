@@ -6,7 +6,7 @@ Class Groupe {
     // if (!empty($name) && !empty($desc) && !empty($imageExtension) && !empty($imageTmp_name)) {
       $imageID = Image::Upload($imageExtension, $imageTmp_name, $imageFile_error);
 
-      $request = Main::Database()->prepare("INSERT INTO GROUPES(NOM, DESCRIPTION, ID_IMAGE_GROUPE, DATE_CREATION) VALUES(:nom, :description, :idPhoto, CURRENT_TIMESTAMP)");
+      $request = Main::Database()->prepare("INSERT INTO GROUPES(NOM, DESCRIPTION, ID_IMAGE_GROUPE, DATE_CREATION, VISIBLE) VALUES(:nom, :description, :idPhoto, CURRENT_TIMESTAMP, 1)");
       $request->execute(["nom" => $name, "description" => $desc, "idPhoto" => $imageID]);
     // }
   }
@@ -24,7 +24,7 @@ Class Groupe {
   }
 
   public static function ListAll() {
-    $request = Main::Database()->prepare("SELECT * FROM GROUPES WHERE VISIBLE=1 OR VISIBLE=NULL");
+    $request = Main::Database()->prepare("SELECT * FROM GROUPES WHERE VISIBLE=1");
     $request->execute();
     return $request->fetchAll();
   }
