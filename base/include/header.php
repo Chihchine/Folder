@@ -6,15 +6,34 @@ if (!isset($_SESSION['id_utilisateur'])) {
 	die;
 }
 
+$utilisateur = Utilisateur::Show($_SESSION['id_utilisateur']);
+
+$imageProfil = Image::Show($utilisateur['ID_IMAGE_PROFIL'])['LIEN'];
+if (empty($imageProfil)) {
+  $imageProfil = Image::Show("1")['LIEN'];
+}
+
 ?>
+<!DOCTYPE HTML>
+<html>
 <head>
   <title>myCampus - <?php echo $pageTitle ?></title>
   <link rel="shortcut icon" type="image/x-icon" href="<?php echo Settings::sitePathRoot; ?>base/img/favicon.ico"/>
   <link rel="stylesheet" type="text/css" href="<?php echo Settings::sitePathRoot; ?>base/css/main.css"/>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.15.4/dist/bootstrap-table.min.css">
+	<link rel="stylesheet" href="<?php echo Settings::sitePathRoot; ?>base/css/sidebar.css">
+<<<<<<< HEAD
+	<link rel="stylesheet" href="<?php echo Settings::sitePathRoot; ?>../assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+	<link rel="stylesheet" href="<?php echo Settings::sitePathRoot; ?>../assets/vendors/iconfonts/ionicons/css/ionicons.css">
+	<link rel="stylesheet" href="<?php echo Settings::sitePathRoot; ?>../assets/vendors/iconfonts/typicons/src/font/typicons.css">
+	<link rel="stylesheet" href="<?php echo Settings::sitePathRoot; ?>../assets/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css">
+	<link rel="stylesheet" href="<?php echo Settings::sitePathRoot; ?>../assets/vendors/css/vendor.bundle.base.css">
+	<link rel="stylesheet" href="<?php echo Settings::sitePathRoot; ?>../assets/vendors/css/vendor.bundle.addons.css">
+=======
+>>>>>>> 6d5666f81f1e9501135405f45c39cdbd67eb1b76
 
-  <script src="<?php echo Settings::sitePathRoot; ?>base/js/jQuery.min.js"></script>
+	<script src="<?php echo Settings::sitePathRoot; ?>base/js/jQuery.min.js"></script>
   <script src="<?php echo Settings::sitePathRoot; ?>base/js/popper.js"></script>
   <script src="<?php echo Settings::sitePathRoot; ?>base/js/bootstrap.min.js"></script>
   <script src="base/js/bootstrap-table.min.js"></script>
@@ -40,14 +59,15 @@ if (!isset($_SESSION['id_utilisateur'])) {
 				</div>
 				<div class="sidebar-header">
 					<div class="user-pic">
-						<img class="img-responsive img-rounded" src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
-						alt="User picture">
+						<img class="img-responsive img-rounded" src="<?php echo Settings::sitePathRoot . $imageProfil; ?>" alt="User picture">
 					</div>
 					<div class="user-info">
-						<span class="user-name">Alexy
-							<strong>DEFORGE</strong>
-						</span>
-						<span class="user-role">B2G1</span>
+						<a href="profil.php?id=<?php echo $_SESSION['id_utilisateur']?>">
+							<span class="user-name"><?php echo $utilisateur['PRENOM']; ?>
+								<strong><?php echo $utilisateur['NOM']; ?></strong>
+							</span>
+						</a>
+						<span class="user-role"><?php echo $utilisateur['ECOLE'] . " " . $utilisateur['PROMOTION']; ?></span>
 						<span class="user-status">
 							<i class="fa fa-circle"></i>
 							<span>Actif</span>
@@ -72,6 +92,12 @@ if (!isset($_SESSION['id_utilisateur'])) {
 					<ul>
 						<li class="header-menu">
 							<span>Général</span>
+						</li>
+						<li>
+							<a href="profil.php?id=<?php echo $_SESSION['id_utilisateur']?>">
+								<i class="fas fa-user"></i>
+								<span>Profil</span>
+							</a>
 						</li>
 						<li class="sidebar-button">
 							<a href="index.php">
@@ -133,9 +159,3 @@ if (!isset($_SESSION['id_utilisateur'])) {
 		</nav>
 		<main class="page-content">
 			<div class="container-fluid">
-				<!-- Contenu à droite -->
-			</div>
-
-		</main>
-
-	</div>

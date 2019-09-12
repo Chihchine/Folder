@@ -95,8 +95,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                     <th>Image</th>
                     <th data-filter-control="input" data-field="nom" data-sortable="true">Nom</th>
                     <th data-filter-control="input" data-field="description" data-sortable="true">Description</th>
-                    <th data-field="date" data-sortable="true">Date de création</th>
-                    <th data-field="membres" data-sortable="true">Nombre de membre</th>
+                    <th data-field="date" data-sortable="true">Création</th>
+                    <th data-field="membres" data-sortable="true">Membres</th>
                     <th>Action</th>
                   </tr>
                 </thead>
@@ -109,7 +109,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                     <td><img class="groupe-image" src="<?php echo Settings::sitePathRoot . Image::Show($groupe['ID_IMAGE_GROUPE'])['LIEN']; ?>"></td>
                     <td><?php echo $groupe['NOM']; ?></td>
                     <td><?php echo $groupe['DESCRIPTION']; ?></td>
-                    <td><?php echo $groupe['DATE_CREATION']; ?></td>
+                    <td><?php echo substr($groupe['DATE_CREATION'], 0, 10); ?></td>
                     <td><?php echo Groupe::CountMember($groupe['ID'])['NUMBER']; ?></td>
                     <td><a href="?r=join&id=<?php echo $groupe['ID']; ?>"><button class="btn btn-classic">Rejoindre</button></a><a href="?r=leave&id=<?php echo $groupe['ID']; ?>"><button class="btn btn-danger">Quitter</button></a></td>
                   </tr>
@@ -118,3 +118,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
               </table>
             </div>
           </div>
+
+<?php require("base/include/footer.php"); ?>
