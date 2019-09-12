@@ -49,16 +49,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
     } else {
         $profilimage = "images/basicprofil.png";
     }
-
-    if(isset($_FILES['avatar']) AND !empty($_FILES['avatar']['name'])) {
-        $extension  = pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION);
-        $idimage = Image::Upload($extension, $_FILES['avatar']['tmp_name'], $_FILES['avatar']['error']);
-        $modifavatar = Main::DataBase()->prepare("UPDATE UTILISATEURS SET ID_IMAGE_PROFIL = ? WHERE ID = ?");
-        $modifavatar->execute(array($idimage, $id));
-
-        echo '<SCRIPT LANGUAGE="JavaScript"> document.location.href="modifprofil.php?id=' . $_SESSION["id_utilisateur"] . '"</SCRIPT>';
-        die;
-      }
+?>
 ?>
 
 <link href="base/css/profile.css" rel="stylesheet" id="css">
@@ -93,7 +84,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
                                 <h6 class="d-block"><?php echo $userinfo["PROMOTION"]?></h6>
                             </div>
                             <div class="ml-auto">
-                                <input type="button" class="btn btn-primary d-none" id="Publish" value="Changer" />
+                                <input type="button" class="btn btn-primary d-none" id="btnDiscard" value="Changer" />
                             </div> 
                         </div>
                     </div>
