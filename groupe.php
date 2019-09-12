@@ -19,7 +19,7 @@ if (isset($_GET['r']) && $_GET['r']=="editInfo") {
     $visible = false;
   }
   echo 1;
-  Groupe::Edit($_GET['id'], $_POST['groupeName'], $_POST['groupeDesc'], $visible, $groupe['IMAGE_ID_GROUPE']);
+  Groupe::Edit($_GET['id'], $_POST['groupeName'], $_POST['groupeDesc'], $visible, $groupe['ID_IMAGE_GROUPE']);
 
 } elseif (isset($_GET['r']) && $_GET['r']=="editImage") {
 
