@@ -1,6 +1,5 @@
 <?php
-
-if (isset($_GET['id']) {
+if (isset($_GET['id'])) {
   header("Location: groupes.php");
 }
 
