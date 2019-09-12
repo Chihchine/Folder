@@ -100,9 +100,6 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 	    die;
 	  }
 ?>
-
-<html>
-	<body>
 	    <!--<div class="fil_arianne container">
 	    <nav aria-label="breadcrumb">
 	        <ol class="breadcrumb">
