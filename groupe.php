@@ -78,8 +78,8 @@ if (isset($_GET['r']) && $_GET['r']=="editInfo ") {
                             <div class="image-container">
                                 <img src="<?php echo Settings::sitePathRoot . Image::Show($groupe['ID_IMAGE_GROUPE'])['LIEN']; ?>" id="imgProfile" style="width: 150px; height: 150px" class="img-thumbnail" />
                                 <div class="middle">
+                                  <input type="button" class="btn btn-secondary" id="btnChangePicture" value="Modifier" />
                                   <form enctype="multipart/form-data" id="editImage" class="form-proposition-groupe" action="groupe.php?id=<?php echo $groupe['ID']; ?>&r=editImage" method="post">
-                                    <input type="button" class="btn btn-secondary" id="btnChangePicture" value="Changer" />
                                     <input type="file" style="display: none;" id="imageProfil" name="image" />
                                   </form>
                                 </div>
