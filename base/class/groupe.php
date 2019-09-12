@@ -11,12 +11,6 @@ Class Groupe {
     // }
   }
 
-  public static function Show($id) {
-    $request = Main::DataBase()->prepare("SELECT * FROM GROUPES WHERE ID = ?");
-    $request->execute([$id]);
-    return $request->fetch();
-  }
-
   public static function List() {
     $request = Main::Database()->prepare("SELECT * FROM GROUPES");
     $request->execute();

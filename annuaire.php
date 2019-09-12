@@ -45,5 +45,3 @@ require("base/include/header.php"); ?>
     </table>
   </div>
 </div>
-
-<?php require("base/include/footer.php"); ?>
