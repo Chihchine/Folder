@@ -114,6 +114,7 @@ button.fc-button {
 
 .fc .fc-row:last-child td, .fc .fc-body .fc-widget-content {
     border-bottom: 0 !important;
+    height: 55px;
 }
 
 .fc-unthemed .fc-disabled-day {
