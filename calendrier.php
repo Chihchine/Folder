@@ -23,7 +23,7 @@ while ($event = $events->fetch()) {
     $color = '#048b9a';
   }
   else {
-    $color = '#cecece'
+    $color = '#cecece';
   }
   $dataEvent[] = array(
     'title'       => $event['NOM'],
