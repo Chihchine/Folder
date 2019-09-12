@@ -34,7 +34,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="#" onClick="setActivePage('home')">Tableau de bord</a></li>
                   <li class="breadcrumb-item active" aria-current="page">Profil</li>
-                  <li class="breadcrumb-item active" aria-current="page"><a href="modifprofil.php?id=<?php $_SESSION['id_utilisateur']?>"> Modifier votre profil</a></li>
+                  <li class="breadcrumb-item active" aria-current="page"><a href="modifprofil.php?id=<?php echo $_SESSION['id_utilisateur']?>"> Modifier votre profil</a></li>
                 </ol>
               </nav>
             </div>

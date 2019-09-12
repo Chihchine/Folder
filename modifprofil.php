@@ -13,7 +13,7 @@ if (isset($_SESSION['id_utilisateur'])) {
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="#" onClick="setActivePage('home')">Tableau de bord</a></li>
-                  <li class="breadcrumb-item active" aria-current="page"><a href="profil.php?id=<?php $_SESSION['id_utilisateur']?>">Profil</a></li>
+                  <li class="breadcrumb-item active" aria-current="page"><a href="profil.php?id=<?php echo $_SESSION['id_utilisateur']?>">Profil</a></li>
                   <li class="breadcrumb-item active" aria-current="page">Modifier votre profil</li>
                 </ol>
               </nav>
@@ -213,7 +213,6 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
 					      </div>
 					      <button class="btn btn-lg btn-primary btn-block" type="submit" name="btnInscrire">Sauvegarder</button>
 					    </form>
-					    <?php echo "<a href='profil.php?id=" . $_SESSION["id_utilisateur"] . "'> Retourner à votre profil </a>"; ?>
 	        </div>
 	      </div>
 	    </div>
