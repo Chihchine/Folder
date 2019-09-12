@@ -57,7 +57,7 @@ $groupe = Groupe::Show($_GET['id']);
           </div>
           <div class="form-group">
             <label for="groupeDesc">Visible</label>
-            <input type="checkbox" class="col-12" id="groupeVisible" name="groupeVisisble" <?php if($groupe['VISIBLE']==true || $groupe['VISIBLE']==NULL) { echo "checked"; }?>>
+            <input type="checkbox" class="col-12" id="groupeVisible" name="groupeVisible" <?php if($groupe['VISIBLE']==true || $groupe['VISIBLE']==NULL) { echo "checked"; }?>>
           </div>
         </form>
       </div>
