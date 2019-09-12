@@ -39,7 +39,6 @@ while ($event = $events->fetch()) {
 <script src='base/js/fullcalendar/packages/timegrid/main.js'></script>
 <script src='base/js/fullcalendar/packages/list/main.js'></script>
 
-<?php Calendrier::eventCalendar(); ?>
 
 <div id='calendar'></div>
 
