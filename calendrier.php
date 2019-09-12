@@ -26,6 +26,8 @@ while ($event = $events->fetch()) {
   );
 }
 
+$dataEventJson = json_encode($dataEvent);
+
  ?>
 
 <link rel="stylesheet" href="base/css/calendrier.css">
@@ -191,18 +193,7 @@ document.addEventListener('DOMContentLoaded', function() {
     weekLabel: "S",
     eventLimit: true,
     eventLimitText: 'de plus',
-    events: [
-  {
-    title: 'BCH237',
-    start: '2019-09-12T10:30:00',
-    end: '2019-09-13T11:30:00',
-    extendedProps: {
-      department: 'BioChemistry'
-    },
-    description: 'Lecture'
-  }
-  // more events ...
-],
+    events: <?php echo $dataEventJson ?>
 
 
 
