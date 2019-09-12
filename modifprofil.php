@@ -5,6 +5,22 @@ if(!isset($_GET['id'])){
 	header("Location: index.html");
 }
 
+
+if (isset($_SESSION['id_utilisateur'])) {
+        //echo $_SESSION['id_utilisateur'];
+        ?>
+            <div class="fil-arianne container">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#" onClick="setActivePage('home')">Tableau de bord</a></li>
+                  <li class="breadcrumb-item active" aria-current="page"><a href="profil.php?id=<?php $_SESSION['id_utilisateur']?>">Profil</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Modifier votre profil</li>
+                </ol>
+              </nav>
+            </div>
+        <?php 
+    }
+
 if(isset($_GET['id']) AND $_GET['id'] > 0) {
    $id = $_GET['id'];
 	$result = Main::DataBase()->prepare("SELECT * FROM UTILISATEURS WHERE ID = ?");
