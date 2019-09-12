@@ -1,7 +1,7 @@
 <?php
 require_once("base/class/main.php");
 
-session_destroy();
+
 
 if (isset($_POST['connexion'])) {
   if (empty(Connexion::verif($_POST['mail'], $_POST['mdp']))) {
@@ -13,7 +13,7 @@ if (isset($_POST['connexion'])) {
     header('Location: profil.php?id='.$_SESSION['id_utilisateur'].'');
   }
 }
-
+session_destroy();
 echo $_SESSION['id_utilisateur'];
  ?>
 <!DOCTYPE html>
