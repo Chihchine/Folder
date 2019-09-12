@@ -28,7 +28,7 @@ Class Calendrier {
         );
       }
   }
-  return $dataEvent;
+  // return $dataEvent;
 }
 
  ?>
