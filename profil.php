@@ -71,7 +71,7 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
     <div class="row">
         <div class="col-12">
             <div class="card">
-
+                <form method="post" class="needs-validation form-signin" novalidate enctype="multipart/form-data"> 
                 <div class="card-body">
                     <div class="card-title mb-4">
                         <div class="d-flex justify-content-start">
@@ -95,10 +95,11 @@ if(isset($_GET['id']) AND $_GET['id'] > 0) {
                                 <h6 class="d-block"><?php echo $userinfo["PROMOTION"]?></h6>
                             </div>
                             <div class="ml-auto">
-                                <input type="button" class="btn btn-primary d-none" id="btnDiscard" value="Changer" />
+                                <button class="btn btn-lg btn-primary btn-block" type="submit" name="btnInscrire">Sauvegarder</button>
                             </div> 
                         </div>
                     </div>
+                </form>
 
                     <div class="row">
                         <div class="col-12">
