@@ -26,7 +26,7 @@ if (empty($groupe)) {
                     <div class="card-title mb-4">
                         <div class="d-flex justify-content-start">
                             <div class="image-container">
-                                <img src="http://placehold.it/150x150" id="imgProfile" style="width: 150px; height: 150px" class="img-thumbnail" />
+                                <img src="<?php echo Image::Show($groupe['ID_IMAGE_GROUPE'])['LIEN']; ?>" id="imgProfile" style="width: 150px; height: 150px" class="img-thumbnail" />
                                 <div class="middle">
                                     <input type="button" class="btn btn-secondary" id="btnChangePicture" value="Change" />
                                     <input type="file" style="display: none;" id="profilePicture" name="file" />
@@ -48,7 +48,7 @@ if (empty($groupe)) {
                                     <a class="nav-link active" id="basicInfo-tab" data-toggle="tab" href="#basicInfo" role="tab" aria-controls="basicInfo" aria-selected="true">Informations</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="connectedServices-tab" data-toggle="tab" href="#connectedServices" role="tab" aria-controls="connectedServices" aria-selected="false">Autres</a>
+                                    <a class="nav-link" id="connectedServices-tab" data-toggle="tab" href="#connectedServices" role="tab" aria-controls="connectedServices" aria-selected="false">Description</a>
                                 </li>
                             </ul>
                             <div class="tab-content ml-1" id="myTabContent">
@@ -90,19 +90,10 @@ if (empty($groupe)) {
                                         </div>
                                     </div>
                                     <hr />
-                                    <div class="row">
-                                        <div class="col-sm-3 col-md-2 col-5">
-                                            <label style="font-weight:bold;">Activé</label>
-                                        </div>
-                                        <div class="col-md-8 col-6">
-                                            B2-Gr1
-                                        </div>
-                                    </div>
-                                    <hr />
 
                                 </div>
                                 <div class="tab-pane fade" id="connectedServices" role="tabpanel" aria-labelledby="ConnectedServices-tab">
-                                    Facebook, Google et Twitter sont connectés à ce compte.
+                                    <?php echo $groupe['DESCRIPTION']; ?>
                                 </div>
                             </div>
                         </div>
