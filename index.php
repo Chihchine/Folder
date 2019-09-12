@@ -302,7 +302,7 @@ require("base/include/header.php");
                             <div class="card-body">
                                 <h4 class="card-title mb-0">Amis</h4>
                                 <div class="d-flex mt-3 py-2 border-bottom">
-                                    <span class="img-sm rounded-circle bg-warning text-white text-avatar">GM</span>
+                                    <span class="img-sm rounded-circle bg-primary text-white text-avatar">GM</span>
                                     <div class="wrapper ml-2">
                                         <p class="mb-n1 font-weight-semibold">Gauthier Mairot</p>
                                         <small>EPSI B2G1</small>
